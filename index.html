@@ -239,6 +239,7 @@
     .bg-prosci  { background: linear-gradient(140deg, #1a0a05 0%, #2d1510 60%, #1a0a08 100%); }
     .bg-funko   { background: linear-gradient(140deg, #0f0520 0%, #1e0a3a 60%, #0a0515 100%); }
     .bg-florence{ background: linear-gradient(140deg, #200510 0%, #3a0d1e 60%, #1a0510 100%); }
+    .bg-taylor  { background: linear-gradient(140deg, #0E1C24 0%, #1A3040 60%, #0A1520 100%); }
 
     /* Service BG colours */
     .bg-s1 { background: linear-gradient(140deg, #061528 0%, #0d2540 60%, #061020 100%); }
@@ -419,7 +420,7 @@
       .stats-bar { display: none !important; }
 
       /* ── Section spacing ── */
-      #services, #brands, #philosophy, #book, #audit { padding: 60px 0 !important; }
+      #services, #brands, #industry-cta, #philosophy, #book, #audit { padding: 60px 0 !important; }
 
       /* ── Brand & Service cards: keep dark animated style on mobile ── */
       .brand-card { min-height: 240px !important; padding: 24px !important; border-radius: 20px !important; }
@@ -471,7 +472,8 @@
 <!-- Mobile nav overlay -->
 <nav id="mobile-nav" aria-label="Mobile navigation">
   <a href="#services" class="mob-nav-link" data-i18n="nav_services" onclick="closeMobileNav()">Servizi</a>
-  <a href="#brands" class="mob-nav-link" data-i18n="nav_brands" onclick="closeMobileNav()">Brand</a>
+  <a href="#brands" class="mob-nav-link" data-i18n="nav_brands" onclick="closeMobileNav()">Portfolio</a>
+  <a href="about.html" class="mob-nav-link" data-i18n="nav_about" onclick="closeMobileNav()">Chi Sono?</a>
   <a href="#book" class="mob-nav-link" data-i18n="nav_contact" onclick="closeMobileNav()">Contatto</a>
   <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" style="margin-top:32px;justify-content:center;width:100%;max-width:280px;" data-i18n="nav_cta" onclick="closeMobileNav()">
     Prenota una Call
@@ -496,7 +498,8 @@
     <!-- Center nav -->
     <nav style="display:flex;align-items:center;gap:32px;" class="hide-sm">
       <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
-      <a href="#brands" class="nav-link" data-i18n="nav_brands">Brands</a>
+      <a href="#brands" class="nav-link" data-i18n="nav_brands">Portfolio</a>
+      <a href="about.html" class="nav-link" data-i18n="nav_about">Chi Sono?</a>
       <a href="#book" class="nav-link" data-i18n="nav_contact">Contact</a>
     </nav>
 
@@ -742,10 +745,12 @@
 <section id="brands" style="padding:100px 0;">
   <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
 
-    <div class="fade-up" style="margin-bottom:48px;">
+    <div class="fade-up" style="margin-bottom:56px;max-width:640px;">
+      <p class="section-label" style="margin-bottom:16px;" data-i18n="brands_label">Portfolio</p>
       <h2 class="heading" style="font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;" data-i18n="brands_title">
-        Brand Clients
+        Case Studies
       </h2>
+      <p style="margin-top:16px;font-size:1.0625rem;line-height:1.75;color:#6B7280;" data-i18n="brands_sub">Real brands. Real budgets. Real results.</p>
     </div>
 
     <div class="brand-grid fade-up">
@@ -766,19 +771,27 @@
         </div>
       </div>
 
-      <!-- La Prosciutteria — Italian food / charcuterie -->
+      <!-- Taylor Wimpey — Real Estate / New Homes -->
       <div class="brand-card">
-        <div class="brand-card-bg bg-prosci">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/6gtlQ5mo8mo?autoplay=1&mute=1&loop=1&playlist=6gtlQ5mo8mo&controls=0&disablekb=1&playsinline=1&rel=0&modestbranding=1"
-            allow="autoplay; encrypted-media" title="La Prosciutteria background"
-          ></iframe>
+        <div class="brand-card-bg bg-taylor">
+          <!-- Architectural decorative element -->
+          <div style="position:absolute;bottom:0;right:0;width:100%;height:100%;opacity:0.06;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.4) 0,rgba(255,255,255,0.4) 1px,transparent 0,transparent 60px),repeating-linear-gradient(180deg,rgba(255,255,255,0.4) 0,rgba(255,255,255,0.4) 1px,transparent 0,transparent 60px);"></div>
+          <div style="position:absolute;top:24px;right:24px;opacity:0.15;">
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+              <path d="M10 36L36 10L62 36" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 36V58H30V46H42V58H54V36" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="30" y="20" width="12" height="14" rx="1" stroke="white" stroke-width="2"/>
+              <path d="M4 58H68" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <rect x="26" y="46" width="6" height="12" rx="1" fill="white" opacity="0.3"/>
+              <rect x="40" y="46" width="6" height="12" rx="1" fill="white" opacity="0.3"/>
+            </svg>
+          </div>
         </div>
         <div class="brand-card-dim"></div>
         <div class="brand-card-content">
-          <span class="brand-tag" data-i18n="brand2_tag">Google Ads</span>
-          <h3 class="brand-name">La Prosciutteria</h3>
-          <p class="brand-desc" data-i18n="brand2_desc">Ran Google Ads campaigns to drive brand awareness and results for this Italian dining brand.</p>
+          <span class="brand-tag" data-i18n="brand2_tag">Google Ads · Real Estate</span>
+          <h3 class="brand-name">Taylor Wimpey</h3>
+          <p class="brand-desc" data-i18n="brand2_desc">Ran high-volume Google Ads campaigns for one of the UK's leading residential house builders — driving qualified home-buyer leads across new development sites at scale.</p>
         </div>
       </div>
 
@@ -813,6 +826,56 @@
           <p class="brand-desc" data-i18n="brand4_desc">Executed TikTok campaigns for Millie Bobby Brown's beauty brand, focused on Gen Z engagement and product discovery.</p>
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     INDUSTRY CTA
+══════════════════════════════════════ -->
+<section id="industry-cta" style="padding:100px 0;background:#0f0f0f;position:relative;overflow:hidden;">
+
+  <!-- Background blobs -->
+  <div style="position:absolute;top:-120px;left:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(ellipse, rgba(232,145,74,0.07) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+  <div style="position:absolute;bottom:-100px;right:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(ellipse, rgba(157,184,217,0.06) 0%, transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+
+  <div style="max-width:840px;margin:0 auto;padding:0 32px;text-align:center;position:relative;z-index:1;">
+    <div class="fade-up" style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+
+      <!-- Industry tag cloud -->
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">Entertainment</span>
+        <span style="background:rgba(232,145,74,0.12);border:1px solid rgba(232,145,74,0.22);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(232,145,74,0.8);">Real Estate</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">Retail</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">Beauty</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">E-commerce</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">SaaS</span>
+        <span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(255,255,255,0.45);">Health &amp; Wellness</span>
+        <span style="background:rgba(157,184,217,0.1);border:1px solid rgba(157,184,217,0.2);border-radius:100px;padding:7px 18px;font-size:0.8125rem;color:rgba(157,184,217,0.8);">Food &amp; Beverage</span>
+      </div>
+
+      <!-- Headline -->
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <h2 class="heading" style="font-size:clamp(2rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;color:#fff;" data-i18n="icta_h1">
+          Tell me your industry.
+        </h2>
+        <h2 class="heading grad-text" style="font-size:clamp(2rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;" data-i18n="icta_h2">
+          I'll show you how I can help.
+        </h2>
+      </div>
+
+      <!-- Sub -->
+      <p style="font-size:1.125rem;line-height:1.8;color:rgba(255,255,255,0.45);max-width:540px;" data-i18n="icta_sub">
+        Whether you're in real estate, entertainment, e-commerce, or beauty — I build campaigns that fit your market, not a template. Let's talk for free.
+      </p>
+
+      <!-- CTA -->
+      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" style="padding:16px 36px;font-size:1rem;background:linear-gradient(120deg,#E8914A 0%,#D4734A 100%);box-shadow:0 8px 40px rgba(232,145,74,0.22),0 2px 8px rgba(0,0,0,0.2);" data-i18n="icta_cta">
+        Let's Talk Free
+        <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="width:16px;height:16px;"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
 
     </div>
   </div>
@@ -942,7 +1005,8 @@
       </div>
       <nav style="display:flex;gap:24px;flex-wrap:wrap;" aria-label="Footer navigation">
         <a href="#services" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_services">Services</a>
-        <a href="#brands" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_brands">Brands</a>
+        <a href="#brands" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_brands">Portfolio</a>
+        <a href="about.html" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_about">Chi Sono?</a>
         <a href="#book" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_contact">Contact</a>
       </nav>
     </div>
@@ -982,7 +1046,8 @@
 const COPY = {
   en: {
     nav_services: "Services",
-    nav_brands: "Brands",
+    nav_brands: "Portfolio",
+    nav_about: "Who Am I?",
     nav_audit: "Results",
     nav_contact: "Contact",
     nav_cta: "Book a Call",
@@ -1010,15 +1075,21 @@ const COPY = {
     stat3_num: "500K+",  stat3_label: "Conversions Driven",
     stat4_num: "4",      stat4_label: "Major Brands",
     brands_eyebrow: "Experience",
-    brands_title: "Brand Clients",
+    brands_label: "Portfolio",
+    brands_title: "Case Studies",
+    brands_sub: "Real brands. Real budgets. Real results.",
     brand1_tag: "Google Ads & Facebook Ads",
     brand1_desc: "Managed paid media for the promotion of 1,300+ concerts across the globe, handling audience targeting and budget strategy at an international scale.",
-    brand2_tag: "Google Ads",
-    brand2_desc: "Ran Google Ads campaigns to drive brand awareness and results for this Italian dining brand.",
+    brand2_tag: "Google Ads · Real Estate",
+    brand2_desc: "Ran high-volume Google Ads campaigns for one of the UK's leading residential house builders — driving qualified home-buyer leads across new development sites at scale.",
     brand3_tag: "TikTok Ads",
     brand3_desc: "Led TikTok campaigns tied to the Spider-Man: Across the Spider-Verse movie launch, aligning pop culture moments with paid social strategy.",
     brand4_tag: "TikTok Ads",
     brand4_desc: "Executed TikTok campaigns for Millie Bobby Brown's beauty brand, focused on Gen Z engagement and product discovery.",
+    icta_h1: "Tell me your industry.",
+    icta_h2: "I'll show you how I can help.",
+    icta_sub: "Whether you're in real estate, entertainment, e-commerce, or beauty — I build campaigns that fit your market, not a template. Let's talk for free.",
+    icta_cta: "Let's Talk Free",
     audit_eyebrow: "Deep Expertise",
     audit_big_num: "1,000+",
     audit_headline: "Accounts Audited",
@@ -1043,7 +1114,8 @@ const COPY = {
   },
   it: {
     nav_services: "Servizi",
-    nav_brands: "Brand",
+    nav_brands: "Portfolio",
+    nav_about: "Chi Sono?",
     nav_audit: "Risultati",
     nav_contact: "Contatto",
     nav_cta: "Prenota una Call",
@@ -1071,15 +1143,21 @@ const COPY = {
     stat3_num: "500K+",  stat3_label: "Conversioni Generate",
     stat4_num: "4",      stat4_label: "Brand di Rilievo",
     brands_eyebrow: "Esperienza",
-    brands_title: "Brand Clienti",
+    brands_label: "Portfolio",
+    brands_title: "Case Study",
+    brands_sub: "Brand reali. Budget reali. Risultati reali.",
     brand1_tag: "Google Ads & Facebook Ads",
     brand1_desc: "Gestione dei paid media per la promozione di oltre 1.300 concerti in tutto il mondo, occupandomi del targeting e della strategia di budget su scala internazionale.",
-    brand2_tag: "Google Ads",
-    brand2_desc: "Campagne Google Ads per aumentare la brand awareness e i risultati per questo brand di ristorazione italiana.",
+    brand2_tag: "Google Ads · Real Estate",
+    brand2_desc: "Campagne Google Ads ad alto volume per uno dei principali costruttori residenziali del Regno Unito — generando lead qualificati di potenziali acquirenti di case su scala.",
     brand3_tag: "TikTok Ads",
     brand3_desc: "Campagne TikTok legate al lancio di Spider-Man: Across the Spider-Verse, allineando i momenti pop culture con la strategia paid social.",
     brand4_tag: "TikTok Ads",
     brand4_desc: "Campagne TikTok per il brand di bellezza di Millie Bobby Brown, con focus sul coinvolgimento della Gen Z e la product discovery.",
+    icta_h1: "Dimmi in che settore operi.",
+    icta_h2: "Ti mostro come posso aiutarti.",
+    icta_sub: "Che tu sia nel real estate, nell'entertainment, nell'e-commerce o nel beauty — costruisco campagne che si adattano al tuo mercato, non a un template. Parliamo gratis.",
+    icta_cta: "Parliamo Gratis",
     audit_eyebrow: "Competenza Approfondita",
     audit_big_num: "1.000+",
     audit_headline: "Account Analizzati",
