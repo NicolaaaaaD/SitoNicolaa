@@ -385,15 +385,11 @@
       .hero-img-col { order: -1; }
       section.grad-bg { padding: 96px 0 56px !important; }
 
-      /* Strip orbiting pills & ring — just show the photo */
-      .orb-w { display: none !important; }
-      .orb-ring { display: none !important; }
-      .orb-container { height: auto !important; max-width: 100% !important; }
-      .hero-photo-wrap {
-        width: 180px !important; border-radius: 50% !important;
-        margin: 0 auto; box-shadow: 0 12px 40px rgba(0,0,0,0.14) !important;
-      }
-      .hero-photo-wrap img { aspect-ratio: 1 !important; border-radius: 50% !important; }
+      /* Orb: scale to fit phone width */
+      .orb-container { width: 300px !important; height: 300px !important; max-width: 100% !important; margin: 0 auto; }
+      .orb-ring { transform: scale(0.68) !important; }
+      .orb-c { left: 128px !important; font-size: 0.65rem !important; padding: 3px 9px !important; }
+      .hero-photo-wrap { width: 170px !important; }
 
       /* Hero type */
       .hero-grid h1 { font-size: 2.2rem !important; letter-spacing: -0.03em !important; line-height: 1.15 !important; }
@@ -405,23 +401,18 @@
       /* ── Section spacing ── */
       #services, #brands, #philosophy, #book, #audit { padding: 60px 0 !important; }
 
-      /* ── Brand & Service cards → clean white list items ── */
-      .brand-card {
-        min-height: auto !important; padding: 22px !important;
-        border-radius: 14px !important;
-        background: #fff !important;
-        box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
-        border: 1px solid rgba(0,0,0,0.07) !important;
-      }
-      .brand-card-bg, .brand-card-dim { display: none !important; }
-      .brand-tag { color: #9CA3AF !important; font-size: 0.6875rem !important; }
-      .brand-name { color: #0f0f0f !important; font-size: 1.125rem !important; transform: none !important; }
+      /* ── Brand & Service cards: keep dark animated style on mobile ── */
+      .brand-card { min-height: 240px !important; padding: 24px !important; border-radius: 20px !important; }
+      .brand-card-bg { display: block !important; }
+      .brand-card-dim { display: block !important; background: rgba(0,0,0,0.32) !important; }
+      .brand-tag { color: rgba(255,255,255,0.65) !important; font-size: 0.6875rem !important; }
+      .brand-name { color: #fff !important; font-size: 1.2rem !important; transform: none !important; }
       .brand-desc {
-        color: #4B5563 !important;
-        max-height: none !important; opacity: 1 !important;
-        margin-top: 8px !important; font-size: 0.9rem !important; line-height: 1.65 !important;
+        color: rgba(255,255,255,0.82) !important;
+        max-height: 200px !important; opacity: 1 !important;
+        margin-top: 10px !important; font-size: 0.875rem !important; line-height: 1.6 !important;
       }
-      .brand-grid { gap: 12px !important; }
+      .brand-grid { gap: 14px !important; }
 
       /* ── Book section ── */
       .book-col-left { padding: 36px 24px !important; }
@@ -442,7 +433,7 @@
 <body>
 
 <!-- Floating Book a Call button -->
-<a href="#book" id="float-cta" data-i18n="nav_cta" style="
+<a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" id="float-cta" data-i18n="nav_cta" style="
   position:fixed;bottom:28px;right:28px;z-index:200;
   display:none;align-items:center;gap:8px;
   background:#0f0f0f;color:#fff;
@@ -462,7 +453,7 @@
   <a href="#services" class="mob-nav-link" data-i18n="nav_services" onclick="closeMobileNav()">Servizi</a>
   <a href="#brands" class="mob-nav-link" data-i18n="nav_brands" onclick="closeMobileNav()">Brand</a>
   <a href="#book" class="mob-nav-link" data-i18n="nav_contact" onclick="closeMobileNav()">Contatto</a>
-  <a href="#book" class="btn-dark" style="margin-top:32px;justify-content:center;width:100%;max-width:280px;" data-i18n="nav_cta" onclick="closeMobileNav()">
+  <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" style="margin-top:32px;justify-content:center;width:100%;max-width:280px;" data-i18n="nav_cta" onclick="closeMobileNav()">
     Prenota una Call
     <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
   </a>
@@ -495,7 +486,7 @@
         <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
         <button class="lang-btn active" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
       </div>
-      <a href="#book" class="btn-dark hide-sm" data-i18n="nav_cta">
+      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark hide-sm" data-i18n="nav_cta">
         Prenota una Call
         <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
@@ -544,7 +535,7 @@
         <!-- CTA -->
         <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
           <!-- Update the Calendly URL to your actual link -->
-          <a href="https://calendly.com/nicoladimattia" target="_blank" rel="noopener" class="btn-dark" style="padding:15px 28px;font-size:0.9375rem;" data-i18n="hero_cta">
+          <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" style="padding:15px 28px;font-size:0.9375rem;" data-i18n="hero_cta">
             Book Your Free Call
             <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </a>
@@ -623,7 +614,6 @@
   <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
 
     <div class="fade-up" style="margin-bottom:48px;">
-      <p class="section-label" style="margin-bottom:14px;" data-i18n="services_eyebrow">What I Do</p>
       <h2 class="heading" style="font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;" data-i18n="services_title">
         Services
       </h2>
@@ -733,7 +723,6 @@
   <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
 
     <div class="fade-up" style="margin-bottom:48px;">
-      <p class="section-label" style="margin-bottom:14px;" data-i18n="brands_eyebrow">Experience</p>
       <h2 class="heading" style="font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;" data-i18n="brands_title">
         Brand Clients
       </h2>
@@ -826,7 +815,7 @@
       <p style="font-size:1.125rem;line-height:1.8;color:#4B5563;max-width:600px;" data-i18n="audit_body">
         I've audited over 1,000 advertising accounts across Google, Meta, TikTok, and Amazon — identifying wasted spend, missed opportunities, and structural issues holding campaigns back.
       </p>
-      <a href="#book" class="btn-dark" style="margin-top:8px;" data-i18n="audit_cta">
+      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" style="margin-top:8px;" data-i18n="audit_cta">
         Get Your Audit
         <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
@@ -856,7 +845,7 @@
           Every business is different — your audience, your offer, your margins. I don't believe in templates. I build tailored strategies that combine the right mix of paid ads, email marketing, and growth systems specifically for you. Let's find yours together.
         </p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <a href="#book" class="btn-dark" data-i18n="phil_cta">
+          <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn-dark" data-i18n="phil_cta">
             Let's Find Yours
             <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </a>
@@ -930,7 +919,7 @@
           <div id="booking-form" style="display:none;flex-direction:column;gap:10px;">
             <input type="text" class="form-input" data-i18n-placeholder="form_name" placeholder="Your full name" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
             <input type="email" class="form-input" data-i18n-placeholder="form_email" placeholder="Email address" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
-            <button class="btn-dark" style="background:#fff;color:#0f0f0f;justify-content:center;" onclick="showConfirm()" data-i18n="form_submit">
+            <button class="btn-dark" style="background:#fff;color:#0f0f0f;justify-content:center;" onclick="window.open('https://calendly.com/nicoladimattia8/30min','_blank')" data-i18n="form_submit">
               Confirm Booking
             </button>
           </div>
