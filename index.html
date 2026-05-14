@@ -281,11 +281,6 @@
       from { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
       to   { transform: translateX(-50%) translateY(-50%) rotate(-360deg); }
     }
-    @media (max-width: 600px) {
-      .orb-container { width: 320px; height: 320px; }
-      .orb-c { left: 135px; font-size: 0.6875rem; padding: 4px 10px; }
-      .orb-ring { transform: scale(0.73); }
-    }
 
     /* ── Audit section ── */
     .audit-number {
@@ -367,7 +362,7 @@
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .brand-grid { grid-template-columns: 1fr; }
+      .brand-grid { grid-template-columns: 1fr !important; }
       .hero-grid { grid-template-columns: 1fr !important; }
       .two-col { grid-template-columns: 1fr !important; }
       .hide-sm { display: none !important; }
@@ -378,30 +373,66 @@
       .stats-bar > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.06); }
       .stats-bar > div:last-child { border-bottom: none !important; }
 
-      /* Hero: show image before text on mobile */
+      /* Hero */
       .hero-img-col { order: -1; }
+      .hero-grid { gap: 32px !important; }
 
-      /* Section padding reduction */
-      #services, #brands, #philosophy, #book, #audit { padding: 64px 0 !important; }
-
-      /* Inner container horizontal padding */
+      /* Section padding */
+      #services, #brands, #philosophy, #book, #audit { padding: 56px 0 !important; }
       section > div, footer > div { padding-left: 20px !important; padding-right: 20px !important; }
 
-      /* Book card columns */
-      .book-col-left { padding: 40px 28px !important; }
-      .book-col-right { padding: 28px !important; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
+      /* Book card */
+      .book-col-left { padding: 36px 24px !important; }
+      .book-col-right { padding: 24px !important; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
 
       /* Float CTA */
       #float-cta { bottom: 16px !important; right: 16px !important; padding: 11px 18px !important; }
+
+      /* Cards: always show description & dim on touch (no hover state) */
+      .brand-desc {
+        max-height: 200px !important; opacity: 1 !important;
+        margin-top: 12px !important; font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+      }
+      .brand-card-dim { background: rgba(0,0,0,0.38) !important; }
+      .brand-name { transform: none !important; font-size: 1.35rem !important; }
+      .brand-card { padding: 26px !important; min-height: 260px !important; }
+      .brand-tag { color: rgba(255,255,255,0.65) !important; }
+
+      /* Services grid label */
+      #services .brand-grid { grid-template-columns: 1fr !important; }
     }
 
-    @media (max-width: 600px) {
-      .orb-container { width: 280px; height: 280px; }
-      .orb-c { left: 118px; font-size: 0.6875rem; padding: 4px 10px; }
-      .orb-ring { transform: scale(0.64); }
-      .hero-photo-wrap { width: 180px !important; }
-      .brand-card { min-height: 200px !important; padding: 24px !important; }
-      .mob-nav-link { font-size: 1.75rem; padding: 16px 0; }
+    @media (max-width: 480px) {
+      /* Orb: compact for small phones */
+      .orb-container { width: 240px !important; height: 240px !important; max-width: 240px !important; }
+      .orb-c { left: 100px !important; font-size: 0.6rem !important; padding: 3px 8px !important; }
+      .orb-ring { transform: scale(0.55) !important; }
+      .hero-photo-wrap { width: 160px !important; }
+
+      /* Cards */
+      .brand-card { min-height: 230px !important; padding: 22px !important; }
+      .brand-name { font-size: 1.2rem !important; }
+      .brand-desc { font-size: 0.845rem !important; max-height: 130px !important; }
+
+      /* Nav: hide wordmark, keep logo mark */
+      .nav-logo-name { display: none !important; }
+
+      /* Mobile nav */
+      .mob-nav-link { font-size: 1.75rem; padding: 15px 0; }
+
+      /* Hero section: tighter top padding */
+      .grad-bg { padding-top: 90px !important; padding-bottom: 48px !important; }
+
+      /* Stats numbers */
+      .stat-val { font-size: 2rem !important; }
+
+      /* Audit big number */
+      .audit-number { font-size: clamp(3rem, 16vw, 5rem) !important; }
+
+      /* Book: tighter */
+      .book-col-left { padding: 28px 20px !important; }
+      .book-col-right { padding: 20px !important; }
     }
   </style>
 </head>
@@ -445,7 +476,7 @@
       <div style="width:32px;height:32px;border-radius:8px;background:#0f0f0f;display:flex;align-items:center;justify-content:center;">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8125rem;font-weight:800;color:#fff;">N</span>
       </div>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#0f0f0f;">Nicola Dimattia</span>
+      <span class="nav-logo-name" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#0f0f0f;">Nicola Dimattia</span>
     </a>
 
     <!-- Center nav -->
