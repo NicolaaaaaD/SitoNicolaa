@@ -361,78 +361,81 @@
     .mob-nav-link:active { opacity: 0.4; }
 
     /* ── Responsive ── */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
+      /* ── Base ── */
+      body { font-size: 0.95rem; }
       .brand-grid { grid-template-columns: 1fr !important; }
-      .hero-grid { grid-template-columns: 1fr !important; }
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
       .two-col { grid-template-columns: 1fr !important; }
       .hide-sm { display: none !important; }
       .hamburger { display: flex; }
 
-      /* Stats: stack vertically */
-      .stats-bar { grid-template-columns: 1fr !important; }
-      .stats-bar > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.06); }
-      .stats-bar > div:last-child { border-bottom: none !important; }
+      /* ── Inner padding ── */
+      section > div, footer > div, header > div {
+        padding-left: 20px !important; padding-right: 20px !important;
+      }
 
-      /* Hero */
+      /* ── Nav ── */
+      .nav-logo-name { display: none !important; }
+
+      /* ── Float CTA: remove — overlaps content ── */
+      #float-cta { display: none !important; }
+
+      /* ── Hero ── */
       .hero-img-col { order: -1; }
-      .hero-grid { gap: 32px !important; }
+      section.grad-bg { padding: 96px 0 56px !important; }
 
-      /* Section padding */
-      #services, #brands, #philosophy, #book, #audit { padding: 56px 0 !important; }
-      section > div, footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+      /* Strip orbiting pills & ring — just show the photo */
+      .orb-w { display: none !important; }
+      .orb-ring { display: none !important; }
+      .orb-container { height: auto !important; max-width: 100% !important; }
+      .hero-photo-wrap {
+        width: 180px !important; border-radius: 50% !important;
+        margin: 0 auto; box-shadow: 0 12px 40px rgba(0,0,0,0.14) !important;
+      }
+      .hero-photo-wrap img { aspect-ratio: 1 !important; border-radius: 50% !important; }
 
-      /* Book card */
+      /* Hero type */
+      .hero-grid h1 { font-size: 2.2rem !important; letter-spacing: -0.03em !important; line-height: 1.15 !important; }
+      .hero-grid p { font-size: 0.95rem !important; line-height: 1.7 !important; }
+
+      /* ── Stat bar: hide — gives breathing room ── */
+      .stats-bar { display: none !important; }
+
+      /* ── Section spacing ── */
+      #services, #brands, #philosophy, #book, #audit { padding: 60px 0 !important; }
+
+      /* ── Brand & Service cards → clean white list items ── */
+      .brand-card {
+        min-height: auto !important; padding: 22px !important;
+        border-radius: 14px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
+        border: 1px solid rgba(0,0,0,0.07) !important;
+      }
+      .brand-card-bg, .brand-card-dim { display: none !important; }
+      .brand-tag { color: #9CA3AF !important; font-size: 0.6875rem !important; }
+      .brand-name { color: #0f0f0f !important; font-size: 1.125rem !important; transform: none !important; }
+      .brand-desc {
+        color: #4B5563 !important;
+        max-height: none !important; opacity: 1 !important;
+        margin-top: 8px !important; font-size: 0.9rem !important; line-height: 1.65 !important;
+      }
+      .brand-grid { gap: 12px !important; }
+
+      /* ── Book section ── */
       .book-col-left { padding: 36px 24px !important; }
       .book-col-right { padding: 24px !important; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
 
-      /* Float CTA */
-      #float-cta { bottom: 16px !important; right: 16px !important; padding: 11px 18px !important; }
+      /* Calendar: bigger cells */
+      #cal-days { gap: 3px !important; }
+      #cal-days button { font-size: 0.75rem !important; border-radius: 6px !important; }
 
-      /* Cards: always show description & dim on touch (no hover state) */
-      .brand-desc {
-        max-height: 200px !important; opacity: 1 !important;
-        margin-top: 12px !important; font-size: 0.9rem !important;
-        line-height: 1.6 !important;
-      }
-      .brand-card-dim { background: rgba(0,0,0,0.38) !important; }
-      .brand-name { transform: none !important; font-size: 1.35rem !important; }
-      .brand-card { padding: 26px !important; min-height: 260px !important; }
-      .brand-tag { color: rgba(255,255,255,0.65) !important; }
+      /* ── Audit number ── */
+      .audit-number { font-size: clamp(3.5rem, 18vw, 6rem) !important; }
 
-      /* Services grid label */
-      #services .brand-grid { grid-template-columns: 1fr !important; }
-    }
-
-    @media (max-width: 480px) {
-      /* Orb: compact for small phones */
-      .orb-container { width: 240px !important; height: 240px !important; max-width: 240px !important; }
-      .orb-c { left: 100px !important; font-size: 0.6rem !important; padding: 3px 8px !important; }
-      .orb-ring { transform: scale(0.55) !important; }
-      .hero-photo-wrap { width: 160px !important; }
-
-      /* Cards */
-      .brand-card { min-height: 230px !important; padding: 22px !important; }
-      .brand-name { font-size: 1.2rem !important; }
-      .brand-desc { font-size: 0.845rem !important; max-height: 130px !important; }
-
-      /* Nav: hide wordmark, keep logo mark */
-      .nav-logo-name { display: none !important; }
-
-      /* Mobile nav */
-      .mob-nav-link { font-size: 1.75rem; padding: 15px 0; }
-
-      /* Hero section: tighter top padding */
-      .grad-bg { padding-top: 90px !important; padding-bottom: 48px !important; }
-
-      /* Stats numbers */
-      .stat-val { font-size: 2rem !important; }
-
-      /* Audit big number */
-      .audit-number { font-size: clamp(3rem, 16vw, 5rem) !important; }
-
-      /* Book: tighter */
-      .book-col-left { padding: 28px 20px !important; }
-      .book-col-right { padding: 20px !important; }
+      /* ── Mobile nav ── */
+      .mob-nav-link { font-size: 1.75rem !important; padding: 16px 0 !important; }
     }
   </style>
 </head>
@@ -1251,7 +1254,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     slotsEl.style.display = 'flex';
     slotsEl.innerHTML = `<p style="font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.4);margin-bottom:4px;">${currentLang === 'it' ? 'Orari disponibili' : 'Available times'}</p>`;
     const grid = document.createElement('div');
-    grid.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:8px;';
+    const timeCols = window.innerWidth < 768 ? 2 : 3;
+    grid.style.cssText = `display:grid;grid-template-columns:repeat(${timeCols},1fr);gap:8px;`;
     times.forEach(t => {
       const b = document.createElement('button');
       b.textContent = t;
