@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nicola Dimattia — Marketing Strategist</title>
+  <title>NicosDigit — Marketing Strategist | Google Ads, Meta &amp; TikTok</title>
+  <meta name="description" content="NicosDigit — Marketing Strategist specializzato in Google Ads, Meta Ads e TikTok per aziende in Italia e Europa. Strategia, paid media, email marketing e audit." />
+  <meta name="keywords" content="marketing strategist, Google Ads, Meta Ads, TikTok Ads, email marketing, paid media, digital marketing Italia, account audit, landing page, conversioni" />
+  <link rel="canonical" href="https://nicolaaaad.github.io/SitoNicolaa/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nicolaaaad.github.io/SitoNicolaa/" />
+  <meta property="og:title" content="NicosDigit — Marketing Strategist | Google Ads, Meta &amp; TikTok" />
+  <meta property="og:description" content="Strategie di marketing su misura per la tua crescita — Google Ads, Meta, TikTok, email e audit degli account pubblicitari." />
+  <meta property="og:image" content="https://nicolaaaad.github.io/SitoNicolaa/Design/1771349858836.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NicosDigit — Marketing Strategist | Google Ads, Meta &amp; TikTok" />
+  <meta name="twitter:description" content="Strategie di marketing su misura per la tua crescita — Google Ads, Meta, TikTok, email e audit degli account pubblicitari." />
+  <meta name="twitter:image" content="https://nicolaaaad.github.io/SitoNicolaa/Design/1771349858836.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"NicosDigit","jobTitle":"Marketing Strategist","url":"https://nicolaaaad.github.io/SitoNicolaa/","email":"nicoladimattia8@gmail.com","knowsAbout":["Google Ads","Meta Ads","TikTok Ads","Email Marketing","Paid Media","Digital Marketing"],"sameAs":["https://www.linkedin.com/in/nicoladimattia/","https://www.instagram.com/nicosdigit/"]}
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -254,6 +269,14 @@
       animation: orb-spin 28s linear infinite;
       animation-delay: var(--d, 0s);
     }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .logo-cursor {
+      display:inline-block; width:2px; height:0.85em;
+      background:currentColor; margin-left:1px;
+      vertical-align:text-bottom;
+      animation: blink 0.7s infinite;
+    }
+
     .orb-c {
       position: absolute;
       left: 185px;
@@ -263,8 +286,8 @@
       background: rgba(255,255,255,0.92);
       border: 1px solid rgba(0,0,0,0.08);
       border-radius: 100px;
-      padding: 5px 13px;
-      font-size: 0.8rem;
+      padding: 7px 18px;
+      font-size: 0.9rem;
       font-weight: 600;
       color: #374151;
       white-space: nowrap;
@@ -467,7 +490,7 @@
       <div style="width:32px;height:32px;border-radius:8px;background:#0f0f0f;display:flex;align-items:center;justify-content:center;">
         <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8125rem;font-weight:800;color:#fff;">N</span>
       </div>
-      <span class="nav-logo-name" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#0f0f0f;">Nicola Dimattia</span>
+      <span id="logo-text" class="nav-logo-name" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#0f0f0f;"></span>
     </a>
 
     <!-- Center nav -->
@@ -560,19 +583,19 @@
           <!-- Ring guide -->
           <div class="orb-ring" style="width:370px;height:370px;"></div>
 
-          <!-- Orbiting items: 8 total, evenly spaced (28s / 8 = 3.5s each) -->
+          <!-- Orbiting items: 8 services, evenly spaced (28s / 8 = 3.5s each) -->
           <div class="orb-w" style="--d:0s">      <span class="orb-c">Google Ads</span></div>
-          <div class="orb-w" style="--d:-3.5s">   <span class="orb-c num">1,300+</span></div>
-          <div class="orb-w" style="--d:-7s">     <span class="orb-c">Email</span></div>
-          <div class="orb-w" style="--d:-10.5s">  <span class="orb-c num">1,000+</span></div>
+          <div class="orb-w" style="--d:-3.5s">   <span class="orb-c">Landing Pages</span></div>
+          <div class="orb-w" style="--d:-7s">     <span class="orb-c">Email Mktg</span></div>
+          <div class="orb-w" style="--d:-10.5s">  <span class="orb-c">Copywriting</span></div>
           <div class="orb-w" style="--d:-14s">    <span class="orb-c">TikTok Ads</span></div>
-          <div class="orb-w" style="--d:-17.5s">  <span class="orb-c">Brand</span></div>
-          <div class="orb-w" style="--d:-21s">    <span class="orb-c num">7 yrs</span></div>
+          <div class="orb-w" style="--d:-17.5s">  <span class="orb-c">Data Analysis</span></div>
+          <div class="orb-w" style="--d:-21s">    <span class="orb-c">Full Strategy</span></div>
           <div class="orb-w" style="--d:-24.5s">  <span class="orb-c">Meta Ads</span></div>
 
-          <!-- Center monogram -->
-          <div style="position:relative;z-index:2;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,rgba(247,217,184,0.92) 0%,rgba(198,218,238,0.92) 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(0,0,0,0.1),0 0 0 14px rgba(255,255,255,0.25),0 0 0 28px rgba(255,255,255,0.08);">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;color:#0f0f0f;letter-spacing:-0.04em;">N</span>
+          <!-- Photo -->
+          <div class="hero-photo-wrap" style="position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,0.14);width:240px;flex-shrink:0;">
+            <img src="Design/1771349858836.jpg" alt="NicosDigit" style="width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:top center;" />
           </div>
 
         </div>
@@ -915,12 +938,11 @@
         <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;">
           <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8125rem;font-weight:800;color:#fff;">N</span>
         </div>
-        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#fff;">Nicola Dimattia</span>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#fff;">NicosDigit</span>
       </div>
       <nav style="display:flex;gap:24px;flex-wrap:wrap;" aria-label="Footer navigation">
         <a href="#services" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_services">Services</a>
         <a href="#brands" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_brands">Brands</a>
-        <a href="#audit" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_audit">Results</a>
         <a href="#book" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_contact">Contact</a>
       </nav>
     </div>
@@ -936,6 +958,26 @@
      SCRIPTS
 ══════════════════════════════════════ -->
 <script>
+/* ── Typewriter logo ────────────────────────────────── */
+(function() {
+  const el = document.getElementById('logo-text');
+  const text = 'NicosDigit';
+  const cursor = document.createElement('span');
+  cursor.className = 'logo-cursor';
+  el.appendChild(cursor);
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      el.insertBefore(document.createTextNode(text[i]), cursor);
+      i++;
+      setTimeout(type, 90);
+    } else {
+      cursor.remove();
+    }
+  }
+  setTimeout(type, 400);
+})();
+
 /* ── i18n ──────────────────────────────────────────── */
 const COPY = {
   en: {
@@ -997,7 +1039,7 @@ const COPY = {
     form_name: "Your full name", form_email: "Email address", form_submit: "Confirm Booking",
     confirm_title: "You're booked!", confirm_sub: "Check your email for confirmation.",
     or_email: "or email at",
-    footer_copy: "© 2026 Nicola Dimattia. All rights reserved.",
+    footer_copy: "© 2026 NicosDigit. All rights reserved.",
   },
   it: {
     nav_services: "Servizi",
@@ -1058,7 +1100,7 @@ const COPY = {
     form_name: "Il tuo nome completo", form_email: "Indirizzo email", form_submit: "Conferma Prenotazione",
     confirm_title: "Sei prenotato!", confirm_sub: "Controlla la tua email per la conferma.",
     or_email: "oppure scrivi a",
-    footer_copy: "© 2026 Nicola Dimattia. Tutti i diritti riservati.",
+    footer_copy: "© 2026 NicosDigit. Tutti i diritti riservati.",
   }
 };
 
