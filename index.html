@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -164,8 +166,8 @@
     .brand-card-bg iframe {
       position: absolute;
       top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300%; height: 300%;
+      transform: translate(-50%, calc(-50% - 30px));
+      width: 300%; height: calc(300% + 60px);
       border: none; pointer-events: none;
       opacity: 0.75;
     }
@@ -381,17 +383,12 @@
       /* ── Float CTA: remove — overlaps content ── */
       #float-cta { display: none !important; }
 
-      /* ── Hero ── */
-      .hero-img-col { order: -1; }
-      section.grad-bg { padding: 96px 0 56px !important; }
-
-      /* Orb: scale to fit phone width */
-      .orb-container { width: 300px !important; height: 300px !important; max-width: 100% !important; margin: 0 auto; }
-      .orb-ring { transform: scale(0.68) !important; }
-      .orb-c { left: 128px !important; font-size: 0.65rem !important; padding: 3px 9px !important; }
-      .hero-photo-wrap { width: 170px !important; }
-
-      /* Hero type */
+      /* ── Hero: no image/orb on mobile, centered text ── */
+      .hero-img-col { display: none !important; }
+      section.grad-bg { padding: 96px 0 72px !important; }
+      .hero-left-col { align-items: center !important; text-align: center !important; }
+      .hero-left-col > div { justify-content: center !important; }
+      .hero-left-col p { max-width: 100% !important; text-align: center !important; }
       .hero-grid h1 { font-size: 2.2rem !important; letter-spacing: -0.03em !important; line-height: 1.15 !important; }
       .hero-grid p { font-size: 0.95rem !important; line-height: 1.7 !important; }
 
@@ -512,7 +509,7 @@
     <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
 
       <!-- Left -->
-      <div style="display:flex;flex-direction:column;gap:28px;">
+      <div class="hero-left-col" style="display:flex;flex-direction:column;gap:28px;">
 
         <!-- Badge -->
         <div>
@@ -573,13 +570,9 @@
           <div class="orb-w" style="--d:-21s">    <span class="orb-c num">7 yrs</span></div>
           <div class="orb-w" style="--d:-24.5s">  <span class="orb-c">Meta Ads</span></div>
 
-          <!-- Photo -->
-          <div class="hero-photo-wrap" style="position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,0.14);width:240px;flex-shrink:0;">
-            <img
-              src="Design/1771349858836.jpg"
-              alt="Nicola Dimattia"
-              style="width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:top center;"
-            />
+          <!-- Center monogram -->
+          <div style="position:relative;z-index:2;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,rgba(247,217,184,0.92) 0%,rgba(198,218,238,0.92) 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(0,0,0,0.1),0 0 0 14px rgba(255,255,255,0.25),0 0 0 28px rgba(255,255,255,0.08);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;color:#0f0f0f;letter-spacing:-0.04em;">N</span>
           </div>
 
         </div>
@@ -588,18 +581,22 @@
     </div>
 
     <!-- Stats bar -->
-    <div class="glass-card fade-up stats-bar" style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;">
-      <div style="padding:28px 32px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
-        <div class="stat-val" data-i18n="stat1_num">1,300+</div>
-        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat1_label">Concerts Promoted Worldwide</div>
+    <div class="glass-card fade-up stats-bar" style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;">
+      <div style="padding:24px 20px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="stat-val" data-i18n="stat1_num">1,000+</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat1_label">Ad Accounts Audited</div>
       </div>
-      <div style="padding:28px 32px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
-        <div class="stat-val" data-i18n="stat2_num">1,000+</div>
-        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat2_label">Ad Accounts Audited</div>
+      <div style="padding:24px 20px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="stat-val" data-i18n="stat2_num">€5M+</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat2_label">Revenue Generated</div>
       </div>
-      <div style="padding:28px 32px;text-align:center;">
-        <div class="stat-val" data-i18n="stat3_num">4</div>
-        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat3_label">Major Brands Worked With</div>
+      <div style="padding:24px 20px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="stat-val" data-i18n="stat3_num">500K+</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat3_label">Conversions Driven</div>
+      </div>
+      <div style="padding:24px 20px;text-align:center;">
+        <div class="stat-val" data-i18n="stat4_num">4</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat4_label">Major Brands</div>
       </div>
     </div>
 
@@ -893,44 +890,11 @@
           </ul>
         </div>
 
-        <!-- Right: Calendar -->
-        <div class="book-col-right" style="padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(255,255,255,0.08);">
-          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-              <span style="font-weight:600;color:#fff;font-size:0.9375rem;" data-i18n="cal_month">May 2026</span>
-              <div style="display:flex;gap:8px;">
-                <button style="background:rgba(255,255,255,0.1);border:none;border-radius:6px;width:28px;height:28px;color:rgba(255,255,255,0.6);cursor:pointer;" aria-label="Previous">‹</button>
-                <button style="background:rgba(255,255,255,0.1);border:none;border-radius:6px;width:28px;height:28px;color:rgba(255,255,255,0.6);cursor:pointer;" aria-label="Next">›</button>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px;">
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_mo">Mo</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_tu">Tu</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_we">We</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_th">Th</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_fr">Fr</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_sa">Sa</div>
-              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_su">Su</div>
-            </div>
-            <div id="cal-days" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;"></div>
-          </div>
-
-          <div id="time-slots" style="display:none;flex-direction:column;gap:8px;"></div>
-          <div id="booking-form" style="display:none;flex-direction:column;gap:10px;">
-            <input type="text" class="form-input" data-i18n-placeholder="form_name" placeholder="Your full name" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
-            <input type="email" class="form-input" data-i18n-placeholder="form_email" placeholder="Email address" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
-            <button class="btn-dark" style="background:#fff;color:#0f0f0f;justify-content:center;" onclick="window.open('https://calendly.com/nicoladimattia8/30min','_blank')" data-i18n="form_submit">
-              Confirm Booking
-            </button>
-          </div>
-          <div id="confirm-msg" style="display:none;text-align:center;padding:24px;">
-            <div style="font-size:2rem;margin-bottom:12px;">✓</div>
-            <div style="font-weight:700;color:#fff;font-size:1.0625rem;margin-bottom:8px;" data-i18n="confirm_title">You're booked!</div>
-            <div style="font-size:0.875rem;color:rgba(255,255,255,0.55);" data-i18n="confirm_sub">Check your email for confirmation.</div>
-          </div>
-
+        <!-- Right: Calendly embed -->
+        <div class="book-col-right" style="padding:32px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(255,255,255,0.08);">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/nicoladimattia8/30min?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=E8914A" style="min-width:280px;height:640px;width:100%;border-radius:12px;overflow:hidden;"></div>
           <p style="text-align:center;font-size:0.8125rem;color:rgba(255,255,255,0.3);">
-            <span data-i18n="or_email">or email at</span>
+            <span data-i18n="or_email">oppure scrivi a</span>
             <a href="mailto:nicoladimattia8@gmail.com" style="color:rgba(255,255,255,0.5);text-decoration:underline;">nicoladimattia8@gmail.com</a>
           </p>
         </div>
@@ -999,11 +963,10 @@ const COPY = {
     s6_tag: "End-to-End Growth", s6_name: "Full Strategy",
     s6_desc: "A complete growth plan across channels — from positioning and messaging to paid, email, and retention.",
     hero_social_proof: "Trusted by 40+ clients",
-    float1_num: "1,300+", float1_label: "Concerts Promoted",
-    float2_num: "1,000+", float2_label: "Accounts Audited",
-    stat1_num: "1,300+", stat1_label: "Concerts Promoted Worldwide",
-    stat2_num: "1,000+", stat2_label: "Ad Accounts Audited",
-    stat3_num: "4",      stat3_label: "Major Brands Worked With",
+    stat1_num: "1,000+", stat1_label: "Ad Accounts Audited",
+    stat2_num: "€5M+",   stat2_label: "Revenue Generated",
+    stat3_num: "500K+",  stat3_label: "Conversions Driven",
+    stat4_num: "4",      stat4_label: "Major Brands",
     brands_eyebrow: "Experience",
     brands_title: "Brand Clients",
     brand1_tag: "Google Ads & Facebook Ads",
@@ -1061,11 +1024,10 @@ const COPY = {
     s6_tag: "Crescita End-to-End", s6_name: "Strategia Completa",
     s6_desc: "Un piano di crescita completo su tutti i canali — dal positioning e la messaggistica fino a paid, email e retention.",
     hero_social_proof: "Scelto da 40+ clienti",
-    float1_num: "1.300+", float1_label: "Concerti Promossi",
-    float2_num: "1.000+", float2_label: "Account Analizzati",
-    stat1_num: "1.300+", stat1_label: "Concerti Promossi nel Mondo",
-    stat2_num: "1.000+", stat2_label: "Account Pubblicitari Analizzati",
-    stat3_num: "4",       stat3_label: "Brand di Rilievo",
+    stat1_num: "1.000+", stat1_label: "Account Analizzati",
+    stat2_num: "€5M+",   stat2_label: "Fatturato Generato",
+    stat3_num: "500K+",  stat3_label: "Conversioni Generate",
+    stat4_num: "4",      stat4_label: "Brand di Rilievo",
     brands_eyebrow: "Esperienza",
     brands_title: "Brand Clienti",
     brand1_tag: "Google Ads & Facebook Ads",
@@ -1180,7 +1142,7 @@ document.querySelectorAll('.fade-up').forEach((el, i) => {
   observer.observe(el);
 });
 
-/* ── Smooth scroll + calendar trigger ─────────────── */
+/* ── Smooth scroll ─────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const href = a.getAttribute('href');
@@ -1188,87 +1150,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) {
       e.preventDefault();
       window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
-      // If linking to #book, pulse the calendar after scroll
-      if (href === '#book') {
-        setTimeout(() => {
-          const calBox = document.querySelector('#cal-days');
-          if (calBox) {
-            calBox.closest('div[style*="border-radius:16px"]').style.boxShadow = '0 0 0 3px rgba(247,217,184,0.8)';
-            setTimeout(() => { calBox.closest('div[style*="border-radius:16px"]').style.boxShadow = ''; }, 1400);
-          }
-        }, 700);
-      }
     }
   });
 });
 
-/* ── Calendar ──────────────────────────────────────── */
-(function() {
-  const today = 14;
-  const daysInMonth = 31;
-  const firstDow = 4; // May 2026: Thursday = index 3 (Mon=0) — actually May 1 2026 is Friday, so firstDow=4
-  const container = document.getElementById('cal-days');
-  const times = ['09:00','10:00','11:00','14:00','15:00','16:00'];
-  let selDay = null;
-
-  for (let i = 0; i < firstDow; i++) container.appendChild(document.createElement('div'));
-
-  for (let d = 1; d <= daysInMonth; d++) {
-    const cell = document.createElement('button');
-    cell.textContent = d;
-    cell.style.cssText = 'aspect-ratio:1;border:none;border-radius:7px;font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.15s ease;font-family:Inter,sans-serif;';
-    const dow = (firstDow + d - 1) % 7;
-    const isPast = d < today;
-    const isWknd = dow >= 5;
-    if (isPast || isWknd) {
-      cell.style.color = 'rgba(255,255,255,0.15)'; cell.style.background = 'transparent'; cell.disabled = true; cell.style.cursor = 'default';
-    } else {
-      cell.style.color = d === today ? '#0f0f0f' : 'rgba(255,255,255,0.75)';
-      cell.style.background = d === today ? '#fff' : 'rgba(255,255,255,0.06)';
-      cell.addEventListener('click', () => selectDay(d, cell));
-      cell.addEventListener('mouseover', () => { if (d !== selDay) cell.style.background = 'rgba(255,255,255,0.14)'; });
-      cell.addEventListener('mouseout', () => { if (d !== selDay) cell.style.background = d === today ? '#fff' : 'rgba(255,255,255,0.06)'; });
-    }
-    container.appendChild(cell);
-  }
-
-  function selectDay(d, btn) {
-    selDay = d;
-    container.querySelectorAll('button').forEach(b => {
-      if (!b.disabled) { const n = parseInt(b.textContent); b.style.background = n === today ? '#fff' : 'rgba(255,255,255,0.06)'; b.style.color = n === today ? '#0f0f0f' : 'rgba(255,255,255,0.75)'; }
-    });
-    btn.style.background = 'linear-gradient(120deg,#F7D9B8,#C6DAEE)'; btn.style.color = '#0f0f0f';
-
-    const slotsEl = document.getElementById('time-slots');
-    slotsEl.style.display = 'flex';
-    slotsEl.innerHTML = `<p style="font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.4);margin-bottom:4px;">${currentLang === 'it' ? 'Orari disponibili' : 'Available times'}</p>`;
-    const grid = document.createElement('div');
-    const timeCols = window.innerWidth < 768 ? 2 : 3;
-    grid.style.cssText = `display:grid;grid-template-columns:repeat(${timeCols},1fr);gap:8px;`;
-    times.forEach(t => {
-      const b = document.createElement('button');
-      b.textContent = t;
-      b.style.cssText = 'background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 4px;font-size:0.8rem;color:rgba(255,255,255,0.75);cursor:pointer;font-weight:500;transition:all 0.15s ease;font-family:Inter,sans-serif;';
-      b.addEventListener('click', () => selectTime(b, grid));
-      b.addEventListener('mouseover', () => { if (!b.classList.contains('sel')) b.style.background = 'rgba(255,255,255,0.12)'; });
-      b.addEventListener('mouseout', () => { if (!b.classList.contains('sel')) b.style.background = 'rgba(255,255,255,0.07)'; });
-      grid.appendChild(b);
-    });
-    slotsEl.appendChild(grid);
-  }
-
-  function selectTime(btn, grid) {
-    grid.querySelectorAll('button').forEach(b => { b.classList.remove('sel'); b.style.background = 'rgba(255,255,255,0.07)'; b.style.borderColor = 'rgba(255,255,255,0.1)'; b.style.color = 'rgba(255,255,255,0.75)'; });
-    btn.classList.add('sel'); btn.style.background = 'linear-gradient(120deg,#F7D9B8,#C6DAEE)'; btn.style.borderColor = 'transparent'; btn.style.color = '#0f0f0f';
-    document.getElementById('booking-form').style.display = 'flex';
-  }
-})();
-
-function showConfirm() {
-  document.getElementById('booking-form').style.display = 'none';
-  document.getElementById('time-slots').style.display = 'none';
-  document.getElementById('confirm-msg').style.display = 'block';
-}
 </script>
 
 </body>
