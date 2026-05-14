@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicola Dimattia — Marketing Strategist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #fff;
+      color: #0f0f0f;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ── Gradient ── */
+    .grad-bg {
+      background: linear-gradient(120deg, #F7D9B8 0%, #FDFAF7 42%, #C6DAEE 100%);
+    }
+    .grad-text {
+      background: linear-gradient(120deg, #E8914A 0%, #9DB8D9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Nav ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      padding: 14px 0;
+    }
+    .nav-link {
+      font-size: 0.875rem; font-weight: 500;
+      color: #4B5563; text-decoration: none; padding: 6px 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 1.5px;
+      background: #0f0f0f;
+      transform: scaleX(0);
+      transition: transform 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+      transform-origin: left;
+    }
+    .nav-link:hover { color: #0f0f0f; }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* ── Lang toggle ── */
+    .lang-btn {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 5px 10px; border-radius: 6px;
+      border: 1.5px solid transparent;
+      cursor: pointer; background: transparent;
+      color: #9CA3AF;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .lang-btn.active {
+      color: #0f0f0f;
+      border-color: rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.04);
+    }
+    .lang-btn:hover:not(.active) { color: #4B5563; }
+
+    /* ── Buttons ── */
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0f0f0f; color: #fff;
+      font-size: 0.875rem; font-weight: 600;
+      padding: 12px 22px; border-radius: 8px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .btn-dark:hover { background: #1a1a1a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+    .btn-dark:active { transform: translateY(0); }
+    .btn-dark:focus-visible { outline: 2px solid #0f0f0f; outline-offset: 3px; }
+    .arrow-icon { width:15px; height:15px; transition: transform 0.2s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .btn-dark:hover .arrow-icon { transform: translateX(3px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #0f0f0f;
+      font-size: 0.875rem; font-weight: 600;
+      padding: 11px 22px; border-radius: 8px;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-outline:hover { border-color: rgba(0,0,0,0.3); background: rgba(0,0,0,0.03); transform: translateY(-1px); }
+
+    /* ── Glass card ── */
+    .glass-card {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    /* ── Stat ── */
+    .stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #9CA3AF;
+    }
+
+    /* ── Fade up ── */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+                  transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Brand cards ── */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .brand-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      cursor: default;
+    }
+    .brand-card-bg {
+      position: absolute; inset: 0;
+      overflow: hidden;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .brand-card:hover .brand-card-bg { transform: scale(1.03); }
+    .brand-card-bg iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300%; height: 300%;
+      border: none; pointer-events: none;
+      opacity: 0.75;
+    }
+    /* Bottom gradient so text always readable */
+    .brand-card-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.1) 100%);
+      z-index: 1;
+    }
+
+    .brand-card-dim {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.45s ease;
+      z-index: 1;
+    }
+    .brand-card:hover .brand-card-dim { background: rgba(0,0,0,0.68); }
+
+    .brand-card-content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .brand-tag {
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.35s ease;
+    }
+    .brand-card:hover .brand-tag { color: rgba(255,255,255,0.7); }
+    .brand-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: #fff; line-height: 1.2;
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .brand-card:hover .brand-name { transform: translateY(-4px); }
+    .brand-desc {
+      font-size: 0.9375rem; line-height: 1.65;
+      color: rgba(255,255,255,0.82);
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.45s cubic-bezier(0.25,0.46,0.45,0.94),
+                  opacity 0.35s ease 0.08s;
+      margin-top: 0;
+    }
+    .brand-card:hover .brand-desc {
+      max-height: 160px;
+      opacity: 1;
+      margin-top: 12px;
+    }
+
+    /* Brand BG colours */
+    .bg-star    { background: linear-gradient(140deg, #0d0d1f 0%, #1a1235 60%, #0d0820 100%); }
+    .bg-prosci  { background: linear-gradient(140deg, #1a0a05 0%, #2d1510 60%, #1a0a08 100%); }
+    .bg-funko   { background: linear-gradient(140deg, #0f0520 0%, #1e0a3a 60%, #0a0515 100%); }
+    .bg-florence{ background: linear-gradient(140deg, #200510 0%, #3a0d1e 60%, #1a0510 100%); }
+
+    /* Service BG colours */
+    .bg-s1 { background: linear-gradient(140deg, #061528 0%, #0d2540 60%, #061020 100%); }
+    .bg-s2 { background: linear-gradient(140deg, #1a0e04 0%, #2e1c08 60%, #150b02 100%); }
+    .bg-s3 { background: linear-gradient(140deg, #021a18 0%, #063028 60%, #021510 100%); }
+    .bg-s4 { background: linear-gradient(140deg, #12051e 0%, #220a38 60%, #0c0315 100%); }
+    .bg-s5 { background: linear-gradient(140deg, #0f1520 0%, #1c2a3a 60%, #080e18 100%); }
+    .bg-s6 { background: linear-gradient(140deg, #180508 0%, #2d0c12 60%, #110205 100%); }
+
+    /* ── Orbit animation ── */
+    .orb-container {
+      position: relative;
+      width: 100%; max-width: 440px;
+      height: 440px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto;
+    }
+    .orb-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(0,0,0,0.08);
+      pointer-events: none;
+    }
+    .orb-w {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      animation: orb-spin 28s linear infinite;
+      animation-delay: var(--d, 0s);
+    }
+    .orb-c {
+      position: absolute;
+      left: 185px;
+      transform: translateX(-50%) translateY(-50%);
+      animation: orb-counter 28s linear infinite;
+      animation-delay: var(--d, 0s);
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      padding: 5px 13px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+    .orb-c.num {
+      background: linear-gradient(120deg, rgba(247,217,184,0.95), rgba(198,218,238,0.95));
+      color: #0f0f0f;
+      font-size: 0.8125rem;
+    }
+    @keyframes orb-spin {
+      from { transform: translate(-50%,-50%) rotate(0deg); }
+      to   { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+    @keyframes orb-counter {
+      from { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+      to   { transform: translateX(-50%) translateY(-50%) rotate(-360deg); }
+    }
+    @media (max-width: 600px) {
+      .orb-container { width: 320px; height: 320px; }
+      .orb-c { left: 135px; font-size: 0.6875rem; padding: 4px 10px; }
+      .orb-ring { transform: scale(0.73); }
+    }
+
+    /* ── Audit section ── */
+    .audit-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    /* ── Form input ── */
+    .form-input {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid rgba(0,0,0,0.12); border-radius: 10px;
+      font-size: 0.9375rem; font-family: 'Inter', sans-serif;
+      background: #fff; color: #0f0f0f;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-input:focus { outline: none; border-color: #0f0f0f; box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+    .form-input::placeholder { color: #9CA3AF; }
+
+    /* ── Book a call dark card ── */
+    .cal-card {
+      background: #0f0f0f;
+      border-radius: 24px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .cal-card::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(247,217,184,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cal-card::after {
+      content: '';
+      position: absolute; bottom: -60px; left: -60px;
+      width: 250px; height: 250px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(198,218,238,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .brand-grid { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr !important; }
+      .two-col { grid-template-columns: 1fr !important; }
+      .hide-sm { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Book a Call button -->
+<a href="#book" id="float-cta" data-i18n="nav_cta" style="
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  display:none;align-items:center;gap:8px;
+  background:#0f0f0f;color:#fff;
+  font-size:0.875rem;font-weight:600;
+  padding:13px 22px;border-radius:100px;
+  text-decoration:none;
+  box-shadow:0 8px 32px rgba(0,0,0,0.2),0 2px 8px rgba(0,0,0,0.12);
+  transition:transform 0.2s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.2s ease,opacity 0.3s ease;
+  opacity:0;
+">
+  Book a Call
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+</a>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<header id="navbar">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;">
+
+    <!-- Logo -->
+    <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div style="width:32px;height:32px;border-radius:8px;background:#0f0f0f;display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8125rem;font-weight:800;color:#fff;">N</span>
+      </div>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#0f0f0f;">Nicola Dimattia</span>
+    </a>
+
+    <!-- Center nav -->
+    <nav style="display:flex;align-items:center;gap:32px;" class="hide-sm">
+      <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+      <a href="#brands" class="nav-link" data-i18n="nav_brands">Brands</a>
+      <a href="#book" class="nav-link" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <!-- Right: Lang + CTA -->
+    <div style="display:flex;align-items:center;gap:10px;justify-content:flex-end;">
+      <div style="display:flex;align-items:center;gap:2px;background:rgba(0,0,0,0.04);border-radius:8px;padding:3px;">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <button class="lang-btn" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
+      </div>
+      <a href="#book" class="btn-dark" data-i18n="nav_cta">
+        Book a Call
+        <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="grad-bg" style="min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;">
+
+  <!-- Soft blobs -->
+  <div style="position:absolute;top:8%;left:4%;width:260px;height:260px;border-radius:50%;background:rgba(232,145,74,0.1);filter:blur(56px);pointer-events:none;" aria-hidden="true"></div>
+  <div style="position:absolute;bottom:12%;right:4%;width:300px;height:300px;border-radius:50%;background:rgba(157,184,217,0.13);filter:blur(64px);pointer-events:none;" aria-hidden="true"></div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;width:100%;">
+    <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+
+      <!-- Left -->
+      <div style="display:flex;flex-direction:column;gap:28px;">
+
+        <!-- Badge -->
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.08);border-radius:100px;padding:6px 14px;font-size:0.8125rem;font-weight:500;color:#374151;">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L8.39 4.26L12 4.64L9.5 6.97L10.18 10.5L7 8.77L3.82 10.5L4.5 6.97L2 4.64L5.61 4.26L7 1Z" fill="#F59E0B"/></svg>
+            <span data-i18n="hero_badge">Marketing Strategist · Italy & Europe</span>
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="heading" style="font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;color:#0f0f0f;">
+          <span data-i18n="hero_headline">Every Business Deserves a Strategy That Actually Works.</span>
+        </h1>
+
+        <!-- Sub -->
+        <p style="font-size:1.125rem;line-height:1.75;color:#4B5563;max-width:460px;" data-i18n="hero_sub">
+          Tailored ads, email, and marketing systems built for your growth — not anyone else's.
+        </p>
+
+        <!-- CTA -->
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <!-- Update the Calendly URL to your actual link -->
+          <a href="https://calendly.com/nicoladimattia" target="_blank" rel="noopener" class="btn-dark" style="padding:15px 28px;font-size:0.9375rem;" data-i18n="hero_cta">
+            Book Your Free Call
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-top:4px;">
+          <div style="display:flex;">
+            <img src="https://placehold.co/32x32/F7D9B8/E8914A?text=+" alt="" style="width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-right:-8px;"/>
+            <img src="https://placehold.co/32x32/C6DAEE/9DB8D9?text=+" alt="" style="width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-right:-8px;"/>
+            <img src="https://placehold.co/32x32/D1FAE5/059669?text=+" alt="" style="width:32px;height:32px;border-radius:50%;border:2px solid #fff;"/>
+          </div>
+          <div>
+            <div style="color:#F59E0B;font-size:0.8125rem;letter-spacing:0.04em;">★★★★★</div>
+            <div style="font-size:0.8125rem;color:#6B7280;margin-top:1px;" data-i18n="hero_social_proof">Trusted by 40+ clients</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Photo + orbit animation -->
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <div class="orb-container">
+
+          <!-- Ring guide -->
+          <div class="orb-ring" style="width:370px;height:370px;"></div>
+
+          <!-- Orbiting items: 8 total, evenly spaced (28s / 8 = 3.5s each) -->
+          <div class="orb-w" style="--d:0s">      <span class="orb-c">Google Ads</span></div>
+          <div class="orb-w" style="--d:-3.5s">   <span class="orb-c num">1,300+</span></div>
+          <div class="orb-w" style="--d:-7s">     <span class="orb-c">Email</span></div>
+          <div class="orb-w" style="--d:-10.5s">  <span class="orb-c num">1,000+</span></div>
+          <div class="orb-w" style="--d:-14s">    <span class="orb-c">TikTok Ads</span></div>
+          <div class="orb-w" style="--d:-17.5s">  <span class="orb-c">Brand</span></div>
+          <div class="orb-w" style="--d:-21s">    <span class="orb-c num">7 yrs</span></div>
+          <div class="orb-w" style="--d:-24.5s">  <span class="orb-c">Meta Ads</span></div>
+
+          <!-- Photo -->
+          <div style="position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,0.14);width:240px;flex-shrink:0;">
+            <img
+              src="Design/1771349858836.jpg"
+              alt="Nicola Dimattia"
+              style="width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:top center;"
+            />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats bar -->
+    <div class="glass-card fade-up" style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;">
+      <div style="padding:28px 32px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="stat-val" data-i18n="stat1_num">1,300+</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat1_label">Concerts Promoted Worldwide</div>
+      </div>
+      <div style="padding:28px 32px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="stat-val" data-i18n="stat2_num">1,000+</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat2_label">Ad Accounts Audited</div>
+      </div>
+      <div style="padding:28px 32px;text-align:center;">
+        <div class="stat-val" data-i18n="stat3_num">4</div>
+        <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat3_label">Major Brands Worked With</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section id="services" style="padding:100px 0;background:#F9FAFB;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+
+    <div class="fade-up" style="margin-bottom:48px;">
+      <p class="section-label" style="margin-bottom:14px;" data-i18n="services_eyebrow">What I Do</p>
+      <h2 class="heading" style="font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;" data-i18n="services_title">
+        Services
+      </h2>
+    </div>
+
+    <div class="brand-grid fade-up" style="grid-template-columns:repeat(3,1fr);">
+
+      <!-- Paid Ads -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s1">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M8 42L20 28L30 36L44 16" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="44" cy="12" r="4" fill="white"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s1_tag">Google · Meta · TikTok</span>
+          <h3 class="brand-name" data-i18n="s1_name">Paid Ads</h3>
+          <p class="brand-desc" data-i18n="s1_desc">Full-funnel paid media strategy and management across the platforms your audience actually uses — built to scale.</p>
+        </div>
+      </div>
+
+      <!-- Landing Pages -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s2">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><rect x="8" y="10" width="40" height="36" rx="4" stroke="white" stroke-width="3"/><path d="M8 20H48" stroke="white" stroke-width="2.5"/><path d="M18 32H38" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 38H34" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s2_tag">Conversion Design</span>
+          <h3 class="brand-name" data-i18n="s2_name">Landing Pages</h3>
+          <p class="brand-desc" data-i18n="s2_desc">High-converting pages built around your offer and audience — designed to turn clicks into customers.</p>
+        </div>
+      </div>
+
+      <!-- Copywriting -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s3">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M14 14H42" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M14 22H36" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M14 30H38" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M14 38H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s3_tag">Words That Convert</span>
+          <h3 class="brand-name" data-i18n="s3_name">Copywriting</h3>
+          <p class="brand-desc" data-i18n="s3_desc">Clear, persuasive copy that speaks your audience's language, builds trust, and drives them to act.</p>
+        </div>
+      </div>
+
+      <!-- Data Analysis -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s4">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><rect x="8" y="28" width="10" height="20" rx="2" fill="white"/><rect x="23" y="18" width="10" height="30" rx="2" fill="white"/><rect x="38" y="10" width="10" height="38" rx="2" fill="white"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s4_tag">Performance Tracking</span>
+          <h3 class="brand-name" data-i18n="s4_name">Data Analysis</h3>
+          <p class="brand-desc" data-i18n="s4_desc">Actionable reporting and deep performance tracking so every decision is backed by real numbers.</p>
+        </div>
+      </div>
+
+      <!-- Account Audit -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s5">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="26" cy="24" r="14" stroke="white" stroke-width="3"/><path d="M36 34L48 46" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s5_tag">1,000+ Audited</span>
+          <h3 class="brand-name" data-i18n="s5_name">Account Audit</h3>
+          <p class="brand-desc" data-i18n="s5_desc">Comprehensive review of your ad accounts — identifying wasted spend, weak structures, and hidden opportunities.</p>
+        </div>
+      </div>
+
+      <!-- Full Strategy -->
+      <div class="brand-card" style="min-height:240px;">
+        <div class="brand-card-bg bg-s6">
+          <div style="position:absolute;top:24px;right:24px;opacity:0.1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M10 28C10 18.06 18.06 10 28 10C37.94 10 46 18.06 46 28C46 37.94 37.94 46 28 46" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M28 18V28L34 34" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M10 38L16 42L20 36" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="s6_tag">End-to-End Growth</span>
+          <h3 class="brand-name" data-i18n="s6_name">Full Strategy</h3>
+          <p class="brand-desc" data-i18n="s6_desc">A complete growth plan across channels — from positioning and messaging to paid, email, and retention.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BRANDS
+══════════════════════════════════════ -->
+<section id="brands" style="padding:100px 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+
+    <div class="fade-up" style="margin-bottom:48px;">
+      <p class="section-label" style="margin-bottom:14px;" data-i18n="brands_eyebrow">Experience</p>
+      <h2 class="heading" style="font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;" data-i18n="brands_title">
+        Brand Clients
+      </h2>
+    </div>
+
+    <div class="brand-grid fade-up">
+
+      <!-- Star Entertainment — Concert/Theatre -->
+      <div class="brand-card">
+        <div class="brand-card-bg bg-star">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/CQphcMNUtUo?autoplay=1&mute=1&loop=1&playlist=CQphcMNUtUo&controls=0&disablekb=1&playsinline=1&rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media" title="Star Entertainment background"
+          ></iframe>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="brand1_tag">Google Ads & Facebook Ads</span>
+          <h3 class="brand-name">Star Entertainment</h3>
+          <p class="brand-desc" data-i18n="brand1_desc">Managed paid media for the promotion of 1,300+ concerts across the globe, handling audience targeting and budget strategy at an international scale.</p>
+        </div>
+      </div>
+
+      <!-- La Prosciutteria — Italian food / charcuterie -->
+      <div class="brand-card">
+        <div class="brand-card-bg bg-prosci">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/6gtlQ5mo8mo?autoplay=1&mute=1&loop=1&playlist=6gtlQ5mo8mo&controls=0&disablekb=1&playsinline=1&rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media" title="La Prosciutteria background"
+          ></iframe>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="brand2_tag">Google Ads</span>
+          <h3 class="brand-name">La Prosciutteria</h3>
+          <p class="brand-desc" data-i18n="brand2_desc">Ran Google Ads campaigns to drive brand awareness and results for this Italian dining brand.</p>
+        </div>
+      </div>
+
+      <!-- Funko POP — Spider-Verse campaign -->
+      <div class="brand-card">
+        <div class="brand-card-bg bg-funko">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/aV2vjrgEy3E?autoplay=1&mute=1&loop=1&playlist=aV2vjrgEy3E&controls=0&disablekb=1&playsinline=1&rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media" title="Funko POP background"
+          ></iframe>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="brand3_tag">TikTok Ads</span>
+          <h3 class="brand-name">Funko POP</h3>
+          <p class="brand-desc" data-i18n="brand3_desc">Led TikTok campaigns tied to the Spider-Man: Across the Spider-Verse movie launch, aligning pop culture moments with paid social strategy.</p>
+        </div>
+      </div>
+
+      <!-- Florence by Mills — Beauty brand -->
+      <div class="brand-card">
+        <div class="brand-card-bg bg-florence">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/q0ULAiVz-B0?autoplay=1&mute=1&loop=1&playlist=q0ULAiVz-B0&controls=0&disablekb=1&playsinline=1&rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media" title="Florence by Mills background"
+          ></iframe>
+        </div>
+        <div class="brand-card-dim"></div>
+        <div class="brand-card-content">
+          <span class="brand-tag" data-i18n="brand4_tag">TikTok Ads</span>
+          <h3 class="brand-name">Florence by Mills</h3>
+          <p class="brand-desc" data-i18n="brand4_desc">Executed TikTok campaigns for Millie Bobby Brown's beauty brand, focused on Gen Z engagement and product discovery.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     AUDIT
+══════════════════════════════════════ -->
+<section id="audit" class="grad-bg" style="padding:100px 0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 32px;text-align:center;">
+    <div class="fade-up" style="display:flex;flex-direction:column;align-items:center;gap:24px;">
+      <p class="section-label" data-i18n="audit_eyebrow">Deep Expertise</p>
+      <div>
+        <div class="audit-number grad-text" data-i18n="audit_big_num">1,000+</div>
+        <h2 class="heading" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.2;margin-top:12px;" data-i18n="audit_headline">
+          Accounts Audited
+        </h2>
+      </div>
+      <p style="font-size:1.125rem;line-height:1.8;color:#4B5563;max-width:600px;" data-i18n="audit_body">
+        I've audited over 1,000 advertising accounts across Google, Meta, TikTok, and Amazon — identifying wasted spend, missed opportunities, and structural issues holding campaigns back.
+      </p>
+      <a href="#book" class="btn-dark" style="margin-top:8px;" data-i18n="audit_cta">
+        Get Your Audit
+        <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PHILOSOPHY
+══════════════════════════════════════ -->
+<section id="philosophy" style="padding:100px 0;background:#fff;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+    <div class="two-col fade-up" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+      <!-- Left: big label -->
+      <div>
+        <p class="section-label" style="margin-bottom:20px;" data-i18n="phil_eyebrow">My Approach</p>
+        <h2 class="heading" style="font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1.12;" data-i18n="phil_headline">
+          There's No One-Size-Fits-All Strategy
+        </h2>
+      </div>
+
+      <!-- Right: body + CTA -->
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <p style="font-size:1.0625rem;line-height:1.85;color:#4B5563;" data-i18n="phil_body">
+          Every business is different — your audience, your offer, your margins. I don't believe in templates. I build tailored strategies that combine the right mix of paid ads, email marketing, and growth systems specifically for you. Let's find yours together.
+        </p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <a href="#book" class="btn-dark" data-i18n="phil_cta">
+            Let's Find Yours
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#brands" class="btn-outline" data-i18n="phil_cta2">See My Work →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BOOK A CALL
+══════════════════════════════════════ -->
+<section id="book" style="padding:100px 0;background:#F9FAFB;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+    <div class="cal-card fade-up">
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;z-index:1;">
+
+        <!-- Left -->
+        <div style="padding:64px 52px;display:flex;flex-direction:column;gap:28px;justify-content:center;">
+          <div>
+            <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;" data-i18n="book_label">Free Strategy Call</p>
+            <h2 class="heading" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;color:#fff;" data-i18n="book_headline">
+              Book your free<br/>30-minute call.
+            </h2>
+          </div>
+          <p style="font-size:1.0625rem;line-height:1.75;color:rgba(255,255,255,0.6);" data-i18n="book_sub">
+            No pitch, no pressure. We'll talk about your brand, your goals, and I'll share exactly how I'd approach your growth.
+          </p>
+          <ul style="display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;align-items:center;gap:12px;font-size:0.9375rem;color:rgba(255,255,255,0.7);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M5 9L7.5 11.5L13 6" stroke="#6EBA8C" stroke-width="1.75" stroke-linecap="round"/></svg>
+              <span data-i18n="book_li1">Audit of your current marketing</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:0.9375rem;color:rgba(255,255,255,0.7);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M5 9L7.5 11.5L13 6" stroke="#6EBA8C" stroke-width="1.75" stroke-linecap="round"/></svg>
+              <span data-i18n="book_li2">Tailored growth opportunities</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:12px;font-size:0.9375rem;color:rgba(255,255,255,0.7);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M5 9L7.5 11.5L13 6" stroke="#6EBA8C" stroke-width="1.75" stroke-linecap="round"/></svg>
+              <span data-i18n="book_li3">Clear next steps, zero obligation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Calendar -->
+        <div style="padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(255,255,255,0.08);">
+          <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+              <span style="font-weight:600;color:#fff;font-size:0.9375rem;" data-i18n="cal_month">May 2026</span>
+              <div style="display:flex;gap:8px;">
+                <button style="background:rgba(255,255,255,0.1);border:none;border-radius:6px;width:28px;height:28px;color:rgba(255,255,255,0.6);cursor:pointer;" aria-label="Previous">‹</button>
+                <button style="background:rgba(255,255,255,0.1);border:none;border-radius:6px;width:28px;height:28px;color:rgba(255,255,255,0.6);cursor:pointer;" aria-label="Next">›</button>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px;">
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_mo">Mo</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_tu">Tu</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_we">We</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_th">Th</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_fr">Fr</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_sa">Sa</div>
+              <div style="text-align:center;font-size:0.6875rem;color:rgba(255,255,255,0.35);font-weight:600;padding:4px 0;" data-i18n="cal_su">Su</div>
+            </div>
+            <div id="cal-days" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;"></div>
+          </div>
+
+          <div id="time-slots" style="display:none;flex-direction:column;gap:8px;"></div>
+          <div id="booking-form" style="display:none;flex-direction:column;gap:10px;">
+            <input type="text" class="form-input" data-i18n-placeholder="form_name" placeholder="Your full name" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
+            <input type="email" class="form-input" data-i18n-placeholder="form_email" placeholder="Email address" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);color:#fff;" />
+            <button class="btn-dark" style="background:#fff;color:#0f0f0f;justify-content:center;" onclick="showConfirm()" data-i18n="form_submit">
+              Confirm Booking
+            </button>
+          </div>
+          <div id="confirm-msg" style="display:none;text-align:center;padding:24px;">
+            <div style="font-size:2rem;margin-bottom:12px;">✓</div>
+            <div style="font-weight:700;color:#fff;font-size:1.0625rem;margin-bottom:8px;" data-i18n="confirm_title">You're booked!</div>
+            <div style="font-size:0.875rem;color:rgba(255,255,255,0.55);" data-i18n="confirm_sub">Check your email for confirmation.</div>
+          </div>
+
+          <p style="text-align:center;font-size:0.8125rem;color:rgba(255,255,255,0.3);">
+            <span data-i18n="or_email">or email at</span>
+            <a href="mailto:nicoladimattia8@gmail.com" style="color:rgba(255,255,255,0.5);text-decoration:underline;">nicoladimattia8@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer style="background:#0f0f0f;padding:48px 0 32px;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:40px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8125rem;font-weight:800;color:#fff;">N</span>
+        </div>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:700;color:#fff;">Nicola Dimattia</span>
+      </div>
+      <nav style="display:flex;gap:24px;flex-wrap:wrap;" aria-label="Footer navigation">
+        <a href="#services" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_services">Services</a>
+        <a href="#brands" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_brands">Brands</a>
+        <a href="#audit" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_audit">Results</a>
+        <a href="#book" style="font-size:0.875rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'" data-i18n="nav_contact">Contact</a>
+      </nav>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);">
+      <span style="font-size:0.8125rem;color:rgba(255,255,255,0.25);" data-i18n="footer_copy">© 2026 Nicola Dimattia. All rights reserved.</span>
+      <a href="mailto:nicoladimattia8@gmail.com" style="font-size:0.8125rem;color:rgba(255,255,255,0.25);text-decoration:none;">nicoladimattia8@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
+<script>
+/* ── i18n ──────────────────────────────────────────── */
+const COPY = {
+  en: {
+    nav_services: "Services",
+    nav_brands: "Brands",
+    nav_audit: "Results",
+    nav_contact: "Contact",
+    nav_cta: "Book a Call",
+    hero_badge: "Marketing Strategist · Italy & Europe",
+    hero_headline: "Every Business Deserves a Strategy That Actually Works.",
+    hero_sub: "Tailored ads, email, and marketing systems built for your growth — not anyone else's.",
+    hero_cta: "Book Your Free Call",
+    services_eyebrow: "What I Do",
+    services_title: "Services",
+    s1_tag: "Google · Meta · TikTok", s1_name: "Paid Ads",
+    s1_desc: "Full-funnel paid media strategy and management across the platforms your audience actually uses — built to scale.",
+    s2_tag: "Conversion Design", s2_name: "Landing Pages",
+    s2_desc: "High-converting pages built around your offer and audience — designed to turn clicks into customers.",
+    s3_tag: "Words That Convert", s3_name: "Copywriting",
+    s3_desc: "Clear, persuasive copy that speaks your audience's language, builds trust, and drives them to act.",
+    s4_tag: "Performance Tracking", s4_name: "Data Analysis",
+    s4_desc: "Actionable reporting and deep performance tracking so every decision is backed by real numbers.",
+    s5_tag: "1,000+ Audited", s5_name: "Account Audit",
+    s5_desc: "Comprehensive review of your ad accounts — identifying wasted spend, weak structures, and hidden opportunities.",
+    s6_tag: "End-to-End Growth", s6_name: "Full Strategy",
+    s6_desc: "A complete growth plan across channels — from positioning and messaging to paid, email, and retention.",
+    hero_social_proof: "Trusted by 40+ clients",
+    float1_num: "1,300+", float1_label: "Concerts Promoted",
+    float2_num: "1,000+", float2_label: "Accounts Audited",
+    stat1_num: "1,300+", stat1_label: "Concerts Promoted Worldwide",
+    stat2_num: "1,000+", stat2_label: "Ad Accounts Audited",
+    stat3_num: "4",      stat3_label: "Major Brands Worked With",
+    brands_eyebrow: "Experience",
+    brands_title: "Brand Clients",
+    brand1_tag: "Google Ads & Facebook Ads",
+    brand1_desc: "Managed paid media for the promotion of 1,300+ concerts across the globe, handling audience targeting and budget strategy at an international scale.",
+    brand2_tag: "Google Ads",
+    brand2_desc: "Ran Google Ads campaigns to drive brand awareness and results for this Italian dining brand.",
+    brand3_tag: "TikTok Ads",
+    brand3_desc: "Led TikTok campaigns tied to the Spider-Man: Across the Spider-Verse movie launch, aligning pop culture moments with paid social strategy.",
+    brand4_tag: "TikTok Ads",
+    brand4_desc: "Executed TikTok campaigns for Millie Bobby Brown's beauty brand, focused on Gen Z engagement and product discovery.",
+    audit_eyebrow: "Deep Expertise",
+    audit_big_num: "1,000+",
+    audit_headline: "Accounts Audited",
+    audit_body: "I've audited over 1,000 advertising accounts across Google, Meta, TikTok, and Amazon — identifying wasted spend, missed opportunities, and structural issues holding campaigns back.",
+    audit_cta: "Get Your Audit",
+    phil_eyebrow: "My Approach",
+    phil_headline: "There's No One-Size-Fits-All Strategy",
+    phil_body: "Every business is different — your audience, your offer, your margins. I don't believe in templates. I build tailored strategies that combine the right mix of paid ads, email marketing, and growth systems specifically for you. Let's find yours together.",
+    phil_cta: "Let's Find Yours",
+    phil_cta2: "See My Work →",
+    book_label: "Free Strategy Call",
+    book_headline: "Book your free\n30-minute call.",
+    book_sub: "No pitch, no pressure. We'll talk about your brand, your goals, and I'll share exactly how I'd approach your growth.",
+    book_li1: "Audit of your current marketing",
+    book_li2: "Tailored growth opportunities",
+    book_li3: "Clear next steps, zero obligation",
+    cal_month: "May 2026", cal_mo:"Mo", cal_tu:"Tu", cal_we:"We", cal_th:"Th", cal_fr:"Fr", cal_sa:"Sa", cal_su:"Su",
+    form_name: "Your full name", form_email: "Email address", form_submit: "Confirm Booking",
+    confirm_title: "You're booked!", confirm_sub: "Check your email for confirmation.",
+    or_email: "or email at",
+    footer_copy: "© 2026 Nicola Dimattia. All rights reserved.",
+  },
+  it: {
+    nav_services: "Servizi",
+    nav_brands: "Brand",
+    nav_audit: "Risultati",
+    nav_contact: "Contatto",
+    nav_cta: "Prenota una Call",
+    hero_badge: "Marketing Strategist · Italia & Europa",
+    hero_headline: "Ogni Business Merita una Strategia che Funziona Davvero.",
+    hero_sub: "Ads, email e sistemi di marketing costruiti per la tua crescita — con metodo, precisione e intenzione.",
+    hero_cta: "Prenota la tua Call Gratuita",
+    services_eyebrow: "Cosa Faccio",
+    services_title: "Servizi",
+    s1_tag: "Google · Meta · TikTok", s1_name: "Paid Ads",
+    s1_desc: "Strategia e gestione dei paid media a tutto funnel — costruiti per scalare sulle piattaforme dove si trova il tuo pubblico.",
+    s2_tag: "Design per la Conversione", s2_name: "Landing Page",
+    s2_desc: "Pagine ad alta conversione costruite attorno alla tua offerta — progettate per trasformare i click in clienti.",
+    s3_tag: "Parole che Convertono", s3_name: "Copywriting",
+    s3_desc: "Copy chiaro e persuasivo che parla la lingua del tuo pubblico, costruisce fiducia e lo spinge all'azione.",
+    s4_tag: "Performance Tracking", s4_name: "Analisi dei Dati",
+    s4_desc: "Report chiari e analisi approfondite delle performance, così ogni decisione è supportata da numeri reali.",
+    s5_tag: "1.000+ Analizzati", s5_name: "Audit Account",
+    s5_desc: "Analisi completa dei tuoi account pubblicitari — sprechi di budget, strutture deboli e opportunità nascoste.",
+    s6_tag: "Crescita End-to-End", s6_name: "Strategia Completa",
+    s6_desc: "Un piano di crescita completo su tutti i canali — dal positioning e la messaggistica fino a paid, email e retention.",
+    hero_social_proof: "Scelto da 40+ clienti",
+    float1_num: "1.300+", float1_label: "Concerti Promossi",
+    float2_num: "1.000+", float2_label: "Account Analizzati",
+    stat1_num: "1.300+", stat1_label: "Concerti Promossi nel Mondo",
+    stat2_num: "1.000+", stat2_label: "Account Pubblicitari Analizzati",
+    stat3_num: "4",       stat3_label: "Brand di Rilievo",
+    brands_eyebrow: "Esperienza",
+    brands_title: "Brand Clienti",
+    brand1_tag: "Google Ads & Facebook Ads",
+    brand1_desc: "Gestione dei paid media per la promozione di oltre 1.300 concerti in tutto il mondo, occupandomi del targeting e della strategia di budget su scala internazionale.",
+    brand2_tag: "Google Ads",
+    brand2_desc: "Campagne Google Ads per aumentare la brand awareness e i risultati per questo brand di ristorazione italiana.",
+    brand3_tag: "TikTok Ads",
+    brand3_desc: "Campagne TikTok legate al lancio di Spider-Man: Across the Spider-Verse, allineando i momenti pop culture con la strategia paid social.",
+    brand4_tag: "TikTok Ads",
+    brand4_desc: "Campagne TikTok per il brand di bellezza di Millie Bobby Brown, con focus sul coinvolgimento della Gen Z e la product discovery.",
+    audit_eyebrow: "Competenza Approfondita",
+    audit_big_num: "1.000+",
+    audit_headline: "Account Analizzati",
+    audit_body: "Ho analizzato oltre 1.000 account pubblicitari su Google, Meta, TikTok e Amazon — identificando sprechi di budget, opportunità mancate e problemi strutturali che rallentano le campagne.",
+    audit_cta: "Richiedi il Tuo Audit",
+    phil_eyebrow: "Il Mio Approccio",
+    phil_headline: "Non Esiste una Strategia Uguale per Tutti",
+    phil_body: "Ogni business è diverso — il tuo pubblico, la tua offerta, i tuoi margini. Inizia tutto dall'ascolto: capire dove sei, dove vuoi arrivare e cosa ti sta frenando. Poi costruisco strategie su misura che combinano il giusto mix di ads, email marketing e sistemi di crescita specifici per te. Troviamola insieme.",
+    phil_cta: "Troviamola Insieme",
+    phil_cta2: "Vedi il Mio Lavoro →",
+    book_label: "Call Strategica Gratuita",
+    book_headline: "Prenota la tua call\ngratuita di 30 minuti.",
+    book_sub: "Nessun pitch, nessuna pressione. Parleremo del tuo brand, dei tuoi obiettivi, e ti dirò esattamente come approccerei la tua crescita.",
+    book_li1: "Audit del tuo marketing attuale",
+    book_li2: "Opportunità di crescita su misura",
+    book_li3: "Prossimi passi chiari, zero obblighi",
+    cal_month: "Maggio 2026", cal_mo:"Lu", cal_tu:"Ma", cal_we:"Me", cal_th:"Gi", cal_fr:"Ve", cal_sa:"Sa", cal_su:"Do",
+    form_name: "Il tuo nome completo", form_email: "Indirizzo email", form_submit: "Conferma Prenotazione",
+    confirm_title: "Sei prenotato!", confirm_sub: "Controlla la tua email per la conferma.",
+    or_email: "oppure scrivi a",
+    footer_copy: "© 2026 Nicola Dimattia. Tutti i diritti riservati.",
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('html-root').lang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+
+  const c = COPY[lang];
+
+  // Update all data-i18n text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (c[key] !== undefined) {
+      // Handle newlines in button text (for book_headline)
+      if (el.tagName === 'H2' && c[key].includes('\n')) {
+        el.innerHTML = c[key].replace(/\n/g, '<br/>');
+      } else {
+        el.textContent = c[key];
+      }
+    }
+  });
+
+  // Update placeholder attributes
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (c[key] !== undefined) el.placeholder = c[key];
+  });
+}
+
+/* ── Sticky nav + floating CTA ──────────────────────── */
+const floatCta = document.getElementById('float-cta');
+floatCta.addEventListener('mouseover', () => { floatCta.style.transform = 'translateY(-2px)'; floatCta.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)'; });
+floatCta.addEventListener('mouseout',  () => { floatCta.style.transform = ''; floatCta.style.boxShadow = '0 8px 32px rgba(0,0,0,0.2),0 2px 8px rgba(0,0,0,0.12)'; });
+floatCta.addEventListener('mousedown', () => { floatCta.style.transform = 'translateY(0)'; });
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  // Show floating CTA after user scrolls past hero (~80vh)
+  const past = window.scrollY > window.innerHeight * 0.75;
+  floatCta.style.display = 'flex';
+  floatCta.style.opacity = past ? '1' : '0';
+  floatCta.style.pointerEvents = past ? 'auto' : 'none';
+}, { passive: true });
+
+/* ── Fade-up observer ──────────────────────────────── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), parseInt(e.target.dataset.delay || 0));
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  el.dataset.delay = (i % 3) * 90;
+  observer.observe(el);
+});
+
+/* ── Smooth scroll + calendar trigger ─────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    const t = document.querySelector(href);
+    if (t) {
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+      // If linking to #book, pulse the calendar after scroll
+      if (href === '#book') {
+        setTimeout(() => {
+          const calBox = document.querySelector('#cal-days');
+          if (calBox) {
+            calBox.closest('div[style*="border-radius:16px"]').style.boxShadow = '0 0 0 3px rgba(247,217,184,0.8)';
+            setTimeout(() => { calBox.closest('div[style*="border-radius:16px"]').style.boxShadow = ''; }, 1400);
+          }
+        }, 700);
+      }
+    }
+  });
+});
+
+/* ── Calendar ──────────────────────────────────────── */
+(function() {
+  const today = 14;
+  const daysInMonth = 31;
+  const firstDow = 4; // May 2026: Thursday = index 3 (Mon=0) — actually May 1 2026 is Friday, so firstDow=4
+  const container = document.getElementById('cal-days');
+  const times = ['09:00','10:00','11:00','14:00','15:00','16:00'];
+  let selDay = null;
+
+  for (let i = 0; i < firstDow; i++) container.appendChild(document.createElement('div'));
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('button');
+    cell.textContent = d;
+    cell.style.cssText = 'aspect-ratio:1;border:none;border-radius:7px;font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.15s ease;font-family:Inter,sans-serif;';
+    const dow = (firstDow + d - 1) % 7;
+    const isPast = d < today;
+    const isWknd = dow >= 5;
+    if (isPast || isWknd) {
+      cell.style.color = 'rgba(255,255,255,0.15)'; cell.style.background = 'transparent'; cell.disabled = true; cell.style.cursor = 'default';
+    } else {
+      cell.style.color = d === today ? '#0f0f0f' : 'rgba(255,255,255,0.75)';
+      cell.style.background = d === today ? '#fff' : 'rgba(255,255,255,0.06)';
+      cell.addEventListener('click', () => selectDay(d, cell));
+      cell.addEventListener('mouseover', () => { if (d !== selDay) cell.style.background = 'rgba(255,255,255,0.14)'; });
+      cell.addEventListener('mouseout', () => { if (d !== selDay) cell.style.background = d === today ? '#fff' : 'rgba(255,255,255,0.06)'; });
+    }
+    container.appendChild(cell);
+  }
+
+  function selectDay(d, btn) {
+    selDay = d;
+    container.querySelectorAll('button').forEach(b => {
+      if (!b.disabled) { const n = parseInt(b.textContent); b.style.background = n === today ? '#fff' : 'rgba(255,255,255,0.06)'; b.style.color = n === today ? '#0f0f0f' : 'rgba(255,255,255,0.75)'; }
+    });
+    btn.style.background = 'linear-gradient(120deg,#F7D9B8,#C6DAEE)'; btn.style.color = '#0f0f0f';
+
+    const slotsEl = document.getElementById('time-slots');
+    slotsEl.style.display = 'flex';
+    slotsEl.innerHTML = `<p style="font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.4);margin-bottom:4px;">${currentLang === 'it' ? 'Orari disponibili' : 'Available times'}</p>`;
+    const grid = document.createElement('div');
+    grid.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:8px;';
+    times.forEach(t => {
+      const b = document.createElement('button');
+      b.textContent = t;
+      b.style.cssText = 'background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 4px;font-size:0.8rem;color:rgba(255,255,255,0.75);cursor:pointer;font-weight:500;transition:all 0.15s ease;font-family:Inter,sans-serif;';
+      b.addEventListener('click', () => selectTime(b, grid));
+      b.addEventListener('mouseover', () => { if (!b.classList.contains('sel')) b.style.background = 'rgba(255,255,255,0.12)'; });
+      b.addEventListener('mouseout', () => { if (!b.classList.contains('sel')) b.style.background = 'rgba(255,255,255,0.07)'; });
+      grid.appendChild(b);
+    });
+    slotsEl.appendChild(grid);
+  }
+
+  function selectTime(btn, grid) {
+    grid.querySelectorAll('button').forEach(b => { b.classList.remove('sel'); b.style.background = 'rgba(255,255,255,0.07)'; b.style.borderColor = 'rgba(255,255,255,0.1)'; b.style.color = 'rgba(255,255,255,0.75)'; });
+    btn.classList.add('sel'); btn.style.background = 'linear-gradient(120deg,#F7D9B8,#C6DAEE)'; btn.style.borderColor = 'transparent'; btn.style.color = '#0f0f0f';
+    document.getElementById('booking-form').style.display = 'flex';
+  }
+})();
+
+function showConfirm() {
+  document.getElementById('booking-form').style.display = 'none';
+  document.getElementById('time-slots').style.display = 'none';
+  document.getElementById('confirm-msg').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
