@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-root">
+<html lang="it" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -330,12 +330,78 @@
       pointer-events: none;
     }
 
+    /* ── Hamburger ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 8px; z-index: 101;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #0f0f0f; border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.2s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Mobile nav overlay ── */
+    #mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      flex-direction: column; align-items: center; justify-content: center;
+      padding: 80px 32px 48px;
+    }
+    #mobile-nav.open { display: flex; }
+    .mob-nav-link {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem; font-weight: 700; color: #0f0f0f;
+      text-decoration: none; letter-spacing: -0.03em;
+      padding: 18px 0; width: 100%; text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: opacity 0.2s;
+    }
+    .mob-nav-link:last-of-type { border-bottom: none; }
+    .mob-nav-link:active { opacity: 0.4; }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
       .brand-grid { grid-template-columns: 1fr; }
       .hero-grid { grid-template-columns: 1fr !important; }
       .two-col { grid-template-columns: 1fr !important; }
       .hide-sm { display: none !important; }
+      .hamburger { display: flex; }
+
+      /* Stats: stack vertically */
+      .stats-bar { grid-template-columns: 1fr !important; }
+      .stats-bar > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .stats-bar > div:last-child { border-bottom: none !important; }
+
+      /* Hero: show image before text on mobile */
+      .hero-img-col { order: -1; }
+
+      /* Section padding reduction */
+      #services, #brands, #philosophy, #book, #audit { padding: 64px 0 !important; }
+
+      /* Inner container horizontal padding */
+      section > div, footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+
+      /* Book card columns */
+      .book-col-left { padding: 40px 28px !important; }
+      .book-col-right { padding: 28px !important; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
+
+      /* Float CTA */
+      #float-cta { bottom: 16px !important; right: 16px !important; padding: 11px 18px !important; }
+    }
+
+    @media (max-width: 600px) {
+      .orb-container { width: 280px; height: 280px; }
+      .orb-c { left: 118px; font-size: 0.6875rem; padding: 4px 10px; }
+      .orb-ring { transform: scale(0.64); }
+      .hero-photo-wrap { width: 180px !important; }
+      .brand-card { min-height: 200px !important; padding: 24px !important; }
+      .mob-nav-link { font-size: 1.75rem; padding: 16px 0; }
     }
   </style>
 </head>
@@ -356,6 +422,17 @@
   Book a Call
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 </a>
+
+<!-- Mobile nav overlay -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+  <a href="#services" class="mob-nav-link" data-i18n="nav_services" onclick="closeMobileNav()">Servizi</a>
+  <a href="#brands" class="mob-nav-link" data-i18n="nav_brands" onclick="closeMobileNav()">Brand</a>
+  <a href="#book" class="mob-nav-link" data-i18n="nav_contact" onclick="closeMobileNav()">Contatto</a>
+  <a href="#book" class="btn-dark" style="margin-top:32px;justify-content:center;width:100%;max-width:280px;" data-i18n="nav_cta" onclick="closeMobileNav()">
+    Prenota una Call
+    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </a>
+</nav>
 
 <!-- ══════════════════════════════════════
      NAVIGATION
@@ -378,16 +455,19 @@
       <a href="#book" class="nav-link" data-i18n="nav_contact">Contact</a>
     </nav>
 
-    <!-- Right: Lang + CTA -->
+    <!-- Right: Lang + CTA + Hamburger -->
     <div style="display:flex;align-items:center;gap:10px;justify-content:flex-end;">
       <div style="display:flex;align-items:center;gap:2px;background:rgba(0,0,0,0.04);border-radius:8px;padding:3px;">
-        <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
-        <button class="lang-btn" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <button class="lang-btn active" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
       </div>
-      <a href="#book" class="btn-dark" data-i18n="nav_cta">
-        Book a Call
+      <a href="#book" class="btn-dark hide-sm" data-i18n="nav_cta">
+        Prenota una Call
         <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
   </div>
@@ -452,7 +532,7 @@
       </div>
 
       <!-- Right: Photo + orbit animation -->
-      <div style="display:flex;justify-content:center;align-items:center;">
+      <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
         <div class="orb-container">
 
           <!-- Ring guide -->
@@ -469,7 +549,7 @@
           <div class="orb-w" style="--d:-24.5s">  <span class="orb-c">Meta Ads</span></div>
 
           <!-- Photo -->
-          <div style="position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,0.14);width:240px;flex-shrink:0;">
+          <div class="hero-photo-wrap" style="position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,0.14);width:240px;flex-shrink:0;">
             <img
               src="Design/1771349858836.jpg"
               alt="Nicola Dimattia"
@@ -483,7 +563,7 @@
     </div>
 
     <!-- Stats bar -->
-    <div class="glass-card fade-up" style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;">
+    <div class="glass-card fade-up stats-bar" style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;">
       <div style="padding:28px 32px;text-align:center;border-right:1px solid rgba(0,0,0,0.06);">
         <div class="stat-val" data-i18n="stat1_num">1,300+</div>
         <div style="font-size:0.8125rem;color:#6B7280;margin-top:8px;font-weight:500;" data-i18n="stat1_label">Concerts Promoted Worldwide</div>
@@ -764,7 +844,7 @@
       <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;z-index:1;">
 
         <!-- Left -->
-        <div style="padding:64px 52px;display:flex;flex-direction:column;gap:28px;justify-content:center;">
+        <div class="book-col-left" style="padding:64px 52px;display:flex;flex-direction:column;gap:28px;justify-content:center;">
           <div>
             <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;" data-i18n="book_label">Free Strategy Call</p>
             <h2 class="heading" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.15;color:#fff;" data-i18n="book_headline">
@@ -791,7 +871,7 @@
         </div>
 
         <!-- Right: Calendar -->
-        <div style="padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(255,255,255,0.08);">
+        <div class="book-col-right" style="padding:40px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(255,255,255,0.08);">
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
               <span style="font-weight:600;color:#fff;font-size:0.9375rem;" data-i18n="cal_month">May 2026</span>
@@ -997,7 +1077,7 @@ const COPY = {
   }
 };
 
-let currentLang = 'en';
+let currentLang = 'it';
 
 function setLang(lang) {
   currentLang = lang;
@@ -1026,6 +1106,27 @@ function setLang(lang) {
     if (c[key] !== undefined) el.placeholder = c[key];
   });
 }
+
+/* ── Init language ─────────────────────────────────── */
+setLang('it');
+
+/* ── Mobile nav ─────────────────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
 
 /* ── Sticky nav + floating CTA ──────────────────────── */
 const floatCta = document.getElementById('float-cta');
