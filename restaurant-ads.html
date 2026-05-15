@@ -561,6 +561,95 @@
     .pain-body { flex: 1; min-width: 260px; }
     .thefork-compare { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; padding: 9px 16px; font-size: 0.875rem; font-weight: 600; color: var(--dark); flex-wrap: wrap; }
     .thefork-compare .vs { font-weight: 400; color: var(--mid); font-size: 0.8125rem; }
+
+    /* ══════════════════════════════════════
+       MOBILE — max-width: 768px
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* Root tokens */
+      :root { --pad: 48px; }
+      .wrap { padding: 0 20px; }
+
+      /* Typography */
+      h1 { font-size: 2rem; line-height: 1.15; }
+      h2 { font-size: 1.6rem; line-height: 1.2; }
+      h1 br, h2 br { display: none; }
+
+      /* Remove staggered animation delays — content appears instantly */
+      [data-anim][data-d="1"],
+      [data-anim][data-d="2"],
+      [data-anim][data-d="3"] { transition-delay: 0s !important; }
+
+      /* Header */
+      .hdr-in { gap: 8px; }
+      .btn-sm { padding: 10px 14px; font-size: 0.8125rem; }
+
+      /* Hero */
+      .hero { padding: 96px 0 52px; min-height: 90vh; display: flex; align-items: flex-start; }
+      .hero > .wrap { width: 100%; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-visual { display: none; }
+      .hero-h1-row { display: block; }
+      .platform-logos { display: none; }
+      .hero-sub { font-size: 1rem; }
+      .hero-btns { flex-direction: column; align-items: stretch; gap: 10px; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .hero-trust { gap: 10px; flex-wrap: wrap; }
+      .contact-inline { flex-direction: column; align-items: flex-start; gap: 6px; }
+
+      /* Photo section */
+      .photo-block { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+      .photo-circle { width: 100px; height: 100px; flex-shrink: 0; }
+
+      /* Stats bar — 2×2 grid */
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell { padding: 20px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stat-cell:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .stat-cell:last-child { grid-column: 1 / -1; border-right: none; border-bottom: none; }
+      .stat-big { font-size: 2.25rem; }
+      .stat-lbl { font-size: 0.875rem; }
+
+      /* Pain points — single column */
+      .pain-grid { grid-template-columns: 1fr; }
+      .pain-card-featured { grid-column: 1; }
+      /* TheFork card: hide ❌ side on mobile, show only ✅ */
+      .thefork-compare span:first-child,
+      .thefork-compare .vs { display: none; }
+
+      /* How it works — vertical stack, no connector line */
+      .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+      .steps-grid::before { display: none; }
+      .step-item { display: flex; align-items: flex-start; gap: 16px; text-align: left; }
+      .step-item .step-circle { margin: 0; flex-shrink: 0; }
+      .step-item > div { flex: 1; }
+
+      /* Results — single column, tighter padding */
+      .results-grid { grid-template-columns: 1fr; }
+      .result-card-top { padding: 20px; }
+      .result-card-bottom { padding: 18px 20px; }
+      .result-big { font-size: 2.5rem; }
+
+      /* Comparison — single column */
+      .compare-grid { grid-template-columns: 1fr; }
+
+      /* What's included — stacked */
+      .incl-grid { grid-template-columns: 1fr; gap: 28px; }
+      .check { padding: 13px 14px; }
+      .check span { font-size: 0.875rem; }
+
+      /* Sticky CTA — full-width native app bar */
+      .float-btn {
+        left: 0; right: 0; bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        justify-content: center;
+        padding: 16px 24px;
+        font-size: 0.9375rem;
+        box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+      }
+      /* Breathing room so content isn't hidden behind the sticky bar */
+      body { padding-bottom: 60px; }
+    }
   </style>
 </head>
 <body>
@@ -1051,6 +1140,11 @@
 
 
 <script>
+// Replace <br> in headings with a space on mobile so words don't concatenate
+if (window.matchMedia('(max-width: 768px)').matches) {
+  document.querySelectorAll('h1 br, h2 br').forEach(br => br.replaceWith(' '));
+}
+
 function openCal() {
   if (typeof Calendly !== 'undefined') {
     Calendly.initPopupWidget({ url: 'https://calendly.com/nicoladimattia8/30min?month=2026-05' });
