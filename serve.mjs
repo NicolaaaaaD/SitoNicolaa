@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, statSync } from 'fs';
 import { extname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -16,8 +16,18 @@ const mime = {
 };
 
 createServer((req, res) => {
-  const url = req.url === '/' ? '/index.html' : req.url;
-  const filePath = join(__dirname, url);
+  let url = req.url.split('?')[0];
+  if (url === '/') url = '/index.html';
+  let filePath = join(__dirname, url);
+  // serve directory index
+  if (existsSync(filePath) && statSync(filePath).isDirectory()) {
+    filePath = join(filePath, 'index.html');
+  }
+  // cleanUrls: try adding .html
+  if (!existsSync(filePath)) {
+    const withHtml = filePath + '.html';
+    if (existsSync(withHtml)) filePath = withHtml;
+  }
   if (existsSync(filePath)) {
     const ext = extname(filePath);
     res.writeHead(200, { 'Content-Type': mime[ext] || 'text/plain' });
