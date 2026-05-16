@@ -16,6 +16,8 @@
   <meta name="author" content="Nicola Di Mattia">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nicosdigit.com/hotel">
+  <link rel="alternate" hreflang="it" href="https://nicosdigit.com/hotel">
+  <link rel="alternate" hreflang="en" href="https://nicosdigit.com/hotel-en">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -109,6 +111,8 @@
     }
     .logo-sq span { color: #fff; font-weight: 800; font-size: 0.8125rem; letter-spacing: -0.02em; }
     .logo-name { font-weight: 700; font-size: 1rem; color: var(--dark); letter-spacing: -0.02em; }
+    .lang-switch { display:inline-flex; align-items:center; gap:5px; padding:8px 13px; border-radius:8px; border:1.5px solid var(--border); background:transparent; font-family:var(--font); font-size:0.8125rem; font-weight:700; color:var(--dark); text-decoration:none; transition:border-color 0.2s, background 0.2s; white-space:nowrap; line-height:1; }
+    .lang-switch:hover { border-color:var(--accent); background:var(--accent-lt); }
     .hdr-right { display: flex; align-items: center; gap: 12px; }
 
     /* ── BUTTONS ── */
@@ -406,6 +410,8 @@
       body { padding-bottom: 60px; }
       .wa-btn { bottom: 72px; right: 16px; width: 58px; height: 58px; }
       .carousel-card { width: 260px; }
+      .lang-switch .lang-label { display: none; }
+      .lang-switch { padding: 8px 10px; }
     }
   </style>
 </head>
@@ -435,6 +441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="logo-name">NicosDigit</span>
       </div>
       <div class="hdr-right">
+        <a href="/hotel-en" class="lang-switch" aria-label="Switch to English">🇬🇧 <span class="lang-label">EN</span></a>
         <button class="btn btn-primary btn-sm" onclick="openCal()">
           Chiamata gratuita <span class="arrow">→</span>
         </button>
