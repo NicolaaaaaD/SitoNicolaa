@@ -138,14 +138,10 @@
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
       position: relative;
     }
-    .sector-card:not(.coming-soon):hover {
+    .sector-card:hover {
       border-color: #111111;
       box-shadow: 0 8px 32px rgba(0,0,0,0.08);
       transform: translateY(-3px);
-    }
-    .sector-card.coming-soon {
-      opacity: 0.45;
-      cursor: default;
     }
     .sector-emoji { font-size: 2rem; margin-bottom: 14px; line-height: 1; }
     .sector-name {
@@ -158,15 +154,9 @@
       font-size: 1rem; color: #ccc;
       transition: color 0.18s, transform 0.18s;
     }
-    .sector-card:not(.coming-soon):hover .sector-arrow {
+    .sector-card:hover .sector-arrow {
       color: #111111;
       transform: translate(2px, -2px);
-    }
-    .coming-soon-tag {
-      display: inline-block;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase; color: #aaa;
-      margin-top: 8px;
     }
 
     /* ── CONTACT CTA ── */
@@ -207,12 +197,11 @@
     .site-footer p { font-size: 0.8125rem; color: #aaa; }
 
     /* ── MOBILE ── */
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       h1 { font-size: 2.25rem; }
-      .sectors-grid { grid-template-columns: 1fr 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 420px) {
-      .sectors-grid { grid-template-columns: 1fr; }
       h1 { font-size: 2rem; }
       .wrap { padding: 0 20px; }
     }
@@ -278,27 +267,6 @@
         <div class="sector-name">Hotel &amp; Lidi Balneari</div>
         <div class="sector-desc">Più prenotazioni dirette, meno commissioni OTA</div>
       </a>
-
-      <div class="sector-card coming-soon">
-        <div class="sector-emoji">✂️</div>
-        <div class="sector-name">Barbieri &amp; Parrucchieri</div>
-        <div class="sector-desc">Più clienti, agenda sempre piena</div>
-        <span class="coming-soon-tag">Prossimamente</span>
-      </div>
-
-      <div class="sector-card coming-soon">
-        <div class="sector-emoji">🛍️</div>
-        <div class="sector-name">E-commerce</div>
-        <div class="sector-desc">Più vendite, ROI misurabile</div>
-        <span class="coming-soon-tag">Prossimamente</span>
-      </div>
-
-      <div class="sector-card coming-soon">
-        <div class="sector-emoji">🏋️</div>
-        <div class="sector-name">Palestre &amp; Wellness</div>
-        <div class="sector-desc">Più iscritti, meno abbandoni</div>
-        <span class="coming-soon-tag">Prossimamente</span>
-      </div>
 
     </div>
 
