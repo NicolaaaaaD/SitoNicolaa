@@ -510,10 +510,10 @@
     .manifesto {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 3.5rem;
     }
     @media (min-width: 880px) {
-      .manifesto { grid-template-columns: 1.6fr 1fr; gap: 5rem; align-items: end; }
+      .manifesto { grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
     }
     .manifesto__quote {
       font-family: 'Archivo Black', sans-serif;
@@ -521,16 +521,49 @@
       font-size: clamp(2.2rem, 7vw, 5.5rem);
       line-height: 0.94;
       letter-spacing: -0.04em;
+      margin-bottom: 2rem;
     }
     .manifesto__quote em { font-style: normal; color: var(--green); }
     .manifesto__body {
       font-size: 1.05rem;
       line-height: 1.7;
       color: rgba(255,255,255,0.78);
-      max-width: 460px;
+      max-width: 520px;
     }
     .manifesto__body p + p { margin-top: 1rem; }
     .manifesto__body strong { color: var(--bg); font-weight: 700; }
+    .manifesto__photo-wrap {
+      position: relative;
+    }
+    .manifesto__photo {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      display: block;
+      filter: grayscale(15%);
+    }
+    .manifesto__photo-badge {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: var(--green);
+      color: var(--ink);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.82rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      line-height: 1.3;
+      box-shadow: 0 8px 28px -6px rgba(51,196,148,0.5);
+    }
+    .manifesto__photo-badge strong { display: block; font-size: 1.1rem; letter-spacing: -0.02em; }
+    @media (max-width: 879px) {
+      .manifesto__photo-wrap { order: -1; }
+      .manifesto__photo { max-width: 280px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; }
+      .manifesto__photo-badge { left: 50%; transform: translateX(-50%); bottom: -20px; white-space: nowrap; }
+    }
 
     /* ===== SERVICES CARDS ===== */
     .svc-grid {
@@ -1165,8 +1198,8 @@
           </svg>
         </div>
         <div>
-          <div class="logo__text">Nicola Dimattia</div>
-          <span class="logo__sub">Esperto Google Ads &amp; Meta Ads</span>
+          <div class="logo__text">NicosDigit</div>
+          <span class="logo__sub">Google Ads · Meta Ads · Landing Page</span>
         </div>
       </a>
 
@@ -1268,17 +1301,24 @@
   <div class="container">
     <div class="manifesto">
       <div>
-        <div class="eyebrow">Il mio approccio</div>
+        <div class="eyebrow">Chi sono</div>
         <div class="manifesto__quote">
           Spendo i tuoi soldi<br>
           come se fossero<br>
           <em>i miei.</em>
         </div>
+        <div class="manifesto__body">
+          <p>Sono <strong>Nicola Dimattia</strong> — specialista in Google Ads, Meta Ads e landing page design. Lavoro con un numero limitato di clienti per seguire ogni progetto come merita.</p>
+          <p>Non faccio consulenza generica. Ogni euro investito deve tornare indietro moltiplicato — e lo stabiliamo insieme prima ancora di partire. <strong>Se prendo il tuo progetto, ci metto la faccia.</strong></p>
+          <p>La differenza tra una campagna che brucia budget e una che porta clienti sta nei dettagli: il copy, il targeting, la landing page che riceve il traffico. Faccio tutto io, in modo che l'ecosistema funzioni come un orologio.</p>
+        </div>
       </div>
-      <div class="manifesto__body">
-        <p>Non faccio consulenza generica. Ogni euro investito in ads deve tornare indietro moltiplicato — e lo sappiamo entrambi prima ancora di partire.</p>
-        <p>Lavoro con un numero limitato di clienti per seguire ogni progetto come merita. <strong>Se prendo il tuo progetto, ci metto la faccia.</strong></p>
-        <p>La differenza tra una campagna che brucia budget e una che porta clienti sta nei dettagli: il copy, il targeting, la landing page che riceve il traffico. Faccio tutto io, in modo che l'ecosistema funzioni come un orologio.</p>
+      <div class="manifesto__photo-wrap" data-anim data-delay="2">
+        <img src="/profile.jpg" alt="Nicola Dimattia" class="manifesto__photo" loading="lazy">
+        <div class="manifesto__photo-badge">
+          <strong>Nicola Dimattia</strong>
+          Google Ads · Meta Ads · Landing Page
+        </div>
       </div>
     </div>
   </div>
@@ -1726,7 +1766,7 @@
             </svg>
           </div>
           <div>
-            <div class="logo__text">Nicola Dimattia</div>
+            <div class="logo__text">NicosDigit</div>
             <span class="logo__sub">Google Ads · Meta Ads · Landing Page</span>
           </div>
         </a>
