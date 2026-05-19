@@ -372,13 +372,34 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-22px); }
     }
-    @media (max-width: 880px) {
-      .hero__bg { right: -25vw; top: 38vh; width: 110vw; opacity: 0.6; }
+    @media (max-width: 959px) {
+      .hero__bg { display: none; }
     }
     .hero__inner {
       position: relative;
       z-index: 2;
-      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+    @media (min-width: 960px) {
+      .hero__inner { grid-template-columns: 1fr 340px; gap: 5rem; }
+    }
+    .hero__photo {
+      display: none;
+      position: relative;
+    }
+    @media (min-width: 960px) {
+      .hero__photo { display: flex; justify-content: flex-end; align-items: flex-end; }
+    }
+    .hero__photo img {
+      width: 320px;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
     }
     .hero__pill {
       display: inline-flex;
@@ -510,10 +531,10 @@
     .manifesto {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3.5rem;
+      gap: 3rem;
     }
     @media (min-width: 880px) {
-      .manifesto { grid-template-columns: 1fr 260px; gap: 5rem; align-items: center; }
+      .manifesto { grid-template-columns: 1.6fr 1fr; gap: 5rem; align-items: end; }
     }
     .manifesto__quote {
       font-family: 'Archivo Black', sans-serif;
@@ -1215,6 +1236,7 @@
   </div>
   <div class="container">
     <div class="hero__inner">
+      <div>
       <div class="hero__pill">Nicola Dimattia · Performance &amp; Design</div>
 
       <h1 class="hero__h1">
@@ -1254,6 +1276,11 @@
           <div class="lab">Euro sprecati in €0</div>
         </div>
       </div>
+      </div>
+
+      <div class="hero__photo">
+        <img src="/Design/profile.png" alt="Nicola Dimattia">
+      </div>
     </div>
   </div>
 </section>
@@ -1285,20 +1312,17 @@
   <div class="container">
     <div class="manifesto">
       <div>
-        <div class="eyebrow">Chi sono</div>
+        <div class="eyebrow">Il mio approccio</div>
         <div class="manifesto__quote">
           Spendo i tuoi soldi<br>
           come se fossero<br>
           <em>i miei.</em>
         </div>
-        <div class="manifesto__body">
-          <p>Sono <strong>Nicola Dimattia</strong> — specialista in Google Ads, Meta Ads e landing page design. Lavoro con un numero limitato di clienti per seguire ogni progetto come merita.</p>
-          <p>Non faccio consulenza generica. Ogni euro investito deve tornare indietro moltiplicato — e lo stabiliamo insieme prima ancora di partire. <strong>Se prendo il tuo progetto, ci metto la faccia.</strong></p>
-          <p>La differenza tra una campagna che brucia budget e una che porta clienti sta nei dettagli: il copy, il targeting, la landing page che riceve il traffico. Faccio tutto io, in modo che l'ecosistema funzioni come un orologio.</p>
-        </div>
       </div>
-      <div class="manifesto__photo-wrap" data-anim data-delay="2">
-        <img src="/Design/profile.png" alt="Nicola Dimattia" class="manifesto__photo" loading="lazy">
+      <div class="manifesto__body">
+        <p>Non faccio consulenza generica. Ogni euro investito in ads deve tornare indietro moltiplicato — e lo sappiamo entrambi prima ancora di partire.</p>
+        <p>Lavoro con un numero limitato di clienti per seguire ogni progetto come merita. <strong>Se prendo il tuo progetto, ci metto la faccia.</strong></p>
+        <p>La differenza tra una campagna che brucia budget e una che porta clienti sta nei dettagli: il copy, il targeting, la landing page che riceve il traffico. Faccio tutto io, in modo che l'ecosistema funzioni come un orologio.</p>
       </div>
     </div>
   </div>
