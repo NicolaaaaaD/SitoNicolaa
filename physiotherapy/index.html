@@ -246,6 +246,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -264,10 +290,10 @@
       <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp us</a>
     </div>
     <div class="hero__strip">
-      <div class="hero__strip-item"><div class="num">+<em>230</em>%</div><div class="lab">New patients on average</div></div>
-      <div class="hero__strip-item"><div class="num"><em>4.9</em>×</div><div class="lab">Average ROI on campaigns</div></div>
-      <div class="hero__strip-item"><div class="num"><em>€0</em></div><div class="lab">Budget wasted</div></div>
-    </div>
+        <div class="hero__strip-item"><div class="num">+74<em>%</em></div><div class="lab">New patients in 90 days</div></div>
+        <div class="hero__strip-item"><div class="num">3.4<em>×</em></div><div class="lab">Average ROI on campaigns</div></div>
+        <div class="hero__strip-item"><div class="num">7.8<em>%</em></div><div class="lab">Avg CTR — sector record</div></div>
+      </div>
   </div></div>
 </section>
 <div class="marquee" aria-hidden="true"><div class="marquee__track">
@@ -278,10 +304,10 @@
   <div class="eyebrow">Real numbers</div>
   <h2 class="h2" style="margin-bottom:3rem;">Results that<br>speak for themselves.</h2>
   <div class="bigstats">
-    <div class="bigstats__cell"><div class="bigstats__num">+<em>230</em>%</div><div class="bigstats__lab">New patients across partner practices</div></div>
-    <div class="bigstats__cell"><div class="bigstats__num"><em>4.9</em>×</div><div class="bigstats__lab">Average ROI on managed campaigns</div></div>
-    <div class="bigstats__cell"><div class="bigstats__num"><em>€0</em></div><div class="bigstats__lab">Budget wasted on wrong targeting</div></div>
-  </div>
+      <div class="bigstats__cell"><div class="bigstats__num">+74<em>%</em></div><div class="bigstats__lab">New patients across partner practices</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">3.4<em>×</em></div><div class="bigstats__lab">Average ROI on campaigns</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">7.8<em>%</em></div><div class="bigstats__lab">Avg CTR — sector record</div></div>
+    </div>
 </div></section>
 <section class="section section--dark" data-anim><div class="container">
   <div class="manifesto">
@@ -296,13 +322,31 @@
   <div class="eyebrow" data-anim>Case studies</div>
   <h2 class="h2" data-anim data-delay="1">Real results from<br>real practices.</h2>
   <div class="carousel-wrap" data-anim data-delay="2"><div class="carousel-track" id="carousel-track">
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Studio Fisio Rossi</div><div class="carousel-card__loc">Milano · Brera</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+<em>195</em>%</div><p class="carousel-card__desc">new patients in 45 days</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 45 days from launch</div></div></div>
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Osteopata Bianchi</div><div class="carousel-card__loc">Roma · Prati</div></div><div class="carousel-card__bottom"><div class="carousel-card__num"><em>5.3</em>×</div><p class="carousel-card__desc">ROI — every euro invested generated over five</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 months from start</div></div></div>
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads local</div><div class="carousel-card__name">Fisioterapia Ferrari</div><div class="carousel-card__loc">Napoli · Chiaia</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€<em>7,800</em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 3 months</div></div></div>
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Studio Osteopatico Marino</div><div class="carousel-card__loc">Torino · Crocetta</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+<em>170</em>%</div><p class="carousel-card__desc">treatment requests in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div></div>
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Fisio &amp; Sport Conti</div><div class="carousel-card__loc">Bologna · Centro</div></div><div class="carousel-card__bottom"><div class="carousel-card__num"><em>4.7</em>×</div><p class="carousel-card__desc">ROI on campaigns</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days from start</div></div></div>
-    <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Centro Fisioterapia Verdi</div><div class="carousel-card__loc">Firenze · Oltrarno</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€<em>6,100</em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 8 weeks</div></div></div>
-  </div></div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dr. Cian Murphy</div><div class="carousel-card__loc">PhysioCity · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+74<em>%</em></div><p class="carousel-card__desc">new patients in 90 days</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 90 days from launch</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dr. Priya Patel</div><div class="carousel-card__loc">Central Physio · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">3.4<em>×</em></div><p class="carousel-card__desc">ROI — every euro generated over three</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads local</div><div class="carousel-card__name">Dr. Khalid Hassan</div><div class="carousel-card__loc">Elite Physio · Dubai</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-28<em>%</em></div><p class="carousel-card__desc">cost per patient</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 3 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Dr. Anna van Berg</div><div class="carousel-card__loc">SportPhysio · Amsterdam</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€2.900<em></em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dr. Siobhan Kelly</div><div class="carousel-card__loc">Dublin Physio · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">7.8<em>%</em></div><p class="carousel-card__desc">avg CTR — triple the sector average</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dr. James Wilson</div><div class="carousel-card__loc">City Physio · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€2.200<em></em></div><p class="carousel-card__desc">additional revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 8 weeks</div></div>
+        </div>
+      </div></div>
 </div></section>
 
 <!-- ADS SHOWCASE -->
@@ -425,7 +469,7 @@
 <footer class="footer"><div class="container"><div class="footer__inner">
   <a class="logo footer__logo" href="/"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#00796b" stroke="#00796b" stroke-width="4" stroke-linejoin="round"/></svg><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Ads for physiotherapy practices — measurable results.</span></div></a>
   <p class="footer__copy">© 2025 Nicola Dimattia</p>
-  <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/fisioterapia">🇮🇹 IT</a></nav>
+  <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/fisioterapia">🇮🇹 IT</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></nav>
 </div></div></footer>
 <a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="WhatsApp" data-gtm="whatsapp-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></a>
 <script>

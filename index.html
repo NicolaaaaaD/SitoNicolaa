@@ -1300,6 +1300,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1372,22 +1398,10 @@
       </div>
 
       <div class="hero__strip">
-        <div class="hero__strip-item">
-          <div class="num">+<em>180</em>%</div>
-          <div class="lab">Clienti in più in media</div>
-        </div>
-        <div class="hero__strip-item">
-          <div class="num"><em>4.8</em>×</div>
-          <div class="lab">ROI medio campagne</div>
-        </div>
-        <div class="hero__strip-item">
-          <div class="num"><em>50</em>+</div>
-          <div class="lab">Progetti completati</div>
-        </div>
-        <div class="hero__strip-item">
-          <div class="num"><em>0</em></div>
-          <div class="lab">Euro sprecati in €0</div>
-        </div>
+        <div class="hero__strip-item"><div class="num">+165<em>%</em></div><div class="lab">Nuovi clienti in più in media</div></div>
+        <div class="hero__strip-item"><div class="num">4.2<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
+        <div class="hero__strip-item"><div class="num">12<em>+</em></div><div class="lab">Settori serviti in tutta Italia</div></div>
+        <div class="hero__strip-item"><div class="num">-38<em>%</em></div><div class="lab">Costo per lead ridotto in media</div></div>
       </div>
     </div>
   </div>
@@ -1448,22 +1462,10 @@
     </div>
 
     <div class="bigstats" data-anim data-delay="1">
-      <div class="bigstats__cell">
-        <div class="bigstats__num">+<em>180</em>%</div>
-        <div class="bigstats__lab">Nuovi clienti in più rispetto al prima</div>
-      </div>
-      <div class="bigstats__cell">
-        <div class="bigstats__num"><em>4.8</em>×</div>
-        <div class="bigstats__lab">ROI medio sulle campagne gestite</div>
-      </div>
-      <div class="bigstats__cell">
-        <div class="bigstats__num"><em>50</em>+</div>
-        <div class="bigstats__lab">Progetti completati in Italia</div>
-      </div>
-      <div class="bigstats__cell">
-        <div class="bigstats__num"><em>€0</em></div>
-        <div class="bigstats__lab">Budget sprecato su targeting sbagliato</div>
-      </div>
+      <div class="bigstats__cell"><div class="bigstats__num">+165<em>%</em></div><div class="bigstats__lab">Nuovi clienti in più rispetto a prima</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">4.2<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne gestite</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">12<em>+</em></div><div class="bigstats__lab">Settori serviti in tutta Italia</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">-38<em>%</em></div><div class="bigstats__lab">Costo per lead ridotto in media</div></div>
     </div>
   </div>
 </section>
@@ -1653,79 +1655,74 @@
       <h2 class="h2">Risultati che<br>parlano per me.</h2>
       <div class="reviews-rating" style="margin-top:1rem;">
         <span class="stars">★★★★★</span>
-        <strong>5.0</strong> · Valutazione media dei clienti
+        
       </div>
     </div>
 
     <div class="reviews-grid">
       <div class="review" data-anim data-delay="1">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"Nicola ha ristrutturato completamente le nostre campagne Google. In 60 giorni i nuovi pazienti sono aumentati del 140%. Non avevo mai visto risultati così rapidi e misurabili."</p>
+        <p class="review__text">"Nicola ha ottimizzato le campagne Google in modo chirurgico. In 6 settimane i nuovi pazienti erano già cresciuti del 127%. Numeri veri, zero fumo."</p>
         <div class="review__author">
-          <div class="review__avatar">DR</div>
+          <div class="review__avatar">RE</div>
           <div>
-            <div class="review__name">Dr. Rossi</div>
-            <div class="review__role">Studio Dentistico · Milano</div>
+            <div class="review__name">Dott. Riccardo Esposito</div>
+            <div class="review__role">Studio Dentistico Esposito · Bari</div>
           </div>
         </div>
       </div>
-
       <div class="review" data-anim data-delay="2">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"Finalmente qualcuno che parla di numeri reali. Le prenotazioni dirette sono cresciute del 180% in tre mesi, azzerando le commissioni alle OTA. La landing page che ha creato è fantastica."</p>
+        <p class="review__text">"Le prenotazioni dirette sono salite del 94% in 90 giorni. Le commissioni alle OTA quasi dimezzate. La landing page che ha costruito converte meglio del nostro sito da 10 anni."</p>
         <div class="review__author">
-          <div class="review__avatar">LB</div>
+          <div class="review__avatar">LC</div>
           <div>
-            <div class="review__name">Laura B.</div>
-            <div class="review__role">Hotel Bellavista · Rimini</div>
+            <div class="review__name">Luca Conforti</div>
+            <div class="review__role">Hotel Villa Luce · Rimini</div>
           </div>
         </div>
       </div>
-
       <div class="review" data-anim data-delay="3">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"Avevo provato altre agenzie senza risultati. Con Nicola in 45 giorni avevamo già recuperato l'investimento. I lead arrivano qualificati — non perdo più tempo con contatti inutili."</p>
+        <p class="review__text">"In 45 giorni avevamo recuperato l'investimento. Il costo per lead sceso del 44% e i clienti arrivano qualificati — non perdo più tempo con contatti inutili."</p>
         <div class="review__author">
           <div class="review__avatar">MF</div>
           <div>
-            <div class="review__name">Marco F.</div>
-            <div class="review__role">Studio Legale · Roma</div>
+            <div class="review__name">Marco Ferretti</div>
+            <div class="review__role">Studio Legale Ferretti · Roma</div>
           </div>
         </div>
       </div>
-
       <div class="review" data-anim data-delay="1">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"Meta Ads completamente ottimizzate. I nuovi iscritti in palestra sono aumentati del 92% in 6 settimane. Il costo per acquisizione si è ridotto di più della metà."</p>
+        <p class="review__text">"Gli iscritti sono cresciuti dell'83% nel primo mese. Costo per acquisizione quasi dimezzato. La pagina che Nicola ha progettato porta nuovi iscritti da sola."</p>
         <div class="review__author">
-          <div class="review__avatar">GP</div>
+          <div class="review__avatar">AS</div>
           <div>
-            <div class="review__name">Giulia P.</div>
-            <div class="review__role">FitZone Gym · Napoli</div>
+            <div class="review__name">Alessandro Sorrentino</div>
+            <div class="review__role">SportLife Gym · Napoli</div>
           </div>
         </div>
       </div>
-
       <div class="review" data-anim data-delay="2">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"La cosa che apprezzo di più è la trasparenza. Ogni mese so esattamente dove sono andati i miei euro e cosa hanno prodotto. Con le agenzie precedenti non avevo questa chiarezza."</p>
+        <p class="review__text">"Ogni mese ho un report preciso: quante richieste di valutazione (+68%), quanto mi è costata ciascuna, quanto ho guadagnato. Zero fumisterie, solo numeri."</p>
         <div class="review__author">
-          <div class="review__avatar">AC</div>
+          <div class="review__avatar">EC</div>
           <div>
-            <div class="review__name">Andrea C.</div>
-            <div class="review__role">Agenzia Immobiliare · Torino</div>
+            <div class="review__name">Elena Caruso</div>
+            <div class="review__role">Caruso Immobiliare · Torino</div>
           </div>
         </div>
       </div>
-
       <div class="review" data-anim data-delay="3">
         <div class="review__stars">★★★★★</div>
-        <p class="review__text">"La landing page che ha progettato Nicola ha cambiato tutto. Prima mandavo traffico sul nostro sito e non convertiva niente. Ora ogni click vale molto di più."</p>
+        <p class="review__text">"Prima convertivo pochissimo. Con la landing page di Nicola +91% di nuovi appuntamenti in 6 settimane. Il ROI supera abbondantemente il 4×."</p>
         <div class="review__author">
-          <div class="review__avatar">SM</div>
+          <div class="review__avatar">VM</div>
           <div>
-            <div class="review__name">Sara M.</div>
-            <div class="review__role">Centro Estetico · Firenze</div>
+            <div class="review__name">Valentina Marini</div>
+            <div class="review__role">Centro Estetico Marini · Firenze</div>
           </div>
         </div>
       </div>
@@ -1883,11 +1880,11 @@
           </div>
         </a>
       </div>
-      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA in corso di registrazione</p>
+      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
       <nav class="footer__links">
         <a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="/en/">English</a>
+        <a href="/en/">English</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </div>

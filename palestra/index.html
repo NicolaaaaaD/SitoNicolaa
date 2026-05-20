@@ -224,6 +224,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -254,9 +280,9 @@
         <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
       </div>
       <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">+240<em>%</em></div><div class="lab">Iscritti nei primi 90 giorni</div></div>
-        <div class="hero__strip-item"><div class="num">4.6<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
-        <div class="hero__strip-item"><div class="num">€0</div><div class="lab">Budget sprecato con la nostra ottimizzazione</div></div>
+        <div class="hero__strip-item"><div class="num">+83<em>%</em></div><div class="lab">Nuove iscrizioni nel primo mese</div></div>
+        <div class="hero__strip-item"><div class="num">3.9<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
+        <div class="hero__strip-item"><div class="num">5.9<em>%</em></div><div class="lab">CTR medio — record nel settore</div></div>
       </div>
     </div>
   </div>
@@ -288,9 +314,9 @@
     <div class="eyebrow">Numeri reali</div>
     <h2 class="h2" style="margin-bottom:3rem;">Risultati che parlano<br>da soli.</h2>
     <div class="bigstats">
-      <div class="bigstats__cell"><div class="bigstats__num">+240<em>%</em></div><div class="bigstats__lab">Iscritti nelle nostre palestre partner</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">4.6<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">€0</div><div class="bigstats__lab">Budget sprecato con la nostra ottimizzazione</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">+83<em>%</em></div><div class="bigstats__lab">Nuove iscrizioni nelle nostre palestre partner</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">3.9<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">5.9<em>%</em></div><div class="bigstats__lab">CTR medio — record nel settore</div></div>
     </div>
   </div>
 </section>
@@ -317,28 +343,28 @@
     <div class="carousel-wrap" data-anim data-delay="2">
       <div class="carousel-track" id="carousel-track">
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Palestra FitZone</div><div class="carousel-card__loc">Milano · Brera</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+200<em>%</em></div><p class="carousel-card__desc">nuovi iscritti nel primo mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 45 giorni dal lancio</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Alessandro Sorrentino</div><div class="carousel-card__loc">SportLife Gym · Napoli</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+83<em>%</em></div><p class="carousel-card__desc">nuove iscrizioni nel primo mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Primo mese</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google + Meta Ads</div><div class="carousel-card__name">CrossFit Roma</div><div class="carousel-card__loc">Roma · Prati</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">4.8<em>×</em></div><p class="carousel-card__desc">ROI — ogni euro investito ne ha generati quasi cinque</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi dalla partenza</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Valentina Greco</div><div class="carousel-card__loc">FitZone · Roma</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">3.9<em>×</em></div><p class="carousel-card__desc">ROI — ogni euro investito ne ha generati quasi quattro</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Gym Power</div><div class="carousel-card__loc">Napoli · Chiaia</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+€8.000</div><p class="carousel-card__desc">fatturato aggiuntivo al mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Marco Ferrara</div><div class="carousel-card__loc">Palestra Power · Milano</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-31<em>%</em></div><p class="carousel-card__desc">costo per iscrizione rispetto a prima</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Personal Trainer Bianchi</div><div class="carousel-card__loc">Torino · Crocetta</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+180<em>%</em></div><p class="carousel-card__desc">nuovi clienti in 6 settimane</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane dal lancio</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Giulia Conti</div><div class="carousel-card__loc">CrossFit Box · Torino</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€4.100<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo mensile</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Palestra Energia</div><div class="carousel-card__loc">Bologna · Centro</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">4.5<em>×</em></div><p class="carousel-card__desc">ROI — costo per iscritto ridotto del 38%</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni dalla partenza</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Davide Russo</div><div class="carousel-card__loc">Gym Pro · Bologna</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">5.9<em>%</em></div><p class="carousel-card__desc">CTR medio — il doppio della media settore</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">FitLife Gym</div><div class="carousel-card__loc">Firenze · Oltrarno</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+€6.500</div><p class="carousel-card__desc">fatturato aggiuntivo al mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Sara Bianchi</div><div class="carousel-card__loc">Wellness Studio · Firenze</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€3.200<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div>
         </div>
       </div>
     </div>
@@ -479,7 +505,7 @@
       <nav class="footer__links">
         <a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="/gym">🇬🇧 EN</a>
+        <a href="/gym">🇬🇧 EN</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </div>

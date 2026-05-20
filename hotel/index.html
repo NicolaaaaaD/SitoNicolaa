@@ -283,6 +283,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -311,9 +337,9 @@
         <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
       </div>
       <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">+280<em>%</em></div><div class="lab">Prenotazioni dirette nelle strutture partner</div></div>
-        <div class="hero__strip-item"><div class="num">5.1<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
-        <div class="hero__strip-item"><div class="num">0<em>%</em></div><div class="lab">Commissioni OTA sulle prenotazioni dirette</div></div>
+        <div class="hero__strip-item"><div class="num">+94<em>%</em></div><div class="lab">Prenotazioni dirette in 90 giorni</div></div>
+        <div class="hero__strip-item"><div class="num">4.7<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
+        <div class="hero__strip-item"><div class="num">-31<em>%</em></div><div class="lab">Commissioni OTA ridotte</div></div>
       </div>
     </div>
   </div>
@@ -345,9 +371,9 @@
     <div class="eyebrow">Numeri reali</div>
     <h2 class="h2" style="margin-bottom:3rem;">Batti le OTA con<br>le campagne giuste.</h2>
     <div class="bigstats">
-      <div class="bigstats__cell"><div class="bigstats__num">+280<em>%</em></div><div class="bigstats__lab">Prenotazioni dirette nelle strutture partner</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">5.1<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">0<em>%</em></div><div class="bigstats__lab">Commissioni OTA sulle prenotazioni dirette</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">+94<em>%</em></div><div class="bigstats__lab">Prenotazioni dirette nelle strutture partner</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">4.7<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">-31<em>%</em></div><div class="bigstats__lab">Commissioni OTA ridotte</div></div>
     </div>
   </div>
 </section>
@@ -373,12 +399,30 @@
     <h2 class="h2" data-anim data-delay="1">Cosa ottengono gli hotel e i lidi<br>che lavorano con noi.</h2>
     <div class="carousel-wrap" data-anim data-delay="2">
       <div class="carousel-track" id="carousel-track">
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Hotel Bellavista</div><div class="carousel-card__loc">Amalfi · Costa Amalfitana</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+145<em>%</em></div><p class="carousel-card__desc">prenotazioni dirette nel primo mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 45 giorni dal lancio</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Lido La Perla</div><div class="carousel-card__loc">Rimini · Lungomare</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">5.8<em>×</em></div><p class="carousel-card__desc">ROI — ogni euro investito ne ha generati quasi sei</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi dalla partenza</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Hotel Mediterraneo</div><div class="carousel-card__loc">Taormina · Centro</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€8.200</div><p class="carousel-card__desc">fatturato aggiuntivo al mese con prenotazioni dirette</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Stabilimento Balneare Azzurro</div><div class="carousel-card__loc">Forte dei Marmi</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+167<em>%</em></div><p class="carousel-card__desc">richieste ombrelloni in 6 settimane</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane dal lancio</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Hotel Villa Rosa</div><div class="carousel-card__loc">Positano · Centro</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">4.9<em>×</em></div><p class="carousel-card__desc">ROI — prenotazioni dirette +90%</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni dalla partenza</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Lido Tramonto</div><div class="carousel-card__loc">Gallipoli · Baia Verde</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€6.400</div><p class="carousel-card__desc">fatturato aggiuntivo al mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div></div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Stefano Conforti</div><div class="carousel-card__loc">Hotel Villa Luce · Rimini</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+94<em>%</em></div><p class="carousel-card__desc">prenotazioni dirette in 90 giorni</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 90 giorni dal lancio</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Giovanna Esposito</div><div class="carousel-card__loc">Hotel La Palma · Sorrento</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">4.7<em>×</em></div><p class="carousel-card__desc">ROI — commissioni OTA quasi azzerate</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Roberto Marini</div><div class="carousel-card__loc">Lido Tramonto · Gallipoli</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-31<em>%</em></div><p class="carousel-card__desc">commissioni OTA rispetto a prima</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Lucia Ferrari</div><div class="carousel-card__loc">Hotel Belvedere · Amalfi</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€6.400<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo mensile</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Andrea Greco</div><div class="carousel-card__loc">B&B Panorama · Taormina</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">5.2<em>%</em></div><p class="carousel-card__desc">CTR medio — il doppio della media settore</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Elena Costa</div><div class="carousel-card__loc">Hotel La Baia · Positano</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€5.100<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -513,7 +557,7 @@
     <div class="footer__inner">
       <a class="logo footer__logo" href="/"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#f57f17" stroke="#f57f17" stroke-width="4" stroke-linejoin="round"/></svg><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Ads per hotel e lidi — risultati misurabili.</span></div></a>
       <p class="footer__copy">© 2025 Nicola Dimattia</p>
-      <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/hotel-en">🇬🇧 EN</a></nav>
+      <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/hotel-en">🇬🇧 EN</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></nav>
     </div>
   </div>
 </footer>

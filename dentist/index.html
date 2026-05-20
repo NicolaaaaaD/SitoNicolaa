@@ -308,6 +308,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -341,9 +367,9 @@
         <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
       </div>
       <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">+340<em>%</em></div><div class="lab">Pazienti medi nei primi 90 giorni</div></div>
-        <div class="hero__strip-item"><div class="num">4.8<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
-        <div class="hero__strip-item"><div class="num">€0</div><div class="lab">Budget sprecato con la nostra ottimizzazione</div></div>
+        <div class="hero__strip-item"><div class="num">+127<em>%</em></div><div class="lab">Nuovi pazienti in 6 settimane</div></div>
+        <div class="hero__strip-item"><div class="num">3.8<em>×</em></div><div class="lab">ROI medio sulle campagne</div></div>
+        <div class="hero__strip-item"><div class="num">6.8<em>%</em></div><div class="lab">CTR medio — record di settore</div></div>
       </div>
     </div>
   </div>
@@ -375,9 +401,9 @@
     <div class="eyebrow">Numeri reali</div>
     <h2 class="h2" style="margin-bottom:3rem;">Risultati che parlano<br>da soli.</h2>
     <div class="bigstats">
-      <div class="bigstats__cell"><div class="bigstats__num">+340<em>%</em></div><div class="bigstats__lab">Pazienti medi nei nostri studi partner</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">4.8<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">€0</div><div class="bigstats__lab">Budget sprecato con la nostra ottimizzazione</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">+127<em>%</em></div><div class="bigstats__lab">Nuovi pazienti nei nostri studi partner</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">3.8<em>×</em></div><div class="bigstats__lab">ROI medio sulle campagne</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">6.8<em>%</em></div><div class="bigstats__lab">CTR medio — record di settore</div></div>
     </div>
   </div>
 </section>
@@ -404,28 +430,28 @@
     <div class="carousel-wrap" data-anim data-delay="2">
       <div class="carousel-track" id="carousel-track">
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Studio Dentistico Rossi</div><div class="carousel-card__loc">Milano · Brera</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+120<em>%</em></div><p class="carousel-card__desc">nuovi pazienti nel primo mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 45 giorni dal lancio</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dott.ssa Marta Ricci</div><div class="carousel-card__loc">Studio Dentistico · Bari</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+127<em>%</em></div><p class="carousel-card__desc">nuovi pazienti in 6 settimane</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane dal lancio</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Clinica Dental Care</div><div class="carousel-card__loc">Roma · Prati</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">5.2<em>×</em></div><p class="carousel-card__desc">ROI — ogni euro investito ne ha generati oltre cinque</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi dalla partenza</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dott. Luca Ferrara</div><div class="carousel-card__loc">Clinica Dentale · Catania</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">3.8<em>×</em></div><p class="carousel-card__desc">ROI — ogni euro investito ne ha reso quasi quattro</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 mesi dalla partenza</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Studio Dr. Bianchi</div><div class="carousel-card__loc">Napoli · Chiaia</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+€5.800</div><p class="carousel-card__desc">fatturato aggiuntivo al mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads locale</div><div class="carousel-card__name">Dott. Andrea Russo</div><div class="carousel-card__loc">Studio Dentistico · Milano</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-38<em>%</em></div><p class="carousel-card__desc">costo per paziente acquisito</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 3 mesi</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Dental Studio Verdi</div><div class="carousel-card__loc">Torino · Crocetta</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+89<em>%</em></div><p class="carousel-card__desc">richieste implantologia in 6 settimane</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane dal lancio</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Dott.ssa Elena Conti</div><div class="carousel-card__loc">Studio Odontoiatrico · Venezia</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€5.200<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo mensile</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 settimane dal lancio</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Centro Odontoiatrico Marino</div><div class="carousel-card__loc">Bologna · Centro</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">4.7<em>×</em></div><p class="carousel-card__desc">ROI — costo per paziente ridotto del 45%</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni dalla partenza</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dott. Paolo Marini</div><div class="carousel-card__loc">Clinica del Sorriso · Roma</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">6.8<em>%</em></div><p class="carousel-card__desc">CTR medio — il triplo della media di settore</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 giorni dalla partenza</div></div>
         </div>
         <div class="carousel-card">
-          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Studio Dentistico Ferrari</div><div class="carousel-card__loc">Firenze · Oltrarno</div></div>
-          <div class="carousel-card__bottom"><div class="carousel-card__num">+€4.200</div><p class="carousel-card__desc">fatturato aggiuntivo al mese</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div>
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dott.ssa Sofia Gallo</div><div class="carousel-card__loc">Studio Dentale · Torino</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€4.800<em></em></div><p class="carousel-card__desc">fatturato aggiuntivo</p><div class="carousel-card__time"><i class="ti ti-clock"></i> Dopo 8 settimane</div></div>
         </div>
       </div>
     </div>
@@ -567,7 +593,7 @@
       <nav class="footer__links">
         <a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="/dentist-en">🇬🇧 EN</a>
+        <a href="/dentist-en">🇬🇧 EN</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </div>

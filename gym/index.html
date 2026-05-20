@@ -333,6 +333,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 
@@ -376,16 +402,16 @@
     </div>
     <div class="hero-stats" data-anim data-delay="4">
       <div class="stat-item">
-        <div class="stat-num"><span>+</span>240<span>%</span></div>
-        <div class="stat-label">Average member increase</div>
+        <div class="stat-num"><span>+</span>83<span>%</span></div>
+        <div class="stat-label">New memberships in first month</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">4.6<span>×</span></div>
+        <div class="stat-num">3.9<span>×</span></div>
         <div class="stat-label">Average ROI</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span>€</span>0</div>
-        <div class="stat-label">Wasted budget</div>
+        <div class="stat-num">5.9<span>%</span></div>
+        <div class="stat-label">Avg CTR — sector record</div>
       </div>
     </div>
   </div>
@@ -453,39 +479,39 @@
     <div class="carousel-track" id="carousel-track">
       <div class="carousel-card">
         <div class="card-badge"><i class="ti ti-trending-up"></i> Members</div>
-        <div class="card-metric"><span>+</span>200<span>%</span></div>
-        <div class="card-name">FitZone Gym Milan</div>
-        <div class="card-location">Milan — Google Ads</div>
+        <div class="card-metric"><span>+</span>83<span>%</span></div>
+        <div class="card-name">Thomas Kelly</div>
+        <div class="card-location">FitLife Gym · Dublin</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-chart-bar"></i> ROI</div>
-        <div class="card-metric">4.8<span>×</span></div>
-        <div class="card-name">CrossFit Rome</div>
-        <div class="card-location">Rome — Meta Ads</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> ROI</div>
+        <div class="card-metric">3.9<span>×</span></div>
+        <div class="card-name">Emma Clarke</div>
+        <div class="card-location">CrossFit Box · London</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-coin"></i> Revenue</div>
-        <div class="card-metric"><span>+€</span>8k</div>
-        <div class="card-name">Gym Power Naples</div>
-        <div class="card-location">Naples — Google + Meta</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> Cost</div>
+        <div class="card-metric">-31<span>%</span></div>
+        <div class="card-name">Rania Al-Hassan</div>
+        <div class="card-location">Fitness Studio · Dubai</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-trending-up"></i> Members</div>
-        <div class="card-metric"><span>+</span>180<span>%</span></div>
-        <div class="card-name">Bianchi Personal Trainer Turin</div>
-        <div class="card-location">Turin — Google Ads</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> Revenue</div>
+        <div class="card-metric"><span>+€</span>4.1k</div>
+        <div class="card-name">Lars van Dam</div>
+        <div class="card-location">SportPlus · Amsterdam</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-chart-bar"></i> ROI</div>
-        <div class="card-metric">4.5<span>×</span></div>
-        <div class="card-name">Energia Gym Bologna</div>
-        <div class="card-location">Bologna — Meta Ads</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> CTR</div>
+        <div class="card-metric">5.9<span>%</span></div>
+        <div class="card-name">Sean Murphy</div>
+        <div class="card-location">Iron Gym · Dublin</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-coin"></i> Revenue</div>
-        <div class="card-metric"><span>+€</span>6.5k</div>
-        <div class="card-name">FitLife Gym Florence</div>
-        <div class="card-location">Florence — Google + Meta</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> Revenue</div>
+        <div class="card-metric"><span>+£</span>3.2k</div>
+        <div class="card-name">Charlotte Smith</div>
+        <div class="card-location">Pure Gym · London</div>
       </div>
     </div>
   </div>
@@ -640,7 +666,8 @@
   <div class="footer-inner">
     <div class="footer-logo">Adul<span>ia</span></div>
     <p>Performance marketing that generates real results.</p>
-    <p><a href="/privacy">Privacy Policy</a> · <a href="/cookie">Cookie Policy</a> · P.IVA 00000000000</p>
+    <p><a href="/privacy">Privacy Policy</a> · <a href="/cookie">Cookie Policy</a> · P.IVA 09099240724</p>
+    <p><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></p>
     <p>© 2025 Nicola Dimattia. All rights reserved.</p>
   </div>
 </footer>

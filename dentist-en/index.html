@@ -220,6 +220,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -244,10 +270,10 @@
       <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp us</a>
     </div>
     <div class="hero__strip">
-      <div class="hero__strip-item"><div class="num">+340<em>%</em></div><div class="lab">Patients in the first 90 days</div></div>
-      <div class="hero__strip-item"><div class="num">4.8<em>×</em></div><div class="lab">Average ROI on campaigns</div></div>
-      <div class="hero__strip-item"><div class="num">€0</div><div class="lab">Wasted budget with our optimisation</div></div>
-    </div>
+        <div class="hero__strip-item"><div class="num">+127<em>%</em></div><div class="lab">New patients in 6 weeks</div></div>
+        <div class="hero__strip-item"><div class="num">3.8<em>×</em></div><div class="lab">Average ROI on campaigns</div></div>
+        <div class="hero__strip-item"><div class="num">6.8<em>%</em></div><div class="lab">Avg CTR — sector record</div></div>
+      </div>
   </div></div>
 </section>
 <div class="marquee" aria-hidden="true">
@@ -261,9 +287,9 @@
     <div class="eyebrow">Real numbers</div>
     <h2 class="h2" style="margin-bottom:3rem;">Results that speak<br>for themselves.</h2>
     <div class="bigstats">
-      <div class="bigstats__cell"><div class="bigstats__num">+340<em>%</em></div><div class="bigstats__lab">Patients in our partner practices</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">4.8<em>×</em></div><div class="bigstats__lab">Average ROI on campaigns</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num">€0</div><div class="bigstats__lab">Wasted budget with our optimisation</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">+127<em>%</em></div><div class="bigstats__lab">New patients in our partner practices</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">3.8<em>×</em></div><div class="bigstats__lab">Average ROI on campaigns</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">6.8<em>%</em></div><div class="bigstats__lab">Avg CTR — sector record</div></div>
     </div>
   </div>
 </section>
@@ -287,12 +313,30 @@
     <h2 class="h2" data-anim data-delay="1">What dental practices get<br>when they work with us.</h2>
     <div class="carousel-wrap" data-anim data-delay="2">
       <div class="carousel-track" id="carousel-track">
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Studio Dentistico Rossi</div><div class="carousel-card__loc">Milan · Brera</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+120<em>%</em></div><p class="carousel-card__desc">new patients in the first month</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 45 days from launch</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Clinica Dental Care</div><div class="carousel-card__loc">Rome · Prati</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">5.2<em>×</em></div><p class="carousel-card__desc">ROI — every euro invested returned over five</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 months from start</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Local Google Ads</div><div class="carousel-card__name">Studio Dr. Bianchi</div><div class="carousel-card__loc">Naples · Chiaia</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€5.800</div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 3 months</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Dental Studio Verdi</div><div class="carousel-card__loc">Turin · Crocetta</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+89<em>%</em></div><p class="carousel-card__desc">implant enquiries in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Centro Odontoiatrico Marino</div><div class="carousel-card__loc">Bologna · Centre</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">4.7<em>×</em></div><p class="carousel-card__desc">ROI — cost per patient down 45%</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days from start</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Studio Dentistico Ferrari</div><div class="carousel-card__loc">Florence · Oltrarno</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€4.200</div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 8 weeks</div></div></div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dr. Emma Walsh</div><div class="carousel-card__loc">Dental Clinic · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+127<em>%</em></div><p class="carousel-card__desc">new patients in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dr. James Patel</div><div class="carousel-card__loc">Dental Practice · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">3.8<em>×</em></div><p class="carousel-card__desc">ROI — every pound generated nearly four</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads local</div><div class="carousel-card__name">Dr. Amira Khalil</div><div class="carousel-card__loc">Smile Dental · Dubai</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-38<em>%</em></div><p class="carousel-card__desc">cost per new patient</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 3 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Dr. Sophie Laurent</div><div class="carousel-card__loc">Dental Studio · Amsterdam</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€5.200<em></em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Dr. Connor Murphy</div><div class="carousel-card__loc">City Dental · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">6.8<em>%</em></div><p class="carousel-card__desc">avg CTR — triple the sector average</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Dr. Layla Ahmed</div><div class="carousel-card__loc">Premium Dental · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€4.800<em></em></div><p class="carousel-card__desc">additional revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 8 weeks</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -422,7 +466,7 @@
     <a class="logo footer__logo" href="/"><svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#1a73e8" stroke="#1a73e8" stroke-width="4" stroke-linejoin="round"/></svg>
       <div><div class="logo__text">NicosDigit</div><span class="logo__sub">Ads for dental practices — measurable results.</span></div></a>
     <p class="footer__copy">© 2025 Nicola Dimattia</p>
-    <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/dentist">🇮🇹 IT</a></nav>
+    <nav class="footer__links"><a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/dentist">🇮🇹 IT</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></nav>
   </div></div>
 </footer>
 <a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="WhatsApp" data-gtm="whatsapp-float">

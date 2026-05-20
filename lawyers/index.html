@@ -557,6 +557,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 
@@ -600,16 +626,16 @@
     </div>
     <div class="hero-stats" data-anim data-delay="4">
       <div class="stat-item">
-        <div class="stat-num"><span>+</span>190<span>%</span></div>
-        <div class="stat-label">Average client increase</div>
+        <div class="stat-num"><span>+</span>142<span>%</span></div>
+        <div class="stat-label">Leads generated in 90 days</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">5.2<span>×</span></div>
+        <div class="stat-num">4.4<span>×</span></div>
         <div class="stat-label">Average ROI</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num"><span>€</span>0</div>
-        <div class="stat-label">Wasted budget</div>
+        <div class="stat-num">-44<span>%</span></div>
+        <div class="stat-label">Cost per lead reduced</div>
       </div>
     </div>
   </div>
@@ -677,39 +703,39 @@
     <div class="carousel-track" id="carousel-track">
       <div class="carousel-card">
         <div class="card-badge"><i class="ti ti-trending-up"></i> Clients</div>
-        <div class="card-metric"><span>+</span>165<span>%</span></div>
-        <div class="card-name">Ferretti Law Firm Milan</div>
-        <div class="card-location">Milan — Google Ads</div>
+        <div class="card-metric"><span>+</span>142<span>%</span></div>
+        <div class="card-name">James O'Brien</div>
+        <div class="card-location">Law Firm · Dublin</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-chart-bar"></i> ROI</div>
-        <div class="card-metric">5.8<span>×</span></div>
-        <div class="card-name">Russo Legal Rome</div>
-        <div class="card-location">Rome — Meta Ads</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> ROI</div>
+        <div class="card-metric">4.4<span>×</span></div>
+        <div class="card-name">Emma Thompson</div>
+        <div class="card-location">Legal Practice · London</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-coin"></i> Revenue</div>
-        <div class="card-metric"><span>+€</span>15k</div>
-        <div class="card-name">Bianchi Law Firm Naples</div>
-        <div class="card-location">Naples — Google + Meta</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> Revenue</div>
+        <div class="card-metric"><span>+£</span>12k</div>
+        <div class="card-name">Abdullah Al-Rashid</div>
+        <div class="card-location">Law Firm · Dubai</div>
       </div>
       <div class="carousel-card">
         <div class="card-badge"><i class="ti ti-trending-up"></i> Clients</div>
-        <div class="card-metric"><span>+</span>120<span>%</span></div>
-        <div class="card-name">Marino Legal Turin</div>
-        <div class="card-location">Turin — Google Ads</div>
+        <div class="card-metric"><span>-</span>44<span>%</span></div>
+        <div class="card-name">Fiona Brennan</div>
+        <div class="card-location">Family Law · Dublin</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-chart-bar"></i> ROI</div>
-        <div class="card-metric">4.9<span>×</span></div>
-        <div class="card-name">Conti Law Firm Bologna</div>
-        <div class="card-location">Bologna — Meta Ads</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> CTR</div>
+        <div class="card-metric">7.2<span>%</span></div>
+        <div class="card-name">Thomas Vane</div>
+        <div class="card-location">Criminal Defence · Amsterdam</div>
       </div>
       <div class="carousel-card">
-        <div class="card-badge"><i class="ti ti-coin"></i> Revenue</div>
-        <div class="card-metric"><span>+€</span>11k</div>
-        <div class="card-name">Ferrari Legal Florence</div>
-        <div class="card-location">Florence — Google + Meta</div>
+        <div class="card-badge"><i class="ti ti-trending-up"></i> Revenue</div>
+        <div class="card-metric"><span>+£</span>9.8k</div>
+        <div class="card-name">Sarah Hayes</div>
+        <div class="card-location">Corporate Law · London</div>
       </div>
     </div>
   </div>
@@ -867,8 +893,9 @@
     <p>
       <a href="/privacy">Privacy Policy</a> ·
       <a href="/cookie">Cookie Policy</a> ·
-      P.IVA 00000000000
+      P.IVA 09099240724
     </p>
+    <p><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></p>
     <p>© 2025 Nicola Dimattia. All rights reserved.</p>
   </div>
 </footer>

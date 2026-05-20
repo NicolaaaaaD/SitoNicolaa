@@ -279,6 +279,32 @@
 }
 </style>
 <!-- /VISUAL UPGRADE CSS -->
+
+<!-- MOBILE FIXES --><style>
+@media (max-width: 430px) {
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn, .hero__ctas .btn--solid, .hero__ctas .btn--ghost { width: 100%; justify-content: center; min-height: 50px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 320px; justify-content: center; min-height: 50px; }
+  .bigstats { grid-template-columns: 1fr !important; }
+  .bigstats__cell { border-right: none !important; padding-right: 0 !important; border-bottom: 1px solid var(--grey-line) !important; }
+  .bigstats__cell:last-child { border-bottom: none !important; }
+  .hero-stats { gap: 28px !important; flex-direction: column; align-items: center; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__links a { min-height: 44px; display: flex; align-items: center; }
+  .footer__inner { gap: 1rem; }
+  .cta-final__actions { flex-direction: column; align-items: center; }
+  .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-btn { width: 100% !important; max-width: 320px !important; }
+}
+@media (max-width: 767px) {
+  .footer-inner { gap: 8px; }
+  .footer-inner p { font-size: 0.8rem; }
+  .hero__strip { gap: 1rem 1.5rem; }
+  .hero-stats { gap: 32px; }
+}
+</style>
+<!-- /MOBILE FIXES -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -312,9 +338,9 @@
         <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp us</a>
       </div>
       <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">+<em>220</em>%</div><div class="lab">New clients on average</div></div>
-        <div class="hero__strip-item"><div class="num"><em>4.7</em>×</div><div class="lab">Average ROI on campaigns</div></div>
-        <div class="hero__strip-item"><div class="num"><em>€0</em></div><div class="lab">Budget wasted</div></div>
+        <div class="hero__strip-item"><div class="num">+91<em>%</em></div><div class="lab">New bookings in 6 weeks</div></div>
+        <div class="hero__strip-item"><div class="num">4.3<em>×</em></div><div class="lab">Average ROI on campaigns</div></div>
+        <div class="hero__strip-item"><div class="num">-29<em>%</em></div><div class="lab">Cost per click reduced</div></div>
       </div>
     </div>
   </div>
@@ -346,9 +372,9 @@
     <div class="eyebrow">Real numbers</div>
     <h2 class="h2" style="margin-bottom:3rem;">Results that<br>speak for themselves.</h2>
     <div class="bigstats">
-      <div class="bigstats__cell"><div class="bigstats__num">+<em>220</em>%</div><div class="bigstats__lab">New clients across partner beauty centres</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num"><em>4.7</em>×</div><div class="bigstats__lab">Average ROI on managed campaigns</div></div>
-      <div class="bigstats__cell"><div class="bigstats__num"><em>€0</em></div><div class="bigstats__lab">Budget wasted on wrong targeting</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">+91<em>%</em></div><div class="bigstats__lab">New bookings across partner beauty centres</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">4.3<em>×</em></div><div class="bigstats__lab">Average ROI on campaigns</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">-29<em>%</em></div><div class="bigstats__lab">Cost per click reduced</div></div>
     </div>
   </div>
 </section>
@@ -374,12 +400,30 @@
     <h2 class="h2" data-anim data-delay="1">Real results from<br>real beauty centres.</h2>
     <div class="carousel-wrap" data-anim data-delay="2">
       <div class="carousel-track" id="carousel-track">
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Centro Estetico Bella</div><div class="carousel-card__loc">Milano · Brera</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+<em>125</em>%</div><p class="carousel-card__desc">new clients in the first 2 months</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days from launch</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Spa Luxury</div><div class="carousel-card__loc">Roma · Parioli</div></div><div class="carousel-card__bottom"><div class="carousel-card__num"><em>4.6</em>×</div><p class="carousel-card__desc">ROI — fully booked diary in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 3 months from start</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Centro Bellezza</div><div class="carousel-card__loc">Napoli · Chiaia</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€<em>4,200</em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 3 months</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Estetica Glamour</div><div class="carousel-card__loc">Torino · Centro</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+<em>88</em>%</div><p class="carousel-card__desc">new treatment bookings in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Beauty Center Rossi</div><div class="carousel-card__loc">Bologna · Centro</div></div><div class="carousel-card__bottom"><div class="carousel-card__num"><em>4.9</em>×</div><p class="carousel-card__desc">ROI — cost per client reduced by 42%</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days from start</div></div></div>
-        <div class="carousel-card"><div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Spa &amp; Benessere</div><div class="carousel-card__loc">Firenze · Oltrarno</div></div><div class="carousel-card__bottom"><div class="carousel-card__num">+€<em>3,800</em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> After 8 weeks</div></div></div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Emma Walsh</div><div class="carousel-card__loc">Beauty Lab · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+91<em>%</em></div><p class="carousel-card__desc">new bookings in 6 weeks</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks from launch</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Amira Khalil</div><div class="carousel-card__loc">Luxury Spa · Dubai</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">4.3<em>×</em></div><p class="carousel-card__desc">ROI — every euro generated over four</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 2 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads local</div><div class="carousel-card__name">Julie Laurent</div><div class="carousel-card__loc">Belle Beauté · Amsterdam</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">-29<em>%</em></div><p class="carousel-card__desc">cost per click</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 3 months</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta Ads</div><div class="carousel-card__name">Sophie Martin</div><div class="carousel-card__loc">Glow Beauty · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€3.600<em></em></div><p class="carousel-card__desc">additional monthly revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 6 weeks</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Google Ads</div><div class="carousel-card__name">Aoife Murphy</div><div class="carousel-card__loc">City Beauty · Dublin</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">6.1<em>%</em></div><p class="carousel-card__desc">avg CTR — double the industry average</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 60 days</div></div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card__top"><div class="carousel-card__platform">Meta + Google Ads</div><div class="carousel-card__name">Hannah Clarke</div><div class="carousel-card__loc">Pure Aesthetics · London</div></div>
+          <div class="carousel-card__bottom"><div class="carousel-card__num">+€2.700<em></em></div><p class="carousel-card__desc">additional revenue</p><div class="carousel-card__time"><i class="ti ti-clock"></i> 8 weeks</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -517,7 +561,7 @@
       <nav class="footer__links">
         <a href="tel:+393514120302" data-gtm="phone-click">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="/estetica">🇮🇹 IT</a>
+        <a href="/estetica">🇮🇹 IT</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </div>
