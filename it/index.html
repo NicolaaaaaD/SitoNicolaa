@@ -4,11 +4,21 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sito Web Professionale per la Tua Attività — €299/mese | Nicos Digital</title>
+  <title>Sito Web Professionale per la Tua Attività — €299 Una Tantum | Nicos Digital</title>
   <meta name="description" content="Il sito professionale della tua attività — design, SEO e profilo Google. Un sito completo e pronto, tuo per sempre, a €299.">
   <link rel="canonical" href="https://nicosdigit.com/it">
   <link rel="alternate" hreflang="it" href="https://nicosdigit.com/it">
   <link rel="alternate" hreflang="en" href="https://nicosdigit.com/">
+  <link rel="alternate" hreflang="x-default" href="https://nicosdigit.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sito Web Professionale per la Tua Attività — €299 Una Tantum | Nicos Digital">
+  <meta property="og:description" content="Il tuo sito professionale completo — design, SEO e profilo Google. Pronto all'uso, tuo per sempre, a €299.">
+  <meta property="og:url" content="https://nicosdigit.com/it">
+  <meta property="og:site_name" content="Nicos Digital">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sito Web Professionale per la Tua Attività — €299 Una Tantum | Nicos Digital">
+  <meta name="twitter:description" content="Il tuo sito professionale completo — design, SEO e profilo Google. Pronto all'uso, tuo per sempre, a €299.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='4,16 28,4 28,28' fill='%23FE6C61' stroke='%23FE6C61' stroke-width='4' stroke-linejoin='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -194,7 +204,18 @@
       .cta-final__actions { flex-direction: column; align-items: center; }
       .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
     }
-    @media (max-width: 767px) { .hero__strip { gap: 1rem 1.5rem; } }
+    @media (max-width: 767px) { .footer-inner { gap: 8px; } }
+    /* Hero price — large single featured stat */
+    .hero__price { padding-top: 2.5rem; border-top: 1px solid var(--grey-line); max-width: 400px; }
+    .hero__price-num { font-family: 'Archivo Black', sans-serif; font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 0.88; letter-spacing: -0.045em; color: var(--coral); margin-bottom: 0.5rem; }
+    .hero__price-lab { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); }
+    /* Tap targets */
+    .btn-hdr { min-height: 44px; }
+    .lang-switch { min-height: 44px; }
+    /* Prevent horizontal overflow */
+    html { overflow-x: hidden; }
+    /* Extra small screens */
+    @media (max-width: 390px) { .hero__h1 { font-size: 2.2rem !important; } }
   </style>
 </head>
 <body>
@@ -221,17 +242,15 @@
   </div>
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__pill">Siti Web Professionali · €299 Una Tantum</div>
       <h1 class="hero__h1">Il sito professionale<br>della tua <span class="accent">azienda.</span></h1>
       <p class="hero__lead">Design, SEO e il tuo profilo Google. <strong>Il tuo sito professionale completo, tuo per sempre.</strong></p>
       <div class="hero__ctas">
         <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;"><span class="btn__arrow"></span>Prenota una call gratuita</button>
         <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
       </div>
-      <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">€299<em></em></div><div class="lab">Prezzo unico una tantum</div></div>
-        <div class="hero__strip-item"><div class="num">4<em></em></div><div class="lab">Funzionalità incluse</div></div>
-        <div class="hero__strip-item"><div class="num">Giorni<em></em></div><div class="lab">Dalla call al lancio online</div></div>
+      <div class="hero__price">
+        <div class="hero__price-num">€299</div>
+        <div class="hero__price-lab">Prezzo unico, tuo per sempre</div>
       </div>
     </div>
   </div>

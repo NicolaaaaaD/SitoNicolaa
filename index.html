@@ -4,11 +4,21 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Website for Your Business — $299/month | Nicos Digital</title>
+  <title>Professional Website for Your Business — €299 One-Time | Nicos Digital</title>
   <meta name="description" content="A professional website for your business — design, SEO and Google Business Profile. A complete, ready-to-use site for €299.">
   <link rel="canonical" href="https://nicosdigit.com/">
   <link rel="alternate" hreflang="en" href="https://nicosdigit.com/">
   <link rel="alternate" hreflang="it" href="https://nicosdigit.com/it">
+  <link rel="alternate" hreflang="x-default" href="https://nicosdigit.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Professional Website for Your Business — €299 One-Time | Nicos Digital">
+  <meta property="og:description" content="A complete professional website — design, SEO and Google Business Profile. Ready to use, yours to keep, for €299.">
+  <meta property="og:url" content="https://nicosdigit.com/">
+  <meta property="og:site_name" content="Nicos Digital">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Professional Website for Your Business — €299 One-Time | Nicos Digital">
+  <meta name="twitter:description" content="A complete professional website — design, SEO and Google Business Profile. Ready to use, yours to keep, for €299.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='4,16 28,4 28,28' fill='%23FE6C61' stroke='%23FE6C61' stroke-width='4' stroke-linejoin='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,7 +216,18 @@
       .cta-final__actions { flex-direction: column; align-items: center; }
       .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
     }
-    @media (max-width: 767px) { .footer-inner { gap: 8px; } .hero__strip { gap: 1rem 1.5rem; } }
+    @media (max-width: 767px) { .footer-inner { gap: 8px; } }
+    /* Hero price — large single featured stat */
+    .hero__price { padding-top: 2.5rem; border-top: 1px solid var(--grey-line); max-width: 400px; }
+    .hero__price-num { font-family: 'Archivo Black', sans-serif; font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 0.88; letter-spacing: -0.045em; color: var(--coral); margin-bottom: 0.5rem; }
+    .hero__price-lab { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); }
+    /* Tap targets */
+    .btn-hdr { min-height: 44px; }
+    .lang-switch { min-height: 44px; }
+    /* Prevent horizontal overflow */
+    html { overflow-x: hidden; }
+    /* Extra small screens */
+    @media (max-width: 390px) { .hero__h1 { font-size: 2.2rem !important; } }
   </style>
 </head>
 <body>
@@ -235,16 +256,14 @@
   </div>
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__pill">Professional Websites · €299 One-Time</div>
       <h1 class="hero__h1">A professional website<br>for your <span class="accent">business.</span></h1>
       <p class="hero__lead">Design, SEO and your Google profile. <strong>Your complete professional website, yours to keep.</strong></p>
       <div class="hero__ctas">
         <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;"><span class="btn__arrow"></span>Book a free call</button>
       </div>
-      <div class="hero__strip">
-        <div class="hero__strip-item"><div class="num">€299<em></em></div><div class="lab">One-time price</div></div>
-        <div class="hero__strip-item"><div class="num">4<em></em></div><div class="lab">Features included</div></div>
-        <div class="hero__strip-item"><div class="num">Days<em></em></div><div class="lab">From call to live online</div></div>
+      <div class="hero__price">
+        <div class="hero__price-num">€299</div>
+        <div class="hero__price-lab">One-time price, yours forever</div>
       </div>
     </div>
   </div>
