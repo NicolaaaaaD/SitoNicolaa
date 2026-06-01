@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Professional Website for Your Business — $299/month | Nicos Digital</title>
@@ -13,264 +14,357 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <style>
     :root {
-      --coral: #FE6C61; --coral-d: #E55A50; --coral-g: rgba(254,108,97,0.10);
-      --bg: #0C0C0C; --bg2: #131313; --bg3: #1A1A1A;
-      --text: rgba(255,255,255,0.88); --muted: rgba(255,255,255,0.50);
-      --faint: rgba(255,255,255,0.06); --bdr: rgba(255,255,255,0.07);
-      --max: 1080px; --ease: cubic-bezier(0.16,1,0.3,1);
+      --coral: #FE6C61; --coral-dark: #E5554A; --coral-soft: #fff3f1;
+      --bg: #FFFFFF; --bg-2: #F6F6F4; --ink: #0A0A0A; --ink-2: #1A1A1A;
+      --grey: rgba(10,10,10,0.62); --grey-line: rgba(10,10,10,0.1);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1); --max: 1320px;
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:1rem;line-height:1.65;overflow-x:hidden}
-    h1,h2,h3{font-family:'Archivo Black',sans-serif;line-height:1.15;letter-spacing:-0.02em;color:#fff}
-    a{text-decoration:none;color:inherit}
-    strong,b{font-weight:700}
-    .c{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.5rem}
-    @media(min-width:768px){.c{padding:0 2.5rem}}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; line-height: 1.55; color: var(--ink); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0; }
+    ul { list-style: none; }
+    ::selection { background: var(--coral); color: #fff; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+    @media (min-width: 768px) { .container { padding: 0 2rem; } }
+    @media (min-width: 1100px) { .container { padding: 0 3rem; } }
 
-    /* HEADER */
-    .hdr{position:sticky;top:0;z-index:100;background:rgba(12,12,12,0.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr)}
-    .hdr-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
-    .logo{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
-    .logo-name{font-family:'Archivo Black',sans-serif;font-size:1.05rem;color:#fff;letter-spacing:-.01em}
-    .logo-sub{font-size:.68rem;color:var(--muted);display:block;margin-top:-3px}
-    .hdr-r{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-    .lang{display:flex;align-items:center;gap:2px;font-size:.78rem;font-weight:500}
-    .lang a{color:var(--muted);padding:.25rem .4rem;border-radius:5px;transition:color .15s}
-    .lang a:hover,.lang a.on{color:#fff}
-    .lang span{color:var(--bdr)}
+    /* HEADER — same as sector pages */
+    .site-head { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 0; background: rgba(255,255,255,0.88); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid rgba(10,10,10,0.06); transition: padding 0.3s var(--ease); }
+    .site-head.is-scrolled { padding: 0.55rem 0; }
+    .site-head__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { display: flex; align-items: center; gap: 0.7rem; }
+    .logo__text { font-family: 'Archivo Black', sans-serif; font-size: 1.05rem; letter-spacing: -0.03em; line-height: 1; }
+    .logo__sub { font-size: 0.62rem; font-weight: 500; color: var(--grey); display: block; margin-top: 0.1rem; letter-spacing: 0.04em; }
+    .lang-switch { display: inline-flex; align-items: center; gap: 5px; padding: 0.45rem 0.9rem; border-radius: 999px; border: 1.5px solid var(--grey-line); font-size: 0.8rem; font-weight: 600; color: var(--ink); transition: border-color 0.2s, background 0.2s; white-space: nowrap; }
+    .lang-switch:hover { border-color: var(--coral); background: var(--coral-soft); }
+    .hdr-right { display: flex; align-items: center; gap: 0.8rem; }
+    .btn-hdr { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ink); color: var(--bg); padding: 0.65rem 1.2rem; font-size: 0.85rem; font-weight: 600; border-radius: 999px; transition: background 0.25s, color 0.25s, transform 0.25s var(--ease); }
+    .btn-hdr::after { content: ''; width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 5px; border-color: transparent transparent transparent currentColor; }
+    .btn-hdr:hover { background: var(--coral); color: #fff; transform: translateY(-2px); }
 
-    /* BUTTON */
-    .btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--coral);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;padding:.55rem 1.1rem;border-radius:8px;border:none;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 4px 18px rgba(254,108,97,.28);white-space:nowrap}
-    .btn:hover{background:var(--coral-d);transform:translateY(-1px);box-shadow:0 6px 26px rgba(254,108,97,.42)}
-    .btn:active{transform:none}
-    .btn.lg{font-size:1rem;padding:.9rem 2.2rem;border-radius:11px}
-    @media(max-width:420px){.hdr-hide{display:none!important}}
+    /* BUTTONS — same as sector pages */
+    .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 1.6rem; font-size: 0.95rem; font-weight: 600; border-radius: 999px; transition: transform 0.25s var(--ease), background 0.25s, color 0.25s, box-shadow 0.25s; white-space: nowrap; border: none; cursor: pointer; font-family: inherit; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn--solid { background: var(--ink); color: var(--bg); box-shadow: 0 6px 24px -8px rgba(10,10,10,0.4); }
+    .btn--solid:hover { background: var(--coral); color: #fff; box-shadow: 0 10px 30px -6px rgba(254,108,97,0.45); }
+    .btn--ghost { background: transparent; color: var(--ink); border: 1.5px solid rgba(10,10,10,0.25); }
+    .btn--ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .btn__arrow { width: 0; height: 0; border-style: solid; border-width: 5px 0 5px 7px; border-color: transparent transparent transparent currentColor; }
 
     /* HERO */
-    .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;padding:5rem 0 4rem;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 90% 50% at 50% 0%,rgba(254,108,97,.13) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(254,108,97,.05) 0%,transparent 50%)}
-    .hero-in{position:relative;text-align:center;max-width:720px;margin:0 auto}
-    .ew{font-size:.7rem;font-weight:600;letter-spacing:.16em;color:var(--coral);text-transform:uppercase;margin-bottom:1.1rem}
-    .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);margin-bottom:1.2rem}
-    .hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;line-height:1.7}
-    .badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--coral-g);border:1px solid rgba(254,108,97,.22);border-radius:100px;padding:.5rem 1.35rem;font-size:.9rem;font-weight:600;color:var(--coral);margin-bottom:2.2rem}
-    .badge .sep{color:rgba(254,108,97,.35);font-weight:400}
-    .badge .n{color:rgba(254,108,97,.65);font-weight:400}
+    .hero { position: relative; padding: 9rem 0 5rem; overflow: hidden; min-height: 88vh; display: flex; align-items: center; background: linear-gradient(135deg, #fef2f0 0%, #fdf8f7 45%, #fce6e3 100%); }
+    .hero__bg { position: absolute; right: -8vw; top: 18vh; width: 70vw; max-width: 900px; pointer-events: none; z-index: 0; animation: floatTri 12s ease-in-out infinite; }
+    @keyframes floatTri { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-22px); } }
+    @media (max-width: 880px) { .hero__bg { right: -25vw; top: 40vh; width: 110vw; opacity: 0.5; } }
+    .hero__inner { position: relative; z-index: 2; max-width: 1100px; }
+    .hero__pill { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.5rem 1rem 0.5rem 0.9rem; background: var(--ink); color: var(--bg); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 999px; margin-bottom: 2rem; }
+    .hero__pill::before { content: ''; width: 8px; height: 8px; background: var(--coral); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.85); } }
+    .hero__h1 { font-family: 'Archivo Black', sans-serif; font-size: clamp(2.8rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 2rem; }
+    .hero__h1 .accent { position: relative; display: inline-block; }
+    .hero__h1 .accent::after { content: ''; position: absolute; left: -2px; right: -2px; bottom: 0.06em; height: 0.16em; background: var(--coral); z-index: -1; }
+    .hero__lead { max-width: 620px; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.7; color: var(--grey); margin-bottom: 2.4rem; }
+    .hero__lead strong { color: var(--ink); }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 4rem; }
+    .hero__strip { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem 2rem; padding-top: 2.5rem; border-top: 1px solid var(--grey-line); max-width: 700px; }
+    @media (min-width: 720px) { .hero__strip { grid-template-columns: repeat(3,1fr); } }
+    .hero__strip-item .num { font-family: 'Archivo Black', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1; letter-spacing: -0.04em; }
+    .hero__strip-item .num em { font-style: normal; color: var(--coral); }
+    .hero__strip-item .lab { margin-top: 0.4rem; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); line-height: 1.3; }
+
+    /* MARQUEE */
+    .marquee { background: var(--ink); color: var(--bg); padding: 1.4rem 0; overflow: hidden; }
+    .marquee__track { display: flex; gap: 3rem; animation: scroll 40s linear infinite; white-space: nowrap; width: max-content; }
+    .marquee__item { display: inline-flex; align-items: center; gap: 1.4rem; font-family: 'Archivo Black', sans-serif; font-size: clamp(0.9rem, 1.5vw, 1.3rem); letter-spacing: -0.02em; }
+    .marquee__sep { width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 9px; border-color: transparent transparent transparent var(--coral); flex-shrink: 0; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* SECTIONS */
-    .sec{padding:5rem 0}
-    .sec.alt{background:var(--bg2)}
-    .sec-hd{text-align:center;margin-bottom:3rem}
-    .sec h2{font-size:clamp(1.7rem,3.8vw,2.5rem)}
-    .sec-sub{color:var(--muted);margin-top:.7rem;font-size:.92rem}
+    .section { padding: clamp(4rem, 8vw, 8rem) 0; }
+    .section--dark { background: var(--ink); color: var(--bg); }
+    .section--alt { background: var(--bg-2); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--grey); }
+    .eyebrow::before { content: ''; width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 6px; border-color: transparent transparent transparent var(--coral); }
+    .section--dark .eyebrow { color: rgba(255,255,255,0.6); }
+    .h2 { font-family: 'Archivo Black', sans-serif; font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: 0.92; letter-spacing: -0.035em; }
 
-    /* INCLUDED */
-    .feat-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border-radius:16px;overflow:hidden}
-    @media(max-width:700px){.feat-g{grid-template-columns:1fr 1fr}}
-    @media(max-width:440px){.feat-g{grid-template-columns:1fr}}
-    .fi{background:var(--bg3);padding:1.6rem 1.4rem;display:flex;gap:1rem;align-items:flex-start}
-    .fi-ico{width:40px;height:40px;min-width:40px;background:var(--coral-g);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--coral);font-size:1.2rem}
-    .fi b{display:block;color:#fff;font-weight:600;font-size:.92rem;margin-bottom:.25rem}
-    .fi span{font-size:.8rem;color:var(--muted);line-height:1.55}
+    /* MANIFESTO */
+    .manifesto { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    @media (min-width: 880px) { .manifesto { grid-template-columns: 1.6fr 1fr; gap: 5rem; align-items: end; } }
+    .manifesto__quote { font-family: 'Archivo Black', sans-serif; font-size: clamp(2.2rem, 6vw, 5rem); line-height: 0.94; letter-spacing: -0.04em; margin-bottom: 2rem; }
+    .manifesto__quote em { font-style: normal; color: var(--coral); }
+    .manifesto__body { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.78); }
+    .manifesto__body p + p { margin-top: 1rem; }
+    .manifesto__body strong { color: #fff; }
 
-    /* WHY */
-    .why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    @media(max-width:700px){.why-g{grid-template-columns:1fr}}
-    .wc{background:var(--bg3);border:1px solid var(--bdr);border-radius:14px;padding:1.75rem 1.5rem}
-    .wc-n{font-family:'Archivo Black',sans-serif;font-size:1.8rem;color:var(--coral);opacity:.22;line-height:1;margin-bottom:.9rem}
-    .wc b{display:block;color:#fff;font-size:1rem;margin-bottom:.45rem}
-    .wc p{color:var(--muted);font-size:.85rem;line-height:1.6}
+    /* METHOD — same as sector pages */
+    .method { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--grey-line); border: 1px solid var(--grey-line); border-radius: 8px; overflow: hidden; }
+    @media (min-width: 720px) { .method { grid-template-columns: repeat(3,1fr); } }
+    .method__step { background: var(--bg); padding: 2.2rem 1.6rem; transition: background 0.3s, transform 0.2s, box-shadow 0.2s; }
+    .method__step:hover { background: var(--bg-2); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+    .method__num { font-family: 'Archivo Black', sans-serif; font-size: 2.8rem; line-height: 0.9; letter-spacing: -0.04em; color: var(--coral); margin-bottom: 0.8rem; }
+    .method__title { font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .method__desc { font-size: 0.9rem; line-height: 1.6; color: var(--grey); }
 
-    /* STEPS */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
-    .steps::before{content:'';position:absolute;top:24px;left:calc(16.67% + 12px);right:calc(16.67% + 12px);height:1px;background:repeating-linear-gradient(90deg,var(--bdr) 0,var(--bdr) 6px,transparent 6px,transparent 14px)}
-    @media(max-width:700px){.steps{grid-template-columns:1fr;gap:1.5rem}.steps::before{display:none}}
-    .step{text-align:center}
-    .step-n{width:48px;height:48px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:'Archivo Black',sans-serif;font-size:1.1rem;color:#fff;box-shadow:0 0 0 8px var(--coral-g),0 4px 20px rgba(254,108,97,.3)}
-    .step b{display:block;color:#fff;font-size:.98rem;margin-bottom:.3rem}
-    .step p{color:var(--muted);font-size:.83rem}
+    /* FEAT GRID (6-item included — same visual as method) */
+    .feat-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--grey-line); border: 1px solid var(--grey-line); border-radius: 8px; overflow: hidden; }
+    @media (min-width: 520px) { .feat-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 880px) { .feat-grid { grid-template-columns: repeat(3,1fr); } }
+    .feat-grid .method__step { }
+    .feat-icon { font-size: 1.8rem; color: var(--coral); margin-bottom: 0.8rem; line-height: 1; }
 
-    /* EXAMPLES */
-    .ex-out{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent}
-    .ex-out::-webkit-scrollbar{height:4px}
-    .ex-out::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
-    .ex-track{display:flex;gap:1.25rem;padding:.5rem 1.5rem .25rem;width:max-content}
-    @media(min-width:768px){.ex-track{padding:.5rem 2.5rem .25rem}}
-    .mc{scroll-snap-align:start;width:258px;flex-shrink:0;background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
-    .mc-ch{background:#1C1C1C;padding:.55rem .75rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
-    .mc-dots{display:flex;gap:5px}
-    .mc-dot{width:9px;height:9px;border-radius:50%}
-    .mc-addr{flex:1;background:rgba(255,255,255,.06);border-radius:4px;height:16px}
-    .mc-hero{height:78px;padding:.8rem;display:flex;flex-direction:column;justify-content:flex-end}
-    .ml{background:rgba(255,255,255,.75);border-radius:3px}
-    .ml.h{width:100px;height:7px;margin-bottom:5px}
-    .ml.s{width:62px;height:4px;opacity:.5;margin-bottom:7px}
-    .mlb{width:46px;height:13px;border-radius:3px;opacity:.9}
-    .mc-blks{display:flex;gap:5px;padding:.65rem}
-    .mb{flex:1;height:42px;border-radius:6px}
-    .mc-lines{padding:0 .65rem .65rem;display:flex;flex-direction:column;gap:5px}
-    .mfl{background:rgba(255,255,255,.07);border-radius:3px;height:4px}
-    .mc-lbl{padding:.85rem;border-top:1px solid var(--bdr)}
-    .mc-lbl b{display:block;color:#fff;font-size:.85rem;margin-bottom:.45rem}
-    .chips{display:flex;flex-wrap:wrap;gap:4px}
-    .chip{background:var(--faint);border:1px solid var(--bdr);color:var(--muted);font-size:.67rem;padding:2px 7px;border-radius:100px}
+    /* EXAMPLES GALLERY */
+    .ex-out { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 1rem; scrollbar-width: thin; scrollbar-color: var(--grey-line) transparent; }
+    .ex-out::-webkit-scrollbar { height: 4px; }
+    .ex-out::-webkit-scrollbar-thumb { background: var(--grey-line); border-radius: 2px; }
+    .ex-track { display: flex; gap: 1.2rem; padding: 0.5rem 1.5rem 0.25rem; width: max-content; }
+    @media (min-width: 768px) { .ex-track { padding-left: 3rem; padding-right: 3rem; } }
+    .mc { scroll-snap-align: start; width: 260px; flex-shrink: 0; border: 1px solid var(--grey-line); border-radius: 8px; background: var(--bg); overflow: hidden; transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s; }
+    .mc:hover { transform: translateY(-4px); box-shadow: 0 14px 40px -16px rgba(10,10,10,0.15); border-color: var(--coral); }
+    .mc-ch { background: #f5f5f5; padding: 0.55rem 0.75rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--grey-line); }
+    .mc-dots { display: flex; gap: 5px; }
+    .mc-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .mc-addr { flex: 1; background: rgba(10,10,10,0.08); border-radius: 4px; height: 16px; }
+    .mc-hero { height: 80px; padding: 0.8rem; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ml { background: rgba(255,255,255,0.8); border-radius: 3px; }
+    .ml.h { width: 100px; height: 7px; margin-bottom: 5px; }
+    .ml.s { width: 62px; height: 4px; opacity: 0.6; margin-bottom: 7px; }
+    .mlb { width: 46px; height: 13px; border-radius: 3px; opacity: 0.95; }
+    .mc-blks { display: flex; gap: 5px; padding: 0.65rem; }
+    .mb { flex: 1; height: 42px; border-radius: 4px; background: var(--bg-2); }
+    .mc-lines { padding: 0 0.65rem 0.65rem; display: flex; flex-direction: column; gap: 5px; }
+    .mfl { background: var(--grey-line); border-radius: 3px; height: 4px; }
+    .mc-lbl { padding: 0.9rem; border-top: 1px solid var(--grey-line); }
+    .mc-lbl b { display: block; font-family: 'Archivo Black', sans-serif; font-size: 0.88rem; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .chip { background: var(--bg-2); border: 1px solid var(--grey-line); color: var(--grey); font-size: 0.68rem; padding: 2px 8px; border-radius: 999px; }
 
-    /* PRICE */
-    .price-wrap{max-width:600px;margin:0 auto 3.5rem;text-align:center}
-    .price-box{background:var(--bg3);border:1px solid var(--bdr);border-radius:20px;padding:2.5rem 2rem;box-shadow:0 0 60px rgba(254,108,97,.06)}
-    .price-big{font-family:'Archivo Black',sans-serif;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--coral);line-height:1;margin-bottom:.4rem}
-    .price-mo{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:400;color:var(--muted)}
-    .price-note{color:var(--muted);font-size:.85rem;margin-bottom:1.75rem}
-    .incl{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .9rem;margin-bottom:2rem;padding:0}
-    .incl li{list-style:none;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.3rem}
-    .incl li::before{content:'✓';color:var(--coral);font-weight:700}
+    /* PRICE BOX */
+    .price-box { background: var(--bg); border: 1px solid var(--grey-line); border-radius: 8px; padding: clamp(2rem, 4vw, 3.5rem); max-width: 640px; margin: 0 auto; text-align: center; box-shadow: 0 4px 24px rgba(10,10,10,0.05); }
+    .price-big { font-family: 'Archivo Black', sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.88; letter-spacing: -0.04em; color: var(--coral); margin-bottom: 0.5rem; }
+    .price-period { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 400; color: var(--grey); }
+    .price-note { font-size: 0.9rem; color: var(--grey); margin-bottom: 2rem; }
+    .incl-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1rem; margin-bottom: 2rem; }
+    .incl-item { font-size: 0.82rem; color: var(--grey); display: flex; align-items: center; gap: 0.35rem; }
+    .incl-item::before { content: '✓'; color: var(--coral); font-weight: 700; }
 
     /* FAQ */
-    .faq-w{max-width:640px;margin:0 auto}
-    details{border-bottom:1px solid var(--bdr)}
-    summary{padding:1.2rem 0;cursor:pointer;list-style:none;font-weight:600;font-size:.93rem;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:1rem}
-    summary::-webkit-details-marker{display:none}
-    summary::after{content:'+';color:var(--coral);font-size:1.3rem;font-weight:300;flex-shrink:0;transition:transform .2s var(--ease)}
-    details[open] summary::after{transform:rotate(45deg)}
-    details>p{padding:0 0 1.2rem;color:var(--muted);font-size:.87rem;line-height:1.65}
+    .faq-list { max-width: 700px; margin: 3rem auto 0; }
+    details { border-bottom: 1px solid var(--grey-line); }
+    summary { padding: 1.25rem 0; cursor: pointer; list-style: none; font-weight: 600; font-size: 0.95rem; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; color: var(--coral); font-size: 1.4rem; font-weight: 300; flex-shrink: 0; transition: transform 0.2s var(--ease); }
+    details[open] summary::after { transform: rotate(45deg); }
+    details > p { padding: 0 0 1.25rem; color: var(--grey); font-size: 0.9rem; line-height: 1.65; }
 
-    /* FOOTER */
-    .footer{background:var(--bg2);border-top:1px solid var(--bdr);padding:2.25rem 0}
-    .footer-in{display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
-    @media(min-width:768px){.footer-in{flex-direction:row;justify-content:space-between;text-align:left}}
-    .flinks{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;justify-content:center}
-    .flinks a{color:var(--muted);font-size:.8rem;transition:color .15s}
-    .flinks a:hover{color:#fff}
-    .fcopy{color:var(--muted);font-size:.75rem}
+    /* CTA FINAL */
+    .cta-final { background: var(--coral); position: relative; overflow: hidden; }
+    .cta-final__inner { padding: clamp(4rem, 8vw, 7rem) 0; text-align: center; max-width: 680px; margin: 0 auto; }
+    .cta-final__h { font-family: 'Archivo Black', sans-serif; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 0.92; letter-spacing: -0.04em; color: #fff; margin-bottom: 1.5rem; }
+    .cta-final__sub { font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; }
+    .cta-final__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+    .cta-final .btn--solid { background: #fff; color: var(--coral); }
+    .cta-final .btn--solid:hover { background: var(--ink); color: #fff; box-shadow: 0 10px 30px rgba(10,10,10,0.3); }
+    .cta-final .btn--ghost { color: #fff; border-color: rgba(255,255,255,0.5); }
+    .cta-final .btn--ghost:hover { background: #fff; color: var(--coral); border-color: #fff; }
 
-    /* FADE IN */
-    [data-f]{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-    [data-f].in{opacity:1;transform:none}
-    [data-f][data-d="1"]{transition-delay:.08s}
-    [data-f][data-d="2"]{transition-delay:.16s}
-    [data-f][data-d="3"]{transition-delay:.24s}
+    /* FOOTER — same as sector pages */
+    .footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 2.5rem 0; }
+    .footer__inner { display: flex; flex-direction: column; gap: 1.5rem; }
+    @media (min-width: 768px) { .footer__inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+    .footer__logo .logo__text { color: #fff; }
+    .footer__logo .logo__sub { color: rgba(255,255,255,0.35); }
+    .footer__copy { font-size: 0.82rem; }
+    .footer__links { display: flex; gap: 1.5rem; font-size: 0.82rem; flex-wrap: wrap; }
+    .footer__links a { color: rgba(255,255,255,0.45); transition: color 0.2s; position: relative; display: inline-block; }
+    .footer__links a:hover { color: var(--coral); }
+    .footer__links a::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px; background: var(--coral); transition: width 0.25s; }
+    .footer__links a:hover::after { width: 100%; }
 
-    @media(max-width:430px){
-      .hero{padding:3.5rem 0 3rem}
-      .btn.lg{width:100%;justify-content:center}
-      .sec{padding:3.5rem 0}
-      .price-box{padding:2rem 1.25rem}
+    /* ANIMATIONS — same as sector pages */
+    [data-anim] { opacity: 0; transform: translateY(28px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
+    [data-anim].in { opacity: 1; transform: none; }
+    [data-anim][data-delay="1"] { transition-delay: 0.1s; }
+    [data-anim][data-delay="2"] { transition-delay: 0.2s; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } [data-anim] { opacity: 1 !important; transform: none !important; } }
+
+    /* MOBILE */
+    @media (max-width: 640px) { .hero { min-height: 100svh; padding: 8rem 0 4rem; } .hero__h1 { font-size: 2.8rem; } .btn { padding: 0.9rem 1.3rem; font-size: 0.9rem; } .mc { width: 240px; } }
+    @media (max-width: 430px) {
+      .hero__ctas { flex-direction: column; }
+      .hero__ctas .btn { width: 100%; justify-content: center; min-height: 50px; }
+      .footer__links { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .footer__links a { min-height: 44px; display: flex; align-items: center; }
+      .footer__inner { gap: 1rem; }
+      .cta-final__actions { flex-direction: column; align-items: center; }
+      .cta-final__actions .btn { width: 100%; max-width: 320px; justify-content: center; }
     }
+    @media (max-width: 767px) { .footer-inner { gap: 8px; } .hero__strip { gap: 1rem 1.5rem; } }
   </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<header class="hdr">
-  <div class="c"><div class="hdr-in">
-    <a class="logo" href="/">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
-      <div><div class="logo-name">Nicos Digital</div><span class="logo-sub">Professional Websites</span></div>
-    </a>
-    <div class="hdr-r">
-      <div class="lang"><a href="/" class="on">EN</a><span>|</span><a href="/it">IT</a></div>
-      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn hdr-hide">Book a free call</a>
+<!-- HEADER — same structure as sector pages -->
+<header class="site-head" id="site-head">
+  <div class="container">
+    <div class="site-head__inner">
+      <a class="logo" href="/">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
+        <div><div class="logo__text">Nicos Digital</div><span class="logo__sub">Professional Websites</span></div>
+      </a>
+      <div class="hdr-right">
+        <a href="/it" class="lang-switch">🇮🇹 <span>IT</span></a>
+        <button class="btn-hdr" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;">Book a free call</button>
+      </div>
     </div>
-  </div></div>
+  </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="c"><div class="hero-in">
-    <div class="ew" data-f>Nicos Digital</div>
-    <h1 data-f data-d="1">A professional website for your business — done for you.</h1>
-    <p class="hero-sub" data-f data-d="2">Design, hosting, maintenance, SEO and your Google profile. All included, one simple monthly price.</p>
-    <div data-f data-d="2" style="margin-bottom:2.2rem">
-      <div class="badge"><span>$299/month</span><span class="sep">·</span><span class="n">no big upfront cost</span></div>
-    </div>
-    <div data-f data-d="3">
-      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Book a free call →</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="sec alt">
-  <div class="c">
-    <div class="sec-hd" data-f><div class="ew">What's included</div><h2>Everything in one place</h2><p class="sec-sub">No hidden extras. No managing five different vendors.</p></div>
-    <div class="feat-g" data-f data-d="1">
-      <div class="fi"><div class="fi-ico"><i class="ti ti-layout-2"></i></div><div><b>Complete showcase website</b><span>A clean, modern multi-page site that makes your business look professional.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-server"></i></div><div><b>Hosting included</b><span>Fast, secure hosting handled for you. Nothing to manage.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-tools"></i></div><div><b>Maintenance &amp; updates</b><span>We keep it updated, secure and online.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-search"></i></div><div><b>Basic SEO</b><span>Set up to be found on Google from day one.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-map-pin"></i></div><div><b>Google Business Profile</b><span>We set up and optimize your profile so you show up on Maps and Search.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-star"></i></div><div><b>Reviews</b><span>Collect and show customer reviews that build trust.</span></div></div>
+  <div class="hero__bg" aria-hidden="true">
+    <svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#FE6C61" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#FE6C61" opacity="0.04"/></svg>
+  </div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__pill">Professional Websites · Done For You</div>
+      <h1 class="hero__h1">A professional website<br>for your <span class="accent">business.</span></h1>
+      <p class="hero__lead">Design, hosting, maintenance, SEO and your Google profile. <strong>All included, one simple monthly price.</strong></p>
+      <div class="hero__ctas">
+        <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+      </div>
+      <div class="hero__strip">
+        <div class="hero__strip-item"><div class="num">$299<em>/mo</em></div><div class="lab">All-inclusive monthly price</div></div>
+        <div class="hero__strip-item"><div class="num">6<em>+</em></div><div class="lab">Features in every plan</div></div>
+        <div class="hero__strip-item"><div class="num">Days<em></em></div><div class="lab">From call to live online</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Why us</div><h2>Why Nicos Digital</h2></div>
-    <div class="why-g">
-      <div class="wc" data-f data-d="1"><div class="wc-n">01</div><b>One simple price</b><p>$299/month. No surprise costs, no huge upfront fee.</p></div>
-      <div class="wc" data-f data-d="2"><div class="wc-n">02</div><b>Everything in one place</b><p>Website, hosting, SEO and Google, handled by one team.</p></div>
-      <div class="wc" data-f data-d="3"><div class="wc-n">03</div><b>Live in days</b><p>Your site online fast, so you start getting customers sooner.</p></div>
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Professional Website<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Hosting Included<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Basic SEO<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Google Business<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Maintenance<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Reviews<span class="marquee__sep"></span></span>
+    <span class="marquee__item">$299/month<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Live in Days<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Professional Website<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Hosting Included<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Basic SEO<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Google Business<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Maintenance<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Reviews<span class="marquee__sep"></span></span>
+    <span class="marquee__item">$299/month<span class="marquee__sep"></span></span>
+    <span class="marquee__item">Live in Days<span class="marquee__sep"></span></span>
+  </div>
+</div>
+
+<!-- INCLUDED — 6-item feat-grid (same visual as method) -->
+<section class="section section--alt" data-anim>
+  <div class="container">
+    <div class="eyebrow">What's included</div>
+    <h2 class="h2" style="margin-bottom:3rem">Everything<br>in one place.</h2>
+    <div class="feat-grid">
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-layout-2"></i></div><div class="method__title">Complete showcase website</div><p class="method__desc">A clean, modern multi-page site that makes your business look professional.</p></div>
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-server"></i></div><div class="method__title">Hosting included</div><p class="method__desc">Fast, secure hosting handled for you. Nothing to manage.</p></div>
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-tools"></i></div><div class="method__title">Maintenance &amp; updates</div><p class="method__desc">We keep it updated, secure and online.</p></div>
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-search"></i></div><div class="method__title">Basic SEO</div><p class="method__desc">Set up to be found on Google from day one.</p></div>
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-map-pin"></i></div><div class="method__title">Google Business Profile</div><p class="method__desc">We set up and optimize your profile so you show up on Maps and Search.</p></div>
+      <div class="method__step"><div class="feat-icon"><i class="ti ti-star"></i></div><div class="method__title">Reviews</div><p class="method__desc">Collect and show customer reviews that build trust.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec alt">
-  <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Process</div><h2>How it works</h2></div>
-    <div class="steps">
-      <div class="step" data-f data-d="1"><div class="step-n">1</div><b>Book a free call</b><p>Tell us about your business. 15 minutes.</p></div>
-      <div class="step" data-f data-d="2"><div class="step-n">2</div><b>We build your site</b><p>You review, we refine.</p></div>
-      <div class="step" data-f data-d="3"><div class="step-n">3</div><b>You go live</b><p>Online and getting found on Google.</p></div>
+<!-- WHY — manifesto dark section -->
+<section class="section section--dark" data-anim>
+  <div class="container">
+    <div class="manifesto">
+      <div>
+        <div class="eyebrow">Why Nicos Digital</div>
+        <div class="manifesto__quote">One price.<br><em>Everything included.</em></div>
+      </div>
+      <div class="manifesto__body">
+        <p><strong>$299/month.</strong> No surprise costs, no huge upfront fee. Your website, hosting, SEO and Google Business are all handled by one team — us.</p>
+        <p>We build fast, so you start getting customers sooner. Most sites are live within days of your first call.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Examples</div><h2>Built for your kind of business</h2><p class="sec-sub">Scroll to see what we build →</p></div>
+<!-- HOW IT WORKS — method component -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="eyebrow" data-anim>How it works</div>
+    <h2 class="h2" style="margin-bottom:2.5rem" data-anim data-delay="1">From call to live.<br>Simple. Fast.</h2>
+    <div class="method" data-anim data-delay="2">
+      <div class="method__step"><div class="method__num">01</div><div class="method__title">Book a free call</div><p class="method__desc">Tell us about your business. 15 minutes is all it takes.</p></div>
+      <div class="method__step"><div class="method__num">02</div><div class="method__title">We build your site</div><p class="method__desc">You review, we refine. No back-and-forth for months.</p></div>
+      <div class="method__step"><div class="method__num">03</div><div class="method__title">You go live</div><p class="method__desc">Online and getting found on Google.</p></div>
+    </div>
   </div>
-  <div class="ex-out" data-f data-d="1">
+</section>
+
+<!-- EXAMPLES — horizontal scroll gallery -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="eyebrow" data-anim>Examples</div>
+    <h2 class="h2" style="margin-bottom:0.75rem" data-anim data-delay="1">Built for your<br>kind of business.</h2>
+    <p style="color:var(--grey);font-size:0.95rem;margin-bottom:2rem" data-anim data-delay="2">Scroll to see what we build →</p>
+  </div>
+  <div class="ex-out" data-anim data-delay="2">
     <div class="ex-track">
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#7D2318,#C45C3A)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#F2CFA0"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(196,92,58,.14)"></div><div class="mb" style="background:rgba(196,92,58,.14)"></div><div class="mb" style="background:rgba(196,92,58,.14)"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(196,92,58,.12)"></div><div class="mb" style="background:rgba(196,92,58,.12)"></div><div class="mb" style="background:rgba(196,92,58,.12)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>Restaurant</b><div class="chips"><span class="chip">Online menu</span><span class="chip">Reservations</span><span class="chip">Click-to-call</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#3E5E40,#8DAA8C)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#EEE9D8"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(141,170,140,.14)"></div><div class="mb" style="background:rgba(141,170,140,.14)"></div><div class="mb" style="background:rgba(141,170,140,.14)"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(141,170,140,.12)"></div><div class="mb" style="background:rgba(141,170,140,.12)"></div><div class="mb" style="background:rgba(141,170,140,.12)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>B&amp;B / Hotel</b><div class="chips"><span class="chip">Room showcase</span><span class="chip">Direct bookings</span><span class="chip">Availability</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#16527A,#2B7CB8)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#D9EEFA"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(43,124,184,.14)"></div><div class="mb" style="background:rgba(43,124,184,.14)"></div><div class="mb" style="background:rgba(43,124,184,.14)"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(43,124,184,.12)"></div><div class="mb" style="background:rgba(43,124,184,.12)"></div><div class="mb" style="background:rgba(43,124,184,.12)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>Dentist</b><div class="chips"><span class="chip">Services</span><span class="chip">Appointment</span><span class="chip">Reviews</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#0C1528,#1D2B4F)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#B8952A"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(184,149,42,.14)"></div><div class="mb" style="background:rgba(184,149,42,.14)"></div><div class="mb" style="background:rgba(184,149,42,.14)"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(184,149,42,.12)"></div><div class="mb" style="background:rgba(184,149,42,.12)"></div><div class="mb" style="background:rgba(184,149,42,.12)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>Law Firm</b><div class="chips"><span class="chip">Practice areas</span><span class="chip">Consultation</span><span class="chip">Credibility</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
-        <div class="mc-hero" style="background:linear-gradient(140deg,#080808,#1C1C1C)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#C4E52B"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(196,229,43,.11)"></div><div class="mb" style="background:rgba(196,229,43,.11)"></div><div class="mb" style="background:rgba(196,229,43,.11)"></div></div>
+        <div class="mc-hero" style="background:linear-gradient(140deg,#141414,#282828)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#C4E52B"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(196,229,43,.1)"></div><div class="mb" style="background:rgba(196,229,43,.1)"></div><div class="mb" style="background:rgba(196,229,43,.1)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>Gym</b><div class="chips"><span class="chip">Classes</span><span class="chip">Free trial</span><span class="chip">Membership</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#6B3049,#C47A95)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#EDD1DB"></div></div>
-        <div class="mc-blks"><div class="mb" style="background:rgba(196,122,149,.14)"></div><div class="mb" style="background:rgba(196,122,149,.14)"></div><div class="mb" style="background:rgba(196,122,149,.14)"></div></div>
+        <div class="mc-blks"><div class="mb" style="background:rgba(196,122,149,.12)"></div><div class="mb" style="background:rgba(196,122,149,.12)"></div><div class="mb" style="background:rgba(196,122,149,.12)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
         <div class="mc-lbl"><b>Beauty</b><div class="chips"><span class="chip">Service list</span><span class="chip">Online booking</span><span class="chip">Gallery</span></div></div>
       </div>
@@ -278,20 +372,25 @@
   </div>
 </section>
 
-<section class="sec alt">
-  <div class="c">
-    <div class="price-wrap" data-f>
-      <div class="price-box">
-        <div class="price-big">$299<span class="price-mo">/month</span></div>
-        <p class="price-note">Everything included — no hidden extras.</p>
-        <ul class="incl">
-          <li>Complete website</li><li>Hosting</li><li>Maintenance</li>
-          <li>Basic SEO</li><li>Google Business</li><li>Reviews</li>
-        </ul>
-        <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Book a free call →</a>
-      </div>
+<!-- PRICE RECAP -->
+<section class="section" id="price">
+  <div class="container">
+    <div class="eyebrow" data-anim>Pricing</div>
+    <h2 class="h2" style="margin-bottom:3rem" data-anim data-delay="1">One price.<br>No surprises.</h2>
+    <div class="price-box" data-anim data-delay="2">
+      <div class="price-big">$299<span class="price-period">/month</span></div>
+      <p class="price-note">Everything included — no hidden extras.</p>
+      <ul class="incl-list">
+        <li class="incl-item">Complete website</li>
+        <li class="incl-item">Hosting</li>
+        <li class="incl-item">Maintenance</li>
+        <li class="incl-item">Basic SEO</li>
+        <li class="incl-item">Google Business</li>
+        <li class="incl-item">Reviews</li>
+      </ul>
+      <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;"><span class="btn__arrow"></span>Book a free call</button>
     </div>
-    <div class="faq-w" data-f data-d="1">
+    <div class="faq-list" data-anim data-delay="2">
       <details><summary>Do I own my website?</summary><p>Yes — it's built for your business and yours to use. Hosting and maintenance are included in your plan.</p></details>
       <details><summary>Is there a setup fee?</summary><p>No large upfront cost. You start with the simple monthly plan.</p></details>
       <details><summary>How long does it take?</summary><p>Usually a few days once we have your content.</p></details>
@@ -300,27 +399,45 @@
   </div>
 </section>
 
+<!-- CTA FINAL — same as sector pages -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-final__inner" data-anim>
+      <h2 class="cta-final__h">Ready to get your business online?</h2>
+      <p class="cta-final__sub">Book a free 15-minute call. We'll build your site fast.</p>
+      <div class="cta-final__actions">
+        <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — same as sector pages -->
 <footer class="footer">
-  <div class="c"><div class="footer-in">
-    <a class="logo" href="/">
-      <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
-      <div class="logo-name" style="font-size:.9rem">Nicos Digital</div>
-    </a>
-    <nav class="flinks">
-      <a href="mailto:nico@nicosdigit.com">nico@nicosdigit.com</a>
-      <a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="/marketing">Ads</a>
-      <a href="/it" style="opacity:.45">IT</a>
-    </nav>
-    <p class="fcopy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
-  </div></div>
+  <div class="container">
+    <div class="footer__inner">
+      <a class="logo footer__logo" href="/">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
+        <div><div class="logo__text">Nicos Digital</div><span class="logo__sub">Professional Websites</span></div>
+      </a>
+      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
+      <nav class="footer__links">
+        <a href="mailto:nico@nicosdigit.com">nico@nicosdigit.com</a>
+        <a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/marketing">Ads</a>
+        <a href="/it">🇮🇹 IT</a>
+      </nav>
+    </div>
+  </div>
 </footer>
 
 <script>
-  const obs = new IntersectionObserver(es => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  const head = document.getElementById('site-head');
+  window.addEventListener('scroll', () => { head.classList.toggle('is-scrolled', window.scrollY > 60); }, { passive: true });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
