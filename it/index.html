@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Website for Your Business — $299/month | Nicos Digital</title>
-  <meta name="description" content="A professional showcase website — design, hosting, maintenance, SEO and Google Business Profile. All included for $299/month. No big upfront cost.">
-  <link rel="canonical" href="https://nicosdigit.com/">
-  <link rel="alternate" hreflang="en" href="https://nicosdigit.com/">
+  <title>Sito Web Professionale per la Tua Attività — €299/mese | Nicos Digital</title>
+  <meta name="description" content="Il sito professionale della tua attività — design, hosting, manutenzione, SEO e profilo Google. Tutto incluso a €299/mese + IVA. Nessun grande costo iniziale.">
+  <link rel="canonical" href="https://nicosdigit.com/it">
   <link rel="alternate" hreflang="it" href="https://nicosdigit.com/it">
+  <link rel="alternate" hreflang="en" href="https://nicosdigit.com/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='4,16 28,4 28,28' fill='%23FE6C61' stroke='%23FE6C61' stroke-width='4' stroke-linejoin='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,6 @@
     .c{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.5rem}
     @media(min-width:768px){.c{padding:0 2.5rem}}
 
-    /* HEADER */
     .hdr{position:sticky;top:0;z-index:100;background:rgba(12,12,12,0.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr)}
     .hdr-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
     .logo{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
@@ -42,14 +41,14 @@
     .lang a:hover,.lang a.on{color:#fff}
     .lang span{color:var(--bdr)}
 
-    /* BUTTON */
     .btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--coral);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;padding:.55rem 1.1rem;border-radius:8px;border:none;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 4px 18px rgba(254,108,97,.28);white-space:nowrap}
     .btn:hover{background:var(--coral-d);transform:translateY(-1px);box-shadow:0 6px 26px rgba(254,108,97,.42)}
     .btn:active{transform:none}
     .btn.lg{font-size:1rem;padding:.9rem 2.2rem;border-radius:11px}
+    .btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.18);color:var(--text);box-shadow:none}
+    .btn.ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);transform:translateY(-1px)}
     @media(max-width:420px){.hdr-hide{display:none!important}}
 
-    /* HERO */
     .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;padding:5rem 0 4rem;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 90% 50% at 50% 0%,rgba(254,108,97,.13) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(254,108,97,.05) 0%,transparent 50%)}
     .hero-in{position:relative;text-align:center;max-width:720px;margin:0 auto}
@@ -59,15 +58,14 @@
     .badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--coral-g);border:1px solid rgba(254,108,97,.22);border-radius:100px;padding:.5rem 1.35rem;font-size:.9rem;font-weight:600;color:var(--coral);margin-bottom:2.2rem}
     .badge .sep{color:rgba(254,108,97,.35);font-weight:400}
     .badge .n{color:rgba(254,108,97,.65);font-weight:400}
+    .hero-ctas{display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap}
 
-    /* SECTIONS */
     .sec{padding:5rem 0}
     .sec.alt{background:var(--bg2)}
     .sec-hd{text-align:center;margin-bottom:3rem}
     .sec h2{font-size:clamp(1.7rem,3.8vw,2.5rem)}
     .sec-sub{color:var(--muted);margin-top:.7rem;font-size:.92rem}
 
-    /* INCLUDED */
     .feat-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border-radius:16px;overflow:hidden}
     @media(max-width:700px){.feat-g{grid-template-columns:1fr 1fr}}
     @media(max-width:440px){.feat-g{grid-template-columns:1fr}}
@@ -76,7 +74,6 @@
     .fi b{display:block;color:#fff;font-weight:600;font-size:.92rem;margin-bottom:.25rem}
     .fi span{font-size:.8rem;color:var(--muted);line-height:1.55}
 
-    /* WHY */
     .why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
     @media(max-width:700px){.why-g{grid-template-columns:1fr}}
     .wc{background:var(--bg3);border:1px solid var(--bdr);border-radius:14px;padding:1.75rem 1.5rem}
@@ -84,7 +81,6 @@
     .wc b{display:block;color:#fff;font-size:1rem;margin-bottom:.45rem}
     .wc p{color:var(--muted);font-size:.85rem;line-height:1.6}
 
-    /* STEPS */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
     .steps::before{content:'';position:absolute;top:24px;left:calc(16.67% + 12px);right:calc(16.67% + 12px);height:1px;background:repeating-linear-gradient(90deg,var(--bdr) 0,var(--bdr) 6px,transparent 6px,transparent 14px)}
     @media(max-width:700px){.steps{grid-template-columns:1fr;gap:1.5rem}.steps::before{display:none}}
@@ -93,7 +89,6 @@
     .step b{display:block;color:#fff;font-size:.98rem;margin-bottom:.3rem}
     .step p{color:var(--muted);font-size:.83rem}
 
-    /* EXAMPLES */
     .ex-out{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent}
     .ex-out::-webkit-scrollbar{height:4px}
     .ex-out::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
@@ -118,7 +113,6 @@
     .chips{display:flex;flex-wrap:wrap;gap:4px}
     .chip{background:var(--faint);border:1px solid var(--bdr);color:var(--muted);font-size:.67rem;padding:2px 7px;border-radius:100px}
 
-    /* PRICE */
     .price-wrap{max-width:600px;margin:0 auto 3.5rem;text-align:center}
     .price-box{background:var(--bg3);border:1px solid var(--bdr);border-radius:20px;padding:2.5rem 2rem;box-shadow:0 0 60px rgba(254,108,97,.06)}
     .price-big{font-family:'Archivo Black',sans-serif;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--coral);line-height:1;margin-bottom:.4rem}
@@ -128,7 +122,6 @@
     .incl li{list-style:none;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.3rem}
     .incl li::before{content:'✓';color:var(--coral);font-weight:700}
 
-    /* FAQ */
     .faq-w{max-width:640px;margin:0 auto}
     details{border-bottom:1px solid var(--bdr)}
     summary{padding:1.2rem 0;cursor:pointer;list-style:none;font-weight:600;font-size:.93rem;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:1rem}
@@ -137,7 +130,6 @@
     details[open] summary::after{transform:rotate(45deg)}
     details>p{padding:0 0 1.2rem;color:var(--muted);font-size:.87rem;line-height:1.65}
 
-    /* FOOTER */
     .footer{background:var(--bg2);border-top:1px solid var(--bdr);padding:2.25rem 0}
     .footer-in{display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
     @media(min-width:768px){.footer-in{flex-direction:row;justify-content:space-between;text-align:left}}
@@ -146,7 +138,6 @@
     .flinks a:hover{color:#fff}
     .fcopy{color:var(--muted);font-size:.75rem}
 
-    /* FADE IN */
     [data-f]{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
     [data-f].in{opacity:1;transform:none}
     [data-f][data-d="1"]{transition-delay:.08s}
@@ -156,6 +147,8 @@
     @media(max-width:430px){
       .hero{padding:3.5rem 0 3rem}
       .btn.lg{width:100%;justify-content:center}
+      .hero-ctas{flex-direction:column;align-items:stretch}
+      .hero-ctas .btn{justify-content:center}
       .sec{padding:3.5rem 0}
       .price-box{padding:2rem 1.25rem}
     }
@@ -165,13 +158,13 @@
 
 <header class="hdr">
   <div class="c"><div class="hdr-in">
-    <a class="logo" href="/">
+    <a class="logo" href="/it">
       <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
-      <div><div class="logo-name">Nicos Digital</div><span class="logo-sub">Professional Websites</span></div>
+      <div><div class="logo-name">Nicos Digital</div><span class="logo-sub">Siti Web Professionali</span></div>
     </a>
     <div class="hdr-r">
-      <div class="lang"><a href="/" class="on">EN</a><span>|</span><a href="/it">IT</a></div>
-      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn hdr-hide">Book a free call</a>
+      <div class="lang"><a href="/">EN</a><span>|</span><a href="/it" class="on">IT</a></div>
+      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn hdr-hide">Prenota una call</a>
     </div>
   </div></div>
 </header>
@@ -179,56 +172,57 @@
 <section class="hero">
   <div class="c"><div class="hero-in">
     <div class="ew" data-f>Nicos Digital</div>
-    <h1 data-f data-d="1">A professional website for your business — done for you.</h1>
-    <p class="hero-sub" data-f data-d="2">Design, hosting, maintenance, SEO and your Google profile. All included, one simple monthly price.</p>
+    <h1 data-f data-d="1">Il sito professionale della tua azienda — fatto da noi.</h1>
+    <p class="hero-sub" data-f data-d="2">Design, hosting, manutenzione, SEO e il tuo profilo Google. Tutto incluso, un unico prezzo mensile.</p>
     <div data-f data-d="2" style="margin-bottom:2.2rem">
-      <div class="badge"><span>$299/month</span><span class="sep">·</span><span class="n">no big upfront cost</span></div>
+      <div class="badge"><span>€299/mese + IVA</span><span class="sep">·</span><span class="n">nessun grande costo iniziale</span></div>
     </div>
-    <div data-f data-d="3">
-      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Book a free call →</a>
+    <div class="hero-ctas" data-f data-d="3">
+      <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Prenota una call gratuita →</a>
+      <a href="https://wa.me/393514120302" target="_blank" rel="noopener" class="btn lg ghost">Scrivici su WhatsApp</a>
     </div>
   </div></div>
 </section>
 
 <section class="sec alt">
   <div class="c">
-    <div class="sec-hd" data-f><div class="ew">What's included</div><h2>Everything in one place</h2><p class="sec-sub">No hidden extras. No managing five different vendors.</p></div>
+    <div class="sec-hd" data-f><div class="ew">Cosa è incluso</div><h2>Tutto in un unico posto</h2><p class="sec-sub">Nessun costo nascosto. Nessun bisogno di gestire cinque fornitori diversi.</p></div>
     <div class="feat-g" data-f data-d="1">
-      <div class="fi"><div class="fi-ico"><i class="ti ti-layout-2"></i></div><div><b>Complete showcase website</b><span>A clean, modern multi-page site that makes your business look professional.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-server"></i></div><div><b>Hosting included</b><span>Fast, secure hosting handled for you. Nothing to manage.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-tools"></i></div><div><b>Maintenance &amp; updates</b><span>We keep it updated, secure and online.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-search"></i></div><div><b>Basic SEO</b><span>Set up to be found on Google from day one.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-map-pin"></i></div><div><b>Google Business Profile</b><span>We set up and optimize your profile so you show up on Maps and Search.</span></div></div>
-      <div class="fi"><div class="fi-ico"><i class="ti ti-star"></i></div><div><b>Reviews</b><span>Collect and show customer reviews that build trust.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-layout-2"></i></div><div><b>Sito vetrina completo</b><span>Un sito moderno e multi-pagina che fa apparire professionale la tua attività.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-server"></i></div><div><b>Hosting incluso</b><span>Hosting veloce e sicuro gestito da noi. Niente da gestire.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-tools"></i></div><div><b>Manutenzione e aggiornamenti</b><span>Lo teniamo aggiornato, sicuro e sempre online.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-search"></i></div><div><b>SEO di base</b><span>Impostato per essere trovato su Google fin da subito.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-map-pin"></i></div><div><b>Profilo Google Business</b><span>Configuriamo e ottimizziamo il tuo profilo per apparire su Maps e nella Ricerca.</span></div></div>
+      <div class="fi"><div class="fi-ico"><i class="ti ti-star"></i></div><div><b>Recensioni</b><span>Raccogli e mostra le recensioni dei clienti che creano fiducia.</span></div></div>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Why us</div><h2>Why Nicos Digital</h2></div>
+    <div class="sec-hd" data-f><div class="ew">Perché noi</div><h2>Perché Nicos Digital</h2></div>
     <div class="why-g">
-      <div class="wc" data-f data-d="1"><div class="wc-n">01</div><b>One simple price</b><p>$299/month. No surprise costs, no huge upfront fee.</p></div>
-      <div class="wc" data-f data-d="2"><div class="wc-n">02</div><b>Everything in one place</b><p>Website, hosting, SEO and Google, handled by one team.</p></div>
-      <div class="wc" data-f data-d="3"><div class="wc-n">03</div><b>Live in days</b><p>Your site online fast, so you start getting customers sooner.</p></div>
+      <div class="wc" data-f data-d="1"><div class="wc-n">01</div><b>Un unico prezzo semplice</b><p>€299/mese. Nessun costo nascosto, nessun grande anticipo.</p></div>
+      <div class="wc" data-f data-d="2"><div class="wc-n">02</div><b>Tutto in un unico posto</b><p>Sito, hosting, SEO e Google, gestiti da un solo team.</p></div>
+      <div class="wc" data-f data-d="3"><div class="wc-n">03</div><b>Online in pochi giorni</b><p>Il tuo sito online in fretta, così inizi prima a ricevere clienti.</p></div>
     </div>
   </div>
 </section>
 
 <section class="sec alt">
   <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Process</div><h2>How it works</h2></div>
+    <div class="sec-hd" data-f><div class="ew">Come funziona</div><h2>3 passi semplici</h2></div>
     <div class="steps">
-      <div class="step" data-f data-d="1"><div class="step-n">1</div><b>Book a free call</b><p>Tell us about your business. 15 minutes.</p></div>
-      <div class="step" data-f data-d="2"><div class="step-n">2</div><b>We build your site</b><p>You review, we refine.</p></div>
-      <div class="step" data-f data-d="3"><div class="step-n">3</div><b>You go live</b><p>Online and getting found on Google.</p></div>
+      <div class="step" data-f data-d="1"><div class="step-n">1</div><b>Prenota una call gratuita</b><p>Raccontaci la tua attività. 15 minuti.</p></div>
+      <div class="step" data-f data-d="2"><div class="step-n">2</div><b>Costruiamo il tuo sito</b><p>Tu controlli, noi rifiniamo.</p></div>
+      <div class="step" data-f data-d="3"><div class="step-n">3</div><b>Vai online</b><p>Online e trovabile su Google.</p></div>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="c">
-    <div class="sec-hd" data-f><div class="ew">Examples</div><h2>Built for your kind of business</h2><p class="sec-sub">Scroll to see what we build →</p></div>
+    <div class="sec-hd" data-f><div class="ew">Esempi</div><h2>Pensato per la tua attività</h2><p class="sec-sub">Scorri per vedere cosa realizziamo →</p></div>
   </div>
   <div class="ex-out" data-f data-d="1">
     <div class="ex-track">
@@ -237,42 +231,42 @@
         <div class="mc-hero" style="background:linear-gradient(140deg,#7D2318,#C45C3A)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#F2CFA0"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(196,92,58,.14)"></div><div class="mb" style="background:rgba(196,92,58,.14)"></div><div class="mb" style="background:rgba(196,92,58,.14)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>Restaurant</b><div class="chips"><span class="chip">Online menu</span><span class="chip">Reservations</span><span class="chip">Click-to-call</span></div></div>
+        <div class="mc-lbl"><b>Ristorante</b><div class="chips"><span class="chip">Menu online</span><span class="chip">Prenotazioni</span><span class="chip">Click-to-call</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#3E5E40,#8DAA8C)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#EEE9D8"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(141,170,140,.14)"></div><div class="mb" style="background:rgba(141,170,140,.14)"></div><div class="mb" style="background:rgba(141,170,140,.14)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>B&amp;B / Hotel</b><div class="chips"><span class="chip">Room showcase</span><span class="chip">Direct bookings</span><span class="chip">Availability</span></div></div>
+        <div class="mc-lbl"><b>B&amp;B / Hotel</b><div class="chips"><span class="chip">Vetrina camere</span><span class="chip">Prenotazione diretta</span><span class="chip">Disponibilità</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#16527A,#2B7CB8)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#D9EEFA"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(43,124,184,.14)"></div><div class="mb" style="background:rgba(43,124,184,.14)"></div><div class="mb" style="background:rgba(43,124,184,.14)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>Dentist</b><div class="chips"><span class="chip">Services</span><span class="chip">Appointment</span><span class="chip">Reviews</span></div></div>
+        <div class="mc-lbl"><b>Dentista</b><div class="chips"><span class="chip">Servizi</span><span class="chip">Appuntamento</span><span class="chip">Recensioni</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#0C1528,#1D2B4F)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#B8952A"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(184,149,42,.14)"></div><div class="mb" style="background:rgba(184,149,42,.14)"></div><div class="mb" style="background:rgba(184,149,42,.14)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>Law Firm</b><div class="chips"><span class="chip">Practice areas</span><span class="chip">Consultation</span><span class="chip">Credibility</span></div></div>
+        <div class="mc-lbl"><b>Studio Legale</b><div class="chips"><span class="chip">Aree di pratica</span><span class="chip">Consulenza</span><span class="chip">Credibilità</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#080808,#1C1C1C)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#C4E52B"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(196,229,43,.11)"></div><div class="mb" style="background:rgba(196,229,43,.11)"></div><div class="mb" style="background:rgba(196,229,43,.11)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>Gym</b><div class="chips"><span class="chip">Classes</span><span class="chip">Free trial</span><span class="chip">Membership</span></div></div>
+        <div class="mc-lbl"><b>Palestra</b><div class="chips"><span class="chip">Corsi</span><span class="chip">Prova gratuita</span><span class="chip">Iscrizioni</span></div></div>
       </div>
       <div class="mc">
         <div class="mc-ch"><div class="mc-dots"><div class="mc-dot" style="background:#FF5F57"></div><div class="mc-dot" style="background:#FFBD2E"></div><div class="mc-dot" style="background:#28CA41"></div></div><div class="mc-addr"></div></div>
         <div class="mc-hero" style="background:linear-gradient(140deg,#6B3049,#C47A95)"><div class="ml h"></div><div class="ml s"></div><div class="mlb" style="background:#EDD1DB"></div></div>
         <div class="mc-blks"><div class="mb" style="background:rgba(196,122,149,.14)"></div><div class="mb" style="background:rgba(196,122,149,.14)"></div><div class="mb" style="background:rgba(196,122,149,.14)"></div></div>
         <div class="mc-lines"><div class="mfl" style="width:80%"></div><div class="mfl" style="width:55%"></div></div>
-        <div class="mc-lbl"><b>Beauty</b><div class="chips"><span class="chip">Service list</span><span class="chip">Online booking</span><span class="chip">Gallery</span></div></div>
+        <div class="mc-lbl"><b>Centro Estetico</b><div class="chips"><span class="chip">Lista servizi</span><span class="chip">Prenotazione online</span><span class="chip">Gallery</span></div></div>
       </div>
     </div>
   </div>
@@ -282,35 +276,36 @@
   <div class="c">
     <div class="price-wrap" data-f>
       <div class="price-box">
-        <div class="price-big">$299<span class="price-mo">/month</span></div>
-        <p class="price-note">Everything included — no hidden extras.</p>
+        <div class="price-big">€299<span class="price-mo">/mese + IVA</span></div>
+        <p class="price-note">Tutto incluso — nessun costo nascosto.</p>
         <ul class="incl">
-          <li>Complete website</li><li>Hosting</li><li>Maintenance</li>
-          <li>Basic SEO</li><li>Google Business</li><li>Reviews</li>
+          <li>Sito vetrina</li><li>Hosting</li><li>Manutenzione</li>
+          <li>SEO di base</li><li>Google Business</li><li>Recensioni</li>
         </ul>
-        <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Book a free call →</a>
+        <a href="https://calendly.com/nicoladimattia8/30min" target="_blank" rel="noopener" class="btn lg">Prenota una call gratuita →</a>
       </div>
     </div>
     <div class="faq-w" data-f data-d="1">
-      <details><summary>Do I own my website?</summary><p>Yes — it's built for your business and yours to use. Hosting and maintenance are included in your plan.</p></details>
-      <details><summary>Is there a setup fee?</summary><p>No large upfront cost. You start with the simple monthly plan.</p></details>
-      <details><summary>How long does it take?</summary><p>Usually a few days once we have your content.</p></details>
-      <details><summary>What if I need bigger changes later?</summary><p>Updates are included; larger custom work we discuss on your call.</p></details>
+      <details><summary>Il sito è mio?</summary><p>Sì — è realizzato per la tua attività ed è tuo da usare. Hosting e manutenzione sono inclusi nel piano.</p></details>
+      <details><summary>C'è un costo di attivazione?</summary><p>Nessun grande costo iniziale. Parti con il semplice canone mensile.</p></details>
+      <details><summary>Quanto tempo serve?</summary><p>Di solito pochi giorni una volta ricevuti i tuoi contenuti.</p></details>
+      <details><summary>E se più avanti servono modifiche grandi?</summary><p>Gli aggiornamenti sono inclusi; i lavori personalizzati più grandi li vediamo in call.</p></details>
     </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="c"><div class="footer-in">
-    <a class="logo" href="/">
+    <a class="logo" href="/it">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#FE6C61" stroke="#FE6C61" stroke-width="4" stroke-linejoin="round"/></svg>
       <div class="logo-name" style="font-size:.9rem">Nicos Digital</div>
     </a>
     <nav class="flinks">
       <a href="mailto:nico@nicosdigit.com">nico@nicosdigit.com</a>
+      <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="/marketing">Ads</a>
-      <a href="/it" style="opacity:.45">IT</a>
+      <a href="/" style="opacity:.45">EN</a>
     </nav>
     <p class="fcopy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
   </div></div>

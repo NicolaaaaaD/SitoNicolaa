@@ -1,4 +1,96 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/dentist-en",
+      "destination": "/dentist-en-ads",
+      "permanent": true
+    },
+    {
+      "source": "/hotel-en",
+      "destination": "/hotel-en-ads",
+      "permanent": true
+    },
+    {
+      "source": "/physiotherapy",
+      "destination": "/physiotherapy-ads",
+      "permanent": true
+    },
+    {
+      "source": "/real-estate",
+      "destination": "/real-estate-ads",
+      "permanent": true
+    },
+    {
+      "source": "/fisioterapia",
+      "destination": "/fisioterapia-ads",
+      "permanent": true
+    },
+    {
+      "source": "/immobiliare",
+      "destination": "/immobiliare-ads",
+      "permanent": true
+    },
+    {
+      "source": "/ristorante",
+      "destination": "/ristorante-ads",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant",
+      "destination": "/restaurant-ads",
+      "permanent": true
+    },
+    {
+      "source": "/avvocati",
+      "destination": "/avvocati-ads",
+      "permanent": true
+    },
+    {
+      "source": "/idraulico",
+      "destination": "/idraulico-ads",
+      "permanent": true
+    },
+    {
+      "source": "/palestra",
+      "destination": "/palestra-ads",
+      "permanent": true
+    },
+    {
+      "source": "/estetica",
+      "destination": "/estetica-ads",
+      "permanent": true
+    },
+    {
+      "source": "/plumber",
+      "destination": "/plumber-ads",
+      "permanent": true
+    },
+    {
+      "source": "/lawyers",
+      "destination": "/lawyers-ads",
+      "permanent": true
+    },
+    {
+      "source": "/beauty",
+      "destination": "/beauty-ads",
+      "permanent": true
+    },
+    {
+      "source": "/dentist",
+      "destination": "/dentist-ads",
+      "permanent": true
+    },
+    {
+      "source": "/hotel",
+      "destination": "/hotel-ads",
+      "permanent": true
+    },
+    {
+      "source": "/gym",
+      "destination": "/gym-ads",
+      "permanent": true
+    }
+  ]
 }
