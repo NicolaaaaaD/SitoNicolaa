@@ -81,9 +81,6 @@
     @keyframes floatTri{0%,100%{transform:translateY(0);}50%{transform:translateY(-22px);}}
     @media(max-width:880px){.hero__bg{right:-25vw;top:30vh;width:110vw;opacity:0.5;}}
     .hero__inner{position:relative;z-index:2;max-width:1000px;}
-    .hero__pill{display:inline-flex;align-items:center;gap:0.7rem;padding:0.5rem 1rem 0.5rem 0.9rem;background:var(--ink);color:var(--bg);font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border-radius:999px;margin-bottom:2rem;}
-    .hero__pill::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(0.85);}}
     .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--grey);margin-bottom:2.5rem;transition:color 0.2s;min-height:44px;}
     .back-link::before{content:'';width:0;height:0;border-style:solid;border-width:5px 7px 5px 0;border-color:transparent var(--grey) transparent transparent;transition:border-color 0.2s;}
     .back-link:hover{color:var(--ink);}.back-link:hover::before{border-right-color:var(--ink);}
@@ -202,7 +199,7 @@
   <div class="hero__bg"><svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#33C494" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#33C494" opacity="0.05"/></svg></div>
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__pill">Caso Studio · Omnitrack · E-commerce Industriale · UK</div>
+      <div class="eyebrow">Caso Studio · Omnitrack</div>
       <h1 class="cs-hero__h1">ROAS <em>+96%</em>,<br>spendendo il 27% in meno.</h1>
       <p class="cs-hero-tagline">Come abbiamo ricostruito il tracking su 7 mercati, eliminato la spesa sprecata e quasi raddoppiato il ritorno sulla spesa pubblicitaria in 90 giorni.</p>
       <div class="cs-meta">

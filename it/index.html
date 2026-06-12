@@ -83,9 +83,6 @@
     @keyframes floatTri{0%,100%{transform:translateY(0);}50%{transform:translateY(-22px);}}
     @media(max-width:880px){.hero__bg{right:-25vw;top:38vh;width:110vw;opacity:0.6;}}
     .hero__inner{position:relative;z-index:2;max-width:1100px;}
-    .hero__pill{display:inline-flex;align-items:center;gap:0.7rem;padding:0.5rem 1rem 0.5rem 0.9rem;background:var(--ink);color:var(--bg);font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border-radius:999px;margin-bottom:2rem;}
-    .hero__pill::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(0.85);}}
     .hero__h1{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2rem,8vw,7rem);line-height:0.92;letter-spacing:-0.04em;color:var(--ink);margin-bottom:2rem;}
     .hero__h1 .accent{position:relative;display:inline-block;}
     .hero__h1 .accent::after{content:'';position:absolute;left:-2px;right:-2px;bottom:0.06em;height:0.16em;background:var(--green);z-index:-1;}
@@ -295,7 +292,6 @@
   <div class="hero__bg"><svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#33C494" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#33C494" opacity="0.05"/><polygon points="0,700 900,260 900,700" fill="#0A0A0A" opacity="0.03"/></svg></div>
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__pill">Nicola Dimattia · Performance &amp; Design</div>
       <h1 class="hero__h1">Smetti di pagare per i clic.<br>Inizia a pagare per i <span class="accent">clienti.</span></h1>
       <p class="hero__lead">Google Ads e Meta Ads con numeri che puoi verificare — ogni risultato su questo sito è cliccabile. Sono Nicola Dimattia: gestisco le campagne, scrivo i testi, costruisco le landing page. Una sola persona responsabile.</p>
       <div class="hero__ctas">
