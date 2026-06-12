@@ -3,7 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/marketing", "destination": "/", "permanent": true },
-    { "source": "/it", "destination": "/", "permanent": true },
     { "source": "/en", "destination": "/", "permanent": true },
     { "source": "/avvocati", "destination": "/", "permanent": true },
     { "source": "/avvocati-ads", "destination": "/", "permanent": true },
