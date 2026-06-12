@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,6 +140,24 @@
     @media(max-width:360px){.container{padding:0 1rem;}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}[data-anim]{opacity:1!important;transform:none!important;}}
   </style>
+<style>
+  .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:199;background:#0A0A0A;color:rgba(255,255,255,.9);display:none;border-top:1px solid rgba(255,255,255,.1);}
+  .cookie-banner.is-visible{display:block;}
+  .cookie-banner__inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 1.5rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));}
+  .cookie-banner__text{font-size:.88rem;line-height:1.5;flex:1;min-width:220px;}
+  .cookie-banner__link{color:#33C494;text-decoration:underline;}
+  .cookie-banner__actions{display:flex;gap:.75rem;flex-shrink:0;}
+  .cookie-banner__btn{padding:.65rem 1.25rem;font-size:.88rem;font-weight:600;border-radius:999px;cursor:pointer;border:none;font-family:inherit;min-height:44px;transition:transform .2s ease,background .2s,color .2s,border-color .2s;}
+  .cookie-banner__btn--accept{background:#33C494;color:#0A0A0A;}.cookie-banner__btn--accept:hover{background:#28A57C;}
+  .cookie-banner__btn--reject{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);}.cookie-banner__btn--reject:hover{border-color:rgba(255,255,255,.5);}
+  .cookie-banner__btn:active{transform:scale(.97);}
+  .footer__bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;}
+  .footer__legal{font-size:.76rem;color:rgba(255,255,255,.3);line-height:1.5;}
+  .footer__legal a{color:rgba(255,255,255,.3);transition:color .2s;}.footer__legal a:hover{color:#33C494;}
+  .footer__legal-links{display:flex;gap:1rem;font-size:.76rem;}
+  .footer__legal-links a,.footer__cookie-btn{color:rgba(255,255,255,.3);transition:color .2s;min-height:44px;display:inline-flex;align-items:center;}.footer__legal-links a:hover,.footer__cookie-btn:hover{color:#33C494;}
+  .footer__cookie-btn{background:none;border:none;cursor:pointer;font:inherit;padding:0;font-size:.76rem;}
+</style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -293,6 +312,33 @@
   document.querySelectorAll('[data-anim]').forEach(el=>observer.observe(el));
   const mobileCta=document.getElementById('mobile-cta'),heroEl=document.querySelector('.hero'),showAfter=heroEl?heroEl.offsetHeight*0.6:300;
   window.addEventListener('scroll',()=>{mobileCta.classList.toggle('is-visible',window.scrollY>showAfter);},{passive:true});
+</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">This site uses cookies to measure visits and campaign performance. Your call. <a class="cookie-banner__link" href="/cookie-policy">Cookie policy</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button>
+      <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--reject">Reject</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cookieConsent');
+  var banner=document.getElementById('cookie-banner');
+  var mCta=document.getElementById('mobile-cta');
+  function adjustSticky(){if(mCta)mCta.style.bottom=banner&&banner.classList.contains('is-visible')?(banner.offsetHeight+'px'):'';}
+  function showBanner(){if(banner){banner.classList.add('is-visible');adjustSticky();}}
+  function grantConsent(){window.dataLayer=window.dataLayer||[];(function(){function gtag(){window.dataLayer.push(arguments);}gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});})();}
+  function dismiss(c){localStorage.setItem('cookieConsent',c);if(banner)banner.classList.remove('is-visible');if(mCta)mCta.style.bottom='';if(c==='granted')grantConsent();}
+  if(stored==='granted')grantConsent();
+  if(!stored)showBanner();
+  var ab=document.getElementById('cookie-accept'),rb=document.getElementById('cookie-reject');
+  if(ab)ab.addEventListener('click',function(){dismiss('granted');});
+  if(rb)rb.addEventListener('click',function(){dismiss('denied');});
+  var reopen=document.getElementById('cookie-reopen');
+  if(reopen)reopen.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');showBanner();});
+})();
 </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -236,12 +237,35 @@
     }
     @media(max-width:767px){.hero{min-height:100svh!important;}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}[data-anim]{opacity:1!important;transform:none!important;}.hero{min-height:auto!important;}}
+    .cta-microcopy{margin-top:.6rem;font-size:.78rem;color:rgba(10,10,10,.45);letter-spacing:.01em;line-height:1.4;}
+    .hero__ctas .cta-microcopy{flex-basis:100%;margin-top:0;}
+    .cta-final .cta-microcopy{color:rgba(10,10,10,.55);margin-top:.75rem;}
+    @keyframes sticky-pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+    .mobile-cta__btn--cal.pulse-once{animation:sticky-pulse .6s ease both;}
   </style>
-<style>@media(prefers-reduced-motion:no-preference){body.intro-active{overflow:hidden;}#intro{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;overflow:hidden;}.intro__top,.intro__btm{position:absolute;left:0;right:0;height:50%;background:#0A0A0A;}.intro__top{top:0;}.intro__btm{bottom:0;}.intro__content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:1.25rem;width:90%;max-width:600px;z-index:1;}.intro__counter{position:absolute;bottom:2rem;right:2rem;color:#33C494;font-family:monospace;font-size:.75rem;letter-spacing:.1em;z-index:2;}.intro__dot{width:10px;height:10px;border-radius:50%;background:#33C494;animation:i-dot .5s cubic-bezier(.16,1,.3,1) 50ms both;}@keyframes i-dot{from{transform:scale(0)}to{transform:scale(1)}}.intro__wordmark{display:flex;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:clamp(2.5rem,8vw,5rem);color:#fff;letter-spacing:-.03em;line-height:1;}.intro__il{overflow:hidden;display:inline-block;}.intro__ic{display:inline-block;animation:i-letter .45s cubic-bezier(.16,1,.3,1) both;}.intro__ig{color:#33C494;}@keyframes i-letter{from{transform:translateY(110%) rotate(6deg);opacity:0}to{transform:none;opacity:1}}.intro__il:nth-child(1) .intro__ic{animation-delay:200ms}.intro__il:nth-child(2) .intro__ic{animation-delay:245ms}.intro__il:nth-child(3) .intro__ic{animation-delay:290ms}.intro__il:nth-child(4) .intro__ic{animation-delay:335ms}.intro__il:nth-child(5) .intro__ic{animation-delay:380ms}.intro__il:nth-child(6) .intro__ic{animation-delay:425ms}.intro__il:nth-child(7) .intro__ic{animation-delay:470ms}.intro__il:nth-child(8) .intro__ic{animation-delay:515ms}.intro__il:nth-child(9) .intro__ic{animation-delay:560ms}.intro__il:nth-child(10) .intro__ic{animation-delay:605ms}.intro__tagwrap{display:flex;flex-direction:column;align-items:center;gap:.6rem;}.intro__line{width:48px;height:2px;background:#33C494;transform-origin:left center;transform:scaleX(0);animation:i-line .35s cubic-bezier(.16,1,.3,1) 1100ms forwards;}@keyframes i-line{to{transform:scaleX(1)}}.intro__tag{color:rgba(255,255,255,.5);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-family:'Poppins',sans-serif;opacity:0;animation:i-tag .3s ease 1300ms forwards;}@keyframes i-tag{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}</style>
+<style>@media(prefers-reduced-motion:no-preference){body.intro-active{overflow:hidden;}#intro{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;overflow:hidden;}.intro__top,.intro__btm{position:absolute;left:0;right:0;height:50%;background:#0A0A0A;}.intro__top{top:0;}.intro__btm{bottom:0;}.intro__content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:1.5rem;width:92%;max-width:960px;z-index:1;}.intro__counter{position:absolute;bottom:2rem;right:2rem;color:#33C494;font-family:monospace;font-size:.75rem;letter-spacing:.1em;z-index:2;}.intro__dot{width:10px;height:10px;border-radius:50%;background:#33C494;animation:i-dot .5s cubic-bezier(.16,1,.3,1) 100ms both;}@keyframes i-dot{from{transform:scale(0)}to{transform:scale(1)}}.intro__wordmark{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:0 .05em;font-family:"Archivo Black",sans-serif;font-size:clamp(3rem,13vw,7.5rem);letter-spacing:-.03em;line-height:1;}.intro__word{display:inline-flex;}.intro__word--g{color:#33C494;}.intro__il{overflow:hidden;display:inline-block;}.intro__ic{display:inline-block;color:#fff;animation:i-letter .5s ease-out both;}.intro__word--g .intro__ic{color:#33C494;}@keyframes i-letter{from{transform:translateY(110%) rotate(6deg);opacity:0}to{transform:none;opacity:1}}.intro__word:nth-child(1) .intro__il:nth-child(1) .intro__ic{animation-delay:300ms}.intro__word:nth-child(1) .intro__il:nth-child(2) .intro__ic{animation-delay:380ms}.intro__word:nth-child(1) .intro__il:nth-child(3) .intro__ic{animation-delay:460ms}.intro__word:nth-child(1) .intro__il:nth-child(4) .intro__ic{animation-delay:540ms}.intro__word:nth-child(1) .intro__il:nth-child(5) .intro__ic{animation-delay:620ms}.intro__word:nth-child(2) .intro__il:nth-child(1) .intro__ic{animation-delay:700ms}.intro__word:nth-child(2) .intro__il:nth-child(2) .intro__ic{animation-delay:780ms}.intro__word:nth-child(2) .intro__il:nth-child(3) .intro__ic{animation-delay:860ms}.intro__word:nth-child(2) .intro__il:nth-child(4) .intro__ic{animation-delay:940ms}.intro__word:nth-child(2) .intro__il:nth-child(5) .intro__ic{animation-delay:1020ms}.intro__tagwrap{display:flex;flex-direction:column;align-items:center;gap:.7rem;}.intro__line{width:60px;height:2px;background:#33C494;transform-origin:left center;transform:scaleX(0);animation:i-line .45s cubic-bezier(.16,1,.3,1) 1600ms forwards;}@keyframes i-line{to{transform:scaleX(1)}}.intro__tag{color:rgba(255,255,255,.5);font-size:clamp(.9rem,2.5vw,1.2rem);letter-spacing:.12em;text-transform:uppercase;font-family:"Poppins",sans-serif;opacity:0;animation:i-tag .4s ease 1800ms forwards;}@keyframes i-tag{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}</style>
+<style>
+  .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:199;background:#0A0A0A;color:rgba(255,255,255,.9);display:none;border-top:1px solid rgba(255,255,255,.1);}
+  .cookie-banner.is-visible{display:block;}
+  .cookie-banner__inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 1.5rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));}
+  .cookie-banner__text{font-size:.88rem;line-height:1.5;flex:1;min-width:220px;}
+  .cookie-banner__link{color:#33C494;text-decoration:underline;}
+  .cookie-banner__actions{display:flex;gap:.75rem;flex-shrink:0;}
+  .cookie-banner__btn{padding:.65rem 1.25rem;font-size:.88rem;font-weight:600;border-radius:999px;cursor:pointer;border:none;font-family:inherit;min-height:44px;transition:transform .2s ease,background .2s,color .2s,border-color .2s;}
+  .cookie-banner__btn--accept{background:#33C494;color:#0A0A0A;}.cookie-banner__btn--accept:hover{background:#28A57C;}
+  .cookie-banner__btn--reject{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);}.cookie-banner__btn--reject:hover{border-color:rgba(255,255,255,.5);}
+  .cookie-banner__btn:active{transform:scale(.97);}
+  .footer__bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;}
+  .footer__legal{font-size:.76rem;color:rgba(255,255,255,.3);line-height:1.5;}
+  .footer__legal a{color:rgba(255,255,255,.3);transition:color .2s;}.footer__legal a:hover{color:#33C494;}
+  .footer__legal-links{display:flex;gap:1rem;font-size:.76rem;}
+  .footer__legal-links a,.footer__cookie-btn{color:rgba(255,255,255,.3);transition:color .2s;min-height:44px;display:inline-flex;align-items:center;}.footer__legal-links a:hover,.footer__cookie-btn:hover{color:#33C494;}
+  .footer__cookie-btn{background:none;border:none;cursor:pointer;font:inherit;padding:0;font-size:.76rem;}
+</style>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><div class="intro__top"></div><div class="intro__btm"></div><div class="intro__content"><div class="intro__dot"></div><div class="intro__wordmark" aria-label="NicosDigit"><span class="intro__il"><span class="intro__ic">N</span></span><span class="intro__il"><span class="intro__ic">i</span></span><span class="intro__il"><span class="intro__ic">c</span></span><span class="intro__il"><span class="intro__ic">o</span></span><span class="intro__il"><span class="intro__ic">s</span></span><span class="intro__il"><span class="intro__ic intro__ig">D</span></span><span class="intro__il"><span class="intro__ic intro__ig">i</span></span><span class="intro__il"><span class="intro__ic intro__ig">g</span></span><span class="intro__il"><span class="intro__ic intro__ig">i</span></span><span class="intro__il"><span class="intro__ic intro__ig">t</span></span></div><div class="intro__tagwrap"><div class="intro__line"></div><div class="intro__tag">Google Ads · Meta Ads · Landing Pages</div></div></div><div class="intro__counter">0%</div></div>
-<script>(function(){var rm=window.matchMedia('(prefers-reduced-motion:no-preference)');var el=document.getElementById('intro');if(!rm.matches||sessionStorage.getItem('introSeen')){if(el)el.remove();return;}document.body.classList.add('intro-active');sessionStorage.setItem('introSeen','1');var cnt=el.querySelector('.intro__counter');var ctt=el.querySelector('.intro__content');var tp=el.querySelector('.intro__top');var bt=el.querySelector('.intro__btm');setTimeout(function(){var s=null,d=600;function t(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);cnt.textContent=Math.round(p*100)+'%';if(p<1)requestAnimationFrame(t);}requestAnimationFrame(t);},1300);setTimeout(function(){ctt.style.cssText+='transition:opacity .4s ease,transform .4s ease;opacity:0;transform:scale(.92)';cnt.style.cssText+='transition:opacity .3s ease;opacity:0';tp.style.cssText='transition:transform .5s ease-in-out;transform:translateY(-100%)';bt.style.cssText='transition:transform .5s ease-in-out .06s;transform:translateY(100%)';setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);document.body.classList.remove('intro-active');},600);},1800);})();</script>
+<div id="intro" aria-hidden="true"><div class="intro__top"></div><div class="intro__btm"></div><div class="intro__content"><div class="intro__dot"></div><div class="intro__wordmark" aria-label="NicosDigit"><span class="intro__word"><span class="intro__il"><span class="intro__ic">N</span></span><span class="intro__il"><span class="intro__ic">i</span></span><span class="intro__il"><span class="intro__ic">c</span></span><span class="intro__il"><span class="intro__ic">o</span></span><span class="intro__il"><span class="intro__ic">s</span></span></span><span class="intro__word intro__word--g"><span class="intro__il"><span class="intro__ic">D</span></span><span class="intro__il"><span class="intro__ic">i</span></span><span class="intro__il"><span class="intro__ic">g</span></span><span class="intro__il"><span class="intro__ic">i</span></span><span class="intro__il"><span class="intro__ic">t</span></span></span></div><div class="intro__tagwrap"><div class="intro__line"></div><div class="intro__tag">Google Ads · Meta Ads · Landing Pages</div></div></div><div class="intro__counter">0%</div></div>
+<script>(function(){var rm=window.matchMedia("(prefers-reduced-motion:no-preference)");var el=document.getElementById("intro");if(!rm.matches||sessionStorage.getItem("introSeen")){if(el)el.remove();return;}document.body.classList.add("intro-active");sessionStorage.setItem("introSeen","1");var cnt=el.querySelector(".intro__counter");var ctt=el.querySelector(".intro__content");var tp=el.querySelector(".intro__top");var bt=el.querySelector(".intro__btm");setTimeout(function(){var s=null,d=1100;function t(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);cnt.textContent=Math.round(p*100)+"%";if(p<1)requestAnimationFrame(t);}requestAnimationFrame(t);},1800);setTimeout(function(){ctt.style.cssText+="transition:opacity .5s ease,transform .5s ease;opacity:0;transform:scale(.94)";cnt.style.cssText+="transition:opacity .3s ease;opacity:0";tp.style.cssText="transition:transform .6s ease-in-out;transform:translateY(-100%)";bt.style.cssText="transition:transform .6s ease-in-out .08s;transform:translateY(100%)";setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);document.body.classList.remove("intro-active");},750);},2900);})();</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCSZKMWQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="site-head" id="site-head">
@@ -274,8 +298,9 @@
       <h1 class="hero__h1">Google Ads.<br>Meta Ads.<br><span class="accent">Numbers you can verify.</span></h1>
       <p class="hero__lead">You're already spending on ads. Campaigns run, clicks come in — but nobody can tell you how many turn into paying customers. That's exactly the problem I fix.</p>
       <div class="hero__ctas">
-        <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+        <button class="btn btn--solid" data-gtm="hero-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Get my free analysis</button>
         <a href="#services" class="btn btn--ghost">See how I work</a>
+        <p class="cta-microcopy">Free · No commitment · No PowerPoint</p>
       </div>
     </div>
   </div>
@@ -361,7 +386,7 @@
           <li class="lp-list__item">Integrated A/B tests to optimise conversion rate over time</li>
           <li class="lp-list__item">Complete tracking: you know exactly what works and what doesn't</li>
         </ul>
-        <div><button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Let's talk</button></div>
+        <div><button class="btn btn--solid" data-gtm="section-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Get my free analysis</button><p class="cta-microcopy">Free · No commitment · No PowerPoint</p></div>
       </div>
     </div>
   </div>
@@ -437,11 +462,12 @@
     <div class="cta-final__inner">
       <div data-anim>
         <h2 class="cta-final__h">Let's start<br>from the numbers.</h2>
-        <p class="cta-final__sub">30 minutes: I look at your situation and tell you where you're losing money. Even if we never work together, you keep the findings. Free, no commitment, no PowerPoint.</p>
+        <p class="cta-final__sub">30 minutes: I look at your situation and tell you where you're losing money. Even if we never work together, you keep the findings.</p>
         <div class="cta-final__actions">
-          <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book the free call</button>
+          <button class="btn btn--solid" data-gtm="final-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Get my free analysis</button>
           <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp</a>
         </div>
+        <p class="cta-microcopy">Free · No commitment · No PowerPoint</p>
       </div>
       <div class="cta-box" data-anim data-delay="2">
         <div class="cta-box__title">Get in touch now</div><div class="cta-box__sub">Choose your preferred method</div>
@@ -477,7 +503,7 @@
 <a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></a>
 
 <div class="mobile-cta" id="mobile-cta">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">📅 Book a call</button>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" data-gtm="sticky-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">📅 Free analysis</button>
   <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
 
@@ -490,7 +516,35 @@
   document.querySelectorAll('[data-anim]').forEach(el=>observer.observe(el));
   document.querySelectorAll('.faq__q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('is-open');document.querySelectorAll('.faq__item').forEach(i=>i.classList.remove('is-open'));if(!isOpen)item.classList.add('is-open');});});
   const mobileCta=document.getElementById('mobile-cta'),heroEl=document.querySelector('.hero'),showAfter=heroEl?heroEl.offsetHeight*0.6:300;
-  window.addEventListener('scroll',()=>{mobileCta.classList.toggle('is-visible',window.scrollY>showAfter);},{passive:true});
+  let stickyPulsed=false;window.addEventListener('scroll',()=>{const vis=window.scrollY>showAfter;mobileCta.classList.toggle('is-visible',vis);if(vis&&!stickyPulsed){stickyPulsed=true;const cb=mobileCta.querySelector('.mobile-cta__btn--cal');if(cb){cb.classList.add('pulse-once');cb.addEventListener('animationend',()=>cb.classList.remove('pulse-once'),{once:true});}}},{passive:true});
+  document.querySelectorAll('[data-gtm]').forEach(el=>el.addEventListener('click',()=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'cta_click',cta_placement:el.getAttribute('data-gtm')});}));
+</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">This site uses cookies to measure visits and campaign performance. Your call. <a class="cookie-banner__link" href="/cookie-policy">Cookie policy</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button>
+      <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--reject">Reject</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cookieConsent');
+  var banner=document.getElementById('cookie-banner');
+  var mCta=document.getElementById('mobile-cta');
+  function adjustSticky(){if(mCta)mCta.style.bottom=banner&&banner.classList.contains('is-visible')?(banner.offsetHeight+'px'):'';}
+  function showBanner(){if(banner){banner.classList.add('is-visible');adjustSticky();}}
+  function grantConsent(){window.dataLayer=window.dataLayer||[];(function(){function gtag(){window.dataLayer.push(arguments);}gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});})();}
+  function dismiss(c){localStorage.setItem('cookieConsent',c);if(banner)banner.classList.remove('is-visible');if(mCta)mCta.style.bottom='';if(c==='granted')grantConsent();}
+  if(stored==='granted')grantConsent();
+  if(!stored)showBanner();
+  var ab=document.getElementById('cookie-accept'),rb=document.getElementById('cookie-reject');
+  if(ab)ab.addEventListener('click',function(){dismiss('granted');});
+  if(rb)rb.addEventListener('click',function(){dismiss('denied');});
+  var reopen=document.getElementById('cookie-reopen');
+  if(reopen)reopen.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');showBanner();});
+})();
 </script>
 </body>
 </html>
