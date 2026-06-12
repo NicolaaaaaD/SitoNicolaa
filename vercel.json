@@ -2,95 +2,44 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/dentist-en",
-      "destination": "/dentist-en-ads",
-      "permanent": true
-    },
-    {
-      "source": "/hotel-en",
-      "destination": "/hotel-en-ads",
-      "permanent": true
-    },
-    {
-      "source": "/physiotherapy",
-      "destination": "/physiotherapy-ads",
-      "permanent": true
-    },
-    {
-      "source": "/real-estate",
-      "destination": "/real-estate-ads",
-      "permanent": true
-    },
-    {
-      "source": "/fisioterapia",
-      "destination": "/fisioterapia-ads",
-      "permanent": true
-    },
-    {
-      "source": "/immobiliare",
-      "destination": "/immobiliare-ads",
-      "permanent": true
-    },
-    {
-      "source": "/ristorante",
-      "destination": "/ristorante-ads",
-      "permanent": true
-    },
-    {
-      "source": "/restaurant",
-      "destination": "/restaurant-ads",
-      "permanent": true
-    },
-    {
-      "source": "/avvocati",
-      "destination": "/avvocati-ads",
-      "permanent": true
-    },
-    {
-      "source": "/idraulico",
-      "destination": "/idraulico-ads",
-      "permanent": true
-    },
-    {
-      "source": "/palestra",
-      "destination": "/palestra-ads",
-      "permanent": true
-    },
-    {
-      "source": "/estetica",
-      "destination": "/estetica-ads",
-      "permanent": true
-    },
-    {
-      "source": "/plumber",
-      "destination": "/plumber-ads",
-      "permanent": true
-    },
-    {
-      "source": "/lawyers",
-      "destination": "/lawyers-ads",
-      "permanent": true
-    },
-    {
-      "source": "/beauty",
-      "destination": "/beauty-ads",
-      "permanent": true
-    },
-    {
-      "source": "/dentist",
-      "destination": "/dentist-ads",
-      "permanent": true
-    },
-    {
-      "source": "/hotel",
-      "destination": "/hotel-ads",
-      "permanent": true
-    },
-    {
-      "source": "/gym",
-      "destination": "/gym-ads",
-      "permanent": true
-    }
+    { "source": "/marketing", "destination": "/", "permanent": true },
+    { "source": "/it", "destination": "/", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/avvocati", "destination": "/", "permanent": true },
+    { "source": "/avvocati-ads", "destination": "/", "permanent": true },
+    { "source": "/lawyers", "destination": "/", "permanent": true },
+    { "source": "/lawyers-ads", "destination": "/", "permanent": true },
+    { "source": "/dentist", "destination": "/", "permanent": true },
+    { "source": "/dentist-ads", "destination": "/", "permanent": true },
+    { "source": "/dentist-en", "destination": "/", "permanent": true },
+    { "source": "/dentist-en-ads", "destination": "/", "permanent": true },
+    { "source": "/ristorante", "destination": "/", "permanent": true },
+    { "source": "/ristorante-ads", "destination": "/", "permanent": true },
+    { "source": "/restaurant", "destination": "/", "permanent": true },
+    { "source": "/restaurant-ads", "destination": "/", "permanent": true },
+    { "source": "/idraulico", "destination": "/", "permanent": true },
+    { "source": "/idraulico-ads", "destination": "/", "permanent": true },
+    { "source": "/plumber", "destination": "/", "permanent": true },
+    { "source": "/plumber-ads", "destination": "/", "permanent": true },
+    { "source": "/palestra", "destination": "/", "permanent": true },
+    { "source": "/palestra-ads", "destination": "/", "permanent": true },
+    { "source": "/gym", "destination": "/", "permanent": true },
+    { "source": "/gym-ads", "destination": "/", "permanent": true },
+    { "source": "/estetica", "destination": "/", "permanent": true },
+    { "source": "/estetica-ads", "destination": "/", "permanent": true },
+    { "source": "/beauty", "destination": "/", "permanent": true },
+    { "source": "/beauty-ads", "destination": "/", "permanent": true },
+    { "source": "/fisioterapia", "destination": "/", "permanent": true },
+    { "source": "/fisioterapia-ads", "destination": "/", "permanent": true },
+    { "source": "/physiotherapy", "destination": "/", "permanent": true },
+    { "source": "/physiotherapy-ads", "destination": "/", "permanent": true },
+    { "source": "/hotel", "destination": "/", "permanent": true },
+    { "source": "/hotel-ads", "destination": "/", "permanent": true },
+    { "source": "/hotel-en", "destination": "/", "permanent": true },
+    { "source": "/hotel-en-ads", "destination": "/", "permanent": true },
+    { "source": "/immobiliare", "destination": "/", "permanent": true },
+    { "source": "/immobiliare-ads", "destination": "/", "permanent": true },
+    { "source": "/real-estate", "destination": "/", "permanent": true },
+    { "source": "/real-estate-ads", "destination": "/", "permanent": true }
   ]
 }
