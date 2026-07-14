@@ -18,10 +18,12 @@ const MIME = {
   '.ico': 'image/x-icon',
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
+  '.webp': 'image/webp',
+  '.gif': 'image/gif',
 };
 
 createServer((req, res) => {
-  let url = req.url.split('?')[0];
+  let url = decodeURIComponent(req.url.split('?')[0]);
   if (url === '/') url = '/index.html';
   else if (url.endsWith('/')) url = url + 'index.html';
   else if (!extname(url)) url = url + '/index.html';
