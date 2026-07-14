@@ -21,6 +21,8 @@ const outPath = join(dir, fname);
 const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
 const page = await browser.newPage();
 await page.setViewport({ width: viewportWidth, height: 900 });
+// Skip intro animation so it doesn't cover content in screenshots
+await page.evaluateOnNewDocument(() => { sessionStorage.setItem('introSeen', '1'); });
 await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 await new Promise(r => setTimeout(r, 800));
 // Force all scroll-animated elements visible so full-page screenshots show content
