@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "validate:case-studies": "node validate-case-studies.mjs"
+  },
   "devDependencies": {
     "puppeteer": "^24.43.1"
   }
