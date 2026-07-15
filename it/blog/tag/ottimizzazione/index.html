@@ -135,7 +135,7 @@
   @media(min-width:1024px){.blog-grid{grid-template-columns:repeat(3,1fr);}}
   .blog-card{background:var(--bg);border:1px solid var(--grey-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.25s var(--ease),box-shadow 0.25s;}
   .blog-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 16px 40px -12px rgba(51,196,148,0.18);}
-  .blog-card__img{background:var(--bg-2);height:160px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--grey-line);padding:2rem;}
+  .blog-card__img{background:#0a1628;height:160px;overflow:hidden;border-bottom:1px solid var(--grey-line);}
   .blog-card__body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:0.5rem;}
   .blog-card__tag{font-size:0.69rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1A7A5C;}
   .blog-card__title{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1rem;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);}
@@ -196,7 +196,7 @@
   .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:8px;font-size:0.84rem;font-weight:600;border:1.5px solid var(--grey-line);color:var(--ink);transition:background 0.2s,color 0.2s,border-color 0.2s;cursor:pointer;min-height:44px;}
   .share-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
   .author-box{margin-top:3rem;padding:2rem;background:var(--bg-2);border-radius:14px;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;}
-  .author-box__avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--ink);flex-shrink:0;}
+  .author-box__avatar{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;object-fit:cover;}
   .author-box__name{font-family:'Archivo Black',sans-serif;font-size:1rem;letter-spacing:-0.02em;color:var(--ink);}
   .author-box__bio{font-size:0.88rem;line-height:1.65;color:var(--grey);margin-top:0.35rem;}
   .article-nav{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}
@@ -294,7 +294,27 @@
   </div>
   <section class="section"><div class="container"><div class="blog-grid">
     <a href="/it/blog/errori-google-ads-budget/" class="blog-card" data-anim data-delay="1">
-      <div class="blog-card__img"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="var(--green)" stroke-width="2"/><path d="M16 24h16M24 16l8 8-8 8" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="blog-card__img"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+    <defs>
+      <linearGradient id="cg-google-ads" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0a1628"/>
+        <stop offset="100%" stop-color="#0d2416"/>
+      </linearGradient>
+      <radialGradient id="cr-google-ads" cx="80%" cy="20%" r="60%">
+        <stop offset="0%" stop-color="#33C494" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#33C494" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="400" height="200" fill="url(#cg-google-ads)"/>
+    <rect width="400" height="200" fill="url(#cr-google-ads)"/>
+    <circle cx="340" cy="160" r="80" fill="#33C494" fill-opacity="0.06"/>
+    <circle cx="60" cy="40" r="40" fill="#33C494" fill-opacity="0.05"/>
+    <line x1="0" y1="150" x2="400" y2="150" stroke="#33C494" stroke-opacity="0.08" stroke-width="1"/>
+    <rect x="28" y="28" width="52" height="3" rx="1.5" fill="#33C494" fill-opacity="0.5"/>
+    <text x="28" y="88" font-family="'Archivo Black',Arial Black,sans-serif" font-size="13" font-weight="900" fill="#33C494" fill-opacity="0.7" letter-spacing="0.12em" text-transform="uppercase">GOOGLE ADS</text>
+    <text x="28" y="116" font-family="'Archivo Black',Arial Black,sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="-0.03em">Cinque Errori in Google</text>
+    <text x="28" y="168" font-family="Arial,sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.35" letter-spacing="0.06em">NICOSDIGIT.COM</text>
+  </svg></div>
       <div class="blog-card__body">
         <div class="blog-card__tag">Google Ads</div>
         <div class="blog-card__title">Cinque Errori in Google Ads Che Troviamo Spesso Negli Account</div>
@@ -305,7 +325,27 @@
       <div class="blog-card__footer">Leggi →</div>
     </a>
     <a href="/it/blog/intento-di-ricerca-google-ads/" class="blog-card" data-anim data-delay="2">
-      <div class="blog-card__img"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="var(--green)" stroke-width="2"/><path d="M16 24h16M24 16l8 8-8 8" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="blog-card__img"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+    <defs>
+      <linearGradient id="cg-google-ads" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0a1628"/>
+        <stop offset="100%" stop-color="#0d2416"/>
+      </linearGradient>
+      <radialGradient id="cr-google-ads" cx="80%" cy="20%" r="60%">
+        <stop offset="0%" stop-color="#33C494" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#33C494" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="400" height="200" fill="url(#cg-google-ads)"/>
+    <rect width="400" height="200" fill="url(#cr-google-ads)"/>
+    <circle cx="340" cy="160" r="80" fill="#33C494" fill-opacity="0.06"/>
+    <circle cx="60" cy="40" r="40" fill="#33C494" fill-opacity="0.05"/>
+    <line x1="0" y1="150" x2="400" y2="150" stroke="#33C494" stroke-opacity="0.08" stroke-width="1"/>
+    <rect x="28" y="28" width="52" height="3" rx="1.5" fill="#33C494" fill-opacity="0.5"/>
+    <text x="28" y="88" font-family="'Archivo Black',Arial Black,sans-serif" font-size="13" font-weight="900" fill="#33C494" fill-opacity="0.7" letter-spacing="0.12em" text-transform="uppercase">GOOGLE ADS</text>
+    <text x="28" y="116" font-family="'Archivo Black',Arial Black,sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="-0.03em">Perché l'Intento di Ricerca</text>
+    <text x="28" y="168" font-family="Arial,sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.35" letter-spacing="0.06em">NICOSDIGIT.COM</text>
+  </svg></div>
       <div class="blog-card__body">
         <div class="blog-card__tag">Google Ads</div>
         <div class="blog-card__title">Perché l'Intento di Ricerca Conta Più delle Parole Chiave in Google Ads</div>

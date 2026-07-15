@@ -134,7 +134,7 @@
   @media(min-width:1024px){.blog-grid{grid-template-columns:repeat(3,1fr);}}
   .blog-card{background:var(--bg);border:1px solid var(--grey-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.25s var(--ease),box-shadow 0.25s;}
   .blog-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 16px 40px -12px rgba(51,196,148,0.18);}
-  .blog-card__img{background:var(--bg-2);height:160px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--grey-line);padding:2rem;}
+  .blog-card__img{background:#0a1628;height:160px;overflow:hidden;border-bottom:1px solid var(--grey-line);}
   .blog-card__body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:0.5rem;}
   .blog-card__tag{font-size:0.69rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1A7A5C;}
   .blog-card__title{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1rem;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);}
@@ -195,7 +195,7 @@
   .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:8px;font-size:0.84rem;font-weight:600;border:1.5px solid var(--grey-line);color:var(--ink);transition:background 0.2s,color 0.2s,border-color 0.2s;cursor:pointer;min-height:44px;}
   .share-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
   .author-box{margin-top:3rem;padding:2rem;background:var(--bg-2);border-radius:14px;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;}
-  .author-box__avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--ink);flex-shrink:0;}
+  .author-box__avatar{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;object-fit:cover;}
   .author-box__name{font-family:'Archivo Black',sans-serif;font-size:1rem;letter-spacing:-0.02em;color:var(--ink);}
   .author-box__bio{font-size:0.88rem;line-height:1.65;color:var(--grey);margin-top:0.35rem;}
   .article-nav{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}

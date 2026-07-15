@@ -275,7 +275,7 @@ const BLOG_CSS = `
   @media(min-width:1024px){.blog-grid{grid-template-columns:repeat(3,1fr);}}
   .blog-card{background:var(--bg);border:1px solid var(--grey-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.25s var(--ease),box-shadow 0.25s;}
   .blog-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 16px 40px -12px rgba(51,196,148,0.18);}
-  .blog-card__img{background:var(--bg-2);height:160px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--grey-line);padding:2rem;}
+  .blog-card__img{background:#0a1628;height:160px;overflow:hidden;border-bottom:1px solid var(--grey-line);}
   .blog-card__body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:0.5rem;}
   .blog-card__tag{font-size:0.69rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1A7A5C;}
   .blog-card__title{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1rem;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);}
@@ -336,7 +336,7 @@ const BLOG_CSS = `
   .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:8px;font-size:0.84rem;font-weight:600;border:1.5px solid var(--grey-line);color:var(--ink);transition:background 0.2s,color 0.2s,border-color 0.2s;cursor:pointer;min-height:44px;}
   .share-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
   .author-box{margin-top:3rem;padding:2rem;background:var(--bg-2);border-radius:14px;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;}
-  .author-box__avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--ink);flex-shrink:0;}
+  .author-box__avatar{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;object-fit:cover;}
   .author-box__name{font-family:'Archivo Black',sans-serif;font-size:1rem;letter-spacing:-0.02em;color:var(--ink);}
   .author-box__bio{font-size:0.88rem;line-height:1.65;color:var(--grey);margin-top:0.35rem;}
   .article-nav{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}
@@ -410,13 +410,35 @@ const SHARED_JS = `
 <script>(function(){var stored=localStorage.getItem('cookieConsent');var banner=document.getElementById('cookie-banner');function grantConsent(){window.dataLayer=window.dataLayer||[];(function(){function gtag(){window.dataLayer.push(arguments);}gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});})();}function dismiss(c){localStorage.setItem('cookieConsent',c);if(banner)banner.classList.remove('is-visible');if(c==='granted')grantConsent();}if(stored==='granted')grantConsent();if(!stored&&banner)banner.classList.add('is-visible');var ab=document.getElementById('cookie-accept'),rb=document.getElementById('cookie-reject');if(ab)ab.addEventListener('click',function(){dismiss('granted');});if(rb)rb.addEventListener('click',function(){dismiss('denied');});var reopen=document.getElementById('cookie-reopen');if(reopen)reopen.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');if(banner)banner.classList.add('is-visible');});})();</script>`;
 
 // ── Article SVG icon for cards ─────────────────────────────────
-function articleIconSVG(category) {
-  const icons = {
-    'google-ads': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="var(--green)" stroke-width="2"/><path d="M16 24h16M24 16l8 8-8 8" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-    'tracking': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" stroke="var(--green)" stroke-width="2"/><path d="M16 28l8-8 4 4 8-10" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-    'strategy': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M8 40L24 8l16 32H8z" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="24" y1="24" x2="24" y2="36" stroke="var(--green)" stroke-width="2" stroke-linecap="round"/></svg>`,
+function articleCardCover(category, title) {
+  const themes = {
+    'google-ads': { bg1: '#0a1628', bg2: '#0d2416', accent: '#33C494', label: 'Google Ads' },
+    'tracking':   { bg1: '#0f1a24', bg2: '#0a1628', accent: '#33C494', label: 'Tracking' },
+    'strategy':   { bg1: '#1a0a0f', bg2: '#0a0a1a', accent: '#33C494', label: 'Strategy' },
   };
-  return icons[category] || icons['google-ads'];
+  const t = themes[category] || themes['google-ads'];
+  const words = (title || '').split(' ').slice(0, 4).join(' ');
+  return `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+    <defs>
+      <linearGradient id="cg-${category}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${t.bg1}"/>
+        <stop offset="100%" stop-color="${t.bg2}"/>
+      </linearGradient>
+      <radialGradient id="cr-${category}" cx="80%" cy="20%" r="60%">
+        <stop offset="0%" stop-color="${t.accent}" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="400" height="200" fill="url(#cg-${category})"/>
+    <rect width="400" height="200" fill="url(#cr-${category})"/>
+    <circle cx="340" cy="160" r="80" fill="${t.accent}" fill-opacity="0.06"/>
+    <circle cx="60" cy="40" r="40" fill="${t.accent}" fill-opacity="0.05"/>
+    <line x1="0" y1="150" x2="400" y2="150" stroke="${t.accent}" stroke-opacity="0.08" stroke-width="1"/>
+    <rect x="28" y="28" width="52" height="3" rx="1.5" fill="${t.accent}" fill-opacity="0.5"/>
+    <text x="28" y="88" font-family="'Archivo Black',Arial Black,sans-serif" font-size="13" font-weight="900" fill="${t.accent}" fill-opacity="0.7" letter-spacing="0.12em" text-transform="uppercase">${t.label.toUpperCase()}</text>
+    <text x="28" y="116" font-family="'Archivo Black',Arial Black,sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="-0.03em">${words}</text>
+    <text x="28" y="168" font-family="Arial,sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.35" letter-spacing="0.06em">NICOSDIGIT.COM</text>
+  </svg>`;
 }
 
 // ── Build blog index page ──────────────────────────────────────
@@ -452,7 +474,7 @@ function buildIndex(articles, lang) {
     const tags = Array.isArray(a.meta.tags) ? a.meta.tags : [];
     return `
     <a href="${basePath}/${a.meta.slug}/" class="blog-card" data-anim data-delay="${(i % 3) + 1}">
-      <div class="blog-card__img">${articleIconSVG(a.meta.category)}</div>
+      <div class="blog-card__img">${articleCardCover(a.meta.category, a.meta.title)}</div>
       <div class="blog-card__body">
         <div class="blog-card__tag">${a.meta.categoryLabel}</div>
         <div class="blog-card__title">${a.meta.title}</div>
@@ -557,7 +579,7 @@ function buildArticle(article, allArticles, lang) {
     const rtags = Array.isArray(a.meta.tags) ? a.meta.tags : [];
     return `
     <a href="${basePath}/${a.meta.slug}/" class="blog-card" data-anim data-delay="${i + 1}">
-      <div class="blog-card__img">${articleIconSVG(a.meta.category)}</div>
+      <div class="blog-card__img">${articleCardCover(a.meta.category, a.meta.title)}</div>
       <div class="blog-card__body">
         <div class="blog-card__tag">${a.meta.categoryLabel}</div>
         <div class="blog-card__title">${a.meta.title}</div>
@@ -639,7 +661,7 @@ ${navHTML(lang, basePath)}
         </div>
 
         <div class="author-box" data-anim>
-          <div class="author-box__avatar" aria-hidden="true">N</div>
+          <img class="author-box__avatar" src="/images/nicola-dimattia.jpg" alt="Nicola Dimattia — Paid Advertising Consultant" loading="lazy" width="60" height="60">
           <div>
             <div class="author-box__name">${article.meta.author}</div>
             <p class="author-box__bio">${isIT ? 'Consulente di paid advertising specializzato in Google Ads, Meta Ads e landing page. Lavoro con aziende in tutta Europa per costruire sistemi pubblicitari che generano risultati misurabili.' : 'Paid advertising consultant specialising in Google Ads, Meta Ads and landing pages. I work with businesses across Europe to build advertising systems that produce measurable results.'}</p>
@@ -710,7 +732,7 @@ function buildCategory(category, catLabel, articles, lang) {
 
   const cards = articles.map((a, i) => `
     <a href="${basePath}/${a.meta.slug}/" class="blog-card" data-anim data-delay="${(i%3)+1}">
-      <div class="blog-card__img">${articleIconSVG(a.meta.category)}</div>
+      <div class="blog-card__img">${articleCardCover(a.meta.category, a.meta.title)}</div>
       <div class="blog-card__body">
         <div class="blog-card__tag">${a.meta.categoryLabel}</div>
         <div class="blog-card__title">${a.meta.title}</div>
@@ -783,7 +805,7 @@ function buildTag(tagSlug, tagLabel, articles, lang, sharedWithOtherLang) {
     const atags = Array.isArray(a.meta.tags) ? a.meta.tags : [];
     return `
     <a href="${basePath}/${a.meta.slug}/" class="blog-card" data-anim data-delay="${(i%3)+1}">
-      <div class="blog-card__img">${articleIconSVG(a.meta.category)}</div>
+      <div class="blog-card__img">${articleCardCover(a.meta.category, a.meta.title)}</div>
       <div class="blog-card__body">
         <div class="blog-card__tag">${a.meta.categoryLabel}</div>
         <div class="blog-card__title">${a.meta.title}</div>
