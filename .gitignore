@@ -2,3 +2,10 @@ temporary screenshots/
 .claude/
 server_temp.py
 node_modules/
+lh-*.json
+check-overflow.mjs
+check-touch.mjs
+find-overflow.mjs
+find-overflow2.mjs
+qa-check.mjs
+PRODUCTION-READINESS-REPORT.md

@@ -21,15 +21,21 @@
   <meta property="og:site_name" content="NicosDigit">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="preload" href="https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Archivo+Black&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Archivo+Black&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='6,16 26,4 26,28' fill='%2333C494' stroke='%2333C494' stroke-width='5' stroke-linejoin='round'/></svg>">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <style>
     :root{--green:#33C494;--green-dark:#28A57C;--green-soft:#E6F7F0;--bg:#FFFFFF;--bg-2:#F6F6F4;--ink:#0A0A0A;--ink-2:#1A1A1A;--grey:rgba(10,10,10,0.62);--grey-line:rgba(10,10,10,0.1);--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
     body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
     img,svg{display:block;max-width:100%;}
     a{color:inherit;text-decoration:none;}
@@ -45,7 +51,7 @@
     .site-head{position:fixed;top:0;left:0;right:0;z-index:160;padding:1rem 0;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid rgba(10,10,10,0.06);transition:padding 0.3s var(--ease);}
     .site-head.is-scrolled{padding:0.55rem 0;}
     .site-head__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
-    .logo{display:flex;align-items:center;gap:0.7rem;}
+    .logo{display:flex;align-items:center;gap:0.7rem;min-height:44px;}
     .logo__mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .logo__text{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:-0.03em;color:var(--ink);line-height:1;}
     .logo__sub{font-size:0.65rem;font-weight:500;color:var(--grey);letter-spacing:0.04em;display:block;margin-top:0.1rem;}
@@ -54,11 +60,35 @@
     .nav__link{position:relative;padding:0.4rem 0;transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1);}
+    /* Nav Dropdown */
+    .nav__item--has-dropdown{position:relative;}
+    .nav__dropdown-btn{display:flex;align-items:center;gap:0.35rem;position:relative;padding:0.4rem 0;font-size:0.93rem;font-weight:500;transition:color 0.2s;min-height:44px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--ink);}
+    .nav__dropdown-btn::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
+    .nav__dropdown-btn[aria-expanded="true"]::after,.nav__dropdown-btn.is-active::after{transform:scaleX(1);}
+    .nav__dropdown-chevron{width:14px;height:14px;transition:transform 0.25s var(--ease);flex-shrink:0;}
+    .nav__dropdown-btn[aria-expanded="true"] .nav__dropdown-chevron{transform:rotate(180deg);}
+    .nav__dropdown{position:absolute;top:calc(100% + 0.75rem);left:-1rem;min-width:210px;background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;box-shadow:0 16px 40px -8px rgba(10,10,10,0.12),0 4px 12px -4px rgba(10,10,10,0.06);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0s 0.2s;z-index:200;}
+    .nav__dropdown.is-open{opacity:1;visibility:visible;transform:none;transition:opacity 0.2s,transform 0.2s;}
+    .nav__dropdown-link{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--ink);transition:background 0.15s,color 0.15s;text-decoration:none;}
+    a.nav__dropdown-link:hover{background:var(--green-soft);color:var(--green-dark);}
+    .nav__dropdown-link--soon{color:var(--grey);cursor:default;}
+    .nav__dropdown-badge{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--grey-line);color:var(--grey);padding:0.12rem 0.45rem;border-radius:999px;}
+    .nav__dropdown-link--active{color:var(--green-dark);font-weight:600;}
+    @media(max-width:880px){
+      .nav.is-open .nav__item--has-dropdown{border-bottom:1px solid var(--grey-line);}
+      .nav.is-open .nav__dropdown-btn{font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;padding:1.1rem 0;width:100%;justify-content:space-between;}
+      .nav.is-open .nav__dropdown-btn::after{display:none;}
+      .nav.is-open .nav__dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:transparent;margin-bottom:0.5rem;}
+      .nav.is-open .nav__dropdown.is-open,.nav.is-open .nav__dropdown{display:none;}
+      .nav.is-open .nav__dropdown.is-open{display:block;}
+      .nav.is-open .nav__dropdown .nav__dropdown-link{padding:0.65rem 0;font-size:0.95rem;border-radius:0;}
+      .nav.is-open .nav__dropdown .nav__dropdown-link:not(:last-child){border-bottom:1px solid var(--grey-line);}
+    }
     .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:var(--bg);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
     .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
     .nav__cta:hover{background:var(--green);color:var(--ink);transform:translateY(-2px);}
     .lang-sw{display:flex;align-items:center;flex-shrink:0;border:1.5px solid var(--grey-line);border-radius:999px;overflow:hidden;}
-    .lang-sw__btn{padding:0.38rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--grey);transition:background 0.2s,color 0.2s;min-height:36px;display:flex;align-items:center;}
+    .lang-sw__btn{padding:0.38rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--grey);transition:background 0.2s,color 0.2s;min-height:44px;display:flex;align-items:center;}
     .lang-sw__btn--active{background:var(--ink);color:var(--bg);}
     .lang-sw__btn:not(.lang-sw__btn--active):hover{background:var(--green-soft);color:var(--green-dark);}
     .nav-toggle{display:none;width:44px;height:44px;position:relative;z-index:110;align-items:center;justify-content:center;}
@@ -99,7 +129,7 @@
     .eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-size:0.76rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;color:var(--grey);}
     .eyebrow::before{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--green);}
     .section--dark .eyebrow{color:rgba(255,255,255,0.6);}
-    .h2{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.2rem,6vw,5rem);line-height:0.92;letter-spacing:-0.035em;}
+    .h2{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.2rem,6vw,5rem);line-height:0.92;letter-spacing:-0.035em;overflow-wrap:break-word;}
     .sec-head{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;}
     .sec-head__lead{font-size:1.1rem;line-height:1.55;color:var(--grey);max-width:480px;}
     .section--dark .sec-head__lead{color:rgba(255,255,255,0.7);}
@@ -193,13 +223,13 @@
     .footer__inner{display:flex;flex-direction:column;gap:2rem;}
     @media(min-width:768px){.footer__inner{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}}
     .footer__brand .logo__text{color:var(--bg);}
-    .footer__brand .logo__sub{color:rgba(255,255,255,0.4);}
+    .footer__brand .logo__sub{color:rgba(255,255,255,0.62);}
     .footer__copy{font-size:0.85rem;}
     .footer__links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.85rem;}
     .footer__links a{color:rgba(255,255,255,0.5);transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .footer__links a:hover{color:var(--green);}
     .footer__lang{display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.15);border-radius:999px;overflow:hidden;}
-    .footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.4);padding:0.3rem 0.75rem;min-height:36px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
+    ..footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.62);padding:0.3rem 0.75rem;min-height:44px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
     .footer__lang a.is-active{background:rgba(255,255,255,0.12);color:var(--bg);}
     .footer__lang a:hover:not(.is-active){color:var(--green);}
 
@@ -270,13 +300,21 @@
     <div class="site-head__inner">
       <a class="logo" href="/">
         <div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div>
-        <div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Page</span></div>
+        <div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div>
       </a>
       <nav class="nav" id="nav">
         <ul class="nav__list">
           <li><a href="/#services" class="nav__link">Services</a></li>
           <li><a href="/#method" class="nav__link">Method</a></li>
-          <li><a href="/case-studies" class="nav__link is-active">Case Studies</a></li>
+          <li class="nav__item--has-dropdown">
+            <button class="nav__dropdown-btn is-active" aria-haspopup="true" aria-expanded="false" aria-controls="nav-resources-menu">Resources<svg class="nav__dropdown-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <ul class="nav__dropdown" id="nav-resources-menu" role="menu">
+              <li><a href="/blog" class="nav__dropdown-link" role="menuitem">Blog</a></li>
+              <li><a href="/case-studies" class="nav__dropdown-link nav__dropdown-link--active" role="menuitem">Case Studies</a></li>
+              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Guides <span class="nav__dropdown-badge">Soon</span></span></li>
+              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Free Resources <span class="nav__dropdown-badge">Soon</span></span></li>
+            </ul>
+          </li>
           <li><a href="/#faq" class="nav__link">FAQ</a></li>
         </ul>
         <div class="lang-sw">
@@ -295,15 +333,15 @@
   <div class="hero__bg"><svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#33C494" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#33C494" opacity="0.05"/></svg></div>
   <div class="container">
     <div class="hero__inner">
-      <div class="eyebrow">Case Study Â· Star Entertainment</div>
+      <div class="eyebrow">Case Study · Star Entertainment</div>
       <h1 class="cs-hero__h1">1,500+ concerts a year.<br><em>One Google Ads account.</em></h1>
-      <p class="cs-hero-tagline">How we built a single automated advertising system to sell out shows on 4 continents â€” without a dedicated team.</p>
+      <p class="cs-hero-tagline">How we built a single automated advertising system to sell out shows on 4 continents — without a dedicated team.</p>
       <div class="cs-meta">
         <span class="cs-meta__item">Google Ads</span>
-        <span class="cs-meta__sep">Â·</span>
+        <span class="cs-meta__sep">·</span>
         <span class="cs-meta__item">Live Entertainment</span>
-        <span class="cs-meta__sep">Â·</span>
-        <span class="cs-meta__item">August 2025 â€” ongoing</span>
+        <span class="cs-meta__sep">·</span>
+        <span class="cs-meta__item">August 2025 — ongoing</span>
       </div>
     </div>
   </div>
@@ -317,8 +355,8 @@
       <div class="eyebrow">The Client</div>
       <h2 class="h2" style="margin-bottom:2rem;">Star Entertainment.<br>Impossible scale.</h2>
     </div>
-    <p class="intro-text" data-anim data-delay="1"><strong>Star Entertainment and Lancelot Production</strong> produce and tour some of the world's most spectacular live shows â€” The Music of Hans Zimmer, The Magical Music of Harry Potter, The Lion King in Concert, and more. They run over <strong>1,500 concerts a year</strong> across the USA, UK, Europe and Asia, consistently achieving sold-out rates above 80%.</p>
-    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The challenge: every show has a different city, venue, date, and audience. New dates go on sale every week. Managing advertising at this scale manually is simply not possible â€” unless you build a system that runs itself.</p>
+    <p class="intro-text" data-anim data-delay="1"><strong>Star Entertainment and Lancelot Production</strong> produce and tour some of the world's most spectacular live shows — The Music of Hans Zimmer, The Magical Music of Harry Potter, The Lion King in Concert, and more. They run over <strong>1,500 concerts a year</strong> across the USA, UK, Europe and Asia, consistently achieving sold-out rates above 80%.</p>
+    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The challenge: every show has a different city, venue, date, and audience. New dates go on sale every week. Managing advertising at this scale manually is simply not possible — unless you build a system that runs itself.</p>
   </div>
 </section>
 
@@ -357,17 +395,17 @@
       <div class="method__step">
         <div class="method__num">01</div>
         <div class="method__title">Master campaign architecture</div>
-        <p class="method__desc">We designed a scalable campaign structure using Performance Max and Smart Bidding â€” built to handle hundreds of simultaneous events without manual intervention per show.</p>
+        <p class="method__desc">We designed a scalable campaign structure using Performance Max and Smart Bidding — built to handle hundreds of simultaneous events without manual intervention per show.</p>
       </div>
       <div class="method__step">
         <div class="method__num">02</div>
         <div class="method__title">Dynamic asset system</div>
-        <p class="method__desc">We built a feed-based creative system that automatically generates ads for each event: correct venue, date, city and show name â€” with zero manual production time per concert.</p>
+        <p class="method__desc">We built a feed-based creative system that automatically generates ads for each event: correct venue, date, city and show name — with zero manual production time per concert.</p>
       </div>
       <div class="method__step">
         <div class="method__num">03</div>
         <div class="method__title">Automated bid scaling</div>
-        <p class="method__desc">Bidding strategies are connected to real-time availability data â€” budget automatically shifts toward shows with available seats, and scales back as venues fill up.</p>
+        <p class="method__desc">Bidding strategies are connected to real-time availability data — budget automatically shifts toward shows with available seats, and scales back as venues fill up.</p>
       </div>
     </div>
   </div>
@@ -381,11 +419,11 @@
       <h2 class="h2">The primary<br>sales channel.</h2>
     </div>
     <div class="result-grid" data-anim data-delay="1">
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>1,500+ events running simultaneously</strong> â€” all managed from a single account structure, with no manual setup per show</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Google Ads became the primary ticketing channel</strong> â€” outperforming organic, social, and email across all four continents</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>80%+ sold-out rate maintained</strong> â€” the system identifies underperforming shows early and reallocates budget before it's too late</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>New shows launch in hours, not days</strong> â€” adding a new event to the system requires minutes of setup, not a full campaign build</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Partnership ongoing since August 2025</strong> â€” the system continues to scale as the touring calendar grows</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>1,500+ events running simultaneously</strong> — all managed from a single account structure, with no manual setup per show</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Google Ads became the primary ticketing channel</strong> — outperforming organic, social, and email across all four continents</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>80%+ sold-out rate maintained</strong> — the system identifies underperforming shows early and reallocates budget before it's too late</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>New shows launch in hours, not days</strong> — adding a new event to the system requires minutes of setup, not a full campaign build</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Partnership ongoing since August 2025</strong> — the system continues to scale as the touring calendar grows</div></div>
     </div>
   </div>
 </section>
@@ -409,7 +447,7 @@
         <div class="cta-box__options">
           <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">
             <div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div>
-            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min Â· Free Â· No commitment</div></div>
+            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div>
             <span class="cta-opt__arrow"></span>
           </button>
           <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener">
@@ -433,9 +471,9 @@
   <div class="container">
     <div class="footer__inner">
       <div class="footer__brand">
-        <a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Page</span></div></a>
+        <a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div></a>
       </div>
-      <p class="footer__copy">Â© 2025 Nicola Dimattia Â· P.IVA 09099240724</p>
+      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
       <nav class="footer__links">
         <a href="tel:+393514120302">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
@@ -455,8 +493,8 @@
 </a>
 
 <div class="mobile-cta" id="mobile-cta">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">ðŸ“… Book a call</button>
-  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">ðŸ’¬ WhatsApp</a>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">?? Book a call</button>
+  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">?? WhatsApp</a>
 </div>
 
 <script>
@@ -465,7 +503,9 @@
   const toggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('nav');
   toggle.addEventListener('click', () => { toggle.classList.toggle('is-open'); nav.classList.toggle('is-open'); document.body.style.overflow = nav.classList.contains('is-open') ? 'hidden' : ''; });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('is-open'); nav.classList.remove('is-open'); document.body.style.overflow = ''; }));
+  nav.querySelectorAll('a,button').forEach(function(el){if(el.classList.contains('nav__dropdown-btn'))return;el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
+  document.querySelectorAll('.nav__item--has-dropdown').forEach(function(item){var btn=item.querySelector('.nav__dropdown-btn'),menu=item.querySelector('.nav__dropdown');if(!btn||!menu)return;btn.addEventListener('click',function(e){var open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));menu.classList.toggle('is-open',!open);e.stopPropagation();});});
+  document.addEventListener('click',function(){document.querySelectorAll('.nav__dropdown.is-open').forEach(function(m){m.classList.remove('is-open');m.closest('.nav__item--has-dropdown').querySelector('.nav__dropdown-btn').setAttribute('aria-expanded','false');});});
   const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
   document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
   const mobileCta = document.getElementById('mobile-cta');

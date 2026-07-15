@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NicosDigit CMS</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#33C494;--green-dark:#28A57C;--green-soft:#E6F7F0;
+      --bg:#FFFFFF;--bg-2:#F6F6F4;--bg-3:#EEEEEC;
+      --ink:#0A0A0A;--grey:rgba(10,10,10,0.55);--grey-line:rgba(10,10,10,0.08);
+      --ease:cubic-bezier(0.16,1,0.3,1);
+      --sidebar:260px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{height:100%;}
+    body{font-family:'Poppins',sans-serif;font-size:14px;line-height:1.6;color:var(--ink);background:var(--bg-2);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}button{background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:0;}
+    ::selection{background:var(--green);color:var(--ink);}
+
+    /* ── Login ── */
+    .login{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;justify-content:center;z-index:999;}
+    .login__box{background:var(--bg);border-radius:16px;padding:2.5rem;width:100%;max-width:380px;box-shadow:0 32px 80px -16px rgba(0,0,0,0.4);}
+    .login__logo{font-family:'Archivo Black',sans-serif;font-size:1.2rem;letter-spacing:-0.03em;margin-bottom:0.25rem;}
+    .login__sub{font-size:0.8rem;color:var(--grey);margin-bottom:2rem;}
+    .login__label{display:block;font-size:0.78rem;font-weight:600;color:var(--grey);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem;}
+    .login__input{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--grey-line);border-radius:8px;font-size:0.9rem;font-family:inherit;transition:border-color 0.2s;outline:none;margin-bottom:1rem;}
+    .login__input:focus{border-color:var(--green);}
+    .login__btn{width:100%;padding:0.85rem;background:var(--ink);color:var(--bg);border-radius:8px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+    .login__btn:hover{background:var(--green);color:var(--ink);}
+    .login__err{font-size:0.82rem;color:#e53e3e;margin-top:0.5rem;display:none;}
+
+    /* ── Layout ── */
+    .cms{display:none;height:100vh;overflow:hidden;}
+    .cms.is-active{display:grid;grid-template-columns:var(--sidebar) 1fr;grid-template-rows:auto 1fr;}
+    .cms-topbar{grid-column:1/-1;background:var(--bg);border-bottom:1px solid var(--grey-line);padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+    .cms-topbar__brand{font-family:'Archivo Black',sans-serif;font-size:0.95rem;letter-spacing:-0.02em;display:flex;align-items:center;gap:0.6rem;}
+    .cms-topbar__brand-dot{width:8px;height:8px;border-radius:50%;background:var(--green);}
+    .cms-topbar__right{display:flex;align-items:center;gap:1rem;}
+    .cms-topbar__badge{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--green-soft);color:var(--green-dark);padding:0.2rem 0.6rem;border-radius:999px;}
+    .topbar-btn{padding:0.45rem 0.9rem;border-radius:8px;font-size:0.82rem;font-weight:600;border:1.5px solid var(--grey-line);transition:background 0.2s,color 0.2s,border-color 0.2s;display:flex;align-items:center;gap:0.4rem;}
+    .topbar-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+    .topbar-btn--primary{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+    .topbar-btn--primary:hover{background:var(--green);color:var(--ink);border-color:var(--green);}
+
+    /* ── Sidebar ── */
+    .cms-sidebar{background:var(--bg);border-right:1px solid var(--grey-line);overflow-y:auto;padding:1rem 0;}
+    .sidebar-section{margin-bottom:0.5rem;}
+    .sidebar-section__label{font-size:0.69rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);padding:0.75rem 1.25rem 0.4rem;display:block;}
+    .sidebar-item{display:flex;align-items:center;gap:0.65rem;padding:0.6rem 1.25rem;font-size:0.87rem;font-weight:500;color:var(--grey);transition:background 0.15s,color 0.15s;cursor:pointer;border-radius:0;width:100%;}
+    .sidebar-item:hover{background:var(--bg-2);color:var(--ink);}
+    .sidebar-item.is-active{background:var(--green-soft);color:var(--green-dark);font-weight:600;}
+    .sidebar-item__icon{width:16px;height:16px;flex-shrink:0;opacity:0.7;}
+    .sidebar-item.is-active .sidebar-item__icon{opacity:1;}
+    .sidebar-item__count{margin-left:auto;font-size:0.72rem;background:var(--grey-line);color:var(--grey);padding:0.08rem 0.45rem;border-radius:999px;}
+    .sidebar-divider{height:1px;background:var(--grey-line);margin:0.5rem 1.25rem;}
+
+    /* ── Main content ── */
+    .cms-main{overflow-y:auto;background:var(--bg-2);}
+    .cms-panel{display:none;padding:2rem;}
+    .cms-panel.is-active{display:block;}
+
+    /* ── Panel header ── */
+    .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem;gap:1rem;flex-wrap:wrap;}
+    .panel-title{font-family:'Archivo Black',sans-serif;font-size:1.4rem;letter-spacing:-0.025em;color:var(--ink);}
+    .panel-sub{font-size:0.85rem;color:var(--grey);margin-top:0.25rem;}
+
+    /* ── Stats row ── */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem;}
+    .stat-card{background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:0.25rem;}
+    .stat-card__num{font-family:'Archivo Black',sans-serif;font-size:1.9rem;letter-spacing:-0.04em;line-height:1;color:var(--ink);}
+    .stat-card__label{font-size:0.78rem;color:var(--grey);font-weight:500;}
+    .stat-card__change{font-size:0.72rem;font-weight:600;color:var(--green-dark);margin-top:0.25rem;}
+
+    /* ── Article list ── */
+    .article-list{display:flex;flex-direction:column;gap:0;}
+    .article-item{background:var(--bg);border:1px solid var(--grey-line);border-radius:0;padding:1rem 1.25rem;display:grid;grid-template-columns:1fr auto;gap:0.75rem 1.5rem;align-items:center;cursor:pointer;transition:background 0.15s;border-bottom:none;}
+    .article-item:first-child{border-radius:12px 12px 0 0;}
+    .article-item:last-child{border-radius:0 0 12px 12px;border-bottom:1px solid var(--grey-line);}
+    .article-item:only-child{border-radius:12px;border-bottom:1px solid var(--grey-line);}
+    .article-item:hover{background:var(--bg-2);}
+    .article-item__title{font-weight:600;font-size:0.9rem;color:var(--ink);margin-bottom:0.2rem;}
+    .article-item__meta{font-size:0.78rem;color:var(--grey);display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;}
+    .article-item__actions{display:flex;gap:0.5rem;align-items:center;flex-shrink:0;}
+    .article-item__actions button{padding:0.35rem 0.75rem;border-radius:6px;font-size:0.78rem;font-weight:600;border:1.5px solid var(--grey-line);transition:background 0.15s,color 0.15s,border-color 0.15s;}
+    .article-item__actions .btn-edit:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+    .article-item__actions .btn-del:hover{background:#e53e3e;color:#fff;border-color:#e53e3e;}
+    .status-badge{font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:999px;}
+    .status-badge--published{background:var(--green-soft);color:var(--green-dark);}
+    .status-badge--draft{background:var(--bg-3);color:var(--grey);}
+    .status-badge--scheduled{background:#FEF3C7;color:#B45309;}
+    .status-badge--featured{background:#EDE9FE;color:#6D28D9;}
+
+    /* ── Editor ── */
+    .editor-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;align-items:start;}
+    @media(max-width:900px){.editor-grid{grid-template-columns:1fr;}}
+    .editor-main,.editor-sidebar-panel{display:flex;flex-direction:column;gap:1rem;}
+    .field-group{background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;padding:1.25rem;}
+    .field-group__title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;}
+    .field{display:flex;flex-direction:column;gap:0.35rem;margin-bottom:0.85rem;}
+    .field:last-child{margin-bottom:0;}
+    .field label{font-size:0.78rem;font-weight:600;color:var(--grey);letter-spacing:0.05em;}
+    .field input,.field textarea,.field select{padding:0.65rem 0.85rem;border:1.5px solid var(--grey-line);border-radius:8px;font-size:0.88rem;font-family:inherit;transition:border-color 0.2s;outline:none;background:var(--bg);color:var(--ink);width:100%;}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green);}
+    .field textarea{resize:vertical;min-height:80px;}
+    .field__hint{font-size:0.73rem;color:var(--grey);margin-top:0.2rem;}
+    #field-body{min-height:420px;font-family:'Courier New',monospace;font-size:0.85rem;line-height:1.7;}
+    .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;}
+    .toggle-row label{font-size:0.85rem;font-weight:500;color:var(--ink);}
+    .toggle{position:relative;width:40px;height:22px;flex-shrink:0;}
+    .toggle input{opacity:0;width:0;height:0;}
+    .toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--grey-line);border-radius:999px;transition:background 0.2s;}
+    .toggle-slider::before{content:'';position:absolute;width:16px;height:16px;left:3px;bottom:3px;background:var(--bg);border-radius:50%;transition:transform 0.2s;}
+    .toggle input:checked+.toggle-slider{background:var(--green);}
+    .toggle input:checked+.toggle-slider::before{transform:translateX(18px);}
+
+    /* ── Tabs ── */
+    .tabs{display:flex;gap:0;border-bottom:1px solid var(--grey-line);margin-bottom:1.25rem;}
+    .tab{padding:0.6rem 1rem;font-size:0.85rem;font-weight:600;color:var(--grey);cursor:pointer;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;margin-bottom:-1px;}
+    .tab.is-active{color:var(--ink);border-bottom-color:var(--ink);}
+    .tab-panel{display:none;}
+    .tab-panel.is-active{display:block;}
+
+    /* ── AI Panel ── */
+    .ai-panel{background:linear-gradient(135deg,var(--ink) 0%,#1a1a2e 100%);border-radius:12px;padding:1.25rem;color:var(--bg);}
+    .ai-panel__header{display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;}
+    .ai-panel__icon{width:28px;height:28px;background:var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .ai-panel__title{font-family:'Archivo Black',sans-serif;font-size:0.9rem;letter-spacing:-0.02em;}
+    .ai-panel__sub{font-size:0.75rem;color:rgba(255,255,255,0.55);margin-top:0.1rem;}
+    .ai-field{margin-bottom:0.85rem;}
+    .ai-field label{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;}
+    .ai-field input,.ai-field textarea{width:100%;padding:0.6rem 0.85rem;border:1.5px solid rgba(255,255,255,0.12);border-radius:8px;background:rgba(255,255,255,0.06);color:var(--bg);font-size:0.85rem;font-family:inherit;outline:none;transition:border-color 0.2s;}
+    .ai-field input:focus,.ai-field textarea:focus{border-color:var(--green);}
+    .ai-field textarea{min-height:70px;resize:vertical;}
+    .ai-btn{width:100%;padding:0.75rem;background:var(--green);color:var(--ink);border:none;border-radius:8px;font-weight:700;font-size:0.88rem;cursor:pointer;font-family:inherit;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.5rem;}
+    .ai-btn:hover{background:var(--green-dark);color:var(--bg);}
+    .ai-btn:disabled{opacity:0.5;cursor:not-allowed;}
+    .ai-result{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.85rem;margin-top:0.75rem;font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.85);display:none;max-height:300px;overflow-y:auto;}
+    .ai-result.is-visible{display:block;}
+    .ai-result pre{white-space:pre-wrap;word-break:break-word;}
+    .ai-apply-btn{margin-top:0.5rem;padding:0.5rem 0.85rem;background:rgba(255,255,255,0.1);color:var(--bg);border:1px solid rgba(255,255,255,0.15);border-radius:6px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s;display:inline-flex;align-items:center;gap:0.4rem;}
+    .ai-apply-btn:hover{background:rgba(255,255,255,0.2);}
+    .ai-fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.75rem;}
+    .ai-apply-field{padding:0.45rem 0.65rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:inherit;color:rgba(255,255,255,0.75);transition:background 0.2s;text-align:center;}
+    .ai-apply-field:hover{background:rgba(51,196,148,0.2);color:var(--green);}
+
+    /* ── Quick actions ── */
+    .quick-actions{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+    .qa-btn{padding:0.55rem 1rem;border:1.5px solid var(--grey-line);border-radius:8px;font-size:0.82rem;font-weight:600;background:var(--bg);display:flex;align-items:center;gap:0.45rem;transition:background 0.15s,color 0.15s,border-color 0.15s;}
+    .qa-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+    .qa-btn--green{background:var(--green-soft);color:var(--green-dark);border-color:var(--green-soft);}
+    .qa-btn--green:hover{background:var(--green);color:var(--ink);border-color:var(--green);}
+
+    /* ── Toast notifications ── */
+    .toast-container{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;display:flex;flex-direction:column;gap:0.5rem;}
+    .toast{background:var(--ink);color:var(--bg);padding:0.75rem 1.25rem;border-radius:10px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 24px -6px rgba(0,0,0,0.3);transform:translateX(120%);transition:transform 0.3s var(--ease);display:flex;align-items:center;gap:0.6rem;max-width:320px;}
+    .toast.is-visible{transform:translateX(0);}
+    .toast--success::before{content:'✓';background:var(--green);color:var(--ink);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;}
+    .toast--error::before{content:'✕';background:#e53e3e;color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;}
+
+    /* ── Settings ── */
+    .settings-section{background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;padding:1.5rem;margin-bottom:1rem;}
+    .settings-section__title{font-family:'Archivo Black',sans-serif;font-size:0.95rem;letter-spacing:-0.02em;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--grey-line);}
+    .api-key-display{font-family:'Courier New',monospace;background:var(--bg-2);border:1px solid var(--grey-line);border-radius:6px;padding:0.6rem 0.85rem;font-size:0.82rem;color:var(--grey);letter-spacing:0.05em;}
+
+    /* ── Empty state ── */
+    .empty-state{text-align:center;padding:4rem 2rem;color:var(--grey);}
+    .empty-state__icon{font-size:2.5rem;margin-bottom:1rem;}
+    .empty-state h3{font-family:'Archivo Black',sans-serif;font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem;}
+    .empty-state p{font-size:0.88rem;line-height:1.6;max-width:320px;margin:0 auto;}
+
+    /* ── Confirm dialog ── */
+    .confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:none;align-items:center;justify-content:center;}
+    .confirm-overlay.is-open{display:flex;}
+    .confirm-box{background:var(--bg);border-radius:14px;padding:2rem;max-width:380px;width:90%;box-shadow:0 24px 60px -12px rgba(0,0,0,0.35);}
+    .confirm-box h3{font-family:'Archivo Black',sans-serif;font-size:1.1rem;margin-bottom:0.5rem;}
+    .confirm-box p{font-size:0.88rem;color:var(--grey);line-height:1.6;margin-bottom:1.5rem;}
+    .confirm-actions{display:flex;gap:0.75rem;justify-content:flex-end;}
+    .confirm-cancel{padding:0.6rem 1.1rem;border:1.5px solid var(--grey-line);border-radius:8px;font-size:0.85rem;font-weight:600;background:var(--bg);}
+    .confirm-cancel:hover{background:var(--bg-2);}
+    .confirm-ok{padding:0.6rem 1.1rem;border-radius:8px;font-size:0.85rem;font-weight:600;background:#e53e3e;color:#fff;border:none;}
+    .confirm-ok:hover{background:#c53030;}
+  </style>
+</head>
+<body>
+
+<!-- ── Login Screen ─────────────────────────────────────────── -->
+<div class="login" id="login-screen">
+  <div class="login__box">
+    <div class="login__logo">NicosDigit CMS</div>
+    <div class="login__sub">Content Management System</div>
+    <label class="login__label" for="login-pass">Password</label>
+    <input class="login__input" type="password" id="login-pass" placeholder="Enter password" autocomplete="current-password">
+    <button class="login__btn" id="login-btn">Sign in</button>
+    <div class="login__err" id="login-err">Incorrect password. Try again.</div>
+    <div style="font-size:0.72rem;color:var(--grey);margin-top:1rem;text-align:center;">Default: <code>nicosdigit2025</code> — change in Settings</div>
+  </div>
+</div>
+
+<!-- ── CMS Shell ────────────────────────────────────────────── -->
+<div class="cms" id="cms">
+  <!-- Topbar -->
+  <div class="cms-topbar">
+    <div class="cms-topbar__brand">
+      <div class="cms-topbar__brand-dot"></div>
+      NicosDigit CMS
+      <span class="cms-topbar__badge">Local</span>
+    </div>
+    <div class="cms-topbar__right">
+      <a href="http://localhost:3000/blog" target="_blank" class="topbar-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Blog
+      </a>
+      <button class="topbar-btn topbar-btn--primary" onclick="showPanel('editor');newArticle()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New Article
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="cms-sidebar">
+    <div class="sidebar-section">
+      <span class="sidebar-section__label">Content</span>
+      <button class="sidebar-item is-active" onclick="showPanel('dashboard');setActive(this)">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </button>
+      <button class="sidebar-item" id="sidebar-articles" onclick="showPanel('articles');setActive(this)">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Articles
+        <span class="sidebar-item__count" id="article-count">8</span>
+      </button>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <span class="sidebar-section__label">Manage</span>
+      <button class="sidebar-item" onclick="showPanel('categories');setActive(this)">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg>
+        Categories
+      </button>
+      <button class="sidebar-item" onclick="showPanel('settings');setActive(this)">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <span class="sidebar-section__label">Build</span>
+      <button class="sidebar-item" onclick="showBuildInstructions()">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Build Blog
+      </button>
+      <button class="sidebar-item" onclick="showPanel('sitemap');setActive(this)">
+        <svg class="sidebar-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/></svg>
+        SEO & Sitemap
+      </button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="cms-main">
+
+    <!-- Dashboard -->
+    <div class="cms-panel is-active" id="panel-dashboard">
+      <div class="panel-head">
+        <div><div class="panel-title">Dashboard</div><div class="panel-sub">NicosDigit Blog overview</div></div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-card__num" id="stat-total">8</div><div class="stat-card__label">Total Articles</div><div class="stat-card__change">4 EN · 4 IT</div></div>
+        <div class="stat-card"><div class="stat-card__num">3</div><div class="stat-card__label">Categories</div><div class="stat-card__change">Google Ads · Tracking · Strategy</div></div>
+        <div class="stat-card"><div class="stat-card__num">2</div><div class="stat-card__label">Languages</div><div class="stat-card__change">EN (UK) · IT</div></div>
+        <div class="stat-card"><div class="stat-card__num" id="stat-scheduled">0</div><div class="stat-card__label">Scheduled</div><div class="stat-card__change">Pending publication</div></div>
+      </div>
+      <div class="panel-head" style="margin-top:1.5rem;"><div class="panel-title" style="font-size:1rem;">Quick actions</div></div>
+      <div class="quick-actions">
+        <button class="qa-btn qa-btn--green" onclick="showPanel('editor');setActive(document.getElementById('sidebar-articles'));newArticle()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Article
+        </button>
+        <button class="qa-btn" onclick="showPanel('articles');setActive(document.getElementById('sidebar-articles'))">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+          View Articles
+        </button>
+        <button class="qa-btn" onclick="showBuildInstructions()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Rebuild Blog
+        </button>
+        <a class="qa-btn" href="http://localhost:3000/blog" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Preview Blog
+        </a>
+      </div>
+      <div class="panel-head" style="margin-top:1rem;"><div class="panel-title" style="font-size:1rem;">How it works</div></div>
+      <div class="settings-section" style="background:var(--bg-2);border-color:transparent;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+          <div>
+            <div style="font-weight:700;margin-bottom:0.35rem;font-size:0.88rem;">1. Write here</div>
+            <div style="font-size:0.82rem;color:var(--grey);line-height:1.6;">Use the editor to write or generate articles. Fill in all metadata fields.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;margin-bottom:0.35rem;font-size:0.88rem;">2. Download markdown</div>
+            <div style="font-size:0.82rem;color:var(--grey);line-height:1.6;">Click "Download .md" to save the article file to <code>content/blog/en/</code> or <code>content/blog/it/</code>.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;margin-bottom:0.35rem;font-size:0.88rem;">3. Rebuild blog</div>
+            <div style="font-size:0.82rem;color:var(--grey);line-height:1.6;">Run <code>node build-blog.mjs</code> in your terminal to regenerate all HTML pages.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;margin-bottom:0.35rem;font-size:0.88rem;">4. Deploy</div>
+            <div style="font-size:0.82rem;color:var(--grey);line-height:1.6;">Push to Git. Vercel auto-deploys on every push to main.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Articles list -->
+    <div class="cms-panel" id="panel-articles">
+      <div class="panel-head">
+        <div><div class="panel-title">Articles</div><div class="panel-sub">All published and draft articles</div></div>
+        <button class="topbar-btn topbar-btn--primary" onclick="showPanel('editor');newArticle()">+ New</button>
+      </div>
+      <div id="articles-list"></div>
+    </div>
+
+    <!-- Editor -->
+    <div class="cms-panel" id="panel-editor">
+      <div class="panel-head">
+        <div><div class="panel-title" id="editor-title">New Article</div><div class="panel-sub">Fill in all fields then download the markdown file</div></div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <button class="topbar-btn" onclick="saveDraft()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Draft
+          </button>
+          <button class="topbar-btn topbar-btn--primary" onclick="downloadMarkdown()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download .md
+          </button>
+        </div>
+      </div>
+      <div class="editor-grid">
+        <div class="editor-main">
+          <div class="field-group">
+            <div class="field-group__title">Content</div>
+            <div class="tabs">
+              <button class="tab is-active" onclick="switchTab(this,'tab-write')">Write</button>
+              <button class="tab" onclick="switchTab(this,'tab-seo')">SEO</button>
+              <button class="tab" onclick="switchTab(this,'tab-preview')">Preview</button>
+            </div>
+            <div class="tab-panel is-active" id="tab-write">
+              <div class="field"><label for="field-title">Title *</label><input type="text" id="field-title" placeholder="Article title…" oninput="autoSlug()"></div>
+              <div class="field"><label for="field-slug">Slug *</label><input type="text" id="field-slug" placeholder="url-friendly-slug"><div class="field__hint">Used in the URL: /blog/[slug]/</div></div>
+              <div class="field"><label for="field-excerpt">Excerpt *</label><textarea id="field-excerpt" rows="3" placeholder="One or two sentences summarising the article for search engines and article cards…"></textarea></div>
+              <div class="field"><label for="field-body">Body (Markdown) *</label><textarea id="field-body" placeholder="# Write your article in Markdown…&#10;&#10;## Section heading&#10;&#10;Your content here…"></textarea></div>
+            </div>
+            <div class="tab-panel" id="tab-seo">
+              <div class="field"><label for="field-seo-title">SEO Title</label><input type="text" id="field-seo-title" placeholder="Overrides title for search engines (60 chars max)"><div class="field__hint" id="seo-title-count">0/60 characters</div></div>
+              <div class="field"><label for="field-meta-desc">Meta Description</label><textarea id="field-meta-desc" rows="3" placeholder="160 characters max. Appears in search results."></textarea><div class="field__hint" id="meta-desc-count">0/160 characters</div></div>
+              <div class="field"><label for="field-og-image">OG Image Path</label><input type="text" id="field-og-image" placeholder="/blog/images/article-name.jpg"></div>
+            </div>
+            <div class="tab-panel" id="tab-preview">
+              <div style="background:var(--bg-2);border-radius:8px;padding:1.25rem;min-height:200px;font-size:0.88rem;line-height:1.7;" id="preview-content">
+                <em style="color:var(--grey)">Preview will render here…</em>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="editor-sidebar-panel">
+          <div class="field-group">
+            <div class="field-group__title">Publish</div>
+            <div class="field">
+              <label for="field-status">Status</label>
+              <select id="field-status">
+                <option value="published">Published</option>
+                <option value="draft">Draft</option>
+                <option value="scheduled">Scheduled</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="field-date">Publish Date</label>
+              <input type="date" id="field-date">
+            </div>
+            <div class="toggle-row">
+              <label for="field-featured">Featured article</label>
+              <label class="toggle"><input type="checkbox" id="field-featured"><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+          <div class="field-group">
+            <div class="field-group__title">Metadata</div>
+            <div class="field">
+              <label for="field-lang">Language</label>
+              <select id="field-lang">
+                <option value="en">English (EN)</option>
+                <option value="it">Italian (IT)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="field-category">Category</label>
+              <select id="field-category">
+                <option value="google-ads" data-label="Google Ads">Google Ads</option>
+                <option value="meta-ads" data-label="Meta Ads">Meta Ads</option>
+                <option value="tracking" data-label="Tracking &amp; Analytics">Tracking &amp; Analytics</option>
+                <option value="strategy" data-label="Strategy">Strategy</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="field-tags">Tags (comma-separated)</label>
+              <input type="text" id="field-tags" placeholder="google-ads, optimization, ppc">
+            </div>
+            <div class="field">
+              <label for="field-author">Author</label>
+              <input type="text" id="field-author" value="Nicola Dimattia">
+            </div>
+            <div class="field">
+              <label for="field-reading-time">Reading Time (min)</label>
+              <input type="number" id="field-reading-time" placeholder="Auto" min="1" max="60">
+            </div>
+          </div>
+          <!-- AI Panel -->
+          <div class="ai-panel">
+            <div class="ai-panel__header">
+              <div class="ai-panel__icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div><div class="ai-panel__title">AI Assistant</div><div class="ai-panel__sub">Claude-powered content generation</div></div>
+            </div>
+            <div class="ai-field">
+              <label>Topic / brief</label>
+              <textarea id="ai-topic" rows="3" placeholder="Describe what you want to write about. E.g. 'Why landing page speed matters for Google Ads quality score'…"></textarea>
+            </div>
+            <div class="ai-field">
+              <label>API Key (Claude)</label>
+              <input type="password" id="ai-key" placeholder="sk-ant-…" autocomplete="off">
+            </div>
+            <button class="ai-btn" id="ai-generate-btn" onclick="generateWithAI()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Generate Article
+            </button>
+            <div class="ai-result" id="ai-result">
+              <pre id="ai-result-text"></pre>
+              <div class="ai-fields-grid" id="ai-apply-btns" style="display:none;">
+                <button class="ai-apply-field" onclick="applyAIField('title')">Apply Title</button>
+                <button class="ai-apply-field" onclick="applyAIField('excerpt')">Apply Excerpt</button>
+                <button class="ai-apply-field" onclick="applyAIField('body')">Apply Body</button>
+                <button class="ai-apply-field" onclick="applyAIField('seo')">Apply SEO</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="cms-panel" id="panel-categories">
+      <div class="panel-head"><div><div class="panel-title">Categories</div><div class="panel-sub">Manage blog categories</div></div></div>
+      <div class="settings-section">
+        <div class="settings-section__title">Active Categories</div>
+        <div id="cats-list"></div>
+      </div>
+    </div>
+
+    <!-- SEO & Sitemap -->
+    <div class="cms-panel" id="panel-sitemap">
+      <div class="panel-head"><div><div class="panel-title">SEO &amp; Sitemap</div><div class="panel-sub">Generated automatically when you run the build</div></div></div>
+      <div class="settings-section">
+        <div class="settings-section__title">Generated Files</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;background:var(--green-soft);border-radius:8px;">
+            <div>
+              <div style="font-weight:600;font-size:0.88rem;color:var(--green-dark);">sitemap.xml</div>
+              <div style="font-size:0.78rem;color:var(--grey);">All pages including blog articles</div>
+            </div>
+            <a href="/sitemap.xml" target="_blank" class="topbar-btn" style="font-size:0.78rem;">View</a>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;background:var(--green-soft);border-radius:8px;">
+            <div>
+              <div style="font-weight:600;font-size:0.88rem;color:var(--green-dark);">robots.txt</div>
+              <div style="font-size:0.78rem;color:var(--grey);">Blocks /admin/, allows everything else</div>
+            </div>
+            <a href="/robots.txt" target="_blank" class="topbar-btn" style="font-size:0.78rem;">View</a>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;background:var(--green-soft);border-radius:8px;">
+            <div>
+              <div style="font-weight:600;font-size:0.88rem;color:var(--green-dark);">rss.xml</div>
+              <div style="font-size:0.78rem;color:var(--grey);">RSS feed for EN blog articles</div>
+            </div>
+            <a href="/rss.xml" target="_blank" class="topbar-btn" style="font-size:0.78rem;">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section__title">Rebuild to update</div>
+        <p style="font-size:0.85rem;color:var(--grey);line-height:1.6;margin-bottom:1rem;">Sitemap, robots.txt and RSS are regenerated every time you run the build script. After adding new articles, always rebuild.</p>
+        <code style="display:block;background:var(--ink);color:var(--green);padding:0.85rem 1rem;border-radius:8px;font-size:0.85rem;">node build-blog.mjs</code>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="cms-panel" id="panel-settings">
+      <div class="panel-head"><div><div class="panel-title">Settings</div><div class="panel-sub">CMS configuration</div></div></div>
+      <div class="settings-section">
+        <div class="settings-section__title">Authentication</div>
+        <div class="field"><label for="set-pass">CMS Password</label><input type="password" id="set-pass" placeholder="New password"></div>
+        <button class="topbar-btn" onclick="savePassword()">Update Password</button>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section__title">AI Integration</div>
+        <p style="font-size:0.85rem;color:var(--grey);line-height:1.6;margin-bottom:1rem;">Enter your Claude API key to enable AI content generation. The key is stored in your browser's localStorage and never leaves your device.</p>
+        <div class="field"><label for="set-ai-key">Claude API Key</label><input type="password" id="set-ai-key" placeholder="sk-ant-…"></div>
+        <button class="topbar-btn" onclick="saveAIKey()">Save API Key</button>
+        <div id="ai-key-status" style="font-size:0.8rem;color:var(--green-dark);margin-top:0.5rem;display:none;">✓ API key saved</div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section__title">Default Author</div>
+        <div class="field"><label for="set-author">Author Name</label><input type="text" id="set-author" placeholder="Nicola Dimattia"></div>
+        <button class="topbar-btn" onclick="saveAuthor()">Save</button>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section__title">Blog Configuration</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;font-size:0.85rem;">
+          <div><strong>EN Blog URL</strong><div style="color:var(--grey);margin-top:0.2rem;">/blog/</div></div>
+          <div><strong>IT Blog URL</strong><div style="color:var(--grey);margin-top:0.2rem;">/it/blog/</div></div>
+          <div><strong>Content directory</strong><div style="color:var(--grey);margin-top:0.2rem;">content/blog/en/ &amp; content/blog/it/</div></div>
+          <div><strong>Build command</strong><div style="color:var(--grey);margin-top:0.2rem;">node build-blog.mjs</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Confirm Dialog ───────────────────────────────────────── -->
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-box">
+    <h3 id="confirm-title">Confirm action</h3>
+    <p id="confirm-msg">Are you sure?</p>
+    <div class="confirm-actions">
+      <button class="confirm-cancel" onclick="closeConfirm()">Cancel</button>
+      <button class="confirm-ok" id="confirm-ok">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast Container ──────────────────────────────────────── -->
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+// ── Data ─────────────────────────────────────────────────────
+const ARTICLES_DATA = [
+  {id:'en-search-intent',title:'Why Search Intent Matters More Than Keywords in Google Ads',slug:'search-intent-google-ads',lang:'en',category:'google-ads',status:'published',date:'2025-07-01',featured:true,excerpt:'Most businesses waste budget on Google Ads because they chase keywords, not intent.',readingTime:7},
+  {id:'en-ppc-audit',title:'Five Google Ads Mistakes We Commonly Find During PPC Audits',slug:'five-google-ads-mistakes-ppc-audit',lang:'en',category:'google-ads',status:'published',date:'2025-07-08',featured:false,excerpt:'After auditing dozens of Google Ads accounts, the same five mistakes appear again and again.',readingTime:8},
+  {id:'en-tracking',title:'Conversion Tracking Is Not Optional: Why We Set It Up Before Everything Else',slug:'conversion-tracking-foundation',lang:'en',category:'tracking',status:'published',date:'2025-07-15',featured:false,excerpt:'We never move a campaign budget until tracking is verified.',readingTime:6},
+  {id:'en-channels',title:'Google Ads vs Meta Ads: How We Recommend Choosing Your First Channel',slug:'google-ads-vs-meta-ads',lang:'en',category:'strategy',status:'published',date:'2025-07-22',featured:false,excerpt:'Clients often ask whether to start with Google or Meta. The answer depends on your business model.',readingTime:9},
+  {id:'it-search-intent',title:'Perché l\'Intento di Ricerca Conta Più delle Parole Chiave in Google Ads',slug:'intento-di-ricerca-google-ads',lang:'it',category:'google-ads',status:'published',date:'2025-07-01',featured:true,excerpt:'La maggior parte delle aziende spreca budget in Google Ads perché segue le keyword, non l\'intento.',readingTime:7},
+  {id:'it-ppc-audit',title:'Cinque Errori in Google Ads Che Troviamo Spesso Negli Account',slug:'errori-google-ads-budget',lang:'it',category:'google-ads',status:'published',date:'2025-07-08',featured:false,excerpt:'Dopo aver analizzato decine di account Google Ads, gli stessi cinque errori compaiono ancora e ancora.',readingTime:8},
+  {id:'it-tracking',title:'Il Tracciamento delle Conversioni Non È Opzionale: Perché Lo Configuriamo Prima di Tutto',slug:'tracciamento-conversioni-fondamenti',lang:'it',category:'tracking',status:'published',date:'2025-07-15',featured:false,excerpt:'Non tocchiamo mai il budget di una campagna finché il tracciamento non è verificato.',readingTime:6},
+  {id:'it-channels',title:'Google Ads o Meta Ads: Come Scegliamo il Canale Giusto per i Nostri Clienti',slug:'google-ads-vs-meta-ads-quale-scegliere',lang:'it',category:'strategy',status:'published',date:'2025-07-22',featured:false,excerpt:'I clienti ci chiedono spesso se iniziare con Google o Meta.',readingTime:9},
+];
+
+const CATEGORIES = {
+  'google-ads': {label:'Google Ads',labelIT:'Google Ads'},
+  'meta-ads': {label:'Meta Ads',labelIT:'Meta Ads'},
+  'tracking': {label:'Tracking & Analytics',labelIT:'Tracking & Analytics'},
+  'strategy': {label:'Strategy',labelIT:'Strategia'},
+};
+
+let articles = [...ARTICLES_DATA];
+let drafts = JSON.parse(localStorage.getItem('cms_drafts') || '[]');
+let editingId = null;
+let lastAIResponse = null;
+let confirmCallback = null;
+
+// ── Auth ──────────────────────────────────────────────────────
+const DEFAULT_PASS = 'nicosdigit2025';
+function getPass(){ return localStorage.getItem('cms_pass') || DEFAULT_PASS; }
+
+document.getElementById('login-btn').addEventListener('click', tryLogin);
+document.getElementById('login-pass').addEventListener('keydown', e => { if(e.key==='Enter') tryLogin(); });
+
+function tryLogin(){
+  const val = document.getElementById('login-pass').value;
+  if(val === getPass()){
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('cms').classList.add('is-active');
+    initCMS();
+  } else {
+    document.getElementById('login-err').style.display='block';
+    document.getElementById('login-pass').value='';
+    document.getElementById('login-pass').focus();
+  }
+}
+
+function savePassword(){
+  const v = document.getElementById('set-pass').value.trim();
+  if(!v){toast('Please enter a password','error');return;}
+  localStorage.setItem('cms_pass',v);
+  document.getElementById('set-pass').value='';
+  toast('Password updated');
+}
+
+// ── Init ──────────────────────────────────────────────────────
+function initCMS(){
+  // Merge drafts
+  drafts.forEach(d => { const idx=articles.findIndex(a=>a.id===d.id); if(idx>-1) articles[idx]=d; else articles.push(d); });
+  renderArticleList();
+  renderCategories();
+  updateStats();
+  // Load saved settings
+  const savedKey=localStorage.getItem('cms_ai_key');
+  if(savedKey){ document.getElementById('ai-key').value=savedKey; document.getElementById('set-ai-key').value=savedKey; }
+  const savedAuthor=localStorage.getItem('cms_author');
+  if(savedAuthor){ document.getElementById('field-author').value=savedAuthor; document.getElementById('set-author').value=savedAuthor; }
+  // Set default date
+  document.getElementById('field-date').value = new Date().toISOString().split('T')[0];
+  // SEO char counters
+  document.getElementById('field-seo-title').addEventListener('input', function(){ document.getElementById('seo-title-count').textContent = this.value.length+'/60 characters'; });
+  document.getElementById('field-meta-desc').addEventListener('input', function(){ document.getElementById('meta-desc-count').textContent = this.value.length+'/160 characters'; });
+}
+
+function updateStats(){
+  document.getElementById('stat-total').textContent = articles.length;
+  document.getElementById('stat-scheduled').textContent = articles.filter(a=>a.status==='scheduled').length;
+  document.getElementById('article-count').textContent = articles.length;
+}
+
+// ── Panels ────────────────────────────────────────────────────
+function showPanel(id){
+  document.querySelectorAll('.cms-panel').forEach(p=>p.classList.remove('is-active'));
+  document.getElementById('panel-'+id).classList.add('is-active');
+  if(id==='tab-preview') renderPreview();
+}
+
+function setActive(el){
+  document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('is-active'));
+  el.classList.add('is-active');
+}
+
+function switchTab(btn, tabId){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('is-active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById(tabId).classList.add('is-active');
+  if(tabId==='tab-preview') renderPreview();
+}
+
+// ── Article list ──────────────────────────────────────────────
+function renderArticleList(){
+  const el = document.getElementById('articles-list');
+  if(!articles.length){ el.innerHTML='<div class="empty-state"><div class="empty-state__icon">📝</div><h3>No articles yet</h3><p>Click "New Article" to create your first post.</p></div>'; return; }
+  el.innerHTML = '<div class="article-list">'+articles.map(a=>`
+    <div class="article-item" onclick="editArticle('${a.id}')">
+      <div>
+        <div class="article-item__title">${a.title}</div>
+        <div class="article-item__meta">
+          <span class="status-badge status-badge--${a.status}">${a.status}</span>
+          ${a.featured ? '<span class="status-badge status-badge--featured">Featured</span>' : ''}
+          <span>${a.lang.toUpperCase()}</span>
+          <span>·</span>
+          <span>${CATEGORIES[a.category]?.label || a.category}</span>
+          <span>·</span>
+          <span>${new Date(a.date).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
+          <span>·</span>
+          <span>${a.readingTime || '?'} min</span>
+        </div>
+      </div>
+      <div class="article-item__actions" onclick="event.stopPropagation()">
+        <button class="btn-edit" onclick="editArticle('${a.id}')">Edit</button>
+        <button class="btn-del" onclick="confirmDelete('${a.id}')">Delete</button>
+      </div>
+    </div>`).join('')+'</div>';
+}
+
+// ── New article ───────────────────────────────────────────────
+function newArticle(){
+  editingId = null;
+  document.getElementById('editor-title').textContent='New Article';
+  document.getElementById('field-title').value='';
+  document.getElementById('field-slug').value='';
+  document.getElementById('field-excerpt').value='';
+  document.getElementById('field-body').value='';
+  document.getElementById('field-status').value='draft';
+  document.getElementById('field-date').value=new Date().toISOString().split('T')[0];
+  document.getElementById('field-featured').checked=false;
+  document.getElementById('field-lang').value='en';
+  document.getElementById('field-category').value='google-ads';
+  document.getElementById('field-tags').value='';
+  document.getElementById('field-reading-time').value='';
+  document.getElementById('field-seo-title').value='';
+  document.getElementById('field-meta-desc').value='';
+  document.getElementById('field-og-image').value='';
+  document.getElementById('ai-result').classList.remove('is-visible');
+  document.getElementById('ai-topic').value='';
+  showPanel('editor');
+}
+
+// ── Edit article ──────────────────────────────────────────────
+function editArticle(id){
+  const a = articles.find(a=>a.id===id);
+  if(!a) return;
+  editingId=id;
+  document.getElementById('editor-title').textContent='Edit: '+a.title.substring(0,40)+(a.title.length>40?'…':'');
+  document.getElementById('field-title').value=a.title||'';
+  document.getElementById('field-slug').value=a.slug||'';
+  document.getElementById('field-excerpt').value=a.excerpt||'';
+  document.getElementById('field-body').value=a.body||'';
+  document.getElementById('field-status').value=a.status||'published';
+  document.getElementById('field-date').value=a.date||'';
+  document.getElementById('field-featured').checked=!!a.featured;
+  document.getElementById('field-lang').value=a.lang||'en';
+  document.getElementById('field-category').value=a.category||'google-ads';
+  document.getElementById('field-tags').value=Array.isArray(a.tags)?a.tags.join(', '):(a.tags||'');
+  document.getElementById('field-reading-time').value=a.readingTime||'';
+  document.getElementById('field-seo-title').value=a.seoTitle||'';
+  document.getElementById('field-meta-desc').value=a.metaDesc||'';
+  document.getElementById('field-og-image').value=a.ogImage||'';
+  showPanel('editor');
+}
+
+// ── Auto slug ─────────────────────────────────────────────────
+function autoSlug(){
+  if(editingId) return;
+  const lang=document.getElementById('field-lang').value;
+  const slug=document.getElementById('field-title').value.toLowerCase()
+    .replace(/[àáâãäå]/g,'a').replace(/[èéêë]/g,'e').replace(/[ìíîï]/g,'i').replace(/[òóôõö]/g,'o').replace(/[ùúûü]/g,'u')
+    .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').trim().substring(0,60);
+  document.getElementById('field-slug').value=slug;
+}
+
+// ── Save draft ────────────────────────────────────────────────
+function saveDraft(){
+  const article = collectFields();
+  if(!article.title){ toast('Please enter a title','error'); return; }
+  if(editingId){
+    article.id=editingId;
+    const idx=articles.findIndex(a=>a.id===editingId);
+    if(idx>-1) articles[idx]=article;
+  } else {
+    article.id='draft-'+Date.now();
+    editingId=article.id;
+    articles.unshift(article);
+  }
+  // Persist
+  const draftIdx=drafts.findIndex(d=>d.id===article.id);
+  if(draftIdx>-1) drafts[draftIdx]=article; else drafts.push(article);
+  localStorage.setItem('cms_drafts',JSON.stringify(drafts));
+  renderArticleList();
+  updateStats();
+  toast('Draft saved');
+}
+
+function collectFields(){
+  const cat=document.getElementById('field-category').value;
+  const lang=document.getElementById('field-lang').value;
+  return {
+    title: document.getElementById('field-title').value.trim(),
+    slug: document.getElementById('field-slug').value.trim(),
+    excerpt: document.getElementById('field-excerpt').value.trim(),
+    body: document.getElementById('field-body').value,
+    status: document.getElementById('field-status').value,
+    date: document.getElementById('field-date').value,
+    featured: document.getElementById('field-featured').checked,
+    lang,
+    category: cat,
+    categoryLabel: document.getElementById('field-category').selectedOptions[0]?.text || cat,
+    tags: document.getElementById('field-tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    readingTime: parseInt(document.getElementById('field-reading-time').value) || null,
+    author: document.getElementById('field-author').value.trim() || 'Nicola Dimattia',
+    seoTitle: document.getElementById('field-seo-title').value.trim(),
+    metaDesc: document.getElementById('field-meta-desc').value.trim(),
+    ogImage: document.getElementById('field-og-image').value.trim(),
+  };
+}
+
+// ── Download markdown ──────────────────────────────────────────
+function downloadMarkdown(){
+  const a = collectFields();
+  if(!a.title || !a.slug){ toast('Title and slug are required','error'); return; }
+  const words=(a.body||'').trim().split(/\s+/).length;
+  const rt=a.readingTime||Math.max(1,Math.ceil(words/200));
+  const tagsStr=a.tags.length?'['+a.tags.map(t=>`"${t}"`).join(', ')+']':'[]';
+  const front=`---
+title: "${a.title.replace(/"/g,'\\"')}"
+slug: ${a.slug}
+date: ${a.date}
+author: ${a.author}
+excerpt: "${a.excerpt.replace(/"/g,'\\"')}"
+category: ${a.category}
+categoryLabel: ${a.categoryLabel}
+tags: ${tagsStr}
+readingTime: ${rt}
+featured: ${a.featured}
+${a.seoTitle?`seoTitle: "${a.seoTitle.replace(/"/g,'\\"')}"\n`:''}${a.metaDesc?`ogDescription: "${a.metaDesc.replace(/"/g,'\\"')}"\n`:''}${a.ogImage?`image: ${a.ogImage}\n`:''}---
+
+${a.body}`;
+  const blob=new Blob([front],{type:'text/markdown'});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement('a');
+  link.href=url;
+  link.download=a.slug+'.md';
+  link.click();
+  URL.revokeObjectURL(url);
+  toast(`Downloaded ${a.slug}.md — save it to content/blog/${a.lang}/ then run node build-blog.mjs`);
+}
+
+// ── Preview ───────────────────────────────────────────────────
+function renderPreview(){
+  const body=document.getElementById('field-body').value;
+  const title=document.getElementById('field-title').value;
+  const excerpt=document.getElementById('field-excerpt').value;
+  // Simple markdown to HTML (headings, bold, italic, links, lists)
+  let html=body
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2">$1</a>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs,'<ul>$1</ul>')
+    .replace(/^---$/gm,'<hr>')
+    .replace(/\n\n/g,'</p><p>');
+  document.getElementById('preview-content').innerHTML=
+    `<h1 style="font-family:'Archivo Black',sans-serif;font-size:1.4rem;letter-spacing:-0.025em;margin-bottom:0.5rem;">${title||'(no title)'}</h1>`+
+    `<p style="color:var(--grey);font-style:italic;margin-bottom:1.5rem;">${excerpt||'(no excerpt)'}</p>`+
+    `<hr style="margin-bottom:1.5rem;border:none;border-top:1px solid var(--grey-line);">`+
+    `<p>${html}</p>`;
+}
+
+// ── Delete ────────────────────────────────────────────────────
+function confirmDelete(id){
+  const a=articles.find(a=>a.id===id);
+  if(!a)return;
+  document.getElementById('confirm-title').textContent='Delete article';
+  document.getElementById('confirm-msg').textContent=`Are you sure you want to delete "${a.title}"? This removes it from the CMS draft list but does not delete the source markdown file.`;
+  document.getElementById('confirm-ok').textContent='Delete';
+  confirmCallback=()=>deleteArticle(id);
+  document.getElementById('confirm-overlay').classList.add('is-open');
+  document.getElementById('confirm-ok').onclick=()=>{ closeConfirm(); if(confirmCallback)confirmCallback(); };
+}
+function closeConfirm(){ document.getElementById('confirm-overlay').classList.remove('is-open'); }
+function deleteArticle(id){
+  articles=articles.filter(a=>a.id!==id);
+  drafts=drafts.filter(d=>d.id!==id);
+  localStorage.setItem('cms_drafts',JSON.stringify(drafts));
+  renderArticleList(); updateStats();
+  toast('Article removed from list');
+}
+
+// ── Categories ────────────────────────────────────────────────
+function renderCategories(){
+  const counts={};
+  articles.forEach(a=>{ counts[a.category]=(counts[a.category]||0)+1; });
+  document.getElementById('cats-list').innerHTML=Object.entries(CATEGORIES).map(([slug,{label}])=>`
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem;border-bottom:1px solid var(--grey-line);">
+      <div>
+        <div style="font-weight:600;font-size:0.88rem;">${label}</div>
+        <div style="font-size:0.78rem;color:var(--grey);">/${slug}/</div>
+      </div>
+      <span class="status-badge status-badge--published">${counts[slug]||0} articles</span>
+    </div>`).join('');
+}
+
+// ── Settings ──────────────────────────────────────────────────
+function saveAIKey(){
+  const v=document.getElementById('set-ai-key').value.trim();
+  if(!v){toast('Please enter an API key','error');return;}
+  localStorage.setItem('cms_ai_key',v);
+  document.getElementById('ai-key').value=v;
+  document.getElementById('ai-key-status').style.display='block';
+  toast('API key saved');
+}
+function saveAuthor(){
+  const v=document.getElementById('set-author').value.trim();
+  if(v){ localStorage.setItem('cms_author',v); document.getElementById('field-author').value=v; toast('Author saved'); }
+}
+
+// ── Build instructions ────────────────────────────────────────
+function showBuildInstructions(){
+  toast('Run "node build-blog.mjs" in your terminal to rebuild the blog');
+}
+
+// ── AI Generation ────────────────────────────────────────────
+async function generateWithAI(){
+  const topic=document.getElementById('ai-topic').value.trim();
+  const key=document.getElementById('ai-key').value.trim() || localStorage.getItem('cms_ai_key');
+  if(!topic){toast('Please enter a topic / brief','error');return;}
+  if(!key){toast('Please enter your Claude API key (or save it in Settings)','error');return;}
+
+  const btn=document.getElementById('ai-generate-btn');
+  const resultEl=document.getElementById('ai-result');
+  const resultText=document.getElementById('ai-result-text');
+  btn.disabled=true;
+  btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10"/></svg> Generating…';
+  resultEl.classList.remove('is-visible');
+
+  const lang=document.getElementById('field-lang').value;
+  const isIT=lang==='it';
+  const prompt=`You are an expert paid advertising consultant writing a blog article for NicosDigit, a PPC and Google Ads consultancy.
+
+Write a complete, high-quality blog article in ${isIT?'Italian':'British English'} about: "${topic}"
+
+The article should be written from a first-person company perspective ("In our experience...", "We usually recommend...", "We have found...").
+
+Provide your response in this exact JSON format:
+{
+  "title": "Article title here",
+  "slug": "url-friendly-slug",
+  "excerpt": "Two sentence summary for article cards and meta description",
+  "seoTitle": "SEO optimised title (60 chars max)",
+  "metaDescription": "Meta description (155 chars max)",
+  "tags": ["tag1", "tag2", "tag3"],
+  "body": "Full article in Markdown format with ## section headings, bullet points where appropriate, and a closing CTA paragraph"
+}
+
+Make the body at least 800 words. Use ## for main sections, ### for subsections. Include practical, actionable advice.`;
+
+  try {
+    const response=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:4096,messages:[{role:'user',content:prompt}]})
+    });
+    if(!response.ok){const err=await response.json();throw new Error(err.error?.message||'API error');}
+    const data=await response.json();
+    const text=data.content[0]?.text||'';
+    const jsonMatch=text.match(/\{[\s\S]*\}/);
+    if(jsonMatch){
+      lastAIResponse=JSON.parse(jsonMatch[0]);
+      resultText.textContent=JSON.stringify(lastAIResponse,null,2);
+      document.getElementById('ai-apply-btns').style.display='grid';
+    } else {
+      lastAIResponse={body:text};
+      resultText.textContent=text;
+      document.getElementById('ai-apply-btns').style.display='none';
+    }
+    resultEl.classList.add('is-visible');
+    toast('AI generation complete — click Apply to use the content');
+  } catch(err){
+    resultText.textContent='Error: '+err.message;
+    resultEl.classList.add('is-visible');
+    toast('Generation failed: '+err.message,'error');
+  } finally {
+    btn.disabled=false;
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Generate Article';
+  }
+}
+
+function applyAIField(field){
+  if(!lastAIResponse)return;
+  if(field==='title'&&lastAIResponse.title){ document.getElementById('field-title').value=lastAIResponse.title; autoSlug(); toast('Title applied'); }
+  if(field==='excerpt'&&lastAIResponse.excerpt){ document.getElementById('field-excerpt').value=lastAIResponse.excerpt; toast('Excerpt applied'); }
+  if(field==='body'&&lastAIResponse.body){ document.getElementById('field-body').value=lastAIResponse.body; toast('Body applied — review and edit before publishing'); }
+  if(field==='seo'){
+    if(lastAIResponse.seoTitle){ document.getElementById('field-seo-title').value=lastAIResponse.seoTitle; document.getElementById('seo-title-count').textContent=lastAIResponse.seoTitle.length+'/60 characters'; }
+    if(lastAIResponse.metaDescription){ document.getElementById('field-meta-desc').value=lastAIResponse.metaDescription; document.getElementById('meta-desc-count').textContent=lastAIResponse.metaDescription.length+'/160 characters'; }
+    if(lastAIResponse.slug){ document.getElementById('field-slug').value=lastAIResponse.slug; }
+    if(lastAIResponse.tags){ document.getElementById('field-tags').value=lastAIResponse.tags.join(', '); }
+    toast('SEO fields applied');
+  }
+}
+
+// ── Toast ─────────────────────────────────────────────────────
+function toast(msg, type='success'){
+  const el=document.createElement('div');
+  el.className='toast toast--'+type;
+  el.textContent=msg;
+  document.getElementById('toast-container').appendChild(el);
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>el.classList.add('is-visible')); });
+  setTimeout(()=>{ el.classList.remove('is-visible'); setTimeout(()=>el.remove(),400); },4000);
+}
+</script>
+</body>
+</html>

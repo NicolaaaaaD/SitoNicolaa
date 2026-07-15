@@ -3,6 +3,8 @@
     "validate:case-studies": "node validate-case-studies.mjs"
   },
   "devDependencies": {
+    "lighthouse": "^12.8.2",
+    "marked": "^18.0.6",
     "puppeteer": "^24.43.1"
   }
 }
