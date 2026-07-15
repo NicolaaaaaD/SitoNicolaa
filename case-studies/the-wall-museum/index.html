@@ -1,20 +1,43 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Wall Museum — Turning Paid Media into a Reliable Ticket-Sales Channel | NicosDigit</title>
-  <meta name="description" content="How I built a paid media system for The Wall Museum in Berlin that turned visitor intent and cultural interest into confirmed ticket purchases.">
+  <title>The Wall Museum: Tourist Intent Turned into Ticket Sales | NicosDigit</title>
+  <meta name="description" content="How we built a paid media system for The Wall Museum in Berlin that captured tourist intent at the planning phase and converted it into confirmed ticket purchases.">
   <link rel="canonical" href="https://nicosdigit.com/case-studies/the-wall-museum">
   <link rel="alternate" hreflang="en" href="https://nicosdigit.com/case-studies/the-wall-museum">
   <link rel="alternate" hreflang="it" href="https://nicosdigit.com/it/case-studies/the-wall-museum">
   <link rel="alternate" hreflang="x-default" href="https://nicosdigit.com/case-studies/the-wall-museum">
-  <meta property="og:title" content="The Wall Museum — Turning Paid Media into a Reliable Ticket-Sales Channel | NicosDigit">
-  <meta property="og:description" content="How I built a paid media system for The Wall Museum in Berlin that turned visitor intent and cultural interest into confirmed ticket purchases.">
+  <meta property="og:title" content="The Wall Museum: Tourist Intent Turned into Ticket Sales">
+  <meta property="og:description" content="Capturing Berlin tourist search intent and converting it into confirmed ticket purchases. Google Ads · Meta Ads.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://nicosdigit.com/case-studies/the-wall-museum">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NicosDigit">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Wall Museum: Tourist Intent Turned into Ticket Sales">
+  <meta name="twitter:description" content="Capturing Berlin tourist search intent and converting it into confirmed ticket purchases. Google Ads · Meta Ads.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Wall Museum: Tourist Intent Turned into Ticket Sales",
+    "description": "How we built a paid media system for The Wall Museum in Berlin that captured tourist intent at the planning phase and converted it into confirmed ticket purchases.",
+    "url": "https://nicosdigit.com/case-studies/the-wall-museum",
+    "author": {"@type": "Person", "name": "Nicola Dimattia", "url": "https://nicosdigit.com"},
+    "publisher": {"@type": "Organization", "name": "NicosDigit"},
+    "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://nicosdigit.com"},
+      {"@type":"ListItem","position":2,"name":"Case Studies","item":"https://nicosdigit.com/case-studies"},
+      {"@type":"ListItem","position":3,"name":"The Wall Museum","item":"https://nicosdigit.com/case-studies/the-wall-museum"}
+    ]}
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,140 +51,129 @@
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "The Wall Museum — Turning Paid Media into a Reliable Ticket-Sales Channel",
-    "url": "https://nicosdigit.com/case-studies/the-wall-museum",
-    "author": {"@type": "Person", "name": "Nicola Dimattia", "url": "https://nicosdigit.com"},
-    "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://nicosdigit.com"},
-      {"@type":"ListItem","position":2,"name":"Case Studies","item":"https://nicosdigit.com/case-studies"},
-      {"@type":"ListItem","position":3,"name":"The Wall Museum","item":"https://nicosdigit.com/case-studies/the-wall-museum"}
-    ]}
-  }
-  </script>
   <style>
-    /* DRAFT — not linked from archive or nav */
-    :root{--green:#33C494;--green-dark:#28A57C;--green-soft:#E6F7F0;--bg:#FFFFFF;--bg-2:#F6F6F4;--ink:#0A0A0A;--grey:rgba(10,10,10,0.62);--grey-line:rgba(10,10,10,0.1);--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
-    *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
-    body{font-family:'Poppins',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-    img,svg{display:block;max-width:100%;}a{color:inherit;text-decoration:none;}button{background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:0;}ul{list-style:none;}::selection{background:var(--green);color:var(--ink);}
+    :root{--green:#33C494;--green-dark:#28A57C;--green-soft:#E6F7F0;--bg:#FFFFFF;--bg-2:#F6F6F4;--ink:#0A0A0A;--ink-2:#1A1A1A;--grey:rgba(10,10,10,0.62);--grey-line:rgba(10,10,10,0.1);--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
+    body{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    img,svg{display:block;max-width:100%;}
+    a{color:inherit;text-decoration:none;}
+    button{background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:0;}
+    ul{list-style:none;}
+    strong{font-weight:700;}
+    ::selection{background:var(--green);color:var(--ink);}
     .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.5rem;}
-    @media(min-width:768px){.container{padding:0 2rem;}}@media(min-width:1100px){.container{padding:0 3rem;}}
-    .container--narrow{max-width:820px;}
-    .site-head{position:fixed;top:0;left:0;right:0;z-index:160;padding:1rem 0;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(10,10,10,0.06);transition:padding 0.3s var(--ease);}
+    @media(min-width:768px){.container{padding:0 2rem;}}
+    @media(min-width:1100px){.container{padding:0 3rem;}}
+    .site-head{position:fixed;top:0;left:0;right:0;z-index:160;padding:1rem 0;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid rgba(10,10,10,0.06);transition:padding 0.3s var(--ease);}
     .site-head.is-scrolled{padding:0.55rem 0;}
     .site-head__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
     .logo{display:flex;align-items:center;gap:0.7rem;min-height:44px;}
     .logo__mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .logo__text{font-family:'Archivo Black',sans-serif;font-size:1.05rem;letter-spacing:-0.03em;color:var(--ink);line-height:1;}
-    .logo__sub{font-size:0.65rem;font-weight:500;color:var(--grey);display:block;margin-top:0.1rem;}
+    .logo__text{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:-0.03em;color:var(--ink);line-height:1;}
+    .logo__sub{font-size:0.65rem;font-weight:500;color:var(--grey);letter-spacing:0.04em;display:block;margin-top:0.1rem;}
     .nav{display:flex;align-items:center;gap:2rem;}
     .nav__list{display:flex;gap:2rem;font-size:0.93rem;font-weight:500;}
-    .nav__link{position:relative;padding:0.4rem 0;min-height:44px;display:flex;align-items:center;}
+    .nav__link{position:relative;padding:0.4rem 0;transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1);}
-    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:#fff;padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,transform 0.25s var(--ease);}
+    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:var(--bg);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
+    .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
     .nav__cta:hover{background:var(--green);color:var(--ink);transform:translateY(-2px);}
-    .lang-sw{display:flex;align-items:center;border:1.5px solid var(--grey-line);border-radius:999px;overflow:hidden;}
-    .lang-sw__btn{padding:0.38rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--grey);min-height:36px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
-    .lang-sw__btn--active{background:var(--ink);color:#fff;}
+    .lang-sw{display:flex;align-items:center;flex-shrink:0;border:1.5px solid var(--grey-line);border-radius:999px;overflow:hidden;}
+    .lang-sw__btn{padding:0.38rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--grey);transition:background 0.2s,color 0.2s;min-height:44px;display:flex;align-items:center;}
+    .lang-sw__btn--active{background:var(--ink);color:var(--bg);}
+    .lang-sw__btn:not(.lang-sw__btn--active):hover{background:var(--green-soft);color:var(--green-dark);}
     .nav-toggle{display:none;width:44px;height:44px;position:relative;z-index:110;align-items:center;justify-content:center;}
     .nav-toggle span{display:block;position:absolute;left:11px;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform 0.3s var(--ease),opacity 0.2s;}
-    .nav-toggle span:nth-child(1){top:16px;}.nav-toggle span:nth-child(2){top:22px;}.nav-toggle span:nth-child(3){top:28px;}
-    .nav-toggle.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}.nav-toggle.is-open span:nth-child(2){opacity:0;}.nav-toggle.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+    .nav-toggle span:nth-child(1){top:16px;}
+    .nav-toggle span:nth-child(2){top:22px;}
+    .nav-toggle span:nth-child(3){top:28px;}
+    .nav-toggle.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+    .nav-toggle.is-open span:nth-child(2){opacity:0;}
+    .nav-toggle.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
     @media(max-width:880px){
       .logo__sub{display:none;}.logo{position:relative;z-index:160;}.nav-toggle{z-index:160!important;}
       .nav__list,.nav__cta,.lang-sw{display:none!important;}.nav-toggle{display:flex!important;}
-      .nav{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;z-index:150!important;background:var(--bg);flex-direction:column!important;align-items:stretch!important;padding:80px 1.5rem 1.5rem!important;overflow-y:auto;gap:0!important;pointer-events:none;visibility:hidden;opacity:0;transform:translateX(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s 0.3s;}
+      .nav{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;z-index:150!important;background:var(--bg);flex-direction:column!important;align-items:stretch!important;padding:80px 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px)) 1.5rem!important;overflow-y:auto;gap:0!important;pointer-events:none;visibility:hidden;opacity:0;transform:translateX(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s 0.3s;}
       .nav.is-open{pointer-events:auto!important;visibility:visible!important;opacity:1!important;transform:none!important;transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s;}
       .nav.is-open .nav__list{display:flex!important;flex-direction:column;width:100%;gap:0;}
       .nav.is-open .nav__list li{border-bottom:1px solid var(--grey-line);}
       .nav.is-open .nav__list a{display:flex;align-items:center;padding:1.1rem 0;font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;}
-      .nav.is-open .nav__cta{display:inline-flex!important;margin-top:2rem;align-self:stretch;justify-content:center;padding:1.1rem;font-size:1rem;}
-      .nav.is-open .lang-sw{display:flex!important;margin-top:2rem;align-self:flex-start;}
+      .nav.is-open .nav__cta{display:inline-flex!important;margin-top:2rem;align-self:stretch;justify-content:center;padding:1.1rem;font-size:1rem;min-height:56px;}
+      .nav.is-open .lang-sw{display:flex!important;margin-top:2rem;align-self:flex-start;gap:0.5rem;}
     }
-    .cs-hero{padding:clamp(7rem,14vw,10rem) 0 clamp(3rem,6vw,5rem);background:var(--ink);color:#fff;position:relative;overflow:hidden;}
-    .cs-hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a1408 0%,#2a1f06 60%,#0a0a08 100%);z-index:0;}
-    .cs-hero__pattern{position:absolute;inset:0;z-index:1;pointer-events:none;}
-    .cs-hero__inner{position:relative;z-index:2;}
-    .eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-size:0.76rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;color:rgba(255,255,255,0.5);}
-    .eyebrow::before{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--green);}
-    .cs-hero__h1{font-family:'Archivo Black',sans-serif;font-size:clamp(2.2rem,6vw,5rem);line-height:0.9;letter-spacing:-0.04em;margin-bottom:1.5rem;max-width:900px;}
-    .cs-hero-tagline{font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.65;color:rgba(255,255,255,0.65);max-width:640px;margin-bottom:2.5rem;}
-    .cs-meta{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);}
-    .cs-meta__label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.62);margin-bottom:0.3rem;}
-    .cs-meta__val{font-size:0.95rem;font-weight:600;color:#fff;}
-    .back-link-bar{padding:1.5rem 0;border-bottom:1px solid var(--grey-line);}
-    .back-link{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.88rem;font-weight:600;color:var(--grey);min-height:44px;transition:color 0.2s;}
-    .back-link::before{content:'';width:0;height:0;border-style:solid;border-width:5px 7px 5px 0;border-color:transparent var(--grey) transparent transparent;transition:border-color 0.2s;}
-    .back-link:hover{color:var(--green);}.back-link:hover::before{border-color:transparent var(--green) transparent transparent;}
-    .section{padding:clamp(4rem,8vw,7rem) 0;}
-    .section--dark{background:var(--ink);color:#fff;}
+    .btn{display:inline-flex;align-items:center;gap:0.7rem;padding:1rem 1.6rem;font-size:0.95rem;font-weight:600;letter-spacing:-0.005em;border-radius:999px;transition:transform 0.25s var(--ease),background 0.25s,color 0.25s,box-shadow 0.25s;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;min-height:48px;}
+    .btn:hover{transform:translateY(-3px);}
+    .btn--solid{background:var(--ink);color:var(--bg);box-shadow:0 6px 24px -8px rgba(10,10,10,0.4);}
+    .btn--solid:hover{background:var(--green);color:var(--ink);box-shadow:0 8px 28px rgba(0,0,0,0.14),0 0 22px rgba(51,196,148,0.32);}
+    .btn--ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(10,10,10,0.25);}
+    .btn--ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+    .btn__arrow{width:0;height:0;border-style:solid;border-width:5px 0 5px 7px;border-color:transparent transparent transparent currentColor;}
+    .btn:active{transform:scale(0.97) translateY(0)!important;transition-duration:80ms!important;}
+    .section{padding:clamp(4.5rem,9vw,9rem) 0;}
+    .section--dark{background:var(--ink);color:var(--bg);}
     .section--alt{background:var(--bg-2);}
-    .sec-head{margin-bottom:2.5rem;}
-    .sec-eyebrow{display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
-    .sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--green);}
-    .sec-h{font-family:'Archivo Black',sans-serif;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-0.03em;line-height:0.95;}
-    .section--dark .sec-h{color:#fff;}
-    .intro-text{font-size:clamp(1rem,1.4vw,1.12rem);line-height:1.75;color:var(--grey);max-width:720px;}
-    .intro-text p+p{margin-top:1.2em;}
-    .problem-stmt{background:var(--green-soft);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:1.5rem 2rem;margin:2rem 0;}
-    .problem-stmt__label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green-dark);margin-bottom:0.5rem;}
-    .problem-stmt__text{font-size:1.05rem;font-weight:600;line-height:1.5;color:var(--ink);}
-    .before-list{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem;}
-    .before-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.2rem;background:var(--bg);border:1px solid var(--grey-line);border-radius:8px;}
-    .before-item__icon{width:28px;height:28px;border-radius:50%;background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-    .before-item__icon::after{content:'';width:8px;height:8px;border-radius:50%;background:#ef4444;}
-    .before-item__text{font-size:0.95rem;line-height:1.6;color:var(--ink);}
-    .obj-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem;}
-    @media(min-width:640px){.obj-grid{grid-template-columns:repeat(2,1fr);}}
-    .obj-card{padding:1.5rem;border:1px solid var(--grey-line);border-radius:10px;background:var(--bg);}
-    .obj-card__num{font-family:'Archivo Black',sans-serif;font-size:2rem;letter-spacing:-0.04em;color:var(--green);line-height:1;margin-bottom:0.5rem;}
-    .obj-card__text{font-size:0.92rem;line-height:1.6;color:var(--ink);}
-    .approach-list{display:flex;flex-direction:column;gap:2rem;margin-top:2rem;}
-    .approach-item{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;}
-    .approach-item__num{font-family:'Archivo Black',sans-serif;font-size:3rem;letter-spacing:-0.06em;line-height:1;color:rgba(255,255,255,0.12);flex-shrink:0;width:3rem;}
-    .section:not(.section--dark) .approach-item__num{color:var(--grey-line);}
-    .approach-item__label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;}
-    .approach-item__h{font-family:'Archivo Black',sans-serif;font-size:1.3rem;letter-spacing:-0.02em;margin-bottom:0.6rem;}
-    .section--dark .approach-item__h{color:#fff;}
-    .approach-item__text{font-size:0.95rem;line-height:1.65;color:var(--grey);}
-    .section--dark .approach-item__text{color:rgba(255,255,255,0.6);}
-    .insight-block{background:var(--ink);color:#fff;border-radius:12px;padding:2.5rem;margin:2rem 0;}
-    .insight-block__label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
-    .insight-block__text{font-family:'Archivo Black',sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);letter-spacing:-0.025em;line-height:1.15;}
-    .result-grid{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-    .result-item{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;padding:1.2rem 1.5rem;border:1px solid rgba(255,255,255,0.08);border-radius:10px;background:rgba(255,255,255,0.04);}
-    .result-item__icon{width:36px;height:36px;border-radius:8px;background:rgba(51,196,148,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-    .result-item__label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.62);margin-bottom:0.3rem;}
-    .result-item__text{font-size:0.95rem;line-height:1.55;color:#fff;}
-    .tech-list{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
-    .tech-tag{display:inline-flex;padding:0.4rem 0.9rem;border:1.5px solid var(--grey-line);border-radius:999px;font-size:0.83rem;font-weight:600;color:var(--grey);}
-    .takeaway{background:var(--green);border-radius:12px;padding:2.5rem;margin-top:2rem;}
-    .takeaway__label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(10,10,10,0.55);margin-bottom:0.75rem;}
-    .takeaway__text{font-family:'Archivo Black',sans-serif;font-size:clamp(1.1rem,2.5vw,1.6rem);letter-spacing:-0.02em;line-height:1.2;color:var(--ink);}
-    .proj-nav{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--grey-line);border-top:1px solid var(--grey-line);}
-    .proj-nav__item{background:var(--bg);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:0.4rem;transition:background 0.2s;}
-    .proj-nav__item:hover{background:var(--bg-2);}
-    .proj-nav__item--next{align-items:flex-end;text-align:right;}
-    .proj-nav__dir{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);}
-    .proj-nav__title{font-family:'Archivo Black',sans-serif;font-size:1.05rem;letter-spacing:-0.02em;color:var(--ink);}
+    .eyebrow{display:inline-flex;align-items:center;gap:0.7rem;font-size:0.76rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;color:var(--grey);}
+    .eyebrow::before{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent var(--green);}
+    .section--dark .eyebrow{color:rgba(255,255,255,0.6);}
+    .h2{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.2rem,6vw,5rem);line-height:0.92;letter-spacing:-0.035em;overflow-wrap:break-word;}
+    .sec-head{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem;}
+    .hero{position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(135deg,#f2f2f0 0%,#ffffff 45%,#ebebea 100%);}
+    .hero--slim{min-height:62vh;padding:8rem 0 4rem;}
+    .hero__bg{position:absolute;right:-8vw;top:10vh;width:60vw;max-width:800px;pointer-events:none;z-index:0;animation:floatTri 12s ease-in-out infinite;}
+    @keyframes floatTri{0%,100%{transform:translateY(0);}50%{transform:translateY(-22px);}}
+    @media(max-width:880px){.hero__bg{right:-25vw;top:30vh;width:110vw;opacity:0.5;}}
+    .hero__inner{position:relative;z-index:2;max-width:1000px;}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--grey);margin-bottom:2.5rem;transition:color 0.2s;min-height:44px;}
+    .back-link::before{content:'';width:0;height:0;border-style:solid;border-width:5px 7px 5px 0;border-color:transparent var(--grey) transparent transparent;transition:border-color 0.2s;}
+    .back-link:hover{color:var(--ink);}
+    .back-link:hover::before{border-right-color:var(--ink);}
+    .cs-hero__h1{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.2rem,5.5vw,5rem);line-height:0.92;letter-spacing:-0.04em;color:var(--ink);margin-bottom:1.2rem;}
+    .cs-hero__h1 em{font-style:normal;color:var(--green);}
+    .cs-hero-tagline{font-size:clamp(1rem,1.8vw,1.35rem);line-height:1.5;color:var(--grey);margin-bottom:2rem;max-width:700px;}
+    .cs-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem 0.8rem;padding-top:1.5rem;border-top:1px solid var(--grey-line);}
+    .cs-meta__item{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);}
+    .cs-meta__sep{color:var(--green);font-weight:900;}
+    .bigstats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--grey-line);}
+    @media(min-width:880px){.bigstats{grid-template-columns:repeat(4,1fr);}}
+    .bigstats__cell{padding:2.5rem 1.5rem 2.5rem 0;border-right:1px solid var(--grey-line);border-bottom:1px solid var(--grey-line);}
+    @media(min-width:880px){.bigstats__cell{border-bottom:0;padding:3.5rem 2rem 3.5rem 0;}.bigstats__cell:last-child{border-right:0;}}
+    @media(max-width:879px){.bigstats__cell:nth-child(2n){border-right:0;padding-right:0;}.bigstats__cell:nth-child(n+3){border-bottom:0;}}
+    .bigstats__num{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,6rem);line-height:0.88;letter-spacing:-0.045em;color:var(--ink);}
+    .bigstats__num em{font-style:normal;color:var(--green);}
+    .bigstats__num--sm{font-size:clamp(1.8rem,4vw,3.5rem);}
+    .bigstats__lab{margin-top:0.7rem;font-size:0.85rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--grey);max-width:200px;line-height:1.35;}
+    .section--dark .bigstats{border-color:rgba(255,255,255,0.1);}
+    .section--dark .bigstats__cell{border-color:rgba(255,255,255,0.1);}
+    .section--dark .bigstats__num{color:var(--bg);}
+    .section--dark .bigstats__num em{color:var(--green);}
+    .section--dark .bigstats__lab{color:rgba(255,255,255,0.55);}
+    .intro-text{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.75;color:var(--grey);max-width:800px;}
+    .intro-text+.intro-text{margin-top:1.2rem;}
+    .intro-text strong{color:var(--ink);}
+    .method{display:grid;grid-template-columns:1fr;gap:1px;background:var(--grey-line);border:1px solid var(--grey-line);border-radius:8px;overflow:hidden;}
+    @media(min-width:720px){.method{grid-template-columns:1fr 1fr;}}
+    @media(min-width:1100px){.method{grid-template-columns:repeat(3,1fr);}}
+    .method__step{background:var(--bg);padding:2.4rem 1.8rem;display:flex;flex-direction:column;gap:0.8rem;transition:background 0.3s,transform 0.2s ease,box-shadow 0.2s ease;}
+    .method__step:hover{background:var(--bg-2);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.07);}
+    .method__num{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:3rem;line-height:0.9;letter-spacing:-0.04em;color:var(--green);}
+    .method__title{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:1.15rem;letter-spacing:-0.02em;line-height:1.2;}
+    .method__desc{font-size:0.93rem;line-height:1.6;color:var(--grey);}
+    .result-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+    @media(min-width:720px){.result-grid{grid-template-columns:repeat(2,1fr);}}
+    .result-item{background:var(--bg);border:1px solid var(--grey-line);border-radius:8px;padding:1.6rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.3s,transform 0.3s var(--ease),box-shadow 0.3s;}
+    .result-item:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 8px 24px -10px rgba(51,196,148,0.2);}
+    .result-item__icon{width:0;height:0;border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--green);flex-shrink:0;margin-top:0.4em;}
+    .result-item__text{font-size:0.97rem;line-height:1.6;color:var(--ink);}
+    .result-item__text strong{font-weight:700;}
     .cta-final{background:var(--green);position:relative;overflow:hidden;}
-    .cta-final__inner{padding:clamp(5rem,10vw,8rem) 0;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center;}
+    .cta-final__bg{position:absolute;right:-5vw;top:-20%;width:55vw;opacity:0.12;pointer-events:none;z-index:1;}
+    .cta-final__inner{position:relative;z-index:2;padding:clamp(5rem,10vw,8rem) 0;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center;}
     @media(min-width:900px){.cta-final__inner{grid-template-columns:1fr 1fr;gap:5rem;}}
-    .cta-final__h{font-family:'Archivo Black',sans-serif;font-size:clamp(2.4rem,7vw,5.5rem);line-height:0.9;letter-spacing:-0.045em;margin-bottom:1.2rem;color:var(--ink);}
+    .cta-final__h{font-family:'Archivo Black',sans-serif;font-weight:900;font-size:clamp(2.4rem,7vw,5.5rem);line-height:0.9;letter-spacing:-0.045em;margin-bottom:1.2rem;color:var(--ink);}
     .cta-final__sub{font-size:1.05rem;line-height:1.6;color:rgba(10,10,10,0.75);max-width:480px;margin-bottom:2rem;}
     .cta-final__actions{display:flex;flex-wrap:wrap;gap:0.8rem;}
-    .btn{display:inline-flex;align-items:center;gap:0.7rem;padding:1rem 1.6rem;font-size:0.95rem;font-weight:600;border-radius:999px;transition:transform 0.25s var(--ease),background 0.25s,color 0.25s;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;min-height:48px;}
-    .btn:hover{transform:translateY(-3px);}
-    .btn--solid{background:var(--ink);color:#fff;box-shadow:0 6px 24px -8px rgba(10,10,10,0.4);}
-    .btn--solid:hover{background:var(--green);color:var(--ink);}
-    .btn--ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(10,10,10,0.25);}
-    .btn--ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
-    .btn__arrow{width:0;height:0;border-style:solid;border-width:5px 0 5px 7px;border-color:transparent transparent transparent currentColor;}
     .cta-box{background:var(--bg);border-radius:10px;padding:2.5rem;box-shadow:0 24px 60px -28px rgba(10,10,10,0.3);}
     .cta-box__title{font-family:'Archivo Black',sans-serif;font-size:1.3rem;letter-spacing:-0.02em;margin-bottom:0.5rem;}
     .cta-box__sub{font-size:0.92rem;color:var(--grey);margin-bottom:1.8rem;}
@@ -178,46 +190,62 @@
     .footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:3rem 0;}
     .footer__inner{display:flex;flex-direction:column;gap:2rem;}
     @media(min-width:768px){.footer__inner{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}}
-    .footer__brand .logo__text{color:#fff;}
+    .footer__brand .logo__text{color:var(--bg);}
     .footer__brand .logo__sub{color:rgba(255,255,255,0.62);}
     .footer__copy{font-size:0.85rem;}
     .footer__links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.85rem;}
     .footer__links a{color:rgba(255,255,255,0.5);transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .footer__links a:hover{color:var(--green);}
     .footer__lang{display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.15);border-radius:999px;overflow:hidden;}
-    ..footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.62);padding:0.3rem 0.75rem;min-height:44px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
-    .footer__lang a.is-active{background:rgba(255,255,255,0.12);color:#fff;}
+    .footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.62);padding:0.3rem 0.75rem;min-height:44px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
+    .footer__lang a.is-active{background:rgba(255,255,255,0.12);color:var(--bg);}
     .footer__lang a:hover:not(.is-active){color:var(--green);}
     .footer__bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.5rem;}
-    .footer__legal{font-size:0.76rem;color:rgba(255,255,255,0.52);}
-    .footer__legal a{color:rgba(255,255,255,0.52);text-decoration:none;}.footer__legal a:hover{color:var(--green);}
+    .footer__legal{font-size:0.76rem;color:rgba(255,255,255,0.3);line-height:1.5;}
+    .footer__legal a{color:rgba(255,255,255,0.3);transition:color 0.2s;}.footer__legal a:hover{color:#33C494;}
     .footer__legal-links{display:flex;gap:1rem;font-size:0.76rem;}
-    .footer__legal-links a,.footer__cookie-btn{color:rgba(255,255,255,0.52);min-height:44px;display:inline-flex;align-items:center;transition:color 0.2s;}.footer__legal-links a:hover,.footer__cookie-btn:hover{color:var(--green);}
+    .footer__legal-links a,.footer__cookie-btn{color:rgba(255,255,255,0.3);transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center;}.footer__legal-links a:hover,.footer__cookie-btn:hover{color:#33C494;}
     .footer__cookie-btn{background:none;border:none;cursor:pointer;font:inherit;padding:0;font-size:0.76rem;}
-    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:97;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px -6px rgba(37,211,102,0.55);transition:transform 0.25s var(--ease);}
-    .wa-float:hover{transform:scale(1.1);}
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:97;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px -6px rgba(37,211,102,0.55);transition:transform 0.25s var(--ease),box-shadow 0.25s;}
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 14px 36px -6px rgba(37,211,102,0.7);}
     .wa-float svg{width:28px;height:28px;fill:#fff;}
     @media(max-width:880px){.wa-float{display:none;}}
-    .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:98;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--grey-line);padding:0.75rem 1rem;padding-bottom:calc(0.75rem + env(safe-area-inset-bottom,0px));gap:0.6rem;opacity:0;transform:translateY(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease);}
+    .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:98;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--grey-line);padding:0.75rem 1rem;padding-bottom:calc(0.75rem + env(safe-area-inset-bottom,0px));gap:0.6rem;box-shadow:0 -4px 20px rgba(0,0,0,0.08);opacity:0;transform:translateY(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease);}
     .mobile-cta.is-visible{opacity:1;transform:translateY(0);}
     @media(max-width:880px){.mobile-cta{display:flex;}body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px));}}
-    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem;font-size:0.88rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;}
-    .mobile-cta__btn--cal{background:var(--ink);color:#fff;}
+    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 0.75rem;font-size:0.88rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;transition:transform 0.2s var(--ease);}
+    .mobile-cta__btn:active{transform:scale(0.97);}
+    .mobile-cta__btn--cal{background:var(--ink);color:var(--bg);}
     .mobile-cta__btn--wa{background:#25D366;color:#fff;}
     .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:199;background:#0A0A0A;color:rgba(255,255,255,.9);display:none;border-top:1px solid rgba(255,255,255,.1);}
     .cookie-banner.is-visible{display:block;}
-    .cookie-banner__inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 1.5rem;}
+    .cookie-banner__inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 1.5rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));}
     .cookie-banner__text{font-size:.88rem;line-height:1.5;flex:1;min-width:220px;}
     .cookie-banner__link{color:#33C494;text-decoration:underline;}
     .cookie-banner__actions{display:flex;gap:.75rem;flex-shrink:0;}
-    .cookie-banner__btn{padding:.65rem 1.25rem;font-size:.88rem;font-weight:600;border-radius:999px;cursor:pointer;border:none;font-family:inherit;min-height:44px;}
-    .cookie-banner__btn--accept{background:#33C494;color:#0A0A0A;}
-    .cookie-banner__btn--reject{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);}
-    [data-anim]{opacity:0;transform:translateY(24px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease);}
+    .cookie-banner__btn{padding:.65rem 1.25rem;font-size:.88rem;font-weight:600;border-radius:999px;cursor:pointer;border:none;font-family:inherit;min-height:44px;transition:transform .2s ease,background .2s,color .2s,border-color .2s;}
+    .cookie-banner__btn--accept{background:#33C494;color:#0A0A0A;}.cookie-banner__btn--accept:hover{background:#28A57C;}
+    .cookie-banner__btn--reject{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);}.cookie-banner__btn--reject:hover{border-color:rgba(255,255,255,.5);}
+    .cookie-banner__btn:active{transform:scale(.97);}
+    [data-anim]{opacity:0;transform:translateY(28px);transition:opacity 0.65s var(--ease),transform 0.65s var(--ease);}
     [data-anim].in{opacity:1;transform:none;}
-    [data-anim][data-delay="1"]{transition-delay:0.1s;}[data-anim][data-delay="2"]{transition-delay:0.2s;}[data-anim][data-delay="3"]{transition-delay:0.3s;}
-    @media(prefers-reduced-motion:reduce){[data-anim]{opacity:1!important;transform:none!important;}}
-    .divider{height:1px;background:var(--grey-line);margin:3rem 0;}
+    [data-anim][data-delay="1"]{transition-delay:0.1s;}
+    [data-anim][data-delay="2"]{transition-delay:0.2s;}
+    [data-anim][data-delay="3"]{transition-delay:0.3s;}
+    @media(max-width:430px){
+      .cs-hero__h1{font-size:clamp(1.9rem,9vw,3rem)!important;}
+      .hero--slim{padding:6.5rem 0 3rem!important;}
+      .result-grid{grid-template-columns:1fr;}
+      .bigstats{grid-template-columns:1fr 1fr;}
+      .cta-final__actions{flex-direction:column;}
+      .cta-final__actions .btn{width:100%;max-width:320px;justify-content:center;}
+      .footer__links{flex-direction:column;gap:0;}
+    }
+    @media(max-width:360px){.container{padding:0 1rem;}}
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}
+      [data-anim]{opacity:1!important;transform:none!important;}
+    }
   </style>
 </head>
 <body>
@@ -226,8 +254,11 @@
 <header class="site-head" id="site-head">
   <div class="container">
     <div class="site-head__inner">
-      <a class="logo" href="/"><div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Pages</span></div></a>
-      <nav class="nav" id="nav" aria-label="Main navigation">
+      <a class="logo" href="/">
+        <div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div>
+        <div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div>
+      </a>
+      <nav class="nav" id="nav">
         <ul class="nav__list">
           <li><a href="/#services" class="nav__link">Services</a></li>
           <li><a href="/#method" class="nav__link">Approach</a></li>
@@ -241,259 +272,144 @@
         </div>
         <a href="/#contact" class="nav__cta">Let's work together</a>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="cs-hero" aria-labelledby="cs-title">
-  <div class="cs-hero__bg"></div>
-  <div class="cs-hero__pattern" aria-hidden="true">
-    <svg width="100%" height="100%" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="xMidYMid slice">
-      <rect x="900" y="50" width="480" height="500" stroke="#b8943c" stroke-width="1" opacity="0.15"/>
-      <rect x="950" y="100" width="130" height="400" fill="#b8943c" opacity="0.04"/>
-      <rect x="1100" y="100" width="130" height="400" fill="#b8943c" opacity="0.03"/>
-      <rect x="1250" y="100" width="130" height="400" fill="#b8943c" opacity="0.04"/>
-    </svg>
-  </div>
-  <div class="container cs-hero__inner">
-    <div class="eyebrow">Case Study · Cultural Institutions</div>
-    <h1 class="cs-hero__h1" id="cs-title">Turning paid media into a more reliable ticket-sales channel for a cultural landmark.</h1>
-    <p class="cs-hero-tagline">The Wall Museum in Berlin had consistent visitor interest but no structured paid media presence. I built a system that connected that interest to confirmed ticket purchases, reliably and measurably.</p>
-    <div class="cs-meta">
-      <div class="cs-meta__item"><div class="cs-meta__label">Client</div><div class="cs-meta__val">The Wall Museum</div></div>
-      <div class="cs-meta__item"><div class="cs-meta__label">Location</div><div class="cs-meta__val">Berlin, Germany</div></div>
-      <div class="cs-meta__item"><div class="cs-meta__label">Services</div><div class="cs-meta__val">Google Ads · Meta Ads</div></div>
-      <div class="cs-meta__item"><div class="cs-meta__label">Industry</div><div class="cs-meta__val">Cultural / Tourism</div></div>
+<section class="hero hero--slim">
+  <div class="hero__bg"><svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#33C494" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#33C494" opacity="0.05"/></svg></div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="eyebrow">Case Study · The Wall Museum</div>
+      <h1 class="cs-hero__h1">The Wall Museum.<br><em>Tourist intent. Confirmed tickets.</em></h1>
+      <p class="cs-hero-tagline">How we built a paid media system in Berlin that captured visitor intent during the planning phase — and converted it into confirmed ticket purchases.</p>
+      <div class="cs-meta">
+        <span class="cs-meta__item">Google Ads</span>
+        <span class="cs-meta__sep">·</span>
+        <span class="cs-meta__item">Meta Ads</span>
+        <span class="cs-meta__sep">·</span>
+        <span class="cs-meta__item">Tourism</span>
+        <span class="cs-meta__sep">·</span>
+        <span class="cs-meta__item">Berlin, Germany</span>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="back-link-bar"><div class="container"><a class="back-link" href="/case-studies">All case studies</a></div></div>
-
-<!-- THE CLIENT -->
+<!-- INTRO -->
 <section class="section">
-  <div class="container container--narrow">
-    <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">The Client</div>
-      <h2 class="sec-h">A museum dedicated to the story of the Berlin Wall and what it meant for divided Germany.</h2>
+  <div class="container">
+    <a href="/case-studies" class="back-link">All case studies</a>
+    <div data-anim>
+      <div class="eyebrow">The Client</div>
+      <h2 class="h2" style="margin-bottom:2rem;">The Wall Museum.<br>Berlin history. Global visitors.</h2>
     </div>
-    <div class="intro-text" data-anim data-delay="1">
-      <p>The Wall Museum (Das Mauer Museum) is a significant cultural institution in Berlin, dedicated to documenting the history of the Berlin Wall and the experience of those living in divided Germany. It draws both international tourists and domestic visitors interested in contemporary history.</p>
-      <p>The museum had an established physical presence but had not built a structured digital acquisition channel. Ticket sales were driven largely by foot traffic, online travel directories, and organic search — without a measurable paid media layer.</p>
+    <p class="intro-text" data-anim data-delay="1"><strong>The Wall Museum</strong> is a cultural institution in Berlin dedicated to the history of the Berlin Wall and the divided city. It attracts visitors from across the world who travel to Berlin to engage with its history — a well-defined audience with clear intent, arriving in one of Europe's most competitive cultural destination markets.</p>
+    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The challenge: high tourist intent existed in Google Search every day. People were planning Berlin visits, searching for historical sites and things to do. But the museum had no paid media system to appear in those searches — leaving ticket sales entirely dependent on physical proximity and third-party listing sites.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section--dark" data-anim>
+  <div class="container">
+    <div class="bigstats">
+      <div class="bigstats__cell"><div class="bigstats__num bigstats__num--sm">Berlin<em>,</em><br>Germany</div><div class="bigstats__lab">Market</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num">2</div><div class="bigstats__lab">Channels (Google Search + Meta)</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num bigstats__num--sm">Tourist<em><br>intent</em></div><div class="bigstats__lab">Primary targeting signal</div></div>
+      <div class="bigstats__cell"><div class="bigstats__num bigstats__num--sm">Direct<em><br>tickets</em></div><div class="bigstats__lab">Conversion goal</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
+<!-- CHALLENGE -->
 <section class="section section--alt">
-  <div class="container container--narrow">
+  <div class="container">
     <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">The Business Problem</div>
-      <h2 class="sec-h">A museum competing in one of the world's most visited cities — without a digital acquisition system.</h2>
+      <div class="eyebrow">The Challenge</div>
+      <h2 class="h2">High tourist intent.<br>No system to capture it.</h2>
     </div>
-    <div class="intro-text" data-anim data-delay="1">
-      <p>Berlin is one of Europe's most-visited cities, with tourists actively searching for cultural and historical experiences. The opportunity was significant — but without paid search campaigns, the museum was invisible to people searching for exactly what it offered, unless they already knew its name.</p>
-      <p>The core problem: intent existed but was not being captured. People planning Berlin visits were searching for things like "Berlin Wall museums" and "historical sites in Berlin" — and finding competitor attractions rather than The Wall Museum directly.</p>
-    </div>
-
-    <div class="problem-stmt" data-anim data-delay="2">
-      <div class="problem-stmt__label">Core problem</div>
-      <div class="problem-stmt__text">High tourist intent in a major destination city, with no paid media system in place to capture it. The museum was competing on the strength of its content alone, against institutions with established digital acquisition budgets.</div>
-    </div>
-
-    <h3 style="font-family:'Archivo Black',sans-serif;font-size:1.1rem;letter-spacing:-0.02em;margin:2rem 0 0.75rem;" data-anim>What wasn't working before</h3>
-    <div class="before-list" data-anim data-delay="1">
-      <div class="before-item">
-        <div class="before-item__icon"></div>
-        <div class="before-item__text">No Google Search campaigns — tourist intent searches were not captured, sending potential visitors to competing attractions</div>
-      </div>
-      <div class="before-item">
-        <div class="before-item__icon"></div>
-        <div class="before-item__text">Ticket sales depended on physical proximity and third-party listing sites, with no paid digital channel to reach visitors during their trip-planning phase</div>
-      </div>
-      <div class="before-item">
-        <div class="before-item__icon"></div>
-        <div class="before-item__text">No conversion tracking in place — there was no way to measure which channels or searches were driving actual ticket purchases</div>
-      </div>
-    </div>
+    <p class="intro-text" data-anim data-delay="1">Museum tourism is intent-first: visitors decide to travel to Berlin and then search for what to do. That window — between "planning to visit" and "booking a ticket" — is exactly where paid search performs best. But the museum was invisible in those searches, while competitors with digital acquisition budgets appeared at the top of every relevant result.</p>
+    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The goal was clear: <strong>install proper tracking, build Search campaigns that capture tourist intent at the planning stage, and use Meta to reach visitors before they even start searching</strong> — creating a full-funnel acquisition system tied directly to ticket purchases.</p>
   </div>
 </section>
 
-<!-- INSIGHT -->
+<!-- SOLUTION -->
 <section class="section">
-  <div class="container container--narrow">
+  <div class="container">
     <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">The Insight</div>
+      <div class="eyebrow">The Solution</div>
+      <h2 class="h2">Capture the search.<br>Own the planning phase.</h2>
     </div>
-    <div class="insight-block" data-anim data-delay="1">
-      <div class="insight-block__label">Strategic insight</div>
-      <div class="insight-block__text">Museum tourism is intent-first: people decide to visit Berlin and then search for what to do. The window between "planning to visit" and "buying a ticket" is exactly where paid search performs best. Getting into that window — with the right messaging — was the entire challenge.</div>
-    </div>
-    <div class="intro-text" style="margin-top:1.5rem;" data-anim data-delay="2">
-      <p>Visitors to cultural institutions aren't browsing — they're researching and deciding. This meant that Search campaigns would outperform display for direct ticket acquisition, while Meta could be used to build awareness during the earlier planning phase.</p>
+    <div class="method" data-anim data-delay="1">
+      <div class="method__step">
+        <div class="method__num">01</div>
+        <div class="method__title">Tracking before spending</div>
+        <p class="method__desc">Conversion tracking was installed and connected to the ticketing flow before any campaign was built — so that ticket purchases were directly attributed to specific keywords and campaigns. This made it possible to optimise for real purchases, not just clicks or website sessions.</p>
+      </div>
+      <div class="method__step">
+        <div class="method__num">02</div>
+        <div class="method__title">Tourist intent Search campaigns</div>
+        <p class="method__desc">Search campaigns were built around the specific queries tourists make when planning a Berlin visit: historical sites, Berlin Wall experiences, museums near key neighbourhoods, and brand searches for the museum itself. Each intent cluster received its own ad group with messaging matched to what that search signalled.</p>
+      </div>
+      <div class="method__step">
+        <div class="method__num">03</div>
+        <div class="method__title">Meta for the planning phase — and seasonal budgets</div>
+        <p class="method__desc">Meta campaigns targeted people who had searched for Berlin travel or were interested in history and culture — reaching visitors before they arrived and before they started searching. Campaign budgets were structured to match Berlin's seasonal tourism patterns, spending more during peak periods and maintaining efficiency year-round.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- OBJECTIVES -->
+<!-- RESULT -->
 <section class="section section--alt">
-  <div class="container container--narrow">
+  <div class="container">
     <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">Objectives</div>
-      <h2 class="sec-h">Three things this engagement had to achieve.</h2>
+      <div class="eyebrow">The Result</div>
+      <h2 class="h2">Tickets sold through<br>search, not chance.</h2>
     </div>
-    <div class="obj-grid" data-anim data-delay="1">
-      <div class="obj-card">
-        <div class="obj-card__num">01</div>
-        <div class="obj-card__text">Capture tourist intent in Google Search — appear when people are actively planning a Berlin visit and looking for cultural experiences</div>
-      </div>
-      <div class="obj-card">
-        <div class="obj-card__num">02</div>
-        <div class="obj-card__text">Install conversion tracking so that ticket purchases could be attributed back to specific campaigns and keywords</div>
-      </div>
-      <div class="obj-card">
-        <div class="obj-card__num">03</div>
-        <div class="obj-card__text">Build a repeatable paid media structure that could scale with seasonal demand fluctuations throughout the year</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APPROACH -->
-<section class="section section--dark">
-  <div class="container container--narrow">
-    <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">The Approach</div>
-      <h2 class="sec-h">How I structured the acquisition system.</h2>
-    </div>
-    <div class="approach-list">
-      <div class="approach-item" data-anim>
-        <div class="approach-item__num">01</div>
-        <div>
-          <div class="approach-item__label">Tracking first</div>
-          <div class="approach-item__h">Measuring what mattered before spending</div>
-          <div class="approach-item__text">Before any campaign was built, I installed proper conversion tracking connecting the ticketing flow back to Google Ads. This made it possible to optimise campaigns based on actual ticket purchases rather than clicks or website sessions.</div>
-        </div>
-      </div>
-      <div class="approach-item" data-anim data-delay="1">
-        <div class="approach-item__num">02</div>
-        <div>
-          <div class="approach-item__label">Search campaign architecture</div>
-          <div class="approach-item__h">Capturing intent at the moment of planning</div>
-          <div class="approach-item__text">I built Search campaigns targeting the specific searches tourists make when planning a Berlin visit: historical sites, Berlin Wall experiences, museums near specific neighbourhoods, and brand searches for the museum itself. Each intent cluster got its own ad group with tailored messaging.</div>
-        </div>
-      </div>
-      <div class="approach-item" data-anim data-delay="2">
-        <div class="approach-item__num">03</div>
-        <div>
-          <div class="approach-item__label">Meta for awareness</div>
-          <div class="approach-item__h">Reaching visitors before they start searching</div>
-          <div class="approach-item__text">Meta campaigns targeted people who had recently searched for Berlin travel, were interested in history and culture, or were located in key origin markets. The goal was to create familiarity with the museum before visitors arrived in Berlin and began searching for things to do.</div>
-        </div>
-      </div>
-      <div class="approach-item" data-anim data-delay="3">
-        <div class="approach-item__num">04</div>
-        <div>
-          <div class="approach-item__label">Seasonal budget allocation</div>
-          <div class="approach-item__h">Spending more when demand was highest</div>
-          <div class="approach-item__text">Tourism in Berlin follows clear seasonal patterns. I built campaign budgets to match: heavier spend during peak tourist seasons and reduced presence during quieter periods, keeping cost-per-acquisition consistent across the year.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section class="section section--dark" style="padding-top:0;">
-  <div class="container container--narrow">
-    <div class="divider" style="background:rgba(255,255,255,0.08);"></div>
-    <div class="sec-head" data-anim>
-      <div class="sec-eyebrow">Business Impact</div>
-      <h2 class="sec-h">What the system delivered.</h2>
-    </div>
-    <!-- [VERIFY: confirm specific ticket sales figures and ROAS with client before publishing] -->
     <div class="result-grid" data-anim data-delay="1">
-      <div class="result-item">
-        <div class="result-item__icon"><i class="ti ti-ticket" style="color:var(--green);"></i></div>
-        <div>
-          <div class="result-item__label">Direct ticket attribution</div>
-          <div class="result-item__text">For the first time, ticket purchases were directly attributable to specific campaigns and keyword searches — making it possible to measure exactly what each pound of ad spend was returning.</div>
-        </div>
-      </div>
-      <div class="result-item">
-        <div class="result-item__icon"><i class="ti ti-search" style="color:var(--green);"></i></div>
-        <div>
-          <div class="result-item__label">Tourist intent captured</div>
-          <div class="result-item__text">The museum appeared in searches it had previously been invisible for — reaching visitors during the planning phase rather than only at the point of physical arrival in Berlin.</div>
-        </div>
-      </div>
-      <div class="result-item">
-        <div class="result-item__icon"><i class="ti ti-calendar-stats" style="color:var(--green);"></i></div>
-        <div>
-          <div class="result-item__label">Seasonal structure</div>
-          <div class="result-item__text">Campaign spend aligned to seasonal demand patterns — maintaining a consistent cost-per-acquisition across peak and off-peak periods instead of over-spending during low-demand months.</div>
-        </div>
-      </div>
-    </div>
-    <!-- [VERIFY: ask client for visit-to-purchase conversion rate, ROAS, and year-on-year ticket sales comparison] -->
-
-    <div class="takeaway" data-anim data-delay="2">
-      <div class="takeaway__label">Key takeaway</div>
-      <div class="takeaway__text">Cultural institutions don't need more visibility — they need to be visible at the exact moment a visitor is deciding what to do. That window is in Search, not in display or social.</div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Direct ticket attribution established for the first time</strong> — every purchase tied back to its source keyword and campaign, making it possible to measure exactly what each euro of ad spend was returning</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>The museum appeared in searches it had previously been invisible for</strong> — reaching visitors during the planning phase rather than only at the moment of physical arrival in Berlin</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Meta campaigns created familiarity before search began</strong> — visitors arrived in Berlin already aware of the museum, making Search remarketing significantly more effective</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Cost-per-acquisition remained consistent across the year</strong> — seasonal budget allocation prevented over-spending during low-demand months and captured peak tourist windows at the right level</div></div>
     </div>
   </div>
 </section>
-
-<!-- TECHNOLOGY -->
-<section class="section">
-  <div class="container container--narrow">
-    <div class="sec-head" data-anim><div class="sec-eyebrow">Tools &amp; Platforms</div></div>
-    <div class="tech-list" data-anim data-delay="1">
-      <span class="tech-tag">Google Ads</span>
-      <span class="tech-tag">Google Search</span>
-      <span class="tech-tag">Meta Ads (Facebook / Instagram)</span>
-      <span class="tech-tag">Conversion Tracking</span>
-      <span class="tech-tag">Google Analytics 4</span>
-      <span class="tech-tag">Tourist Intent Targeting</span>
-      <span class="tech-tag">Seasonal Budget Management</span>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECT NAVIGATION -->
-<nav class="proj-nav" aria-label="Other case studies">
-  <a href="/case-studies/star-entertainment" class="proj-nav__item">
-    <div class="proj-nav__dir">? Previous</div>
-    <div class="proj-nav__title">Star Entertainment</div>
-  </a>
-  <a href="/case-studies/omnitrack" class="proj-nav__item proj-nav__item--next">
-    <div class="proj-nav__dir">Next ?</div>
-    <div class="proj-nav__title">Omnitrack</div>
-  </a>
-</nav>
 
 <!-- CTA -->
 <section class="cta-final" id="contact">
+  <div class="cta-final__bg" aria-hidden="true"><svg viewBox="0 0 800 600" fill="none"><polygon points="0,600 800,0 800,600" fill="#0A0A0A" opacity="1"/></svg></div>
   <div class="container">
     <div class="cta-final__inner">
       <div data-anim>
-        <h2 class="cta-final__h">Facing a similar growth problem?</h2>
-        <p class="cta-final__sub">I help businesses identify what is limiting their advertising performance and build a more measurable path to growth.</p>
+        <h2 class="cta-final__h">Your customers are searching. Be there when they do.</h2>
+        <p class="cta-final__sub">A free 30-minute call to see if it makes sense for your project. No pitch deck, no commitment.</p>
         <div class="cta-final__actions">
-          <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Get my free analysis</button>
-          <a href="/case-studies" class="btn btn--ghost">View all case studies</a>
+          <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+          <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <p style="margin-top:1rem;font-size:0.83rem;color:rgba(10,10,10,0.55);">Free · No commitment — No PowerPoint</p>
       </div>
       <div class="cta-box" data-anim data-delay="2">
         <div class="cta-box__title">Get in touch</div>
         <div class="cta-box__sub">Choose your preferred method</div>
         <div class="cta-box__options">
-          <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div><div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div><span class="cta-opt__arrow"></span></button>
-          <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener"><div class="cta-opt__icon cta-opt__icon--wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></div><div><div class="cta-opt__label">WhatsApp</div><div class="cta-opt__desc">Reply within a few hours</div></div><span class="cta-opt__arrow"></span></a>
-          <a class="cta-opt" href="tel:+393514120302"><div class="cta-opt__icon cta-opt__icon--ph"><i class="ti ti-phone"></i></div><div><div class="cta-opt__label">Call me</div><div class="cta-opt__desc">+39 351 412 0302</div></div><span class="cta-opt__arrow"></span></a>
+          <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">
+            <div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div>
+            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div>
+            <span class="cta-opt__arrow"></span>
+          </button>
+          <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener">
+            <div class="cta-opt__icon cta-opt__icon--wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></div>
+            <div><div class="cta-opt__label">WhatsApp</div><div class="cta-opt__desc">Reply within a few hours</div></div>
+            <span class="cta-opt__arrow"></span>
+          </a>
+          <a class="cta-opt" href="tel:+393514120302">
+            <div class="cta-opt__icon cta-opt__icon--ph"><i class="ti ti-phone"></i></div>
+            <div><div class="cta-opt__label">Call me</div><div class="cta-opt__desc">+39 351 412 0302</div></div>
+            <span class="cta-opt__arrow"></span>
+          </a>
         </div>
       </div>
     </div>
@@ -503,10 +419,20 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__brand"><a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Pages</span></div></a></div>
+      <div class="footer__brand">
+        <a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div></a>
+      </div>
       <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
-      <nav class="footer__links"><a href="tel:+393514120302">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/case-studies">Case Studies</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></nav>
-      <div class="footer__lang"><a href="/case-studies/the-wall-museum" class="is-active" hreflang="en">EN</a><a href="/it/case-studies/the-wall-museum" hreflang="it">IT</a></div>
+      <nav class="footer__links">
+        <a href="tel:+393514120302">+39 351 412 0302</a>
+        <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <div class="footer__lang">
+        <a href="/case-studies/the-wall-museum" class="is-active" hreflang="en">EN</a>
+        <a href="/it/case-studies/the-wall-museum" hreflang="it">IT</a>
+      </div>
     </div>
     <div class="footer__bottom">
       <p class="footer__legal">NicosDigit di Nicola Dimattia · P.IVA 09099240724 — <a href="mailto:nicoladimattia8@gmail.com">nicoladimattia8@gmail.com</a></p>
@@ -515,21 +441,55 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></a>
+<a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+</a>
+
 <div class="mobile-cta" id="mobile-cta">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">?? Free analysis</button>
-  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">?? WhatsApp</a>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">&#128197; Book a call</button>
+  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">&#128172; WhatsApp</a>
 </div>
-<div id="cookie-banner" class="cookie-banner"><div class="cookie-banner__inner"><p class="cookie-banner__text">This site uses cookies to measure visits and campaign performance. <a class="cookie-banner__link" href="/cookie-policy">Cookie policy</a></p><div class="cookie-banner__actions"><button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button><button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--reject">Reject</button></div></div></div>
+
 <script>
-  const head=document.getElementById('site-head');window.addEventListener('scroll',()=>{head.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
-  const toggle=document.getElementById('nav-toggle'),nav=document.getElementById('nav');
-  toggle.addEventListener('click',()=>{const o=nav.classList.toggle('is-open');toggle.classList.toggle('is-open',o);toggle.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+  const head = document.getElementById('site-head');
+  window.addEventListener('scroll', () => { head.classList.toggle('is-scrolled', window.scrollY > 60); }, { passive: true });
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => { toggle.classList.toggle('is-open'); nav.classList.toggle('is-open'); document.body.style.overflow = nav.classList.contains('is-open') ? 'hidden' : ''; });
   nav.querySelectorAll('a').forEach(function(el){el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1});
-  document.querySelectorAll('[data-anim]').forEach(el=>obs.observe(el));
-  const mc=document.getElementById('mobile-cta');window.addEventListener('scroll',()=>{mc.classList.toggle('is-visible',window.scrollY>300);},{passive:true});
-  (function(){var s=localStorage.getItem('cookieConsent'),b=document.getElementById('cookie-banner');function g(){window.dataLayer=window.dataLayer||[];(function(){function gt(){window.dataLayer.push(arguments);}gt('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});})();}function d(c){localStorage.setItem('cookieConsent',c);if(b)b.classList.remove('is-visible');if(c==='granted')g();}if(s==='granted')g();if(!s&&b)b.classList.add('is-visible');var ab=document.getElementById('cookie-accept'),rb=document.getElementById('cookie-reject');if(ab)ab.addEventListener('click',function(){d('granted');});if(rb)rb.addEventListener('click',function(){d('denied');});var re=document.getElementById('cookie-reopen');if(re)re.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');if(b)b.classList.add('is-visible');});})();
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
+  document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+  const mobileCta = document.getElementById('mobile-cta');
+  const heroEl = document.querySelector('.hero');
+  const showAfter = heroEl ? heroEl.offsetHeight * 0.6 : 300;
+  window.addEventListener('scroll', () => { mobileCta.classList.toggle('is-visible', window.scrollY > showAfter); }, { passive: true });
+</script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">This site uses cookies to measure visits and campaign performance. Your call. <a class="cookie-banner__link" href="/cookie-policy">Cookie policy</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button>
+      <button id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--reject">Reject</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cookieConsent');
+  var banner=document.getElementById('cookie-banner');
+  var mCta=document.getElementById('mobile-cta');
+  function adjustSticky(){if(mCta)mCta.style.bottom=banner&&banner.classList.contains('is-visible')?(banner.offsetHeight+'px'):'';}
+  function showBanner(){if(banner){banner.classList.add('is-visible');adjustSticky();}}
+  function grantConsent(){window.dataLayer=window.dataLayer||[];(function(){function gtag(){window.dataLayer.push(arguments);}gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});})();}
+  function dismiss(c){localStorage.setItem('cookieConsent',c);if(banner)banner.classList.remove('is-visible');if(mCta)mCta.style.bottom='';if(c==='granted')grantConsent();}
+  if(stored==='granted')grantConsent();
+  if(!stored)showBanner();
+  var ab=document.getElementById('cookie-accept'),rb=document.getElementById('cookie-reject');
+  if(ab)ab.addEventListener('click',function(){dismiss('granted');});
+  if(rb)rb.addEventListener('click',function(){dismiss('denied');});
+  var reopen=document.getElementById('cookie-reopen');
+  if(reopen)reopen.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');showBanner();});
+})();
 </script>
 </body>
 </html>

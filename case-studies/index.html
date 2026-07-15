@@ -160,6 +160,9 @@
     .cs-card--upcoming{opacity:0.7;}
     .cs-card__visual{position:relative;height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
     .cs-card__visual svg{position:absolute;inset:0;width:100%;height:100%;}
+    .cs-card__visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .cs-card__visual--logo{background:#f6f6f4;}
+    .cs-card__visual--logo img{object-fit:contain;padding:1.5rem;}
     .cs-card__ind{position:absolute;top:0.85rem;left:0.85rem;padding:0.28rem 0.7rem;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:999px;}
     .cs-card__ind--live{background:var(--green);color:var(--ink);}
     .cs-card__ind--soon{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);}
@@ -206,7 +209,7 @@
     .footer__links a{color:rgba(255,255,255,0.5);transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .footer__links a:hover{color:var(--green);}
     .footer__lang{display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.15);border-radius:999px;overflow:hidden;}
-    ..footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.62);padding:0.3rem 0.75rem;min-height:44px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
+    .footer__lang a{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.62);padding:0.3rem 0.75rem;min-height:44px;display:flex;align-items:center;transition:background 0.2s,color 0.2s;}
     .footer__lang a.is-active{background:rgba(255,255,255,0.12);color:var(--bg);}
     .footer__lang a:hover:not(.is-active){color:var(--green);}
     .footer__bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.5rem;}
@@ -328,19 +331,9 @@
       <h2 class="section__h" id="featured-heading">The project that changed<br>how I think about scale.</h2>
     </div>
     <a href="/case-studies/star-entertainment" class="featured-card" data-anim data-delay="1" aria-label="Read case study: Star Entertainment — Building a scalable campaign system for an international live-events business">
-      <div class="featured-card__visual">
-        <svg class="featured-card__visual-svg" viewBox="0 0 700 420" fill="none" aria-hidden="true">
-          <circle cx="350" cy="210" r="180" stroke="#33C494" stroke-width="1.5" stroke-dasharray="12 6" opacity="0.4"/>
-          <circle cx="350" cy="210" r="110" stroke="#33C494" stroke-width="1" stroke-dasharray="6 8" opacity="0.3"/>
-          <circle cx="350" cy="210" r="50" fill="#33C494" opacity="0.15"/>
-          <polygon points="330,190 330,230 370,210" fill="#33C494" opacity="0.7"/>
-          <circle cx="160" cy="100" r="5" fill="#33C494" opacity="0.6"/>
-          <circle cx="540" cy="320" r="5" fill="#33C494" opacity="0.6"/>
-          <circle cx="580" cy="80" r="3" fill="#33C494" opacity="0.4"/>
-          <circle cx="120" cy="340" r="3" fill="#33C494" opacity="0.4"/>
-          <line x1="160" y1="100" x2="350" y2="210" stroke="#33C494" stroke-width="1" opacity="0.2"/>
-          <line x1="540" y1="320" x2="350" y2="210" stroke="#33C494" stroke-width="1" opacity="0.2"/>
-        </svg>
+      <div class="featured-card__visual" style="background:#0a0a0a;">
+        <img src="/case-studies/star-entertainment/images%20(1).png" alt="Star Entertainment live concert event" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.75;">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.5) 0%,rgba(10,40,22,0.3) 100%);"></div>
         <div class="featured-card__badge">Live now</div>
         <div class="featured-card__metric">
           <div class="featured-card__metric-val">80<em>%+</em></div>
@@ -384,12 +377,13 @@
       <!-- Star Entertainment — published -->
       <article class="cs-card cs-card--live" data-category="entertainment" data-anim>
         <a href="/case-studies/star-entertainment" aria-label="Star Entertainment case study">
-          <div class="cs-card__visual" style="background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%);">
+          <div class="cs-card__visual" style="background:#0a0a0a;">
+            <img src="/case-studies/star-entertainment/images%20(1).png" alt="Star Entertainment live concert" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.55) 0%,transparent 60%);"></div>
             <span class="cs-card__ind cs-card__ind--live">Live</span>
-            <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><circle cx="170" cy="100" r="75" stroke="#33C494" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.5"/><polygon points="150,75 150,125 195,100" fill="#33C494" opacity="0.6"/></svg>
           </div>
           <div class="cs-card__body">
-            <div class="cs-card__service">Google Ads — Automation</div>
+            <div class="cs-card__service">Google Ads · Automation · Live Entertainment</div>
             <div class="cs-card__client">Star Entertainment / Lancelot Production</div>
             <h3 class="cs-card__h">Building a scalable campaign system for an international live-events business.</h3>
             <p class="cs-card__desc">1,500+ concerts. 4 continents. One account that had to sell them all — automatically.</p>
@@ -402,79 +396,91 @@
       <!-- Omnitrack — published -->
       <article class="cs-card cs-card--live" data-category="ecommerce" data-anim data-delay="1">
         <a href="/case-studies/omnitrack" aria-label="Omnitrack case study">
-          <div class="cs-card__visual" style="background:linear-gradient(135deg,#1a2a1e 0%,#0d1f16 100%);">
+          <div class="cs-card__visual" style="background:#0d1f16;">
+            <img src="/case-studies/omnitrack/Blog_2.webp" alt="Omnitrack ecommerce analytics dashboard" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.5) 0%,transparent 60%);"></div>
             <span class="cs-card__ind cs-card__ind--live">Live</span>
-            <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><rect x="60" y="55" width="220" height="90" rx="6" stroke="#33C494" stroke-width="1.5" opacity="0.5"/><polyline points="80,120 115,85 150,105 190,68 230,80" stroke="#33C494" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="230" cy="80" r="5" fill="#33C494"/></svg>
           </div>
           <div class="cs-card__body">
-            <div class="cs-card__service">Google Ads — Tracking</div>
-            <div class="cs-card__client">Omnitrack</div>
+            <div class="cs-card__service">Google Ads · Tracking · E-commerce</div>
+            <div class="cs-card__client">Omnitrack · 7 markets</div>
             <h3 class="cs-card__h">Fixing ecommerce tracking so market decisions could be based on real revenue data.</h3>
-            <p class="cs-card__desc">Broken tracking across 7 markets. Germany spending —785 to return —4. I rebuilt from scratch.</p>
+            <p class="cs-card__desc">Broken tracking across 7 markets. Germany spending €785 to return €4. Rebuilt from scratch in 90 days.</p>
             <div class="cs-card__stat">ROAS +96%</div>
             <span class="cs-card__link">Read case study</span>
           </div>
         </a>
       </article>
 
-      <!-- The Wall Museum — coming soon -->
-      <article class="cs-card cs-card--upcoming" data-category="cultural" data-anim data-delay="2" aria-label="The Wall Museum — coming soon">
-        <div class="cs-card__visual" style="background:linear-gradient(135deg,#1a1408 0%,#2a1f06 100%);">
-          <span class="cs-card__ind cs-card__ind--soon">Coming soon</span>
-          <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><rect x="40" y="40" width="260" height="120" rx="4" stroke="#b8943c" stroke-width="1.5" opacity="0.4"/><rect x="60" y="60" width="60" height="80" fill="#b8943c" opacity="0.15"/><rect x="140" y="60" width="60" height="80" fill="#b8943c" opacity="0.1"/><rect x="220" y="60" width="60" height="80" fill="#b8943c" opacity="0.15"/></svg>
-        </div>
-        <div class="cs-card__body">
-          <div class="cs-card__service">Google Ads · Meta Ads</div>
-          <div class="cs-card__client">The Wall Museum, Berlin</div>
-          <h3 class="cs-card__h">Turning paid media into a more reliable ticket-sales channel for a cultural landmark.</h3>
-          <p class="cs-card__desc">Building a measurable path from visitor intent and cultural interest to confirmed ticket purchase.</p>
-          <span class="cs-card__soon">Case study in preparation</span>
-        </div>
+      <!-- The Wall Museum — published -->
+      <article class="cs-card cs-card--live" data-category="cultural" data-anim data-delay="2">
+        <a href="/case-studies/the-wall-museum" aria-label="The Wall Museum case study">
+          <div class="cs-card__visual cs-card__visual--logo" style="background:#f2f2f0;">
+            <img src="/case-studies/the-wall-museum/logo_huzz.png" alt="The Wall Museum Berlin logo" loading="lazy">
+            <span class="cs-card__ind" style="background:var(--ink);color:#fff;">Live</span>
+          </div>
+          <div class="cs-card__body">
+            <div class="cs-card__service">Google Ads · Meta Ads · Tourism</div>
+            <div class="cs-card__client">The Wall Museum, Berlin</div>
+            <h3 class="cs-card__h">Turning tourist search intent into confirmed ticket sales for a Berlin cultural landmark.</h3>
+            <p class="cs-card__desc">Building a measurable path from visitor intent to confirmed ticket purchase — with tracking in place from day one.</p>
+            <span class="cs-card__link">Read case study</span>
+          </div>
+        </a>
       </article>
 
-      <!-- Cinema for Peace — coming soon -->
-      <article class="cs-card cs-card--upcoming" data-category="cultural entertainment" data-anim data-delay="1" aria-label="Cinema for Peace — coming soon">
-        <div class="cs-card__visual" style="background:linear-gradient(135deg,#08101a 0%,#0a1628 100%);">
-          <span class="cs-card__ind cs-card__ind--soon">Coming soon</span>
-          <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><circle cx="170" cy="100" r="65" stroke="#4a90d9" stroke-width="1.5" opacity="0.4"/><line x1="60" y1="100" x2="280" y2="100" stroke="#4a90d9" stroke-width="1" opacity="0.3"/><line x1="100" y1="40" x2="240" y2="160" stroke="#4a90d9" stroke-width="1" opacity="0.2"/><line x1="240" y1="40" x2="100" y2="160" stroke="#4a90d9" stroke-width="1" opacity="0.2"/></svg>
-        </div>
-        <div class="cs-card__body">
-          <div class="cs-card__service">Google Ads · Meta Ads</div>
-          <div class="cs-card__client">Cinema for Peace</div>
-          <h3 class="cs-card__h">Expanding international awareness for a globally significant cultural event.</h3>
-          <p class="cs-card__desc">Communicating the importance and urgency of an international peace-focused film festival to a global audience.</p>
-          <span class="cs-card__soon">Case study in preparation</span>
-        </div>
+      <!-- Cinema for Peace — published -->
+      <article class="cs-card cs-card--live" data-category="cultural entertainment" data-anim data-delay="1">
+        <a href="/case-studies/cinema-for-peace" aria-label="Cinema for Peace case study">
+          <div class="cs-card__visual" style="background:#08101a;">
+            <img src="/case-studies/cinema-for-peace/WhatsApp+Image+2026-04-29+at+15.39.21.webp" alt="Cinema for Peace international film festival" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,26,0.6) 0%,transparent 60%);"></div>
+            <span class="cs-card__ind cs-card__ind--live">Live</span>
+          </div>
+          <div class="cs-card__body">
+            <div class="cs-card__service">Google Ads · Meta Ads · Cultural</div>
+            <div class="cs-card__client">Cinema for Peace, Berlin</div>
+            <h3 class="cs-card__h">Expanding international awareness for a globally significant humanitarian film festival.</h3>
+            <p class="cs-card__desc">Communicating the urgency of an international peace-focused film festival to a global audience on a limited budget.</p>
+            <span class="cs-card__link">Read case study</span>
+          </div>
+        </a>
       </article>
 
-      <!-- Rhode Island Novelty — coming soon -->
-      <article class="cs-card cs-card--upcoming" data-category="ecommerce" data-anim data-delay="2" aria-label="Rhode Island Novelty — coming soon">
-        <div class="cs-card__visual" style="background:linear-gradient(135deg,#1a0a08 0%,#2a1010 100%);">
-          <span class="cs-card__ind cs-card__ind--soon">Coming soon</span>
-          <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><rect x="50" y="80" width="240" height="60" rx="4" fill="none" stroke="#d9654a" stroke-width="1.5" opacity="0.4"/><polyline points="50,130 90,95 130,115 170,85 210,100 250,80 290,95" stroke="#d9654a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/></svg>
-        </div>
-        <div class="cs-card__body">
-          <div class="cs-card__service">Market Research — Google Ads</div>
-          <div class="cs-card__client">Rhode Island Novelty</div>
-          <h3 class="cs-card__h">Using demand and trend research to improve product-launch timing and distribution decisions.</h3>
-          <p class="cs-card__desc">Marketing research that had to influence inventory decisions before advertising spend began.</p>
-          <span class="cs-card__soon">Case study in preparation</span>
-        </div>
+      <!-- Rhode Island Novelty — published -->
+      <article class="cs-card cs-card--live" data-category="ecommerce" data-anim data-delay="2">
+        <a href="/case-studies/rhode-island-novelty" aria-label="Rhode Island Novelty case study">
+          <div class="cs-card__visual" style="background:#1a0a08;">
+            <img src="/case-studies/rhode-island-novelty/images%20(2).jpg" alt="Rhode Island Novelty product catalogue" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,8,0.55) 0%,transparent 60%);"></div>
+            <span class="cs-card__ind cs-card__ind--live">Live</span>
+          </div>
+          <div class="cs-card__body">
+            <div class="cs-card__service">Market Research · Google Ads · E-commerce</div>
+            <div class="cs-card__client">Rhode Island Novelty, USA</div>
+            <h3 class="cs-card__h">Using demand and trend research to improve product-launch timing and distribution decisions.</h3>
+            <p class="cs-card__desc">Market research that had to influence inventory decisions before a single dollar of advertising spend.</p>
+            <span class="cs-card__link">Read case study</span>
+          </div>
+        </a>
       </article>
 
-      <!-- Duebi Elevatori — coming soon -->
-      <article class="cs-card cs-card--upcoming" data-category="service" data-anim data-delay="3" aria-label="Duebi Elevatori — coming soon">
-        <div class="cs-card__visual" style="background:linear-gradient(135deg,#080d1a 0%,#101828 100%);">
-          <span class="cs-card__ind cs-card__ind--soon">Coming soon</span>
-          <svg viewBox="0 0 340 200" fill="none" aria-hidden="true"><rect x="135" y="30" width="70" height="140" rx="4" stroke="#5a8fd4" stroke-width="1.5" opacity="0.4"/><line x1="170" y1="60" x2="170" y2="90" stroke="#5a8fd4" stroke-width="2" opacity="0.6"/><polygon points="155,62 185,62 170,44" fill="#5a8fd4" opacity="0.5"/><line x1="170" y1="115" x2="170" y2="145" stroke="#5a8fd4" stroke-width="2" opacity="0.6"/><polygon points="155,143 185,143 170,161" fill="#5a8fd4" opacity="0.5"/></svg>
-        </div>
-        <div class="cs-card__body">
-          <div class="cs-card__service">Google Ads — Lead Generation</div>
-          <div class="cs-card__client">Duebi Elevatori</div>
-          <h3 class="cs-card__h">Building a measurable lead-generation system for a regional elevator service business.</h3>
-          <p class="cs-card__desc">Creating a repeatable path from local search intent to qualified enquiries — with full tracking in place.</p>
-          <span class="cs-card__soon">Case study in preparation</span>
-        </div>
+      <!-- Duebi Elevatori — published -->
+      <article class="cs-card cs-card--live" data-category="service" data-anim data-delay="3">
+        <a href="/case-studies/duebi-elevatori" aria-label="Duebi Elevatori case study">
+          <div class="cs-card__visual" style="background:#080d1a;">
+            <img src="/case-studies/duebi-elevatori/images%20(2).png" alt="Duebi Elevatori elevator service business" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,26,0.55) 0%,transparent 60%);"></div>
+            <span class="cs-card__ind cs-card__ind--live">Live</span>
+          </div>
+          <div class="cs-card__body">
+            <div class="cs-card__service">Google Ads · Lead Generation · Service</div>
+            <div class="cs-card__client">Duebi Elevatori, Italy</div>
+            <h3 class="cs-card__h">Building a measurable lead-generation system for a regional elevator service business.</h3>
+            <p class="cs-card__desc">Creating a repeatable path from local search intent to qualified enquiries — with 100% of leads tracked from day one.</p>
+            <span class="cs-card__link">Read case study</span>
+          </div>
+        </a>
       </article>
 
     </div>
@@ -556,8 +562,8 @@
 </a>
 
 <div class="mobile-cta" id="mobile-cta" aria-hidden="true">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">?? Free analysis</button>
-  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">?? WhatsApp</a>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">&#128197; Free analysis</button>
+  <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">&#128172; WhatsApp</a>
 </div>
 
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
