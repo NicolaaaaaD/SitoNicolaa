@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCSZKMWQ');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duebi Elevatori — Building a Measurable Lead-Generation System for a Regional Service Business | NicosDigit</title>
-  <meta name="description" content="How I built a measurable lead-generation system for Duebi Elevatori — creating a repeatable path from local search intent to qualified enquiries.">
+  <title>Duebi Elevatori â€” Building a Measurable Lead-Generation System for a Regional Service Business | NicosDigit</title>
+  <meta name="description" content="How I built a measurable lead-generation system for Duebi Elevatori â€” creating a repeatable path from local search intent to qualified enquiries.">
   <link rel="canonical" href="https://nicosdigit.com/case-studies/duebi-elevatori">
   <link rel="alternate" hreflang="en" href="https://nicosdigit.com/case-studies/duebi-elevatori">
   <link rel="alternate" hreflang="it" href="https://nicosdigit.com/it/case-studies/duebi-elevatori">
   <link rel="alternate" hreflang="x-default" href="https://nicosdigit.com/case-studies/duebi-elevatori">
-  <meta property="og:title" content="Duebi Elevatori — Building a Measurable Lead-Generation System | NicosDigit">
-  <meta property="og:description" content="Creating a repeatable path from local search intent to qualified enquiries — with full tracking in place.">
+  <meta property="og:title" content="Duebi Elevatori â€” Building a Measurable Lead-Generation System | NicosDigit">
+  <meta property="og:description" content="Creating a repeatable path from local search intent to qualified enquiries â€” with full tracking in place.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://nicosdigit.com/case-studies/duebi-elevatori">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
   <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript>
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <style>
-    /* DRAFT — not linked from archive or nav */
+    /* DRAFT â€” not linked from archive or nav */
     :root{--green:#33C494;--green-dark:#28A57C;--green-soft:#E6F7F0;--bg:#FFFFFF;--bg-2:#F6F6F4;--ink:#0A0A0A;--grey:rgba(10,10,10,0.62);--grey-line:rgba(10,10,10,0.1);--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
     *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
     body{font-family:'Poppins',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
@@ -49,30 +49,6 @@
     .nav__link{position:relative;padding:0.4rem 0;min-height:44px;display:flex;align-items:center;}
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1);}
-    /* Nav Dropdown */
-    .nav__item--has-dropdown{position:relative;}
-    .nav__dropdown-btn{display:flex;align-items:center;gap:0.35rem;position:relative;padding:0.4rem 0;font-size:0.93rem;font-weight:500;transition:color 0.2s;min-height:44px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--ink);}
-    .nav__dropdown-btn::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
-    .nav__dropdown-btn[aria-expanded="true"]::after,.nav__dropdown-btn.is-active::after{transform:scaleX(1);}
-    .nav__dropdown-chevron{width:14px;height:14px;transition:transform 0.25s var(--ease);flex-shrink:0;}
-    .nav__dropdown-btn[aria-expanded="true"] .nav__dropdown-chevron{transform:rotate(180deg);}
-    .nav__dropdown{position:absolute;top:calc(100% + 0.75rem);left:-1rem;min-width:210px;background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;box-shadow:0 16px 40px -8px rgba(10,10,10,0.12),0 4px 12px -4px rgba(10,10,10,0.06);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0s 0.2s;z-index:200;}
-    .nav__dropdown.is-open{opacity:1;visibility:visible;transform:none;transition:opacity 0.2s,transform 0.2s;}
-    .nav__dropdown-link{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--ink);transition:background 0.15s,color 0.15s;text-decoration:none;}
-    a.nav__dropdown-link:hover{background:var(--green-soft);color:var(--green-dark);}
-    .nav__dropdown-link--soon{color:var(--grey);cursor:default;}
-    .nav__dropdown-badge{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--grey-line);color:var(--grey);padding:0.12rem 0.45rem;border-radius:999px;}
-    .nav__dropdown-link--active{color:var(--green-dark);font-weight:600;}
-    @media(max-width:880px){
-      .nav.is-open .nav__item--has-dropdown{border-bottom:1px solid var(--grey-line);}
-      .nav.is-open .nav__dropdown-btn{font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;padding:1.1rem 0;width:100%;justify-content:space-between;}
-      .nav.is-open .nav__dropdown-btn::after{display:none;}
-      .nav.is-open .nav__dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:transparent;margin-bottom:0.5rem;}
-      .nav.is-open .nav__dropdown.is-open,.nav.is-open .nav__dropdown{display:none;}
-      .nav.is-open .nav__dropdown.is-open{display:block;}
-      .nav.is-open .nav__dropdown .nav__dropdown-link{padding:0.65rem 0;font-size:0.95rem;border-radius:0;}
-      .nav.is-open .nav__dropdown .nav__dropdown-link:not(:last-child){border-bottom:1px solid var(--grey-line);}
-    }
     .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:#fff;padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,transform 0.25s var(--ease);}
     .nav__cta:hover{background:var(--green);color:var(--ink);transform:translateY(-2px);}
     .lang-sw{display:flex;align-items:center;border:1.5px solid var(--grey-line);border-radius:999px;overflow:hidden;}
@@ -229,20 +205,13 @@
 <header class="site-head" id="site-head">
   <div class="container">
     <div class="site-head__inner">
-      <a class="logo" href="/"><div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Pages</span></div></a>
+      <a class="logo" href="/"><div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Pages</span></div></a>
       <nav class="nav" id="nav" aria-label="Main navigation">
         <ul class="nav__list">
           <li><a href="/#services" class="nav__link">Services</a></li>
-          <li><a href="/#method" class="nav__link">Method</a></li>
-          <li class="nav__item--has-dropdown">
-            <button class="nav__dropdown-btn is-active" aria-haspopup="true" aria-expanded="false" aria-controls="nav-resources-menu">Resources<svg class="nav__dropdown-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <ul class="nav__dropdown" id="nav-resources-menu" role="menu">
-              <li><a href="/blog" class="nav__dropdown-link" role="menuitem">Blog</a></li>
-              <li><a href="/case-studies" class="nav__dropdown-link nav__dropdown-link--active" role="menuitem">Case Studies</a></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Guides <span class="nav__dropdown-badge">Soon</span></span></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Free Resources <span class="nav__dropdown-badge">Soon</span></span></li>
-            </ul>
-          </li>
+          <li><a href="/#method" class="nav__link">Approach</a></li>
+          <li><a href="/case-studies" class="nav__link is-active">Work</a></li>
+          <li><a href="/blog" class="nav__link">Blog</a></li>
           <li><a href="/#faq" class="nav__link">FAQ</a></li>
         </ul>
         <div class="lang-sw">
@@ -269,13 +238,13 @@
     </svg>
   </div>
   <div class="container cs-hero__inner">
-    <div class="eyebrow">Case Study · Lead Generation / Local Services</div>
+    <div class="eyebrow">Case Study Â· Lead Generation / Local Services</div>
     <h1 class="cs-hero__h1" id="cs-title">Building a measurable lead-generation system for a regional elevator service business.</h1>
-    <p class="cs-hero-tagline">Duebi Elevatori needed a reliable way to turn local search interest into qualified enquiries — with full tracking so the cost of each lead was visible and the system could be optimised.</p>
+    <p class="cs-hero-tagline">Duebi Elevatori needed a reliable way to turn local search interest into qualified enquiries â€” with full tracking so the cost of each lead was visible and the system could be optimised.</p>
     <div class="cs-meta">
       <div class="cs-meta__item"><div class="cs-meta__label">Client</div><div class="cs-meta__val">Duebi Elevatori</div></div>
       <div class="cs-meta__item"><div class="cs-meta__label">Location</div><div class="cs-meta__val">Italy</div></div>
-      <div class="cs-meta__item"><div class="cs-meta__label">Services</div><div class="cs-meta__val">Google Ads · Lead Generation</div></div>
+      <div class="cs-meta__item"><div class="cs-meta__label">Services</div><div class="cs-meta__val">Google Ads â€” Lead Generation</div></div>
       <div class="cs-meta__item"><div class="cs-meta__label">Industry</div><div class="cs-meta__val">Building Services / Local B2B</div></div>
     </div>
   </div>
@@ -291,8 +260,8 @@
       <h2 class="sec-h">A regional elevator installation and maintenance company serving residential and commercial customers.</h2>
     </div>
     <div class="intro-text" data-anim data-delay="1">
-      <p>Duebi Elevatori is a regional elevator installation and maintenance company operating in Italy. The business provides installation of new elevator systems and ongoing maintenance contracts for existing ones — serving both residential buildings and commercial properties.</p>
-      <p>Like most regional service businesses, Duebi Elevatori's growth depends on a consistent pipeline of qualified enquiries. The challenge was building a digital acquisition channel that generated those enquiries reliably — not just website traffic — at a cost the business could measure and justify.</p>
+      <p>Duebi Elevatori is a regional elevator installation and maintenance company operating in Italy. The business provides installation of new elevator systems and ongoing maintenance contracts for existing ones â€” serving both residential buildings and commercial properties.</p>
+      <p>Like most regional service businesses, Duebi Elevatori's growth depends on a consistent pipeline of qualified enquiries. The challenge was building a digital acquisition channel that generated those enquiries reliably â€” not just website traffic â€” at a cost the business could measure and justify.</p>
     </div>
   </div>
 </section>
@@ -305,24 +274,24 @@
       <h2 class="sec-h">No measurable path from local search intent to qualified leads.</h2>
     </div>
     <div class="intro-text" data-anim data-delay="1">
-      <p>People searching for elevator installation or maintenance in a specific region represent high-intent, high-value prospects. These are not casual browsers — they typically have a real need and are comparing service providers. The window is short and the intent is clear.</p>
-      <p>The problem: Duebi Elevatori had no system in place to consistently capture this intent. Without paid search campaigns or conversion tracking, there was no way to know how many potential customers were searching and selecting competitors — or what a lead cost to acquire.</p>
+      <p>People searching for elevator installation or maintenance in a specific region represent high-intent, high-value prospects. These are not casual browsers â€” they typically have a real need and are comparing service providers. The window is short and the intent is clear.</p>
+      <p>The problem: Duebi Elevatori had no system in place to consistently capture this intent. Without paid search campaigns or conversion tracking, there was no way to know how many potential customers were searching and selecting competitors â€” or what a lead cost to acquire.</p>
     </div>
 
     <div class="problem-stmt" data-anim data-delay="2">
       <div class="problem-stmt__label">Core problem</div>
-      <div class="problem-stmt__text">Local search intent existed for the services Duebi Elevatori offered — but without a paid acquisition system, that intent was reaching competitors instead. And without tracking, there was no way to measure whether any digital activity was generating leads at all.</div>
+      <div class="problem-stmt__text">Local search intent existed for the services Duebi Elevatori offered â€” but without a paid acquisition system, that intent was reaching competitors instead. And without tracking, there was no way to measure whether any digital activity was generating leads at all.</div>
     </div>
 
     <h3 style="font-family:'Archivo Black',sans-serif;font-size:1.1rem;letter-spacing:-0.02em;margin:2rem 0 0.75rem;" data-anim>What wasn't working before</h3>
     <div class="before-list" data-anim data-delay="1">
       <div class="before-item">
         <div class="before-item__icon"></div>
-        <div class="before-item__text">No Google Ads campaigns — potential customers searching for elevator services in the target region were not seeing the business in paid results</div>
+        <div class="before-item__text">No Google Ads campaigns â€” potential customers searching for elevator services in the target region were not seeing the business in paid results</div>
       </div>
       <div class="before-item">
         <div class="before-item__icon"></div>
-        <div class="before-item__text">No conversion tracking — phone calls and form submissions from the website were not being connected back to any specific source, keyword, or campaign</div>
+        <div class="before-item__text">No conversion tracking â€” phone calls and form submissions from the website were not being connected back to any specific source, keyword, or campaign</div>
       </div>
       <div class="before-item">
         <div class="before-item__icon"></div>
@@ -340,10 +309,10 @@
     </div>
     <div class="insight-block" data-anim data-delay="1">
       <div class="insight-block__label">Strategic insight</div>
-      <div class="insight-block__text">For local B2B service businesses, lead quality matters more than lead volume. The right campaign structure generates fewer but higher-quality enquiries — from people with a real need, in the right geographic area, at a cost the business can sustain.</div>
+      <div class="insight-block__text">For local B2B service businesses, lead quality matters more than lead volume. The right campaign structure generates fewer but higher-quality enquiries â€” from people with a real need, in the right geographic area, at a cost the business can sustain.</div>
     </div>
     <div class="intro-text" style="margin-top:1.5rem;" data-anim data-delay="2">
-      <p>Elevator installation and maintenance is a high-ticket, high-trust service. Prospects search with specific intent — "installazione ascensori [city]", "manutenzione ascensori condominio" — and the decision timeline is longer than in consumer markets. This meant that the campaign needed to be built around qualified intent signals, not broad awareness.</p>
+      <p>Elevator installation and maintenance is a high-ticket, high-trust service. Prospects search with specific intent â€” "installazione ascensori [city]", "manutenzione ascensori condominio" â€” and the decision timeline is longer than in consumer markets. This meant that the campaign needed to be built around qualified intent signals, not broad awareness.</p>
     </div>
   </div>
 </section>
@@ -358,11 +327,11 @@
     <div class="obj-grid" data-anim data-delay="1">
       <div class="obj-card">
         <div class="obj-card__num">01</div>
-        <div class="obj-card__text">Generate qualified leads from local searches — people with a real installation or maintenance need, in the geographic area Duebi Elevatori serves</div>
+        <div class="obj-card__text">Generate qualified leads from local searches â€” people with a real installation or maintenance need, in the geographic area Duebi Elevatori serves</div>
       </div>
       <div class="obj-card">
         <div class="obj-card__num">02</div>
-        <div class="obj-card__text">Track every lead — phone calls, form submissions — back to its source keyword and campaign, making cost-per-lead visible and optimisable</div>
+        <div class="obj-card__text">Track every lead â€” phone calls, form submissions â€” back to its source keyword and campaign, making cost-per-lead visible and optimisable</div>
       </div>
       <div class="obj-card">
         <div class="obj-card__num">03</div>
@@ -385,7 +354,7 @@
         <div>
           <div class="approach-item__label">Tracking infrastructure</div>
           <div class="approach-item__h">Making every conversion visible before spending</div>
-          <div class="approach-item__text">I installed call tracking and form tracking connected to Google Ads — so that both phone enquiries and website contact form submissions were attributed to the specific keyword and campaign that generated them. This was the foundation everything else was built on.</div>
+          <div class="approach-item__text">I installed call tracking and form tracking connected to Google Ads â€” so that both phone enquiries and website contact form submissions were attributed to the specific keyword and campaign that generated them. This was the foundation everything else was built on.</div>
         </div>
       </div>
       <div class="approach-item" data-anim data-delay="1">
@@ -393,7 +362,7 @@
         <div>
           <div class="approach-item__label">Intent-based keyword architecture</div>
           <div class="approach-item__h">Targeting searches from people with a real need, not browsers</div>
-          <div class="approach-item__text">I mapped the specific searches that indicated commercial intent — people actively looking to commission installation or maintenance, not researching the topic generally. High-intent, long-tail keywords in the target region received dedicated ad groups with messaging matched to the specific service being searched for.</div>
+          <div class="approach-item__text">I mapped the specific searches that indicated commercial intent â€” people actively looking to commission installation or maintenance, not researching the topic generally. High-intent, long-tail keywords in the target region received dedicated ad groups with messaging matched to the specific service being searched for.</div>
         </div>
       </div>
       <div class="approach-item" data-anim data-delay="2">
@@ -401,7 +370,7 @@
         <div>
           <div class="approach-item__label">Ad copy and landing experience</div>
           <div class="approach-item__h">Matching what the prospect is looking for, immediately</div>
-          <div class="approach-item__text">Ad copy was written to match the specific intent of each search — "Ascensori per condominio" got different messaging from "manutenzione ascensore urgente". The landing experience was built to reduce friction from click to enquiry: clear service description, immediate contact options, and trust signals for a new prospect.</div>
+          <div class="approach-item__text">Ad copy was written to match the specific intent of each search â€” "Ascensori per condominio" got different messaging from "manutenzione ascensore urgente". The landing experience was built to reduce friction from click to enquiry: clear service description, immediate contact options, and trust signals for a new prospect.</div>
         </div>
       </div>
       <div class="approach-item" data-anim data-delay="3">
@@ -409,7 +378,7 @@
         <div>
           <div class="approach-item__label">Geographic targeting</div>
           <div class="approach-item__h">Spending only where the business could actually serve</div>
-          <div class="approach-item__text">Campaigns ran only within the geographic radius where Duebi Elevatori could genuinely accept new work — preventing budget waste on enquiries from outside the service area that the business couldn't convert.</div>
+          <div class="approach-item__text">Campaigns ran only within the geographic radius where Duebi Elevatori could genuinely accept new work â€” preventing budget waste on enquiries from outside the service area that the business couldn't convert.</div>
         </div>
       </div>
     </div>
@@ -430,28 +399,28 @@
         <div class="result-item__icon"><i class="ti ti-phone-call" style="color:var(--green);"></i></div>
         <div>
           <div class="result-item__label">Qualified lead pipeline</div>
-          <div class="result-item__text">A consistent flow of inbound enquiries from local searches — from people actively looking for elevator installation or maintenance, rather than leads from general awareness campaigns that required significant qualification effort.</div>
+          <div class="result-item__text">A consistent flow of inbound enquiries from local searches â€” from people actively looking for elevator installation or maintenance, rather than leads from general awareness campaigns that required significant qualification effort.</div>
         </div>
       </div>
       <div class="result-item">
         <div class="result-item__icon"><i class="ti ti-chart-bar" style="color:var(--green);"></i></div>
         <div>
           <div class="result-item__label">Cost-per-lead visibility</div>
-          <div class="result-item__text">For the first time, every enquiry was tracked back to its source — making it possible to calculate the true cost of each lead and optimise the campaign toward the keywords and ad groups generating the best results.</div>
+          <div class="result-item__text">For the first time, every enquiry was tracked back to its source â€” making it possible to calculate the true cost of each lead and optimise the campaign toward the keywords and ad groups generating the best results.</div>
         </div>
       </div>
       <div class="result-item">
         <div class="result-item__icon"><i class="ti ti-adjustments" style="color:var(--green);"></i></div>
         <div>
           <div class="result-item__label">Optimisable system</div>
-          <div class="result-item__text">A repeatable acquisition structure that could be scaled or reduced based on business capacity — unlike word-of-mouth dependency, which provides no control over lead volume or timing.</div>
+          <div class="result-item__text">A repeatable acquisition structure that could be scaled or reduced based on business capacity â€” unlike word-of-mouth dependency, which provides no control over lead volume or timing.</div>
         </div>
       </div>
     </div>
 
     <div class="takeaway" data-anim data-delay="2">
       <div class="takeaway__label">Key takeaway</div>
-      <div class="takeaway__text">For regional service businesses, the goal of paid search is not more traffic — it's a predictable number of qualified enquiries at a cost that makes the channel sustainable. That requires tracking before anything else.</div>
+      <div class="takeaway__text">For regional service businesses, the goal of paid search is not more traffic â€” it's a predictable number of qualified enquiries at a cost that makes the channel sustainable. That requires tracking before anything else.</div>
     </div>
   </div>
 </section>
@@ -487,13 +456,13 @@
           <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Get my free analysis</button>
           <a href="/case-studies" class="btn btn--ghost">View all case studies</a>
         </div>
-        <p style="margin-top:1rem;font-size:0.83rem;color:rgba(10,10,10,0.55);">Free · No commitment · No PowerPoint</p>
+        <p style="margin-top:1rem;font-size:0.83rem;color:rgba(10,10,10,0.55);">Free Â· No commitment â€” No PowerPoint</p>
       </div>
       <div class="cta-box" data-anim data-delay="2">
         <div class="cta-box__title">Get in touch</div>
         <div class="cta-box__sub">Choose your preferred method</div>
         <div class="cta-box__options">
-          <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div><div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div><span class="cta-opt__arrow"></span></button>
+          <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div><div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min Â· Free Â· No commitment</div></div><span class="cta-opt__arrow"></span></button>
           <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener"><div class="cta-opt__icon cta-opt__icon--wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></div><div><div class="cta-opt__label">WhatsApp</div><div class="cta-opt__desc">Reply within a few hours</div></div><span class="cta-opt__arrow"></span></a>
           <a class="cta-opt" href="tel:+393514120302"><div class="cta-opt__icon cta-opt__icon--ph"><i class="ti ti-phone"></i></div><div><div class="cta-opt__label">Call me</div><div class="cta-opt__desc">+39 351 412 0302</div></div><span class="cta-opt__arrow"></span></a>
         </div>
@@ -505,13 +474,13 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__brand"><a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Pages</span></div></a></div>
-      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
+      <div class="footer__brand"><a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Pages</span></div></a></div>
+      <p class="footer__copy">Â© 2025 Nicola Dimattia Â· P.IVA 09099240724</p>
       <nav class="footer__links"><a href="tel:+393514120302">+39 351 412 0302</a><a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a><a href="/case-studies">Case Studies</a><a href="https://www.linkedin.com/in/nicoladimattia/" target="_blank" rel="noopener">LinkedIn</a></nav>
       <div class="footer__lang"><a href="/case-studies/duebi-elevatori" class="is-active" hreflang="en">EN</a><a href="/it/case-studies/duebi-elevatori" hreflang="it">IT</a></div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__legal">NicosDigit di Nicola Dimattia — P.IVA 09099240724 — <a href="mailto:nicoladimattia8@gmail.com">nicoladimattia8@gmail.com</a></p>
+      <p class="footer__legal">NicosDigit di Nicola Dimattia Â· P.IVA 09099240724 â€” <a href="mailto:nicoladimattia8@gmail.com">nicoladimattia8@gmail.com</a></p>
       <div class="footer__legal-links"><a href="/cookie-policy">Cookie policy</a><button id="cookie-reopen" class="footer__cookie-btn">Cookie preferences</button></div>
     </div>
   </div>
@@ -523,10 +492,7 @@
   const head=document.getElementById('site-head');window.addEventListener('scroll',()=>{head.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
   const toggle=document.getElementById('nav-toggle'),nav=document.getElementById('nav');
   toggle.addEventListener('click',()=>{const o=nav.classList.toggle('is-open');toggle.classList.toggle('is-open',o);toggle.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
-  nav.querySelectorAll('a,button').forEach(function(el){if(el.classList.contains('nav__dropdown-btn'))return;el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  document.querySelectorAll('.nav__item--has-dropdown').forEach(function(item){var btn=item.querySelector('.nav__dropdown-btn'),menu=item.querySelector('.nav__dropdown');if(!btn||!menu)return;btn.addEventListener('click',function(e){var open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));menu.classList.toggle('is-open',!open);e.stopPropagation();});});
-  document.addEventListener('click',function(){document.querySelectorAll('.nav__dropdown.is-open').forEach(function(m){m.classList.remove('is-open');m.closest('.nav__item--has-dropdown').querySelector('.nav__dropdown-btn').setAttribute('aria-expanded','false');});});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('is-open'))toggle.click();});
+  nav.querySelectorAll('a').forEach(function(el){el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
   const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1});
   document.querySelectorAll('[data-anim]').forEach(el=>obs.observe(el));
   const mc=document.getElementById('mobile-cta');window.addEventListener('scroll',()=>{mc.classList.toggle('is-visible',window.scrollY>300);},{passive:true});

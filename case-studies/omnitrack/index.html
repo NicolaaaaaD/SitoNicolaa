@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});</script>
@@ -46,30 +46,6 @@
     .nav__link{position:relative;padding:0.4rem 0;transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1);}
-    /* Nav Dropdown */
-    .nav__item--has-dropdown{position:relative;}
-    .nav__dropdown-btn{display:flex;align-items:center;gap:0.35rem;position:relative;padding:0.4rem 0;font-size:0.93rem;font-weight:500;transition:color 0.2s;min-height:44px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--ink);}
-    .nav__dropdown-btn::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
-    .nav__dropdown-btn[aria-expanded="true"]::after,.nav__dropdown-btn.is-active::after{transform:scaleX(1);}
-    .nav__dropdown-chevron{width:14px;height:14px;transition:transform 0.25s var(--ease);flex-shrink:0;}
-    .nav__dropdown-btn[aria-expanded="true"] .nav__dropdown-chevron{transform:rotate(180deg);}
-    .nav__dropdown{position:absolute;top:calc(100% + 0.75rem);left:-1rem;min-width:210px;background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;box-shadow:0 16px 40px -8px rgba(10,10,10,0.12),0 4px 12px -4px rgba(10,10,10,0.06);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0s 0.2s;z-index:200;}
-    .nav__dropdown.is-open{opacity:1;visibility:visible;transform:none;transition:opacity 0.2s,transform 0.2s;}
-    .nav__dropdown-link{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--ink);transition:background 0.15s,color 0.15s;text-decoration:none;}
-    a.nav__dropdown-link:hover{background:var(--green-soft);color:var(--green-dark);}
-    .nav__dropdown-link--soon{color:var(--grey);cursor:default;}
-    .nav__dropdown-badge{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--grey-line);color:var(--grey);padding:0.12rem 0.45rem;border-radius:999px;}
-    .nav__dropdown-link--active{color:var(--green-dark);font-weight:600;}
-    @media(max-width:880px){
-      .nav.is-open .nav__item--has-dropdown{border-bottom:1px solid var(--grey-line);}
-      .nav.is-open .nav__dropdown-btn{font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;padding:1.1rem 0;width:100%;justify-content:space-between;}
-      .nav.is-open .nav__dropdown-btn::after{display:none;}
-      .nav.is-open .nav__dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:transparent;margin-bottom:0.5rem;}
-      .nav.is-open .nav__dropdown.is-open,.nav.is-open .nav__dropdown{display:none;}
-      .nav.is-open .nav__dropdown.is-open{display:block;}
-      .nav.is-open .nav__dropdown .nav__dropdown-link{padding:0.65rem 0;font-size:0.95rem;border-radius:0;}
-      .nav.is-open .nav__dropdown .nav__dropdown-link:not(:last-child){border-bottom:1px solid var(--grey-line);}
-    }
     .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:var(--bg);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
     .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
     .nav__cta:hover{background:var(--green);color:var(--ink);transform:translateY(-2px);}
@@ -207,20 +183,13 @@
 <header class="site-head" id="site-head">
   <div class="container">
     <div class="site-head__inner">
-      <a class="logo" href="/"><div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div></a>
+      <a class="logo" href="/"><div class="logo__mark"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Page</span></div></a>
       <nav class="nav" id="nav">
         <ul class="nav__list">
           <li><a href="/#services" class="nav__link">Services</a></li>
-          <li><a href="/#method" class="nav__link">Method</a></li>
-          <li class="nav__item--has-dropdown">
-            <button class="nav__dropdown-btn is-active" aria-haspopup="true" aria-expanded="false" aria-controls="nav-resources-menu">Resources<svg class="nav__dropdown-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <ul class="nav__dropdown" id="nav-resources-menu" role="menu">
-              <li><a href="/blog" class="nav__dropdown-link" role="menuitem">Blog</a></li>
-              <li><a href="/case-studies" class="nav__dropdown-link nav__dropdown-link--active" role="menuitem">Case Studies</a></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Guides <span class="nav__dropdown-badge">Soon</span></span></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Free Resources <span class="nav__dropdown-badge">Soon</span></span></li>
-            </ul>
-          </li>
+          <li><a href="/#method" class="nav__link">Approach</a></li>
+          <li><a href="/case-studies" class="nav__link is-active">Work</a></li>
+          <li><a href="/blog" class="nav__link">Blog</a></li>
           <li><a href="/#faq" class="nav__link">FAQ</a></li>
         </ul>
         <div class="lang-sw">
@@ -238,12 +207,12 @@
   <div class="hero__bg"><svg viewBox="0 0 900 700" fill="none"><polygon points="0,700 900,0 900,700" fill="#33C494" opacity="0.06"/><polygon points="120,700 900,140 900,700" fill="#33C494" opacity="0.05"/></svg></div>
   <div class="container">
     <div class="hero__inner">
-      <div class="eyebrow">Case Study · Omnitrack</div>
+      <div class="eyebrow">Case Study Â· Omnitrack</div>
       <h1 class="cs-hero__h1">ROAS <em>+96%</em>,<br>spending 27% less.</h1>
       <p class="cs-hero-tagline">How we rebuilt tracking across 7 markets, eliminated wasted spend, and nearly doubled return on ad spend in 90 days.</p>
       <div class="cs-meta">
-        <span class="cs-meta__item">Google Ads</span><span class="cs-meta__sep">·</span>
-        <span class="cs-meta__item">Industrial E-commerce</span><span class="cs-meta__sep">·</span>
+        <span class="cs-meta__item">Google Ads</span><span class="cs-meta__sep">Â·</span>
+        <span class="cs-meta__item">Industrial E-commerce</span><span class="cs-meta__sep">Â·</span>
         <span class="cs-meta__item">United Kingdom</span>
       </div>
     </div>
@@ -258,7 +227,7 @@
       <h2 class="h2" style="margin-bottom:2rem;">Omnitrack.<br>7 markets, broken data.</h2>
     </div>
     <p class="intro-text" data-anim data-delay="1"><strong>Omnitrack</strong> is a UK-based industrial e-commerce company selling tracking and monitoring equipment across 7 European markets. When they came to us, their Google Ads account was a mess: a previous agency had left tracking broken across multiple markets, campaigns were spending with no clear signal of what was working, and ROAS had collapsed.</p>
-    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The situation in Germany was the most extreme: <strong>£785 spent for every £4 of measured return</strong>. The problem wasn't the market — it was that nobody could see what was actually happening. Without clean data, every optimisation decision was guesswork.</p>
+    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The situation in Germany was the most extreme: <strong>â€”785 spent for every â€”4 of measured return</strong>. The problem wasn't the market â€” it was that nobody could see what was actually happening. Without clean data, every optimisation decision was guesswork.</p>
   </div>
 </section>
 
@@ -279,8 +248,8 @@
       <div class="eyebrow">The Challenge</div>
       <h2 class="h2">You can't optimise<br>what you can't measure.</h2>
     </div>
-    <p class="intro-text" data-anim data-delay="1">The previous agency had left a tangle of duplicate tags, missing conversion actions, and misattributed data. Smart Bidding strategies were learning from corrupted signals — optimising toward ghost conversions that didn't represent real revenue.</p>
-    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The result: in Germany, the most competitive market, the account was spending <strong>£785 to return £4</strong>. Budget was flooding into keywords and geographies with no real return, while high-performing segments were starved of investment. The entire account needed to be rebuilt from the ground up, starting with the data layer.</p>
+    <p class="intro-text" data-anim data-delay="1">The previous agency had left a tangle of duplicate tags, missing conversion actions, and misattributed data. Smart Bidding strategies were learning from corrupted signals â€” optimising toward ghost conversions that didn't represent real revenue.</p>
+    <p class="intro-text" data-anim data-delay="2" style="margin-top:1.2rem;">The result: in Germany, the most competitive market, the account was spending <strong>â€”785 to return â€”4</strong>. Budget was flooding into keywords and geographies with no real return, while high-performing segments were starved of investment. The entire account needed to be rebuilt from the ground up, starting with the data layer.</p>
   </div>
 </section>
 
@@ -317,11 +286,11 @@
       <h2 class="h2">Clean data.<br>Measurable results.</h2>
     </div>
     <div class="result-grid" data-anim data-delay="1">
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>ROAS increased by 96%</strong> across all 7 markets — without increasing the total budget, purely through better data and smarter allocation</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Revenue grew 44%</strong> while total ad spend dropped 27% — proof that the previous setup was wasting nearly a third of the budget on non-converting traffic</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Germany turned profitable</strong> — from £785 spent for £4 returned, to a positive ROAS within 60 days of clean tracking being live</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>ROAS increased by 96%</strong> across all 7 markets â€” without increasing the total budget, purely through better data and smarter allocation</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Revenue grew 44%</strong> while total ad spend dropped 27% â€” proof that the previous setup was wasting nearly a third of the budget on non-converting traffic</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Germany turned profitable</strong> â€” from â€”785 spent for â€”4 returned, to a positive ROAS within 60 days of clean tracking being live</div></div>
       <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Google's algorithm found genuinely high-value customers</strong> across all markets. It needed accurate conversion signals to do it.</div></div>
-      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Full visibility across 7 markets</strong> — every penny of spend is now tracked, attributed, and reportable in real time with no data gaps</div></div>
+      <div class="result-item"><div class="result-item__icon"></div><div class="result-item__text"><strong>Full visibility across 7 markets</strong> â€” every penny of spend is now tracked, attributed, and reportable in real time with no data gaps</div></div>
     </div>
   </div>
 </section>
@@ -332,7 +301,7 @@
     <div class="cta-final__inner">
       <div data-anim>
         <h2 class="cta-final__h">How much of your budget is really working?</h2>
-        <p class="cta-final__sub">A free 30-minute call to audit your current setup and find out what's actually driving revenue — and what isn't.</p>
+        <p class="cta-final__sub">A free 30-minute call to audit your current setup and find out what's actually driving revenue â€” and what isn't.</p>
         <div class="cta-final__actions">
           <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free call</button>
           <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp</a>
@@ -344,7 +313,7 @@
         <div class="cta-box__options">
           <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">
             <div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div>
-            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div>
+            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min Â· Free Â· No commitment</div></div>
             <span class="cta-opt__arrow"></span>
           </button>
           <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener">
@@ -366,8 +335,8 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__brand"><a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads · Meta Ads · Landing Page</span></div></a></div>
-      <p class="footer__copy">© 2025 Nicola Dimattia · P.IVA 09099240724</p>
+      <div class="footer__brand"><a class="logo" href="/"><div class="logo__mark"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><polygon points="4,16 28,4 28,28" fill="#33C494" stroke="#33C494" stroke-width="4" stroke-linejoin="round"/></svg></div><div><div class="logo__text">NicosDigit</div><span class="logo__sub">Google Ads Â· Meta Ads Â· Landing Page</span></div></a></div>
+      <p class="footer__copy">Â© 2025 Nicola Dimattia Â· P.IVA 09099240724</p>
       <nav class="footer__links">
         <a href="tel:+393514120302">+39 351 412 0302</a>
         <a href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
@@ -393,9 +362,7 @@
   const head=document.getElementById('site-head');window.addEventListener('scroll',()=>{head.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
   const toggle=document.getElementById('nav-toggle'),nav=document.getElementById('nav');
   toggle.addEventListener('click',()=>{toggle.classList.toggle('is-open');nav.classList.toggle('is-open');document.body.style.overflow=nav.classList.contains('is-open')?'hidden':'';});
-  nav.querySelectorAll('a,button').forEach(function(el){if(el.classList.contains('nav__dropdown-btn'))return;el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
-  document.querySelectorAll('.nav__item--has-dropdown').forEach(function(item){var btn=item.querySelector('.nav__dropdown-btn'),menu=item.querySelector('.nav__dropdown');if(!btn||!menu)return;btn.addEventListener('click',function(e){var open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));menu.classList.toggle('is-open',!open);e.stopPropagation();});});
-  document.addEventListener('click',function(){document.querySelectorAll('.nav__dropdown.is-open').forEach(function(m){m.classList.remove('is-open');m.closest('.nav__item--has-dropdown').querySelector('.nav__dropdown-btn').setAttribute('aria-expanded','false');});});
+  nav.querySelectorAll('a').forEach(function(el){el.addEventListener('click',function(){toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
   const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target);}});},{threshold:0.12});
   document.querySelectorAll('[data-anim]').forEach(el=>observer.observe(el));
   const mobileCta=document.getElementById('mobile-cta'),heroEl=document.querySelector('.hero'),showAfter=heroEl?heroEl.offsetHeight*0.6:300;

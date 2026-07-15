@@ -51,18 +51,7 @@
   .nav__link{position:relative;padding:0.4rem 0;transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
   .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
   .nav__link:hover::after{transform:scaleX(1);}
-  .nav__item--has-dropdown{position:relative;}
-  .nav__dropdown-btn{display:flex;align-items:center;gap:0.35rem;position:relative;padding:0.4rem 0;font-size:0.93rem;font-weight:500;transition:color 0.2s;min-height:44px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--ink);}
-  .nav__dropdown-btn::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
-  .nav__dropdown-btn[aria-expanded="true"]::after,.nav__dropdown-btn.is-active::after{transform:scaleX(1);}
-  .nav__dropdown-chevron{width:14px;height:14px;transition:transform 0.25s var(--ease);flex-shrink:0;}
-  .nav__dropdown-btn[aria-expanded="true"] .nav__dropdown-chevron{transform:rotate(180deg);}
-  .nav__dropdown{position:absolute;top:calc(100% + 0.75rem);left:-1rem;min-width:210px;background:var(--bg);border:1px solid var(--grey-line);border-radius:12px;box-shadow:0 16px 40px -8px rgba(10,10,10,0.12);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0s 0.2s;z-index:200;}
-  .nav__dropdown.is-open{opacity:1;visibility:visible;transform:none;transition:opacity 0.2s,transform 0.2s;}
-  .nav__dropdown-link{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--ink);transition:background 0.15s,color 0.15s;text-decoration:none;}
-  a.nav__dropdown-link:hover,.nav__dropdown-link.is-active-link{background:var(--green-soft);color:var(--green-dark);}
-  .nav__dropdown-link--soon{color:var(--grey);cursor:default;}
-  .nav__dropdown-badge{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--grey-line);color:var(--grey);padding:0.12rem 0.45rem;border-radius:999px;}
+  .nav__link.is-active::after{transform:scaleX(1)!important;}
   .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:var(--bg);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:999px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
   .nav__cta:hover{background:var(--green);color:var(--ink);transform:translateY(-2px);}
   .lang-sw{display:flex;align-items:center;flex-shrink:0;border:1.5px solid var(--grey-line);border-radius:999px;overflow:hidden;}
@@ -79,17 +68,10 @@
     .nav{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;z-index:150!important;background:var(--bg);flex-direction:column!important;align-items:stretch!important;padding:80px 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px)) 1.5rem!important;overflow-y:auto;gap:0!important;pointer-events:none;visibility:hidden;opacity:0;transform:translateX(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s 0.3s;}
     .nav.is-open{pointer-events:auto!important;visibility:visible!important;opacity:1!important;transform:none!important;transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s;}
     .nav.is-open .nav__list{display:flex!important;flex-direction:column;width:100%;gap:0;}
-    .nav.is-open .nav__list li:not(.nav__item--has-dropdown){border-bottom:1px solid var(--grey-line);}
+    .nav.is-open .nav__list li{border-bottom:1px solid var(--grey-line);}
     .nav.is-open .nav__list a{display:flex;align-items:center;padding:1.1rem 0;font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;}
     .nav.is-open .nav__cta{display:inline-flex!important;margin-top:2rem;align-self:stretch;justify-content:center;padding:1.1rem;font-size:1rem;min-height:56px;}
     .nav.is-open .lang-sw{display:flex!important;margin-top:2rem;align-self:flex-start;}
-    .nav.is-open .nav__item--has-dropdown{border-bottom:1px solid var(--grey-line);}
-    .nav.is-open .nav__dropdown-btn{font-size:1.4rem;font-family:'Archivo Black';letter-spacing:-0.02em;min-height:60px;padding:1.1rem 0;width:100%;justify-content:space-between;}
-    .nav.is-open .nav__dropdown-btn::after{display:none;}
-    .nav.is-open .nav__dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:transparent;margin-bottom:0.5rem;display:none;}
-    .nav.is-open .nav__dropdown.is-open{display:block;}
-    .nav.is-open .nav__dropdown .nav__dropdown-link{padding:0.65rem 0;font-size:0.95rem;border-radius:0;}
-    .nav.is-open .nav__dropdown .nav__dropdown-link:not(:last-child){border-bottom:1px solid var(--grey-line);}
   }
   .btn{display:inline-flex;align-items:center;gap:0.7rem;padding:1rem 1.6rem;font-size:0.95rem;font-weight:600;border-radius:999px;transition:transform 0.25s var(--ease),background 0.25s,color 0.25s;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;min-height:48px;}
   .btn:hover{transform:translateY(-3px);}
@@ -282,15 +264,8 @@
         <ul class="nav__list" role="list">
           <li><a href="/it/#services" class="nav__link">Servizi</a></li>
           <li><a href="/it/#method" class="nav__link">Approccio</a></li>
-          <li class="nav__item--has-dropdown">
-            <button class="nav__dropdown-btn is-active" aria-haspopup="true" aria-expanded="false" aria-controls="nav-res-menu">Risorse<svg class="nav__dropdown-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <ul class="nav__dropdown" id="nav-res-menu" role="menu">
-              <li><a href="/it/blog" class="nav__dropdown-link is-active-link" role="menuitem">Blog</a></li>
-              <li><a href="/it/case-studies" class="nav__dropdown-link" role="menuitem">Case Study</a></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Guide <span class="nav__dropdown-badge">Presto</span></span></li>
-              <li><span class="nav__dropdown-link nav__dropdown-link--soon">Risorse gratuite <span class="nav__dropdown-badge">Presto</span></span></li>
-            </ul>
-          </li>
+          <li><a href="/it/case-studies" class="nav__link">Lavori</a></li>
+          <li><a href="/it/blog" class="nav__link is-active">Blog</a></li>
           <li><a href="/it/#faq" class="nav__link">FAQ</a></li>
         </ul>
         <div class="lang-sw">
@@ -517,17 +492,9 @@
   window.addEventListener('scroll',()=>{head.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
   const toggle=document.getElementById('nav-toggle'),nav=document.getElementById('nav');
   toggle.addEventListener('click',()=>{const open=toggle.classList.toggle('is-open');nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';});
-  nav.querySelectorAll('a,button').forEach(el=>{
-    if(el.classList.contains('nav__dropdown-btn'))return;
+  nav.querySelectorAll('a').forEach(el=>{
     el.addEventListener('click',()=>{toggle.classList.remove('is-open');nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});
   });
-  document.querySelectorAll('.nav__item--has-dropdown').forEach(function(item){
-    var btn=item.querySelector('.nav__dropdown-btn'),menu=item.querySelector('.nav__dropdown');
-    if(!btn||!menu)return;
-    btn.addEventListener('click',function(e){var open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!open);menu.classList.toggle('is-open',!open);e.stopPropagation();});
-  });
-  document.addEventListener('click',function(){document.querySelectorAll('.nav__dropdown.is-open').forEach(function(m){m.classList.remove('is-open');m.closest('.nav__item--has-dropdown').querySelector('.nav__dropdown-btn').setAttribute('aria-expanded','false');});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav__dropdown.is-open').forEach(function(m){m.classList.remove('is-open');m.closest('.nav__item--has-dropdown').querySelector('.nav__dropdown-btn').setAttribute('aria-expanded','false');});});
   const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target);}});},{threshold:0.1});
   document.querySelectorAll('[data-anim]').forEach(el=>observer.observe(el));
 </script>
