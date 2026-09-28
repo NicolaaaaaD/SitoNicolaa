@@ -106,4 +106,4 @@ Le campagne che performano costantemente meglio, nella nostra esperienza, sono q
 
 ---
 
-*Se non sei sicuro che il tuo tracciamento delle conversioni funzioni correttamente, [prenota una call gratuita](/it/contact). Analizzeremo la tua configurazione e ti diremo cosa troviamo.*
+*Se non sei sicuro che il tuo tracciamento delle conversioni funzioni correttamente, [prenota una call gratuita](/contact). Analizzeremo la tua configurazione e ti diremo cosa troviamo.*

@@ -91,4 +91,4 @@ Se stai pubblicando Google Ads e il tuo tasso di conversione sembra basso per la
 
 ---
 
-*Se vuoi che eseguiamo un audit dell'intento sul tuo account, [prenota una call gratuita](/it/contact). Ti diremo onestamente cosa troviamo.*
+*Se vuoi che eseguiamo un audit dell'intento sul tuo account, [prenota una call gratuita](/contact). Ti diremo onestamente cosa troviamo.*

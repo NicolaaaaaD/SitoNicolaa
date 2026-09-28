@@ -15,7 +15,7 @@ const ROOT = dirname(__filename);
 
 const CASE_STUDY_DIRS = [
   'case-studies',
-  'it/case-studies',
+  'en/case-studies',
 ];
 
 // Slugs that should exist in both EN and IT
@@ -115,17 +115,17 @@ function checkFile(filePath) {
   }
 
   // Lang attribute check
-  const isIT = rel.startsWith('it/');
+  const isEN = rel.startsWith('en/');
   const langMatch = html.match(/html lang="([^"]+)"/);
   if (langMatch) {
     const lang = langMatch[1];
-    if (isIT && lang !== 'it') errors.push(`Expected lang="it", found lang="${lang}"`);
-    if (!isIT && lang !== 'en') errors.push(`Expected lang="en", found lang="${lang}"`);
+    if (isEN && lang !== 'en') errors.push(`Expected lang="en", found lang="${lang}"`);
+    if (!isEN && lang !== 'it') errors.push(`Expected lang="it", found lang="${lang}"`);
   }
 
-  // Logo href on EN pages should not point to /it
-  if (!isIT && html.includes('class="logo" href="/it"')) {
-    errors.push(`Logo links to /it — should link to / on EN pages`);
+  // Logo href on EN pages should point into /en, not to the IT root
+  if (isEN && html.includes('class="logo" href="/">')) {
+    errors.push(`Logo links to / — should link to /en/ on EN pages`);
   }
 
   return { rel, errors, warnings };
@@ -157,8 +157,8 @@ function findCaseStudyFiles() {
 
 function checkArchiveDraftLinks() {
   const archiveChecks = [
-    { file: 'case-studies/index.html', label: 'EN archive' },
-    { file: 'it/case-studies/index.html', label: 'IT archive' },
+    { file: 'case-studies/index.html', label: 'IT archive' },
+    { file: 'en/case-studies/index.html', label: 'EN archive' },
   ];
   const issues = [];
 
@@ -174,7 +174,7 @@ function checkArchiveDraftLinks() {
       // Check if there's a clickable href to the draft page (not just a text reference)
       const liveLink = new RegExp(`href="[^"]*/${slug}[^"]*"[^>]*>[^<]*(?<!soon|prossimamente|coming)`, 'i');
       // A simpler check: if the archive has a direct href link to a draft slug
-      const hrefPattern = new RegExp(`href="(?:/it)?/case-studies/${slug}"`, 'i');
+      const hrefPattern = new RegExp(`href="(?:/en)?/case-studies/${slug}"`, 'i');
       if (hrefPattern.test(html)) {
         // Make sure it's not inside a "coming soon" context — this is a heuristic check
         issues.push(`${label}: may have live link to draft page /${slug} — verify it's a "coming soon" card only`);
@@ -187,10 +187,10 @@ function checkArchiveDraftLinks() {
 function checkPairing() {
   const issues = [];
   for (const slug of EXPECTED_SLUGS) {
-    const en = join(ROOT, 'case-studies', slug, 'index.html');
-    const it = join(ROOT, 'it', 'case-studies', slug, 'index.html');
-    if (!existsSync(en)) issues.push(`Missing EN page: case-studies/${slug}/index.html`);
-    if (!existsSync(it)) issues.push(`Missing IT page: it/case-studies/${slug}/index.html`);
+    const en = join(ROOT, 'en', 'case-studies', slug, 'index.html');
+    const it = join(ROOT, 'case-studies', slug, 'index.html');
+    if (!existsSync(en)) issues.push(`Missing EN page: en/case-studies/${slug}/index.html`);
+    if (!existsSync(it)) issues.push(`Missing IT page: case-studies/${slug}/index.html`);
   }
   return issues;
 }

@@ -2,253 +2,253 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nicosdigit.com/</loc>
-    
+
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/</loc>
-    
+    <loc>https://nicosdigit.com/en/</loc>
+
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/case-studies/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/case-studies/</loc>
-    
+    <loc>https://nicosdigit.com/en/case-studies/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/</loc>
-    
+
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/</loc>
+
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/search/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/search/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/search/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/google-ads-vs-meta-ads/</loc>
+    <loc>https://nicosdigit.com/blog/google-ads-vs-meta-ads-quale-scegliere/</loc>
     <lastmod>2025-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/conversion-tracking-foundation/</loc>
+    <loc>https://nicosdigit.com/blog/tracciamento-conversioni-fondamenti/</loc>
     <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/five-google-ads-mistakes-ppc-audit/</loc>
+    <loc>https://nicosdigit.com/blog/errori-google-ads-budget/</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/search-intent-google-ads/</loc>
+    <loc>https://nicosdigit.com/blog/intento-di-ricerca-google-ads/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/google-ads-vs-meta-ads-quale-scegliere/</loc>
+    <loc>https://nicosdigit.com/en/blog/google-ads-vs-meta-ads/</loc>
     <lastmod>2025-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tracciamento-conversioni-fondamenti/</loc>
+    <loc>https://nicosdigit.com/en/blog/conversion-tracking-foundation/</loc>
     <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/errori-google-ads-budget/</loc>
+    <loc>https://nicosdigit.com/en/blog/five-google-ads-mistakes-ppc-audit/</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/intento-di-ricerca-google-ads/</loc>
+    <loc>https://nicosdigit.com/en/blog/search-intent-google-ads/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/google-ads/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/meta-ads/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/strategy/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/strategia/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/paid-advertising/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/channel-selection/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/scelta-canale/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/tracking/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/tracciamento/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/analytics/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/conversion-tracking/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/conversioni/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/audit/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/optimization/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/ottimizzazione/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nicosdigit.com/blog/tag/ppc/</loc>
-    
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/keyword-research/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/parole-chiave/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/blog/tag/search-intent/</loc>
-    
+    <loc>https://nicosdigit.com/blog/tag/intento-di-ricerca/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/google-ads/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/google-ads/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/meta-ads/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/meta-ads/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/strategia/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/strategy/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/paid-advertising/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/paid-advertising/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/scelta-canale/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/channel-selection/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/tracciamento/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/tracking/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/analytics/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/analytics/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/conversioni/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/conversion-tracking/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/audit/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/audit/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/ottimizzazione/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/optimization/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/ppc/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/ppc/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/parole-chiave/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/keyword-research/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nicosdigit.com/it/blog/tag/intento-di-ricerca/</loc>
-    
+    <loc>https://nicosdigit.com/en/blog/tag/search-intent/</loc>
+
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

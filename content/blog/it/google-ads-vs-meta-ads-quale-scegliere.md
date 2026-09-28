@@ -93,4 +93,4 @@ Quello che garantiamo è che qualunque cosa raccomandiamo, avremo una base logic
 
 ---
 
-*Se stai cercando di decidere dove iniziare la tua pubblicità a pagamento, [prenota una call strategica gratuita](/it/contact). Faremo le domande giuste e daremo una raccomandazione onesta per la tua situazione specifica.*
+*Se stai cercando di decidere dove iniziare la tua pubblicità a pagamento, [prenota una call strategica gratuita](/contact). Faremo le domande giuste e daremo una raccomandazione onesta per la tua situazione specifica.*

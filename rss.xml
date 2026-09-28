@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NicosDigit Blog</title>
+    <title>NDigital Blog</title>
     <link>https://nicosdigit.com/blog/</link>
-    <description>Practical articles on Google Ads, Meta Ads, tracking and strategy.</description>
-    <language>en-GB</language>
+    <description>Articoli pratici su Google Ads, Meta Ads, tracciamento e strategia.</description>
+    <language>it-IT</language>
     <atom:link href="https://nicosdigit.com/rss.xml" rel="self" type="application/rss+xml"/>
     <managingEditor>nicoladimattia8@gmail.com (Nicola Dimattia)</managingEditor>
     <copyright>© 2025 Nicola Dimattia</copyright>
   <item>
-    <title><![CDATA[Google Ads vs Meta Ads: How We Recommend Choosing Your First Channel]]></title>
-    <link>https://nicosdigit.com/blog/google-ads-vs-meta-ads/</link>
-    <guid>https://nicosdigit.com/blog/google-ads-vs-meta-ads/</guid>
-    <description><![CDATA[Clients often ask whether to start with Google or Meta. The answer depends on your business model, not the platform's reputation. Here is the framework we use to make that recommendation.]]></description>
+    <title><![CDATA[Google Ads o Meta Ads: Come Scegliamo il Canale Giusto per i Nostri Clienti]]></title>
+    <link>https://nicosdigit.com/blog/google-ads-vs-meta-ads-quale-scegliere/</link>
+    <guid>https://nicosdigit.com/blog/google-ads-vs-meta-ads-quale-scegliere/</guid>
+    <description><![CDATA[I clienti ci chiedono spesso se iniziare con Google o Meta. La risposta dipende dal tuo modello di business, non dalla reputazione della piattaforma. Ecco il framework che usiamo per fare questa raccomandazione.]]></description>
     <pubDate>Tue, 22 Jul 2025 00:00:00 GMT</pubDate>
     <author>nicoladimattia8@gmail.com (Nicola Dimattia)</author>
-    <category>Strategy</category>
+    <category>Strategia</category>
   </item>
   <item>
-    <title><![CDATA[Conversion Tracking Is Not Optional: Why We Set It Up Before Everything Else]]></title>
-    <link>https://nicosdigit.com/blog/conversion-tracking-foundation/</link>
-    <guid>https://nicosdigit.com/blog/conversion-tracking-foundation/</guid>
-    <description><![CDATA[We never move a campaign budget until tracking is verified. Here is why reliable conversion data changes everything about how you run paid advertising — and what usually goes wrong with it.]]></description>
+    <title><![CDATA[Il Tracciamento delle Conversioni Non È Opzionale: Perché Lo Configuriamo Prima di Tutto]]></title>
+    <link>https://nicosdigit.com/blog/tracciamento-conversioni-fondamenti/</link>
+    <guid>https://nicosdigit.com/blog/tracciamento-conversioni-fondamenti/</guid>
+    <description><![CDATA[Non tocchiamo mai il budget di una campagna finché il tracciamento non è verificato. Ecco perché i dati di conversione affidabili cambiano tutto nel paid advertising — e cosa va storto nella maggior parte degli account.]]></description>
     <pubDate>Tue, 15 Jul 2025 00:00:00 GMT</pubDate>
     <author>nicoladimattia8@gmail.com (Nicola Dimattia)</author>
-    <category>Tracking & Analytics</category>
+    <category>Tracking &amp; Analytics</category>
   </item>
   <item>
-    <title><![CDATA[Five Google Ads Mistakes We Commonly Find During PPC Audits]]></title>
-    <link>https://nicosdigit.com/blog/five-google-ads-mistakes-ppc-audit/</link>
-    <guid>https://nicosdigit.com/blog/five-google-ads-mistakes-ppc-audit/</guid>
-    <description><![CDATA[After auditing dozens of Google Ads accounts, the same five mistakes appear again and again. Here is what to look for in your own account — and what each one is actually costing you.]]></description>
+    <title><![CDATA[Cinque Errori in Google Ads Che Troviamo Spesso Negli Account]]></title>
+    <link>https://nicosdigit.com/blog/errori-google-ads-budget/</link>
+    <guid>https://nicosdigit.com/blog/errori-google-ads-budget/</guid>
+    <description><![CDATA[Dopo aver analizzato decine di account Google Ads, gli stessi cinque errori compaiono ancora e ancora. Ecco cosa cercare nel tuo account — e cosa sta costando a ciascuno di essi.]]></description>
     <pubDate>Tue, 08 Jul 2025 00:00:00 GMT</pubDate>
     <author>nicoladimattia8@gmail.com (Nicola Dimattia)</author>
     <category>Google Ads</category>
   </item>
   <item>
-    <title><![CDATA[Why Search Intent Matters More Than Keywords in Google Ads]]></title>
-    <link>https://nicosdigit.com/blog/search-intent-google-ads/</link>
-    <guid>https://nicosdigit.com/blog/search-intent-google-ads/</guid>
-    <description><![CDATA[Most businesses waste budget on Google Ads because they chase keywords, not intent. Here is what we actually look for when auditing an account — and why the difference determines everything.]]></description>
+    <title><![CDATA[Perché l'Intento di Ricerca Conta Più delle Parole Chiave in Google Ads]]></title>
+    <link>https://nicosdigit.com/blog/intento-di-ricerca-google-ads/</link>
+    <guid>https://nicosdigit.com/blog/intento-di-ricerca-google-ads/</guid>
+    <description><![CDATA[La maggior parte delle aziende spreca budget in Google Ads perché segue le keyword, non l'intento. Ecco cosa guardiamo davvero quando facciamo un audit di un account — e perché la differenza determina tutto.]]></description>
     <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
     <author>nicoladimattia8@gmail.com (Nicola Dimattia)</author>
     <category>Google Ads</category>

@@ -104,4 +104,4 @@ La maggior parte degli account che audittiamo ha almeno tre di questi cinque pro
 
 ---
 
-*Offriamo una call di audit gratuita di un'ora in cui analizziamo il tuo account e identifichiamo dove stai perdendo budget. [Prenota una call qui.](/it/contact)*
+*Offriamo una call di audit gratuita di un'ora in cui analizziamo il tuo account e identifichiamo dove stai perdendo budget. [Prenota una call qui.](/contact)*
