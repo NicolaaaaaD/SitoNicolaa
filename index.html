@@ -42,33 +42,35 @@
     .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.5rem;}
     @media(min-width:768px){.container{padding:0 2rem;}}@media(min-width:1100px){.container{padding:0 3rem;}}
 
-    .site-head{position:fixed;top:0;left:0;right:0;z-index:160;padding:1rem 0;background:var(--ink);color:#fff;border-bottom:1px solid rgba(255,255,255,0.08);transition:padding 0.3s var(--ease);}
-    .site-head.is-scrolled{padding:0.55rem 0;}
+    .site-head{position:fixed;top:0;left:0;right:0;z-index:160;padding:1rem 0;background:#FFFFFF;color:#1A1A1A;border-bottom:1px solid transparent;transition:padding 0.3s var(--ease),border-color 0.3s,box-shadow 0.3s;}
+    .site-head.is-scrolled{padding:0.55rem 0;border-bottom-color:#EAEAEA;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
     .site-head__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
     .logo{display:flex;align-items:center;gap:0.7rem;min-height:44px;}
     .logo__mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .logo__text{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.03em;color:#fff;line-height:1;}
+    .logo__text{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.03em;color:#1A1A1A;line-height:1;}
     .logo__sub{font-size:0.65rem;font-weight:500;color:var(--grey);letter-spacing:0.04em;display:block;margin-top:0.1rem;}
     .nav{display:flex;align-items:center;gap:2rem;}
     .nav__list{display:flex;gap:2rem;font-size:0.93rem;font-weight:500;}
     .nav__link{position:relative;padding:0.4rem 0;transition:color 0.2s;min-height:44px;display:flex;align-items:center;}
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after{transform:scaleX(1);}.nav__link:hover,.nav__link.is-active{color:var(--green);}
+    .nav__phone{display:flex;align-items:center;gap:6px;font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;color:#1A1A1A;min-height:44px;white-space:nowrap;}
     .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--ink);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:8px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
     .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
-    .nav__cta:hover{background:#fff;color:var(--ink);transform:translateY(-2px);}
+    .nav__cta:hover{background:var(--ink);color:#fff;transform:translateY(-2px);}
     .nav-toggle{display:none;width:44px;height:44px;position:relative;z-index:110;align-items:center;justify-content:center;}
-    .nav-toggle span{display:block;position:absolute;left:11px;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.3s var(--ease),opacity 0.2s;}
+    .nav-toggle span{display:block;position:absolute;left:11px;width:22px;height:2px;background:#1A1A1A;border-radius:2px;transition:transform 0.3s var(--ease),opacity 0.2s;}
     .nav-toggle span:nth-child(1){top:16px;}.nav-toggle span:nth-child(2){top:22px;}.nav-toggle span:nth-child(3){top:28px;}
     .nav-toggle.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}.nav-toggle.is-open span:nth-child(2){opacity:0;}.nav-toggle.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
     @media(max-width:880px){
       .logo__sub{display:none;}.logo{position:relative;z-index:160;}.nav-toggle{z-index:160!important;}
-      .nav__list,.nav__cta{display:none!important;}.nav-toggle{display:flex!important;}
+      .nav__list,.nav__cta,.nav__phone{display:none!important;}.nav-toggle{display:flex!important;}
       .nav{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;z-index:150!important;background:var(--bg);color:var(--ink);flex-direction:column!important;align-items:stretch!important;padding:80px 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px)) 1.5rem!important;overflow-y:auto;gap:0!important;pointer-events:none;visibility:hidden;opacity:0;transform:translateX(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s 0.3s;}
       .nav.is-open{pointer-events:auto!important;visibility:visible!important;opacity:1!important;transform:none!important;transition:opacity 0.3s var(--ease),transform 0.3s var(--ease),visibility 0s;}
       .nav.is-open .nav__list{display:flex!important;flex-direction:column;width:100%;gap:0;}
       .nav.is-open .nav__list li{border-bottom:1px solid var(--grey-line);}
       .nav.is-open .nav__list a{display:flex;align-items:center;padding:1.1rem 0;font-size:1.4rem;font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.02em;min-height:60px;}
+      .nav.is-open .nav__phone{display:flex!important;margin-top:1.5rem;font-size:1.1rem;}
       .nav.is-open .nav__cta{display:inline-flex!important;margin-top:2rem;align-self:stretch;justify-content:center;padding:1.1rem;font-size:1rem;min-height:56px;}
     }
 
@@ -96,22 +98,24 @@
     .cta-microcopy{margin-top:.65rem;font-size:.78rem;color:rgba(10,10,10,.42);letter-spacing:.01em;line-height:1.45;}
 
     .hero{position:relative;padding:clamp(8rem,16vw,12rem) 0 clamp(5rem,10vw,8rem);background:var(--bg);overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:0;right:-14%;width:48vw;max-width:640px;height:100%;background:linear-gradient(to right,var(--green-soft) 55%,rgba(234,248,242,0) 100%);clip-path:polygon(100% 0,100% 100%,12% 50%);pointer-events:none;z-index:0;opacity:0;animation:heroBgIn .8s ease-out 1.5s forwards;}@keyframes heroBgIn{to{opacity:1;}}@media(max-width:900px){.hero::before{width:60vw;right:-30%;}}@media(max-width:600px){.hero::before{width:45vw;right:-24%;}}
+    .hero::before{content:'';position:absolute;top:0;right:-14%;width:48vw;max-width:640px;height:100%;background:#33C494;clip-path:polygon(100% 0,100% 100%,12% 50%);pointer-events:none;z-index:0;opacity:0;animation:heroBgIn .8s ease-out 1.5s forwards;}@keyframes heroBgIn{to{opacity:1;}}@media(max-width:900px){.hero::before{width:60vw;right:-30%;}}@media(max-width:600px){.hero::before{width:45vw;right:-24%;}}
     .hero__inner{max-width:840px;position:relative;z-index:1;}
     .hero__h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(2.75rem,5vw,3.5rem);line-height:1.2;letter-spacing:-0.04em;color:var(--ink);margin-bottom:1.25rem;}.hero__underline{display:block;width:40px;height:3px;background:var(--green);margin-bottom:1.5rem;}
     .hero__lead{max-width:600px;font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.7;color:var(--grey);margin-bottom:2.25rem;}
-    .nd-hero-logo{display:flex;align-items:center;gap:12px;height:36px;margin-bottom:20px}
-    .nd-tri{width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-right:24px solid #33C494;border-radius:3px;opacity:0;transform:translateX(12px);animation:ndTri .4s ease-out forwards}
-    .nd-type{display:inline-block;font:700 28px/1 'Poppins',sans-serif;color:#1A1A1A;white-space:nowrap;overflow:hidden;width:0;animation:ndType .9s steps(8,end) .4s forwards}
-    .nd-cursor{width:2px;height:28px;background:#33C494;margin-left:-8px;opacity:0;animation:ndBlink .45s step-end .4s 4, ndHide .2s 2.2s forwards}
+    .nd-hero-logo{display:flex;align-items:center;gap:16px;margin-bottom:28px;min-height:60px}
+    .nd-tri{width:0;height:0;border-top:22px solid transparent;border-bottom:22px solid transparent;border-right:38px solid #33C494;opacity:0;transform:translateX(12px);animation:ndTri .4s ease-out forwards}
+    .nd-type{display:inline-block;font:700 48px/1.3 'Poppins',sans-serif;color:#1A1A1A;white-space:nowrap;overflow:visible;width:auto;padding-bottom:4px;clip-path:inset(-10% 100% -25% 0);animation:ndType .9s steps(8,end) .4s forwards}
+    .nd-cursor{width:3px;height:44px;background:#33C494;margin-left:-10px;opacity:0;animation:ndBlink .45s step-end .4s 4, ndHide .2s 2.2s forwards}
     @keyframes ndTri{to{opacity:1;transform:none}}
-    @keyframes ndType{to{width:8.6ch}}
+    @keyframes ndType{to{clip-path:inset(-10% -2% -25% 0)}}
     @keyframes ndBlink{0%,100%{opacity:1}50%{opacity:0}}
     @keyframes ndHide{to{opacity:0}}
     .hero__h1{opacity:0;transform:translateY(16px);animation:ndUp .6s ease-out 1.5s forwards}
     @keyframes ndUp{to{opacity:1;transform:none}}
-    @media (max-width:768px){.nd-type{font-size:22px}.nd-cursor{height:22px}.nd-tri{border-top-width:11px;border-bottom-width:11px;border-right-width:19px}}
-    @media (prefers-reduced-motion:reduce){.nd-tri,.nd-type,.nd-cursor,.hero__h1{animation:none!important;opacity:1!important;transform:none!important;width:auto!important}.nd-cursor{display:none}.hero::before{animation:none!important;opacity:1!important;}}
+    @media (max-width:768px){.nd-type{font-size:34px}.nd-cursor{height:32px}.nd-tri{border-top-width:16px;border-bottom-width:16px;border-right-width:28px}}
+    @media (prefers-reduced-motion:reduce){.nd-type{clip-path:none!important;animation:none!important}.nd-tri,.nd-cursor,.hero__h1{animation:none!important;opacity:1!important;transform:none!important}.nd-cursor{display:none}.hero::before{animation:none!important;opacity:1!important;}}
+    #site-head .logo{opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .3s ease,transform .3s ease;}
+    #site-head .logo.nav-logo--visible{opacity:1;transform:none;pointer-events:auto;}
 
     .hero__ctas{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;}
     .hero__ctas .cta-microcopy{flex-basis:100%;margin-top:0;}
@@ -289,6 +293,7 @@
           <li><a href="/blog" class="nav__link">Blog</a></li>
           <li><a href="/#faq" class="nav__link">FAQ</a></li>
         </ul>
+        <a href="tel:+393514120302" class="nav__phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#33C494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>351 412 0302</a>
         <button class="nav__cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">Prenota una call</button>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
@@ -638,5 +643,6 @@
   if(reopen)reopen.addEventListener('click',function(e){e.preventDefault();localStorage.removeItem('cookieConsent');showBanner();});
 })();
 </script>
+<script>(function(){var heroLogo=document.querySelector('.nd-hero-logo');var navLogo=document.querySelector('#site-head .logo');if(!heroLogo||!navLogo)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){navLogo.classList.remove('nav-logo--visible');}else{navLogo.classList.add('nav-logo--visible');}});},{threshold:0});obs.observe(heroLogo);})();</script>
 </body>
 </html>
