@@ -19,9 +19,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"></noscript>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='6,16 26,4 26,28' fill='%2333C494' stroke='%2333C494' stroke-width='5' stroke-linejoin='round'/></svg>">
   <style>
-    :root{--green:#33C494;--green-dark:#28A57C;--bg:#FFFFFF;--ink:#141414;--grey:#6B6B6B;--grey-line:#E5E5E5;--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
+    :root{--green:#33C494;--green-dark:#28A57C;--bg:#FFFFFF;--bg-warm:#FAFAF8;--ink:#1A1A1A;--grey:#5F6663;--grey-line:#E5E5E5;--ease:cubic-bezier(0.16,1,0.3,1);--max:1320px;}
     *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-    body{font-family:'Poppins',system-ui,sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;}
+    body{font-family:'Poppins',system-ui,sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg-warm);-webkit-font-smoothing:antialiased;}
     a{color:var(--green);text-decoration:underline;}
     .container{width:100%;max-width:800px;margin:0 auto;padding:0 1.5rem;}
     .site-head{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;background:var(--ink);color:#fff;border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -45,23 +45,20 @@
     .footer__copy{font-size:.82rem;}
     .footer__links{display:flex;gap:1.2rem;font-size:.82rem;}
     .footer__links a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;min-height:44px;display:flex;align-items:center;}.footer__links a:hover{color:var(--green);}
-    .footer__lang{display:flex;border:1.5px solid rgba(255,255,255,.15);border-radius:999px;overflow:hidden;}
-    .footer__lang a{font-size:.75rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.4);padding:.3rem .75rem;text-decoration:none;min-height:36px;display:flex;align-items:center;transition:background .2s,color .2s;}
-    .footer__lang a.is-active{background:rgba(255,255,255,.12);color:#fff;}
-    .footer__bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;}
+    .footer__lang{display:flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-weight:500;font-size:13px;}.footer__lang svg{color:rgba(255,255,255,.45);flex-shrink:0;}.footer__lang a{color:rgba(255,255,255,.45);transition:color .2s;min-height:44px;display:inline-flex;align-items:center;}.footer__lang a.is-active{color:var(--green);}.footer__lang a:hover:not(.is-active){color:var(--green);}.footer__lang span{color:rgba(255,255,255,.3);}.footer__bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;}
     .footer__legal{font-size:.76rem;color:rgba(255,255,255,.3);}
     .footer__legal a{color:rgba(255,255,255,.3);transition:color .2s;text-decoration:none;}.footer__legal a:hover{color:var(--green);}
     .footer__legal-links{display:flex;gap:1rem;font-size:.76rem;}
     .footer__legal-links a,.footer__cookie-btn{color:rgba(255,255,255,.3);transition:color .2s;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;}.footer__legal-links a:hover,.footer__cookie-btn:hover{color:var(--green);}
     .footer__cookie-btn{background:none;border:none;cursor:pointer;font:inherit;padding:0;font-size:.76rem;}
-    .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:199;background:#141414;color:rgba(255,255,255,.9);display:none;border-top:1px solid rgba(255,255,255,.1);}
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:199;background:#1A1A1A;color:rgba(255,255,255,.9);display:none;border-top:1px solid rgba(255,255,255,.1);}
     .cookie-banner.is-visible{display:block;}
     .cookie-banner__inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 1.5rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));}
     .cookie-banner__text{font-size:.88rem;line-height:1.5;flex:1;min-width:220px;}
     .cookie-banner__link{color:#33C494;text-decoration:underline;}
     .cookie-banner__actions{display:flex;gap:.75rem;flex-shrink:0;}
     .cookie-banner__btn{padding:.65rem 1.25rem;font-size:.88rem;font-weight:600;border-radius:999px;cursor:pointer;border:none;font-family:inherit;min-height:44px;transition:transform .2s,background .2s,color .2s,border-color .2s;}
-    .cookie-banner__btn--accept{background:#33C494;color:#141414;}.cookie-banner__btn--accept:hover{background:#28A57C;}
+    .cookie-banner__btn--accept{background:#33C494;color:#1A1A1A;}.cookie-banner__btn--accept:hover{background:#28A57C;}
     .cookie-banner__btn--reject{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.2);}.cookie-banner__btn--reject:hover{border-color:rgba(255,255,255,.5);}
     .cookie-banner__btn:active{transform:scale(.97);}
   </style>
@@ -141,14 +138,11 @@
         <a href="/en/case-studies">Case Studies</a>
         <a href="/en/#contact">Contact</a>
       </nav>
-      <div class="footer__lang">
-        <a href="/en/cookie-policy" class="is-active" hreflang="en">EN</a>
-        <a href="/cookie-policy" hreflang="it">IT</a>
-      </div>
     </div>
     <div class="footer__bottom">
       <p class="footer__legal">NicosDigit di Nicola Dimattia — P.IVA 09099240724 — <a href="mailto:nicoladimattia8@gmail.com">nicoladimattia8@gmail.com</a></p>
-      <div class="footer__legal-links"><a href="/en/cookie-policy">Cookie policy</a><button id="cookie-reopen" class="footer__cookie-btn">Cookie preferences</button></div>
+      <div class="footer__legal-links">
+        <div class="footer__lang"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.7 5.7 3.7 9s-1.4 6.5-3.7 9c-2.3-2.5-3.7-5.7-3.7-9s1.4-6.5 3.7-9z"/></svg><a href="/cookie-policy" hreflang="it">IT</a><span aria-hidden="true">|</span><a href="/en/cookie-policy" class="is-active" hreflang="en">EN</a></div><a href="/en/cookie-policy">Cookie policy</a><button id="cookie-reopen" class="footer__cookie-btn">Cookie preferences</button></div>
     </div>
   </div>
 </footer>
