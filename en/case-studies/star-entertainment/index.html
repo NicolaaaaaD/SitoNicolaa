@@ -65,7 +65,7 @@
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after,.nav__link.is-active::after{transform:scaleX(1);}.nav__link:hover,.nav__link.is-active{color:var(--green);}
     .nav__phone{display:flex;align-items:center;gap:6px;font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;color:#1A1A1A;min-height:44px;white-space:nowrap;}
-    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--ink);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:8px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
+    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--ink);padding:0.7rem 1.1rem;font-size:0.85rem;font-weight:600;border-radius:8px;min-height:44px;white-space:nowrap;flex-shrink:0;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
     .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
     .nav__cta:hover{background:var(--ink);color:#fff;transform:translateY(-2px);}
     .nav-toggle{display:none;width:44px;height:44px;position:relative;z-index:110;align-items:center;justify-content:center;}
@@ -216,7 +216,7 @@
     .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:98;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--grey-line);padding:0.75rem 1rem;padding-bottom:calc(0.75rem + env(safe-area-inset-bottom,0px));gap:0.6rem;box-shadow:0 -4px 20px rgba(0,0,0,0.08);opacity:0;transform:translateY(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease);}
     .mobile-cta.is-visible{opacity:1;transform:translateY(0);}
     @media(max-width:880px){.mobile-cta{display:flex;}body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px));}}
-    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 0.75rem;font-size:0.88rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;transition:transform 0.2s var(--ease);}
+    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 0.5rem;font-size:0.8rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;white-space:nowrap;transition:transform 0.2s var(--ease);}
     .mobile-cta__btn:active{transform:scale(0.97);}
     .mobile-cta__btn--cal{background:var(--ink);color:var(--bg);}
     .mobile-cta__btn--wa{background:#25D366;color:#fff;}
@@ -393,9 +393,9 @@
     <div class="cta-final__inner">
       <div data-anim>
         <h2 class="cta-final__h">Your business doesn't have 1,500 concerts. But it deserves the same method.</h2>
-        <p class="cta-final__sub">A free 30-minute call to see if it makes sense for your project. No pitch deck, no commitment.</p>
+        <p class="cta-final__sub">A free 30-minute consultation to see if it makes sense for your project. No pitch deck, no commitment.</p>
         <div class="cta-final__actions">
-          <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+          <button class="btn btn--solid" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free consultation</button>
           <a href="https://wa.me/393514120302" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
@@ -405,7 +405,7 @@
         <div class="cta-box__options">
           <button class="cta-opt" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">
             <div class="cta-opt__icon cta-opt__icon--cal"><i class="ti ti-calendar"></i></div>
-            <div><div class="cta-opt__label">Book a call</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div>
+            <div><div class="cta-opt__label">Book a consultation</div><div class="cta-opt__desc">30 min · Free · No commitment</div></div>
             <span class="cta-opt__arrow"></span>
           </button>
           <a class="cta-opt" href="https://wa.me/393514120302" target="_blank" rel="noopener">
@@ -453,7 +453,7 @@
 </a>
 
 <div class="mobile-cta" id="mobile-cta">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">&#128197; Book a call</button>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">&#128197; Book a consultation</button>
   <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">&#128172; WhatsApp</a>
 </div>
 

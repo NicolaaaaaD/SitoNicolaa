@@ -56,7 +56,7 @@
     .nav__link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease);}
     .nav__link:hover::after{transform:scaleX(1);}.nav__link:hover,.nav__link.is-active{color:var(--green);}
     .nav__phone{display:flex;align-items:center;gap:6px;font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;color:#1A1A1A;min-height:44px;white-space:nowrap;}
-    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--ink);padding:0.7rem 1.3rem;font-size:0.88rem;font-weight:600;border-radius:8px;min-height:44px;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
+    .nav__cta{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--ink);padding:0.7rem 1.1rem;font-size:0.85rem;font-weight:600;border-radius:8px;min-height:44px;white-space:nowrap;flex-shrink:0;transition:background 0.25s,color 0.25s,transform 0.25s var(--ease);}
     .nav__cta::after{content:'';width:0;height:0;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent currentColor;}
     .nav__cta:hover{background:var(--ink);color:#fff;transform:translateY(-2px);}
     .nav-toggle{display:none;width:44px;height:44px;position:relative;z-index:110;align-items:center;justify-content:center;}
@@ -225,7 +225,7 @@
     .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:98;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--grey-line);padding:0.75rem 1rem;padding-bottom:calc(0.75rem + env(safe-area-inset-bottom,0px));gap:0.6rem;box-shadow:0 -4px 20px rgba(0,0,0,0.07);opacity:0;transform:translateY(100%);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease);}
     .mobile-cta.is-visible{opacity:1;transform:translateY(0);}
     @media(max-width:880px){.mobile-cta{display:flex;}body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px));}}
-    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 0.75rem;font-size:0.88rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;transition:transform 0.2s var(--ease);}
+    .mobile-cta__btn{flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 0.5rem;font-size:0.8rem;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;min-height:48px;white-space:nowrap;transition:transform 0.2s var(--ease);}
     .mobile-cta__btn:active{transform:scale(0.97);}.mobile-cta__btn--cal{background:var(--ink);color:var(--bg);}.mobile-cta__btn--wa{background:#25D366;color:#fff;}
 
     /* ── Animation ── */
@@ -362,7 +362,7 @@
           <li><a href="#faq" class="nav__link">FAQ</a></li>
         </ul>
         <a href="tel:+393514120302" class="nav__phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#33C494" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>351 412 0302</a>
-        <button class="nav__cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">Book a free call</button>
+        <button class="nav__cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">Book a consultation</button>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
@@ -382,7 +382,7 @@
       <span class="hero__underline" aria-hidden="true"></span>
       <p class="hero__lead">Google Ads and Meta Ads campaigns, landing pages, and reliable tracking — built together to drive measurable business results.</p>
       <div class="hero__ctas">
-        <button class="btn btn--green" data-gtm="hero-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free strategy call</button>
+        <button class="btn btn--green" data-gtm="hero-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free consultation</button>
         <a href="/en/case-studies" class="btn btn--solid">View case studies</a>
       </div>
     </div>
@@ -501,7 +501,7 @@
     </div>
 
     <div class="svc2-cta" data-anim data-delay="2">
-      <button class="btn btn--green" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free call</button>
+      <button class="btn btn--green" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free consultation</button>
       <span class="svc2-cta__note">30 minutes, no commitment.</span>
     </div>
   </div>
@@ -612,7 +612,7 @@
       <div class="faq__item">
         <button class="faq__q" aria-expanded="false">What's the minimum budget to get started?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a" role="region">
-          <div class="faq__a-inner">There's no universal figure — it depends on your industry, the platforms involved, and your objectives. Most clients start with a monthly media spend of €500–€1,500. The right number for your situation is something we can work out in the first call, once I understand what you're trying to achieve.</div>
+          <div class="faq__a-inner">There's no universal figure — it depends on your industry, the platforms involved, and your objectives. Most clients start with a monthly media spend of €500–€1,500. The right number for your situation is something we can work out in the first consultation, once I understand what you're trying to achieve.</div>
         </div>
       </div>
 
@@ -647,7 +647,7 @@
       <div class="faq__item">
         <button class="faq__q" aria-expanded="false">What industries do you work with?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a" role="region">
-          <div class="faq__a-inner">I've worked with e-commerce brands, service businesses, event promoters, B2B companies, and more. The industry matters less than the fundamentals: a solid offer, a real market, and a willingness to make decisions from data. If you're not sure whether your situation is a good fit, ask on the call — I'll give you an honest answer either way.</div>
+          <div class="faq__a-inner">I've worked with e-commerce brands, service businesses, event promoters, B2B companies, and more. The industry matters less than the fundamentals: a solid offer, a real market, and a willingness to make decisions from data. If you're not sure whether your situation is a good fit, ask during the consultation — I'll give you an honest answer either way.</div>
         </div>
       </div>
 
@@ -664,7 +664,7 @@
       <h2 class="cta-final__h" id="cta-heading">Let's talk about what's limiting your growth.</h2>
       <p class="cta-final__sub">Whether you're launching a new campaign or trying to understand why your current advertising isn't working, the first conversation costs you nothing.</p>
       <div class="cta-final__actions">
-        <button class="btn btn--solid" data-gtm="final-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free strategy call</button>
+        <button class="btn btn--solid" data-gtm="final-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;"><span class="btn__arrow"></span>Book a free consultation</button>
         <a href="mailto:nicoladimattia8@gmail.com" class="btn btn--ghost-inv">Email me</a>
       </div>
       <p class="cta-microcopy">No pressure. No long-term contracts. One conversation about your business.</p>
@@ -699,7 +699,7 @@
 <a class="wa-float" href="https://wa.me/393514120302" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.524 5.826L0 24l6.341-1.507A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.016-1.374l-.36-.213-3.727.885.935-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></a>
 
 <div class="mobile-cta" id="mobile-cta">
-  <button class="mobile-cta__btn mobile-cta__btn--cal" data-gtm="sticky-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">Book a free call</button>
+  <button class="mobile-cta__btn mobile-cta__btn--cal" data-gtm="sticky-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/nicoladimattia8/30min?month=2026-05'});return false;">Book a free consultation</button>
   <a class="mobile-cta__btn mobile-cta__btn--wa" href="https://wa.me/393514120302" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
